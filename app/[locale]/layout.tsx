@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { ProviderQueryWrapper } from "@/providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  variable: "--font-ibm-plex-sans-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -27,10 +28,10 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${ibmPlexSansArabic.variable} h-full antialiased`}
       dir={locale === "ar" ? "rtl" : "ltr"}
     >
-      <body className="min-h-full flex flex-col">
+      <body className={locale === "ar" ? "font-arabic" : "font-latin"}>
         <NextIntlClientProvider>
           <ProviderQueryWrapper>{children}</ProviderQueryWrapper>
         </NextIntlClientProvider>
