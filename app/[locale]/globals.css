@@ -299,6 +299,14 @@
   --thickness-xs: 0.03125rem;
 }
 
+@utility container {
+  max-width: 100%;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Typography */
 
 @utility heading-hero-semibold {
