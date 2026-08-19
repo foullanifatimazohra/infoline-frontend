@@ -1,6 +1,6 @@
 import Link from "next/link";
 import TopBar from "./top-bar";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 
 const menuItems = [
   "Solutions",
@@ -28,14 +28,14 @@ export const Header = () => {
               <Link
                 key={item}
                 href="#"
-                className="whitespace-nowrap border-b border-transparent py-1.5 text-[13.5px] font-medium tracking-[0.01em] transition-colors duration-250 hover:border-brandblue-500 hover:text-gray-600"
+                className="whitespace-nowrap uppercase border-b border-transparent py-1.5 text-[13.5px] font-medium tracking-[0.01em] transition-colors duration-250 hover:border-brandblue-500 hover:text-gray-600"
               >
                 {item}
               </Link>
             ))}
           </nav>
 
-          <Button>Talk to an Expert</Button>
+          <Button href="/">Talk to an Expert</Button>
         </div>
       </header>
     </>

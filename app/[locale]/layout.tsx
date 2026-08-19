@@ -5,6 +5,7 @@ import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { ProviderQueryWrapper } from "@/providers";
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,6 +38,7 @@ export default async function RootLayout({
           <ProviderQueryWrapper>
             <Header />
             {children}
+            <Footer />
           </ProviderQueryWrapper>
         </NextIntlClientProvider>
       </body>
