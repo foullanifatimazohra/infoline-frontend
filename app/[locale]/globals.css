@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --font-latin: var(--font-inter), sans-serif;
   --font-arabic: var(--font-ibm-plex-sans-arabic), sans-serif;
@@ -12,6 +17,7 @@
 
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-ink: #0d161b;
   --color-alpha-black-80: rgba(0, 0, 0, 0.8);
   --color-alpha-black-10: rgba(0, 0, 0, 0.1);
   --color-alpha-black-25: rgba(0, 0, 0, 0.25);
@@ -604,6 +610,10 @@
   line-height: 1rem;
   letter-spacing: 0.09375rem;
   text-transform: uppercase;
+}
+
+.custom-header {
+  backdrop-filter: blur(18px);
 }
 
 @utility overline-xs-semibold {

@@ -3,72 +3,42 @@ import { Link } from "@/i18n/navigation";
 
 export default function Main() {
   return (
-    <section className="relative overflow-hidden bg-ink-900">
-      {/* <div
-        className="pointer-events-none absolute -left-40 -top-[220px] h-[820px] w-[820px] animate-[il-drift_18s_ease-in-out_infinite] rounded-full blur-[24px]"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(28,151,212,.30), rgba(28,151,212,0) 68%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-[320px] right-[12%] h-[680px] w-[680px] animate-[il-drift_24s_ease-in-out_infinite] rounded-full blur-[30px]"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(0,188,212,.14), rgba(0,188,212,0) 70%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px)",
-          backgroundSize: "96px 96px",
-        }}
-      /> */}
-
-      <div className="relative mx-auto grid min-h-165 max-w-340 items-center gap-16 px-6 md:px-12 lg:grid-cols-[1.06fr_.94fr]">
+    <section className="relative overflow-hidden bg-ink">
+      <div className="relative mx-auto grid min-h-165 max-w-340 items-center gap-16 px-6 md:px-12 lg:grid-cols-[1.2fr_.80fr]">
         <div className="flex flex-col items-start gap-0 py-16 lg:py-26">
           <div className="mb-8.5 flex items-center gap-3.5">
             <span className="block h-px w-8.5 bg-brandblue-500" />
             <span className="font-mono text-[11.5px] font-medium uppercase tracking-[0.2em] text-lightblue-300">
-              Hero — one message, one primary action
+              Operating in Oman since 2004
             </span>
           </div>
 
-          <h1 className="heading-hero-bold m-0 max-w-[19ch] text-[44px] font-bold leading-[1.06] tracking-[-.033em] sm:text-[52px] lg:text-[66px]">
-            Outsourced customer experience and IT operations for Oman&apos;s{" "}
-            {/* <span className="text-lightblue-300">institutions</span>. */}
+          <h1 className="max-w-[20ch] text-white text-[48px] font-bold leading-[1.06] tracking-[-.033em]">
+            Oman&apos;s trusted partner for{" "}
+            <span className="text-lightblue-300">customer operations.</span>
           </h1>
 
-          <p className="mt-7.5 max-w-[52ch] text-[17.5px] leading-[1.7] text-slate-200">
-            ISO 9001:2015 and COPC certified. Operating in Oman since 2003.
-            Three pillars: CX & BPO · Technology & Enterprise Solutions · People
-            & Finance Outsourcing.
+          <p className="mt-7.5 max-w-[60ch] text-[16px] leading-[24px] text-slate-200">
+            Trusted CX operations, managed services and technology from Oman,
+            built around clear accountability and measurable outcomes.
           </p>
 
           <div className="mt-11 flex max-md:justify-start flex-wrap items-center gap-3.5">
-            <Button
-              href="/"
-              className="inline-flex items-center gap-3 rounded-xs bg-brandblue-500 px-8.5 py-4.75 text-[13px] font-semibold uppercase tracking-[0.11em] text-white shadow-[0_14px_40px_-16px_rgba(28,151,212,.95)] transition-[background,box-shadow,transform] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] hover:bg-brandblue-600 hover:shadow-[0_22px_52px_-18px_rgba(28,151,212,1)]"
-            >
-              Talk to an Expert
-            </Button>
+            <Button href="/">Talk to an Expert</Button>
             <Link
               href="#solutions"
-              className="inline-flex  items-center gap-3 rounded-xs border px-7.5 py-4.75 text-[13px] font-semibold uppercase tracking-[0.11em] transition-[border-color,color,background] duration-300 hover:border-white/[.42] hover:bg-white/[.04] hover:text-white"
+              className="inline-flex border-white  items-center gap-3 px-6 py-3.5 rounded-md border  text-[13px] font-semibold uppercase tracking-[0.11em] transition-[border-color,color,background] duration-300 hover:border-white/[.42] hover:bg-white/[.04] text-white"
             >
               Explore Solutions
             </Link>
           </div>
 
           <p className="mt-6.5 font-mono text-[13px] leading-[1.6] text-slate-500">
-            Headline, sub-head and pillar names are the audit`s proposed
-            language — editable, not final.
+            We respond within 1 business day.
           </p>
         </div>
 
-        <div className="relative -mb-px h-[420px] sm:h-[500px] lg:h-[560px]">
+        <div className="relative -mb-px h-[420px] ">
           <div className="absolute inset-0 border border-white/[.1]" />
           <div className="absolute inset-3.5 flex items-center justify-center bg-slate-800/60 text-center text-sm text-slate-400">
             Hero photograph

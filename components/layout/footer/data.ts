@@ -18,16 +18,14 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Government", href: "#" },
       { label: "Telecom", href: "#" },
-      { label: "Healthcare", href: "#" },
       { label: "Energy & Utilities", href: "#" },
-      { label: "BFSI · Retail · Travel", href: "#" },
+      { label: "All sectors", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "#" },
-      { label: "Certifications", href: "#" },
       { label: "Leadership", href: "#" },
       { label: "Case studies", href: "#" },
       { label: "Insights", href: "#" },
@@ -37,18 +35,16 @@ export const footerColumns: FooterColumn[] = [
     title: "Get in touch",
     links: [
       { label: "Partnership inquiry", href: "#" },
-      { label: "Support", href: "#" },
+      { label: "Vendor registration", href: "#" },
       { label: "Careers & media", href: "#" },
-      { label: "Client portal", href: "#" },
-      { label: "FAQ", href: "#" },
+      { label: "Contact us", href: "#" },
     ],
   },
 ];
 
 export const legalLinks = [
   { label: "Privacy policy", href: "#" },
-  { label: "Terms of use", href: "#" },
-  { label: "Accessibility", href: "#" },
+  { label: "Company profile", href: "#" },
 ];
 
 export const heroStats = [
