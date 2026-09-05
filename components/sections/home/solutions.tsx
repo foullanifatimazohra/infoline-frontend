@@ -16,17 +16,17 @@ export default function Solutions() {
 
   return (
     <section className="bg-[#0a1014] py-10 text-white sm:py-12 lg:py-28">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-[12px] font-medium uppercase tracking-[0.28em] text-white/50">
+            <p className="overline-sm-medium uppercase tracking-[0.28em] text-slate-300">
               {t("eyebrow")}
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
               {t("title")}
             </h2>
           </div>
-          <p className="max-w-[50ch] text-[15px] leading-relaxed text-white/55">
+          <p className="max-w-[54ch] body-lg-regular leading-relaxed text-slate-300">
             {t("description")}
           </p>
         </div>

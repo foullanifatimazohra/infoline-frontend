@@ -107,5 +107,76 @@
     "title": "Established in 2004. Part of Omantel Group",
     "description": "Contracted service relationships, grouped by sector. Public authorities carry the largest share of our delivered volume.",
     "clientsCta": { "label": "All clients", "href": "#clients" }
+  },
+
+  "WhatChanges": {
+    "eyebrow": "What changes with Infoline",
+    "title": "Less operating burden. More visibility. Clearer accountability",
+    "description": "Four things an operations owner notices in the first quarter. The detail behind each sits in the procurement comparison below.",
+    "columns": {
+      "without": "Without Infoline",
+      "with": "With Infoline",
+      "impact": "Business impact"
+    },
+    "rows": [
+      {
+        "without": "Multiple teams to coordinate",
+        "with": "One accountable operating partner",
+        "impact": "Clearer ownership and faster decisions"
+      },
+      {
+        "without": "Reactive staffing and capacity",
+        "with": "Demand-led workforce planning",
+        "impact": "Better readiness for peaks and growth"
+      },
+      {
+        "without": "Fragmented reporting",
+        "with": "Shared performance visibility",
+        "impact": "Faster, more confident decisions"
+      },
+      {
+        "without": "Your team manages day-to-day operations",
+        "with": "Infoline manages the agreed operating scope",
+        "impact": "More focus on customers and business priorities"
+      }
+    ],
+    "cta": { "label": "Model this for our operation", "href": "#contact" }
+  },
+  "Industries": {
+    "eyebrow": "Industries · 6 sectors",
+    "title": "If you think in sectors, start here instead.",
+    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee.",
+    "items": [
+      {
+        "title": "Government & Public Authorities",
+        "image": "/assets/industries/government.jpg",
+        "href": "#government"
+      },
+      {
+        "title": "Telecom & Technology",
+        "image": "/assets/industries/telecom.jpg",
+        "href": "#telecom"
+      },
+      {
+        "title": "Healthcare",
+        "image": "/assets/industries/healthcare.jpg",
+        "href": "#healthcare"
+      },
+      {
+        "title": "Energy & Utilities",
+        "image": "/assets/industries/energy.jpg",
+        "href": "#energy"
+      },
+      {
+        "title": "Banking, Financial Services & Insurance",
+        "image": "/assets/industries/bfsi.jpg",
+        "href": "#bfsi"
+      },
+      {
+        "title": "Retail",
+        "image": "/assets/industries/retail.jpg",
+        "href": "#retail"
+      }
+    ]
   }
 }

@@ -13,39 +13,65 @@ import {
 } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-/** Floating glass cards. `depth` = pointer-parallax strength (px),
- *  `float` = idle bob amplitude (px). Positions are % of the frame —
- *  tweak to taste; negatives let a card bleed left over the copy. */
+/**
+ * Floating glass elements over the hero photo.
+ * - `start` / `top` use CSS logical positioning (insetInlineStart / insetBlockStart)
+ *   so they automatically mirror to the correct side when `dir="rtl"` is set
+ *   on <html>. No JS branching needed for layout.
+ * - `depth` = pointer-parallax strength (px), `float` = idle bob amplitude (px).
+ * - Assets are expected to already include the glass-card chrome (blur, border,
+ *   inner glow) baked in from Figma — this component only handles motion.
+ */
 const CARDS = [
   {
-    src: "/hero/card-1.svg",
-    w: 134,
-    h: 147,
-    top: "8%",
-    left: "-6%",
-    depth: 30,
-    float: 10,
+    src: "/assets/hero/f4.svg",
+    w: 64,
+    h: 64,
+    top: "28%",
+    start: "17%",
+    depth: 22,
+    float: 8,
     delay: 0,
   },
   {
-    src: "/hero/card-2.svg",
-    w: 111,
-    h: 131,
-    top: "44%",
-    left: "-12%",
-    depth: 46,
-    float: 14,
-    delay: 0.6,
+    src: "/assets/hero/f4.svg",
+    w: 56,
+    h: 56,
+    top: "45%",
+    start: "2%",
+    depth: 26,
+    float: 10,
+    delay: 0.4,
   },
   {
-    src: "/hero/card-3.svg",
-    w: 117,
-    h: 131,
-    top: "66%",
-    left: "4%",
+    src: "/assets/hero/f4.svg",
+    w: 56,
+    h: 56,
+    top: "60%",
+    start: "7%",
+    depth: 20,
+    float: 9,
+    delay: 0.8,
+  },
+  {
+    src: "/assets/hero/f3.svg",
+    w: 150,
+    h: 110,
+    top: "38%",
+    start: "24%",
     depth: 38,
+    float: 13,
+    delay: 0.2,
+  },
+  {
+    src: "/assets/hero/f2.svg",
+    w: 110,
+    h: 110,
+    top: "49%",
+    start: "52%",
+    depth: 34,
     float: 12,
-    delay: 1.2,
+    delay: 1,
   },
 ] as const;
 
@@ -57,12 +83,14 @@ export default function HeroVisual() {
   const wrapRef = useRef<HTMLDivElement>(null);
 
   // Pointer parallax (normalized -0.5..0.5, spring-smoothed).
+  // Relative to the component's own bounding box, so it needs no
+  // RTL handling — cursor-follow feels correct in either direction.
   const px = useMotionValue(0);
   const py = useMotionValue(0);
   const sx = useSpring(px, { stiffness: 120, damping: 20, mass: 0.4 });
   const sy = useSpring(py, { stiffness: 120, damping: 20, mass: 0.4 });
 
-  // Scroll parallax for the background layers.
+  // Scroll parallax for background layers.
   const { scrollYProgress } = useScroll({
     target: wrapRef,
     offset: ["start end", "end start"],
@@ -88,55 +116,25 @@ export default function HeroVisual() {
       ref={wrapRef}
       onMouseMove={handleMove}
       onMouseLeave={resetMove}
-      className="relative h-[420px] w-full lg:h-[560px]"
+      className="relative h-full w-full"
     >
-      {/* Soft radial glow */}
-      <motion.div
-        style={enabled ? { y: yGlow } : undefined}
-        className="pointer-events-none absolute -inset-x-24 -top-24 -bottom-10 -z-10"
-      >
-        <Image
-          src="/hero/glow.svg"
-          alt=""
-          aria-hidden
-          fill
-          priority
-          className="object-contain object-center opacity-80"
-        />
-      </motion.div>
-
-      {/* Bottom arc */}
-      <motion.div
-        style={enabled ? { y: yArc } : undefined}
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10"
-      >
-        <Image
-          src="/hero/arc.svg"
-          alt=""
-          aria-hidden
-          width={674}
-          height={155}
-          className="h-auto w-full"
-        />
-      </motion.div>
-
-      {/* Hero photo */}
+      {/* Hero photo — never flip real photography for RTL */}
       <motion.div
         style={enabled ? { y: yImg } : undefined}
-        className="absolute inset-0"
+        className="lg:absolute relative inset-0"
       >
         <Image
-          src="/hero/team.svg"
+          src="/assets/hero/arc.svg"
           alt="Infoline customer operations team reviewing live performance dashboards"
-          fill
+          width={647}
+          height={560}
           priority
-          sizes="(min-width: 1024px) 40vw, 100vw"
-          className="object-contain object-bottom"
+          className="object-contain h-full  object-bottom"
         />
       </motion.div>
 
       {/* Floating glass cards */}
-      {CARDS.map((card, i) => (
+      {/* {CARDS.map((card) => (
         <FloatingCard
           key={card.src}
           card={card}
@@ -144,7 +142,7 @@ export default function HeroVisual() {
           sy={sy}
           enabled={enabled}
         />
-      ))}
+      ))} */}
     </div>
   );
 }
@@ -167,8 +165,8 @@ function FloatingCard({
   return (
     <motion.div
       style={{
-        top: card.top,
-        left: card.left,
+        insetBlockStart: card.top,
+        insetInlineStart: card.start,
         ...(enabled ? { x, y } : {}),
       }}
       className="absolute"
@@ -193,7 +191,7 @@ function FloatingCard({
           aria-hidden
           width={card.w}
           height={card.h}
-          className="h-auto w-[clamp(78px,7vw,134px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
+          className="h-auto w-[clamp(48px,6vw,150px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
         />
       </motion.div>
     </motion.div>

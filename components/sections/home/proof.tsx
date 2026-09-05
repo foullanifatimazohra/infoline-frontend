@@ -13,10 +13,10 @@ export default function Proof() {
     <section>
       {/* Stats bar */}
       <div className="bg-[#0a1014] text-white">
-        <div className="mx-auto flex w-full flex-col gap-8 px-6 py-8 lg:flex-row lg:items-center lg:justify-start lg:px-8">
-          <dl className="grid flex-1 grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
+        <div className="mx-auto flex w-full max-w-7xl flex-col px-6 md:px-12 py-11 lg:flex-row lg:items-center lg:justify-start">
+          <dl className="grid flex-1 grid-cols-2 gap-y-8 md:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label}>
+              <div key={stat.label} className="max-w-[570px]">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="text-3xl font-bold sm:text-4xl">
                   {stat.value}
@@ -33,7 +33,7 @@ export default function Proof() {
             ))}
           </dl>
 
-          <div className="flex items-center gap-5 border-white/10 lg:border-l lg:pl-8">
+          <div className="flex items-center gap-4.5 border-white/10 lg:border-l lg:pl-2">
             {badges.map((badge) => (
               <Image
                 key={badge.alt}

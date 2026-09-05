@@ -6,8 +6,8 @@ import HeroVisual from "./hero-visual";
 export default function Main() {
   return (
     <section className="relative overflow-hidden bg-ink">
-      <div className="relative mx-auto grid max-w-340 items-center gap-16 px-6 md:px-12 lg:grid-cols-[1.2fr_.80fr]">
-        <div className="flex flex-col items-start gap-0 py-16 lg:py-26">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-12 lg:grid-cols-[1fr_1fr]">
+        <div className="flex flex-col items-start gap-0 py-14 lg:py-20">
           <div className="mb-8.5 flex items-center gap-3.5">
             <span className="block h-px w-8.5 bg-brandblue-500" />
             <span className="font-mono text-[11.5px] font-medium uppercase tracking-[0.2em] text-lightblue-300">
