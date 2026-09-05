@@ -1,5 +1,112 @@
 {
   "homePage": {
     "title": "Home Page"
+  },
+  "Solutions": {
+    "eyebrow": "Solutions",
+    "title": "What we do",
+    "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
+    "items": [
+      {
+        "icon": "headphones",
+        "title": "CX Operations",
+        "description": "You own the customer. We run the operation",
+        "href": "#cx-operations",
+        "featured": true
+      },
+      {
+        "icon": "line-chart",
+        "title": "CX Transformation",
+        "description": "Find the gaps. Fix what matters. Stay accountable for improvement",
+        "href": "#cx-transformation"
+      },
+      {
+        "icon": "badge-check",
+        "title": "Quality as a Service",
+        "description": "Quality you can defend, not just report",
+        "href": "#quality-as-a-service"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "Training as a Service",
+        "description": "Build capability, certify it, then prove it on the floor",
+        "href": "#training-as-a-service"
+      },
+      {
+        "icon": "brain-circuit",
+        "title": "Business Intelligence",
+        "description": "One version of the numbers. Clearer decisions",
+        "href": "#business-intelligence"
+      },
+      {
+        "icon": "share",
+        "title": "Workforce Management",
+        "description": "Right people. Right interval. Right service level",
+        "href": "#workforce-management"
+      },
+      {
+        "icon": "terminal",
+        "title": "Technology Services",
+        "description": "Connected channels, in-country options and AI where it helps",
+        "href": "#technology-services"
+      },
+      {
+        "icon": "users",
+        "title": "HR Outsourcing",
+        "description": "You direct the work. We manage the employment",
+        "href": "#hr-outsourcing"
+      }
+    ]
+  },
+  "WhyInfoline": {
+    "eyebrow": "Why Infoline",
+    "title": "Why organisations trust Infoline",
+    "description": "One accountable operating partner, close to your customers, with the scale and governance to hold a service level under real demand.",
+    "cta": { "label": "Talk to an expert", "href": "#contact" },
+    "points": [
+      {
+        "number": "01",
+        "text": "Trusted in Oman, close to your customers and operating environment"
+      },
+      {
+        "number": "02",
+        "text": "One accountable model across people, process, technology and performance"
+      },
+      { "number": "03", "text": "Operational scale that can flex with demand" },
+      {
+        "number": "04",
+        "text": "Human expertise strengthened by analytics, automation and AI"
+      }
+    ]
+  },
+  "Proof": {
+    "stats": [
+      {
+        "value": "22",
+        "unit": "yrs",
+        "label": "In continuous operation since 2003."
+      },
+      { "value": "1,400+", "label": "Seats across delivery centres." },
+      { "value": "68", "label": "Clients across six sectors" },
+      { "value": "6M", "label": "Customer transactions a year" }
+    ],
+    "badges": [
+      {
+        "src": "/assets/badges/iso.svg",
+        "alt": "ISO 9001:2015",
+        "width": 76,
+        "height": 76
+      },
+      {
+        "src": "/assets/badges/copc.svg",
+        "alt": "COPC Certified",
+        "width": 76,
+        "height": 76
+      }
+    ],
+    "eyebrow": "Trust built on proof",
+    "title": "Established in 2004. Part of Omantel Group",
+    "description": "Contracted service relationships, grouped by sector. Public authorities carry the largest share of our delivered volume.",
+    "clientsCta": { "label": "All clients", "href": "#clients" }
   }
 }

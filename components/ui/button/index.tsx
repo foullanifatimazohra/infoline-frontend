@@ -39,7 +39,7 @@ const sizeClasses: Record<
   small: {
     text: "text-[12px]",
     tracking: "tracking-[0.1em]",
-    padding: "px-6 py-3.5",
+    padding: "py-[15px] px-[24px]",
     iconPadding: "p-3.5",
     gap: "gap-2.5",
   },
