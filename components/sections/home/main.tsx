@@ -1,5 +1,5 @@
 import Button from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
 
 export default function Main() {
   return (
@@ -24,13 +24,17 @@ export default function Main() {
           </p>
 
           <div className="mt-11 flex max-md:justify-start flex-wrap items-center gap-3.5">
-            <Button href="/">Talk to an Expert</Button>
-            <Link
-              href="#solutions"
-              className="inline-flex border-white  items-center gap-3 px-6 py-3.5 rounded-md border  text-[13px] font-semibold uppercase tracking-[0.11em] transition-[border-color,color,background] duration-300 hover:border-white/[.42] hover:bg-white/[.04] text-white"
+            <Button
+              href="/"
+              icon={ArrowRight}
+              size="large"
+              iconPosition="right"
             >
+              Talk to an Expert
+            </Button>
+            <Button variant="secondary" size="large" href="/solutions">
               Explore Solutions
-            </Link>
+            </Button>
           </div>
 
           <p className="mt-6.5 font-mono text-[13px] leading-[1.6] text-slate-500">

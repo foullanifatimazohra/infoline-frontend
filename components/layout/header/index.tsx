@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "@/components/ui/button";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import LanguageSwitcher from "./language-switcher";
 
 const menuItems = [
@@ -39,7 +40,14 @@ export const Header = () => {
           </nav>
           <div className="flex items-center gap-5">
             <LanguageSwitcher />
-            <Button href="/">Talk to an Expert</Button>
+            <Button
+              href="/"
+              icon={ArrowRight}
+              size="small"
+              iconPosition="right"
+            >
+              Talk to an Expert
+            </Button>
           </div>
         </div>
       </header>
