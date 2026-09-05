@@ -1,6 +1,7 @@
 import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Proof from "./proof";
+import HeroVisual from "./hero-visual";
 
 export default function Main() {
   return (
@@ -43,12 +44,7 @@ export default function Main() {
           </p>
         </div>
 
-        <div className="relative -mb-px h-[420px] ">
-          <div className="absolute inset-0 border border-white/[.1]" />
-          <div className="absolute inset-3.5 flex items-center justify-center bg-slate-800/60 text-center text-sm text-slate-400">
-            Hero photograph
-          </div>
-        </div>
+        <HeroVisual />
       </div>
       <Proof />
     </section>

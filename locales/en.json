@@ -8,50 +8,49 @@
     "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
     "items": [
       {
-        "icon": "headphones",
+        "icon": "/assets/solutions/s1.svg",
         "title": "CX Operations",
         "description": "You own the customer. We run the operation",
-        "href": "#cx-operations",
-        "featured": true
+        "href": "#cx-operations"
       },
       {
-        "icon": "line-chart",
+        "icon": "/assets/solutions/s2.svg",
         "title": "CX Transformation",
         "description": "Find the gaps. Fix what matters. Stay accountable for improvement",
         "href": "#cx-transformation"
       },
       {
-        "icon": "badge-check",
+        "icon": "/assets/solutions/s3.svg",
         "title": "Quality as a Service",
         "description": "Quality you can defend, not just report",
         "href": "#quality-as-a-service"
       },
       {
-        "icon": "graduation-cap",
+        "icon": "/assets/solutions/s4.svg",
         "title": "Training as a Service",
         "description": "Build capability, certify it, then prove it on the floor",
         "href": "#training-as-a-service"
       },
       {
-        "icon": "brain-circuit",
+        "icon": "/assets/solutions/s5.svg",
         "title": "Business Intelligence",
         "description": "One version of the numbers. Clearer decisions",
         "href": "#business-intelligence"
       },
       {
-        "icon": "share",
+        "icon": "/assets/solutions/s6.svg",
         "title": "Workforce Management",
         "description": "Right people. Right interval. Right service level",
         "href": "#workforce-management"
       },
       {
-        "icon": "terminal",
+        "icon": "/assets/solutions/s7.svg",
         "title": "Technology Services",
         "description": "Connected channels, in-country options and AI where it helps",
         "href": "#technology-services"
       },
       {
-        "icon": "users",
+        "icon": "/assets/solutions/s8.svg",
         "title": "HR Outsourcing",
         "description": "You direct the work. We manage the employment",
         "href": "#hr-outsourcing"
