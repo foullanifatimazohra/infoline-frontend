@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Insight = {
   category: string;
@@ -35,47 +36,58 @@ export default function Insights() {
   return (
     <section className="insights py-20 lg:py-26">
       <div className="px-6 lg:px-10 max-w-7xl">
-        <div className="flex items-start justify-between gap-lg">
-          <div>
+        <Stagger
+          as="div"
+          className="flex items-start justify-between gap-lg"
+          stagger={0.15}
+        >
+          <StaggerItem direction="start">
             <p className="overline-sm-medium text-slate-300 mb-sm">Insights</p>
             <h2 className="heading-xl-bold text-[36px] text-white">
               What we are seeing across Omani operations
             </h2>
-          </div>
-          <Link
-            href="/insights"
-            className="overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
-          >
-            All insights
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-
-        <div className="mt-11 grid grid-cols-1 md:grid-cols-3 gap-2xl">
-          {insights.map((insight) => (
+          </StaggerItem>
+          <StaggerItem direction="end">
             <Link
-              key={insight.title}
-              href={insight.href}
-              className="group flex flex-col max-h-[315px]"
+              href="/insights"
+              className="overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-lg bg-slate-800">
-                <Image
-                  src={insight.image}
-                  alt={insight.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </div>
-              <p className="overline-xs-medium mt-3 text-slate-300 mt-lg mb-xs">
-                {insight.category}
-              </p>
-              <h3 className="body-lg-semibold  text-white leading-snug">
-                {insight.title}
-              </h3>
+              All insights
+              <ArrowRight className="size-4" />
             </Link>
+          </StaggerItem>
+        </Stagger>
+
+        <Stagger
+          as="div"
+          className="mt-11 grid grid-cols-1 md:grid-cols-3 gap-2xl"
+          stagger={0.13}
+        >
+          {insights.map((insight) => (
+            <StaggerItem as="div" key={insight.title}>
+              <Link
+                href={insight.href}
+                className="group flex flex-col max-h-[315px]"
+              >
+                <div className="relative aspect-[16/11] w-full overflow-hidden rounded-lg bg-slate-800">
+                  <Image
+                    src={insight.image}
+                    alt={insight.title}
+                    width={430}
+                    height={220}
+                    className="object-cover h-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <p className="overline-xs-medium mt-3 text-slate-300 mt-lg mb-xs">
+                  {insight.category}
+                </p>
+                <h3 className="body-lg-semibold  text-white leading-snug">
+                  {insight.title}
+                </h3>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

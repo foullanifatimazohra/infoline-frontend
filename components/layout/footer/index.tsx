@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/button";
 import Image from "next/image";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 import { footerColumns, legalLinks, certifications } from "./data";
 
@@ -8,8 +9,13 @@ export const Footer = () => {
   return (
     <footer id="careers" className="bg-ink pb-10 pt-[76px] text-slate-300">
       <div className="mx-auto max-w-340 px-6 md:px-12">
-        <div className="grid grid-cols-1 gap-11 sm:grid-cols-2 lg:grid-cols-[1.75fr_1fr_1fr_1fr_1fr]">
-          <div>
+        <Stagger
+          as="div"
+          className="grid grid-cols-1 gap-11 sm:grid-cols-2 lg:grid-cols-[1.75fr_1fr_1fr_1fr_1fr]"
+          stagger={0.08}
+          amount={0.25}
+        >
+          <StaggerItem as="div" distance={32} blur={false}>
             <Link href="/" className="flex items-baseline gap-3">
               <Image
                 src="/assets/logo.svg"
@@ -42,10 +48,10 @@ export const Footer = () => {
             >
               Talk to an Expert
             </Button>
-          </div>
+          </StaggerItem>
 
           {footerColumns.map((column) => (
-            <div key={column.title}>
+            <StaggerItem as="div" key={column.title} distance={32} blur={false}>
               <p className="mb-[18px] font-mono text-[10.5px] font-medium uppercase tracking-[0.2em] text-slate-600">
                 {column.title}
               </p>
@@ -60,9 +66,9 @@ export const Footer = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         <div className="mt-16 flex flex-col items-start gap-6 border-t border-white/[.08] pt-[26px] sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[12px] text-slate-600">

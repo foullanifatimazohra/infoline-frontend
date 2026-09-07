@@ -648,3 +648,48 @@ body {
   box-shadow: 0px 24px 40px -34px rgba(38, 50, 56, 0.1);
   border: 1px solid #abd7ed;
 }
+
+/* ---------------------------------------------------------------------------
+   Custom cursor (Bluxart-inspired follower).
+   The React island in components/ui/cursor sets [data-custom-cursor] on <html>
+   once it is active (fine pointers only), so the native cursor is hidden ONLY
+   while the custom one is actually running. If JS fails, the system cursor
+   stays. Touch / coarse pointers keep the normal cursor.
+--------------------------------------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  html[data-custom-cursor],
+  html[data-custom-cursor] * {
+    cursor: none !important;
+  }
+}
+
+.cursor-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-ring,
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px; /* centre the ring on the pointer coordinate */
+  border: 1.5px solid var(--color-brandaccent-500);
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px; /* centre the dot on the pointer coordinate */
+  background: var(--color-brandaccent-500);
+}

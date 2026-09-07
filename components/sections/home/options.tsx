@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/ui/button";
+import { Parallax, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Pillar = {
   eyebrow: string;
@@ -42,22 +43,35 @@ export default function Options() {
   return (
     <section className="bg-white py-6xl">
       <div className="max-w-7xl px-6 lg:px-10 mx-auto w-full">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-4xl">
-          <div>
+        <Stagger
+          as="div"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-4xl"
+          stagger={0.15}
+        >
+          <StaggerItem direction="start">
             <p className="overline-sm-medium text-slate-500 mb-sm">Solutions</p>
             <h2 className="heading-2xl-semibold text-slate-900 max-w-[23ch]">
               Three ways we take work off your operation.
             </h2>
-          </div>
-          <p className="body-lg-regular text-slate-600 max-w-[54ch]">
+          </StaggerItem>
+          <StaggerItem
+            as="p"
+            direction="end"
+            className="body-lg-regular text-slate-600 max-w-[54ch]"
+          >
             Pick the problem closest to yours. Each pillar groups the services
             that solve it, with the proof that we have solved it before.
-          </p>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {pillars.map((pillar, i) => (
-            <div
+        <Stagger
+          as="div"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          stagger={0.12}
+        >
+          {pillars.map((pillar) => (
+            <StaggerItem
+              as="div"
               key={pillar.title}
               className={`rounded-xl max-h-[268px] py-10 px-[28px] bg-white flex flex-col solutions-card-shadow`}
             >
@@ -77,20 +91,32 @@ export default function Options() {
                 {pillar.cta}
                 <ArrowRight className="size-4" />
               </Link>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <div className="relative overflow-hidden rounded-2xl bg-brandblue-900 mt-2xl lg:py-15 lg:px-11 p-10">
-          {/* Layer 1: background image */}
-          <Image
-            src="/assets/options/bg.svg"
-            alt=""
-            fill
-            aria-hidden="true"
-            className="pointer-events-none object-cover object-bottom-left"
-            priority={false}
-          />
+        <Reveal
+          as="div"
+          className="relative overflow-hidden rounded-2xl bg-brandblue-900 mt-2xl lg:py-15 lg:px-11 p-10"
+          distance={72}
+          blur={false}
+          amount={0.25}
+        >
+          {/* Layer 1: background image — drifts on scroll (desktop only). The
+              parallax layer is oversized so the translation never exposes an edge. */}
+          <Parallax
+            className="pointer-events-none absolute -inset-y-[20%] inset-x-0"
+            speed={0.12}
+          >
+            <Image
+              src="/assets/options/bg.svg"
+              alt=""
+              fill
+              aria-hidden="true"
+              className="object-cover object-bottom-left"
+              priority={false}
+            />
+          </Parallax>
           {/* Layer 2: gradient overlay on top of the image, for text legibility */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/85 to-ink/85" />
           {/* Layer 3: content */}
@@ -113,7 +139,7 @@ export default function Options() {
               <ArrowRight className="size-4" />
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

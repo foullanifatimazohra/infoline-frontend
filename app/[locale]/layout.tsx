@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { ProviderQueryWrapper } from "@/providers";
+import CustomCursor from "@/components/ui/cursor";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
@@ -39,6 +40,7 @@ export default async function RootLayout({
             <Header />
             {children}
             <Footer />
+            <CustomCursor />
           </ProviderQueryWrapper>
         </NextIntlClientProvider>
       </body>

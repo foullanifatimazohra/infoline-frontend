@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Industry = {
   title: string;
@@ -17,24 +18,36 @@ export default function Industries() {
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         {/* Header */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
+        <Stagger
+          as="div"
+          className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+          stagger={0.15}
+        >
+          <StaggerItem direction="start">
             <p className="text-[12px] overline-sm-medium uppercase tracking-[0.28em] text-slate-400">
               {t("eyebrow")}
             </p>
             <h2 className="mt-3 max-w-[20ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]">
               {t("title")}
             </h2>
-          </div>
-          <p className="max-w-[55ch] body-lg-regular leading-relaxed text-slate-500">
+          </StaggerItem>
+          <StaggerItem
+            as="p"
+            direction="end"
+            className="max-w-[55ch] body-lg-regular leading-relaxed text-slate-500"
+          >
             {t("description")}
-          </p>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
         {/* Grid */}
-        <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger
+          as="ul"
+          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          stagger={0.11}
+        >
           {items.map((item) => (
-            <li key={item.title}>
+            <StaggerItem as="li" key={item.title}>
               <Link
                 href={item.href}
                 className="group relative block aspect-[4/3] max-h-[254px] w-full overflow-hidden rounded-2xl"
@@ -69,9 +82,9 @@ export default function Industries() {
                   </div>
                 </div>
               </Link>
-            </li>
+            </StaggerItem>
           ))}
-        </ul>
+        </Stagger>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Row = { without: string; with: string; impact: string };
 
@@ -12,48 +13,67 @@ export default function WhatChanges() {
     <section className="bg-[#f2f5f7] py-20 text-[#0a1014] sm:py-24 lg:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         {/* Header */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
+        <Stagger
+          as="div"
+          className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+          stagger={0.15}
+        >
+          <StaggerItem direction="start">
             <p className="text-[12px] overline-sm-medium uppercase tracking-[0.28em] text-slate-400">
               {t("eyebrow")}
             </p>
             <h2 className="mt-3 max-w-[60ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]">
               {t("title")}
             </h2>
-          </div>
-          <p className="max-w-[55ch] body-lg-regular leading-relaxed text-slate-700">
+          </StaggerItem>
+          <StaggerItem
+            as="p"
+            direction="end"
+            className="max-w-[55ch] body-lg-regular leading-relaxed text-slate-700"
+          >
             {t("description")}
-          </p>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
         {/* Comparison */}
-        <div className="relative mt-14 grid justify-center grid-cols-1 gap-y-10 lg:grid-cols-3 lg:gap-y-0">
-          <Column
-            variant="without"
-            heading={t("columns.without")}
-            cells={rows.map((r) => r.without)}
-          />
-          <Column
-            variant="with"
-            heading={t("columns.with")}
-            cells={rows.map((r) => r.with)}
-            footer={
-              <Button
-                href={t("cta.href")}
-                icon={ArrowRight}
-                size="small"
-                iconPosition="right"
-              >
-                {t("cta.label")}
-              </Button>
-            }
-          />
-          <Column
-            variant="impact"
-            heading={t("columns.impact")}
-            cells={rows.map((r) => r.impact)}
-          />
-        </div>
+        <Stagger
+          as="div"
+          className="relative mt-14 grid justify-center grid-cols-1 gap-y-10 lg:grid-cols-3 lg:gap-y-0"
+          stagger={0.16}
+          amount={0.25}
+        >
+          <StaggerItem>
+            <Column
+              variant="without"
+              heading={t("columns.without")}
+              cells={rows.map((r) => r.without)}
+            />
+          </StaggerItem>
+          <StaggerItem>
+            <Column
+              variant="with"
+              heading={t("columns.with")}
+              cells={rows.map((r) => r.with)}
+              footer={
+                <Button
+                  href={t("cta.href")}
+                  icon={ArrowRight}
+                  size="small"
+                  iconPosition="right"
+                >
+                  {t("cta.label")}
+                </Button>
+              }
+            />
+          </StaggerItem>
+          <StaggerItem>
+            <Column
+              variant="impact"
+              heading={t("columns.impact")}
+              cells={rows.map((r) => r.impact)}
+            />
+          </StaggerItem>
+        </Stagger>
       </div>
     </section>
   );

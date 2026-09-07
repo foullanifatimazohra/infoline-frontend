@@ -9,7 +9,7 @@ import WhatChanges from "@/components/sections/home/what-changes";
 import WhyInfoline from "@/components/sections/home/why-infoline";
 export default function HomePage() {
   return (
-    <main>
+    <main className="overflow-x-clip">
       <Main />
       <PartnersLogos />
       <WhyInfoline />
