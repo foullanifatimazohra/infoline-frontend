@@ -11,7 +11,7 @@ export default function WhatChanges() {
 
   return (
     <section className="bg-[#f2f5f7] py-20 text-[#0a1014] sm:py-24 lg:py-28">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         {/* Header */}
         <Stagger
           as="div"

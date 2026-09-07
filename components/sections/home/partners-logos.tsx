@@ -11,6 +11,7 @@ import {
   useAnimationFrame,
   useReducedMotion,
 } from "framer-motion";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 export type PartnerLogo = {
   src: string;
@@ -97,18 +98,33 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
 
   return (
     <div className="bg-white py-20 sm:py-24">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto flex flex-col items-center text-center">
-          <p className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-400">
+      <div className="mx-auto w-full max-w-360 px-6 lg:px-8">
+        <Stagger
+          as="div"
+          className="flex flex-col items-center text-center"
+          stagger={0.14}
+          amount={0.4}
+        >
+          <StaggerItem
+            as="p"
+            className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-400"
+          >
             {t("eyebrow")}
-          </p>
-          <h2 className="mt-4 text-3xl text-slate-900 font-bold tracking-tight sm:text-4xl">
+          </StaggerItem>
+          <StaggerItem
+            as="h2"
+            distance={72}
+            className="mt-4 text-3xl text-slate-900 font-bold tracking-tight sm:text-4xl"
+          >
             {t("title")}
-          </h2>
-          <p className="mt-4 text-[15px] max-w-[54ch] leading-relaxed text-slate-700">
+          </StaggerItem>
+          <StaggerItem
+            as="p"
+            className="mt-4 text-[15px] max-w-[54ch] leading-relaxed text-slate-700"
+          >
             {t("description")}
-          </p>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
         <div className="mt-7">
           <div

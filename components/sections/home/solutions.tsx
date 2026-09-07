@@ -17,7 +17,7 @@ export default function Solutions() {
 
   return (
     <section className="bg-[#0a1014] py-10 text-white sm:py-12 lg:py-28">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Stagger
           as="div"
           className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"

@@ -2,12 +2,13 @@ import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Proof from "./proof";
 import HeroVisual from "./hero-visual";
+import { MainBackground } from "@/components/ui/background/main";
 import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 export default function Main() {
   return (
-    <section className="relative overflow-hidden bg-ink">
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-12 lg:grid-cols-[1fr_1fr]">
+    <section className="relative overflow-hidden ">
+      <div className="relative pt-25 mx-auto grid max-w-360 items-center gap-16 px-6 md:px-12 lg:grid-cols-[1fr_1fr]">
         <Stagger
           as="div"
           className="flex flex-col items-start gap-0 py-14 lg:py-20"
@@ -15,7 +16,10 @@ export default function Main() {
           delayChildren={0.05}
           amount={0.35}
         >
-          <StaggerItem className="mb-8.5 flex items-center gap-3.5" distance={40}>
+          <StaggerItem
+            className="mb-8.5 flex items-center gap-3.5"
+            distance={40}
+          >
             <span className="block h-px w-8.5 bg-brandblue-500" />
             <span className="font-mono text-[11.5px] font-medium uppercase tracking-[0.2em] text-lightblue-300">
               Operating in Oman since 2004
@@ -64,6 +68,7 @@ export default function Main() {
 
         <HeroVisual />
       </div>
+      <MainBackground />
       <Proof />
     </section>
   );

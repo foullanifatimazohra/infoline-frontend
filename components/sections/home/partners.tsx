@@ -28,7 +28,7 @@ export default function Partners() {
     <section className="bg-ink py-30 overflow-hidden">
       <Stagger
         as="div"
-        className="container max-w-7xl px-6 lg-px-10 text-center"
+        className="container max-w-360 px-6 lg-px-10 text-center"
         stagger={0.14}
         amount={0.4}
       >

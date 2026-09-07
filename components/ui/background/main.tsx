@@ -1,0 +1,62 @@
+export const MainBackground = () => (
+  <div className="absolute bottom-0 -z-1 left-0 h-full top-0 w-full overflow-hidden bg-ink leading-[0]">
+    <svg
+      width={1440}
+      height={838}
+      viewBox="0 0 1440 838"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_27_2561)">
+        <rect width={1440} height={838} fill="#0D161B" />
+        <g filter="url(#filter0_f_27_2561)">
+          <rect
+            x={-181}
+            y={-73}
+            width={618}
+            height={618}
+            rx={309}
+            fill="url(#paint0_radial_27_2561)"
+          />
+        </g>
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_27_2561"
+          x={-205}
+          y={-97}
+          width={666}
+          height={666}
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
+          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation={12}
+            result="effect1_foregroundBlur_27_2561"
+          />
+        </filter>
+        <radialGradient
+          id="paint0_radial_27_2561"
+          cx={0}
+          cy={0}
+          r={1}
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(128 236) scale(436.992)"
+        >
+          <stop stopColor="#1C97D4" stopOpacity={0.3} />
+          <stop offset={0.68} stopColor="#1C97D4" stopOpacity={0} />
+        </radialGradient>
+        <clipPath id="clip0_27_2561">
+          <rect width={1440} height={838} fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+);

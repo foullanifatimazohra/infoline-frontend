@@ -19,7 +19,7 @@ const pillars: Pillar[] = [
     description:
       "Tell us what needs to improve across CX, quality, workforce, reporting or technology.",
     cta: "Talk to our team",
-    href: "/clients",
+    href: "#clients",
   },
   {
     eyebrow: "For vendors",
@@ -27,7 +27,7 @@ const pillars: Pillar[] = [
     description:
       "Introduce your company, capability, Oman presence and contact details to Procurement.",
     cta: "Become a vendor",
-    href: "/vendors",
+    href: "#vendors",
   },
   {
     eyebrow: "For partners",
@@ -35,17 +35,17 @@ const pillars: Pillar[] = [
     description:
       "If your platform or capability complements our portfolio, let's explore the opportunity together.",
     cta: "Explore a partnership",
-    href: "/partners",
+    href: "#partners",
   },
 ];
 
 export default function Options() {
   return (
     <section className="bg-white py-6xl">
-      <div className="max-w-7xl px-6 lg:px-10 mx-auto w-full">
+      <div className="max-w-360 px-6 lg:px-10 mx-auto w-full">
         <Stagger
           as="div"
-          className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-4xl"
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-lg mb-4xl"
           stagger={0.15}
         >
           <StaggerItem direction="start">
@@ -66,14 +66,14 @@ export default function Options() {
 
         <Stagger
           as="div"
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-4"
           stagger={0.12}
         >
           {pillars.map((pillar) => (
             <StaggerItem
               as="div"
               key={pillar.title}
-              className={`rounded-xl max-h-[268px] py-10 px-[28px] bg-white flex flex-col solutions-card-shadow`}
+              className={`rounded-xl max-h-67 py-10 px-6.5 bg-white flex flex-col solutions-card-shadow`}
             >
               <p className="overline-sm-medium text-slate-300 mb-5">
                 {pillar.eyebrow}
@@ -97,7 +97,7 @@ export default function Options() {
 
         <Reveal
           as="div"
-          className="relative overflow-hidden rounded-2xl bg-brandblue-900 mt-2xl lg:py-15 lg:px-11 p-10"
+          className="relative overflow-hidden rounded-2xl bg-brandblue-900 my-20 lg:py-15 lg:px-11 p-10"
           distance={72}
           blur={false}
           amount={0.25}
@@ -109,18 +109,17 @@ export default function Options() {
             speed={0.12}
           >
             <Image
-              src="/assets/options/bg.svg"
+              src="/assets/options/bg.jpg"
               alt=""
               fill
               aria-hidden="true"
-              className="object-cover object-bottom-left"
+              className="object-cover object-top-right"
               priority={false}
             />
           </Parallax>
-          {/* Layer 2: gradient overlay on top of the image, for text legibility */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/85 to-ink/85" />
+
           {/* Layer 3: content */}
-          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-xl">
+          <div className="relative z-10 flex flex-col lg:flex-row md:items-center justify-between gap-xl">
             <div>
               <h3 className="heading-xl-bold lg:text-[36px] mb-4 text-white">
                 Start with the outcome you need
@@ -132,7 +131,7 @@ export default function Options() {
             </div>
             <Button
               href="/contact"
-              size="small"
+              size="large"
               className="shrink-0 rounded-lg bg-white !text-ink px-2xl py-md overline-xs-semibold hover:bg-white transition-colors"
             >
               Talk to an expert

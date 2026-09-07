@@ -16,7 +16,7 @@ const menuItems = [
 
 export const Header = () => {
   return (
-    <header className="sticky inset-x-0 top-0 z-40 bg-ink backdrop-blur-[18px] backdrop-saturate-140">
+    <header className="fixed bg-transparent inset-x-0 top-0 z-40 backdrop-blur-[18px] backdrop-saturate-140">
       {/* Toggle state lives here; `peer` lets siblings react to :checked */}
       <input
         type="checkbox"
@@ -25,7 +25,7 @@ export const Header = () => {
         aria-hidden
       />
 
-      <div className="mx-auto flex h-21 max-w-7xl items-center justify-between gap-7 px-6 md:px-12">
+      <div className="mx-auto flex h-21 max-w-360 items-center justify-between gap-7 px-6 md:px-12">
         <Link href="#" className="flex flex-none items-baseline gap-3">
           <Image
             src="/assets/logo.svg"

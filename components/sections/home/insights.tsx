@@ -35,7 +35,7 @@ const insights: Insight[] = [
 export default function Insights() {
   return (
     <section className="insights py-20 lg:py-26">
-      <div className="px-6 lg:px-10 max-w-7xl">
+      <div className="px-6 lg:px-10 max-w-360">
         <Stagger
           as="div"
           className="flex items-start justify-between gap-lg"
@@ -75,7 +75,7 @@ export default function Insights() {
                     alt={insight.title}
                     width={430}
                     height={220}
-                    className="object-cover h-full transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <p className="overline-xs-medium mt-3 text-slate-300 mt-lg mb-xs">

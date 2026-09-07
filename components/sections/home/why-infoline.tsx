@@ -11,7 +11,7 @@ export default function WhyInfoline() {
 
   return (
     <section className="bg-[#f2f5f7] py-20 text-[#0a1014] sm:py-24 lg:py-28">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+      <div className="mx-auto grid w-full max-w-360 grid-cols-1 gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <Stagger as="div" stagger={0.12}>
           <StaggerItem
             as="p"
