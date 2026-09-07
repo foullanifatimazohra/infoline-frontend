@@ -77,18 +77,19 @@ function Column({
   cells: string[];
   footer?: React.ReactNode;
 }) {
+  const isFeatured = variant === "with";
   return (
     <div className="group relative">
       {/* Raised card — lifts/fades in on hover of this column */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-x-0 -top-6 bottom-0 rounded-2xl bg-gradient-to-b from-white to-[#eaf6fd] opacity-0 shadow-[0_30px_60px_-30px_rgba(28,151,212,0.45)] ring-1 ring-brandblue-500/20 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] lg:-inset-x-0 lg:translate-y-2 lg:group-hover:translate-y-0 lg:group-hover:opacity-100"
+        className={`pointer-events-none absolute -inset-x-0 -top-6 bottom-0 rounded-2xl ${isFeatured ? "bg-gradient-to-b from-white to-[#eaf6fd] opacity-0 shadow-[0_30px_60px_-30px_rgba(28,151,212,0.45)] ring-1 ring-brandblue-500/20 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] lg:-inset-x-0 lg:translate-y-2 translate-y-0 opacity-100" : ""} `}
       />
 
       <div className="relative z-10">
         {/* Heading */}
         <div className={HEADING_H}>
-          <span className="inline-block size-1.5 rounded-full transition-colors duration-300 border border-slate-400 bg-transparent lg:group-hover:border-brandblue-500 lg:group-hover:bg-brandblue-500" />
+          <span className="inline-block size-1.5 rounded-full transition-colors duration-300 border border-slate-400 bg-transparent border-brandblue-500 lg:group-hover:bg-brandblue-500" />
           <span className="overline-sm-medium uppercase tracking-[0.2em] text-slate-500 transition-colors duration-300 lg:group-hover:text-brandblue-500">
             {heading}
           </span>
@@ -106,8 +107,8 @@ function Column({
         </ul>
 
         {/* CTA — only where a footer is provided; revealed on hover */}
-        {footer && (
-          <div className="overflow-hidden px-6 py-6 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] lg:max-h-0 lg:pt-0 lg:opacity-0 lg:group-hover:max-h-32 lg:group-hover:pt-6 lg:group-hover:opacity-100">
+        {footer && isFeatured && (
+          <div className=" px-6 py-6 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)]  lg:pt-0  max-h-32 pt-6">
             {footer}
           </div>
         )}

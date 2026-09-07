@@ -2,7 +2,12 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
-type Industry = { title: string; image: string; href: string };
+type Industry = {
+  title: string;
+  image: string;
+  href: string;
+  description: string;
+};
 
 export default function Industries() {
   const t = useTranslations("Industries");
@@ -27,13 +32,14 @@ export default function Industries() {
         </div>
 
         {/* Grid */}
-        <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <li key={item.title}>
               <Link
                 href={item.href}
-                className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
+                className="group relative block aspect-[4/3] max-h-[254px] w-full overflow-hidden rounded-2xl"
               >
+                {/* 1. Image — bottom layer */}
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -41,14 +47,27 @@ export default function Industries() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                 />
-                {/* Legibility gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                {/* Hover blue wash */}
+
+                {/* 2. Gradient — in front of image, behind text.
+              Slightly stronger on hover for legibility. */}
+                <div className="industries-card_gradient absolute inset-0 opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+
+                {/* 3. Hover blue wash */}
                 <div className="absolute inset-0 bg-brandblue-500/0 transition-colors duration-500 group-hover:bg-brandblue-500/15" />
 
-                <h3 className="absolute inset-x-0 bottom-0 max-w-[85%] p-6 text-lg font-semibold leading-snug text-white">
-                  {item.title}
-                </h3>
+                {/* 4. Text — top layer */}
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="text-lg font-semibold leading-snug text-white">
+                    {item.title}
+                  </h3>
+
+                  {/* Description: revealed on hover */}
+                  <div className="grid grid-rows-[0fr] transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:grid-rows-[1fr] group-hover:mt-2">
+                    <p className="line-clamp-2 max-w-[90%] overflow-hidden text-[14px] leading-relaxed text-white/75 opacity-0 -translate-y-1 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:opacity-100 group-hover:translate-y-0">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

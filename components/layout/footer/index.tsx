@@ -23,7 +23,7 @@ export const Footer = () => {
               hello@infoline.om
             </p>
             <div className="mt-6 flex gap-3">
-              {certifications.map((cert) => (
+              {/* {certifications.map((cert) => (
                 <div
                   key={cert}
                   className="flex h-[74px] w-[74px] items-center justify-center rounded-full border border-white/[.18] text-center font-mono text-[9px] font-medium leading-[1.2] text-slate-100"
@@ -34,7 +34,7 @@ export const Footer = () => {
                     </span>
                   ))}
                 </div>
-              ))}
+              ))} */}
             </div>
             <Button
               href="#cta"

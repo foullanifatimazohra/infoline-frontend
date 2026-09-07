@@ -149,32 +149,33 @@
     "items": [
       {
         "title": "Government & Public Authorities",
-        "image": "/assets/industries/government.jpg",
-        "href": "#government"
+        "image": "/assets/industries/i1.png",
+        "href": "#government",
+        "description": "We have a long history of working with government and public authorities, providing efficient and effective solutions to meet their unique needs."
       },
       {
         "title": "Telecom & Technology",
-        "image": "/assets/industries/telecom.jpg",
+        "image": "/assets/industries/i2.png",
         "href": "#telecom"
       },
       {
         "title": "Healthcare",
-        "image": "/assets/industries/healthcare.jpg",
+        "image": "/assets/industries/i3.png",
         "href": "#healthcare"
       },
       {
         "title": "Energy & Utilities",
-        "image": "/assets/industries/energy.jpg",
+        "image": "/assets/industries/i4.png",
         "href": "#energy"
       },
       {
         "title": "Banking, Financial Services & Insurance",
-        "image": "/assets/industries/bfsi.jpg",
+        "image": "/assets/industries/i5.png",
         "href": "#bfsi"
       },
       {
         "title": "Retail",
-        "image": "/assets/industries/retail.jpg",
+        "image": "/assets/industries/i6.png",
         "href": "#retail"
       }
     ]

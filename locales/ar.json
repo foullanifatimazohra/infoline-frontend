@@ -8,50 +8,49 @@
     "description": "اختر التحدي الأقرب إلى واقعك. كل محور يجمع الخدمات التي تعالجه، مدعومًا بأدلة على أننا حللناه من قبل.",
     "items": [
       {
-        "icon": "headphones",
+        "icon": "/assets/solutions/s1.svg",
         "title": "عمليات تجربة العملاء",
         "description": "أنت تملك علاقة العميل، ونحن ندير العملية",
-        "href": "#cx-operations",
-        "featured": true
+        "href": "#cx-operations"
       },
       {
-        "icon": "line-chart",
+        "icon": "/assets/solutions/s2.svg",
         "title": "تحول تجربة العملاء",
         "description": "نحدد الفجوات، ونعالج ما يهم، ونلتزم بالتحسين المستمر",
         "href": "#cx-transformation"
       },
       {
-        "icon": "badge-check",
+        "icon": "/assets/solutions/s3.svg",
         "title": "الجودة كخدمة",
         "description": "جودة يمكنك الدفاع عنها، لا مجرد تقارير",
         "href": "#quality-as-a-service"
       },
       {
-        "icon": "graduation-cap",
+        "icon": "/assets/solutions/s4.svg",
         "title": "التدريب كخدمة",
         "description": "نبني القدرات، ونعتمدها، ثم نثبتها على أرض العمل",
         "href": "#training-as-a-service"
       },
       {
-        "icon": "brain-circuit",
+        "icon": "/assets/solutions/s5.svg",
         "title": "ذكاء الأعمال",
         "description": "نسخة واحدة من الأرقام. قرارات أكثر وضوحًا",
         "href": "#business-intelligence"
       },
       {
-        "icon": "share",
+        "icon": "/assets/solutions/s6.svg",
         "title": "إدارة القوى العاملة",
         "description": "الأشخاص المناسبون، في الوقت المناسب، بمستوى الخدمة المناسب",
         "href": "#workforce-management"
       },
       {
-        "icon": "terminal",
+        "icon": "/assets/solutions/s7.svg",
         "title": "الخدمات التقنية",
         "description": "قنوات متصلة، وخيارات محلية، وذكاء اصطناعي حيثما يضيف قيمة",
         "href": "#technology-services"
       },
       {
-        "icon": "users",
+        "icon": "/assets/solutions/s8.svg",
         "title": "الاستعانة بمصادر الموارد البشرية",
         "description": "أنت توجّه العمل، ونحن ندير التوظيف",
         "href": "#hr-outsourcing"
@@ -72,10 +71,7 @@
         "number": "02",
         "text": "نموذج واحد مسؤول يشمل الأشخاص والعمليات والتقنية والأداء"
       },
-      {
-        "number": "03",
-        "text": "قدرة تشغيلية تتكيف مع تغير الطلب"
-      },
+      { "number": "03", "text": "قدرة تشغيلية تتكيف مع تغير الطلب" },
       {
         "number": "04",
         "text": "خبرة بشرية معززة بالتحليلات والأتمتة والذكاء الاصطناعي"
@@ -111,5 +107,77 @@
     "title": "تأسست عام 2004. جزء من مجموعة عمانتل",
     "description": "علاقات خدمة تعاقدية، مصنّفة حسب القطاع. تستحوذ الجهات الحكومية على الحصة الأكبر من حجم أعمالنا.",
     "clientsCta": { "label": "جميع العملاء", "href": "#clients" }
+  },
+
+  "WhatChanges": {
+    "eyebrow": "ما الذي يتغير مع إنفولاين",
+    "title": "عبء تشغيلي أقل. رؤية أوضح. مسؤولية أكثر وضوحًا",
+    "description": "أربعة أمور يلاحظها مسؤول العمليات في الربع الأول. التفاصيل الكاملة لكل منها موضحة في جدول المقارنة أدناه.",
+    "columns": {
+      "without": "بدون إنفولاين",
+      "with": "مع إنفولاين",
+      "impact": "الأثر على الأعمال"
+    },
+    "rows": [
+      {
+        "without": "فرق متعددة تحتاج إلى تنسيق",
+        "with": "شريك تشغيلي واحد مسؤول",
+        "impact": "مسؤولية أوضح وقرارات أسرع"
+      },
+      {
+        "without": "توظيف وقدرة تشغيلية تفاعلية",
+        "with": "تخطيط للقوى العاملة قائم على الطلب",
+        "impact": "جاهزية أفضل لأوقات الذروة والنمو"
+      },
+      {
+        "without": "تقارير مجزأة",
+        "with": "رؤية أداء مشتركة",
+        "impact": "قرارات أسرع وأكثر ثقة"
+      },
+      {
+        "without": "فريقك يدير العمليات اليومية",
+        "with": "إنفولاين تدير النطاق التشغيلي المتفق عليه",
+        "impact": "تركيز أكبر على العملاء وأولويات الأعمال"
+      }
+    ],
+    "cta": { "label": "صمّم هذا النموذج لعملياتنا", "href": "#contact" }
+  },
+  "Industries": {
+    "eyebrow": "القطاعات · 6 قطاعات",
+    "title": "إذا كنت تفكر بمنطق القطاعات، ابدأ من هنا.",
+    "description": "تعرض كل صفحة قطاع العمليات التي نديرها بالفعل فيه، والقيود التنظيمية التي نعمل ضمنها، ونتائج العملاء التي يمكننا تقديمها أمام لجنة التقييم.",
+    "items": [
+      {
+        "title": "الحكومة والجهات العامة",
+        "image": "/assets/industries/i1.png",
+        "href": "#government",
+        "description": "لدينا تاريخ طويل في العمل مع الجهات الحكومية والعامة، حيث نقدم حلولًا كفؤة وفعّالة تلبي احتياجاتها الفريدة."
+      },
+      {
+        "title": "الاتصالات والتقنية",
+        "image": "/assets/industries/i2.png",
+        "href": "#telecom"
+      },
+      {
+        "title": "الرعاية الصحية",
+        "image": "/assets/industries/i3.png",
+        "href": "#healthcare"
+      },
+      {
+        "title": "الطاقة والمرافق",
+        "image": "/assets/industries/i4.png",
+        "href": "#energy"
+      },
+      {
+        "title": "الخدمات المصرفية والمالية والتأمين",
+        "image": "/assets/industries/i5.png",
+        "href": "#bfsi"
+      },
+      {
+        "title": "التجزئة",
+        "image": "/assets/industries/i6.png",
+        "href": "#retail"
+      }
+    ]
   }
 }
