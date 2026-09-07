@@ -11,7 +11,7 @@ export default function WhatChanges() {
 
   return (
     <section className="bg-[#f2f5f7] py-20 text-[#0a1014] sm:py-24 lg:py-28">
-      <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <Stagger
           as="div"
@@ -78,13 +78,7 @@ export default function WhatChanges() {
     </section>
   );
 }
-
 type Variant = "without" | "with" | "impact";
-
-const HEADING_H = "flex h-8 px-6  items-center gap-2";
-// Row line only: top border on every cell, blue tint that deepens on column hover.
-const CELL =
-  "min-h-[76px] flex items-center border-t border-brandblue-500/15 transition-colors duration-300 lg:group-hover:border-brandblue-500/40 lg:group-hover:text-brandblue-600 text-slate-600";
 
 function Column({
   variant,
@@ -98,19 +92,37 @@ function Column({
   footer?: React.ReactNode;
 }) {
   const isFeatured = variant === "with";
+  const blueBullet = variant === "with" || variant === "impact";
+
+  const HEADING_H = `flex h-8 items-center gap-2 px-4 ${
+    isFeatured ? "text-brandblue-500" : "text-slate-600"
+  }`;
+  // Row line only: top border on every cell.
+  const CELL =
+    "flex min-h-[76px] items-center border-t border-brandblue-500/15 transition-colors duration-300 " +
+    (isFeatured ? "text-brandblue-600" : "text-slate-600");
+
   return (
-    <div className="group relative">
-      {/* Raised card — lifts/fades in on hover of this column */}
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute -inset-x-0 -top-6 bottom-0 rounded-2xl ${isFeatured ? "bg-gradient-to-b from-white to-[#eaf6fd] opacity-0 shadow-[0_30px_60px_-30px_rgba(28,151,212,0.45)] ring-1 ring-brandblue-500/20 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] lg:-inset-x-0 lg:translate-y-2 translate-y-0 opacity-100" : ""} `}
-      />
+    <div className="relative">
+      {/* Featured raised card — only the middle column, always visible */}
+      {isFeatured && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-x-0 -top-6 bottom-0 rounded-2xl bg-gradient-to-b from-white to-[#eaf6fd] shadow-[0_30px_60px_-30px_rgba(28,151,212,0.45)] ring-1 ring-brandblue-500/20"
+        />
+      )}
 
       <div className="relative z-10">
         {/* Heading */}
         <div className={HEADING_H}>
-          <span className="inline-block size-1.5 rounded-full transition-colors duration-300 border border-slate-400 bg-transparent border-brandblue-500 lg:group-hover:bg-brandblue-500" />
-          <span className="overline-sm-medium uppercase tracking-[0.2em] text-slate-500 transition-colors duration-300 lg:group-hover:text-brandblue-500">
+          <span
+            className={`inline-block size-2 rounded-full border transition-colors duration-300 ${
+              blueBullet
+                ? "border-brandblue-500 bg-brandblue-500"
+                : "border-slate-400 bg-transparent"
+            }`}
+          />
+          <span className="overline-sm-medium uppercase tracking-[0.2em]">
             {heading}
           </span>
         </div>
@@ -119,19 +131,15 @@ function Column({
         <ul>
           {cells.map((cell, i) => (
             <li key={i} className={CELL}>
-              <span className="px-6 py-5 body-lg-medium leading-snug">
+              <span className="px-4 py-5 body-lg-medium leading-snug">
                 {cell}
               </span>
             </li>
           ))}
         </ul>
 
-        {/* CTA — only where a footer is provided; revealed on hover */}
-        {footer && isFeatured && (
-          <div className=" px-6 py-6 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)]  lg:pt-0  max-h-32 pt-6">
-            {footer}
-          </div>
-        )}
+        {/* CTA — only under the featured column */}
+        {footer && isFeatured && <div className="px-6 py-6">{footer}</div>}
       </div>
     </div>
   );

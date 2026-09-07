@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Menu, X } from "lucide-react";
@@ -15,8 +18,23 @@ const menuItems = [
 ];
 
 export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll(); // set correct state on mount (e.g. reload mid-page)
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed bg-transparent inset-x-0 top-0 z-40 backdrop-blur-[18px] backdrop-saturate-140">
+    <header
+      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${
+        scrolled
+          ? "bg-ink backdrop-blur-[18px] backdrop-saturate-140 shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
+          : "bg-transparent"
+      }`}
+    >
       {/* Toggle state lives here; `peer` lets siblings react to :checked */}
       <input
         type="checkbox"
@@ -59,7 +77,6 @@ export const Header = () => {
         {/* Mobile controls */}
         <div className="flex items-center gap-3 min-[1081px]:hidden">
           <LanguageSwitcher />
-          {/* Label toggles the checkbox; swap icon based on peer state */}
           <label
             htmlFor="nav-toggle"
             aria-label="Toggle menu"
@@ -71,7 +88,7 @@ export const Header = () => {
         </div>
       </div>
 
-      {/* Backdrop — closes menu when clicked (it's a label for the same checkbox) */}
+      {/* Backdrop */}
       <label
         htmlFor="nav-toggle"
         className="pointer-events-none fixed inset-0 top-21 z-30 bg-black/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-100 min-[1081px]:hidden"

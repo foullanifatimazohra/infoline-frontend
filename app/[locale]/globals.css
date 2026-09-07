@@ -693,3 +693,21 @@ body {
   margin: -4px 0 0 -4px; /* centre the dot on the pointer coordinate */
   background: var(--color-brandaccent-500);
 }
+
+@supports (animation-timeline: scroll()) {
+  .header-scroll {
+    animation: header-bg linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100px;
+  }
+  @keyframes header-bg {
+    from {
+      background-color: transparent;
+      backdrop-filter: none;
+    }
+    to {
+      background-color: var(--color-ink);
+      backdrop-filter: blur(18px) saturate(1.4);
+    }
+  }
+}
