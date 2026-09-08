@@ -13,36 +13,41 @@ import {
 } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
+/**
+ * Positions are eyeballed against the Figma/design screenshot as % of the
+ * HeroVisual wrapper (top-left origin). Fine-tune live in devtools if the
+ * final image asset's crop/whitespace differs slightly from the mock.
+ */
 const CARDS = [
   {
-    src: "/assets/hero/f4.svg",
+    src: "/assets/hero/f2.svg", // headset icon — above the shoulders, left of the chart card
+    w: 64,
+    h: 64,
+    top: "18%",
+    start: "10%",
+    depth: 22,
+    float: 3,
+    delay: 0,
+  },
+  {
+    src: "/assets/hero/f3.svg", // waveform icon — left edge, mid height
     w: 56,
     h: 56,
-    top: "10%",
-    start: "7%",
+    top: "30%",
+    start: "0%",
+    depth: 26,
+    float: 10,
+    delay: 0.4,
+  },
+  {
+    src: "/assets/hero/f4.svg", // terminal icon — below waveform, slightly right
+    w: 56,
+    h: 56,
+    top: "45%",
+    start: "3%",
     depth: 20,
     float: 9,
     delay: 0.8,
-  },
-  {
-    src: "/assets/hero/f3.svg",
-    w: 150,
-    h: 110,
-    top: "38%",
-    start: "24%",
-    depth: 38,
-    float: 13,
-    delay: 0.2,
-  },
-  {
-    src: "/assets/hero/f2.svg",
-    w: 110,
-    h: 110,
-    top: "49%",
-    start: "52%",
-    depth: 34,
-    float: 12,
-    delay: 1,
   },
 ] as const;
 
@@ -53,15 +58,11 @@ export default function HeroVisual() {
 
   const wrapRef = useRef<HTMLDivElement>(null);
 
-  // Pointer parallax (normalized -0.5..0.5, spring-smoothed).
-  // Relative to the component's own bounding box, so it needs no
-  // RTL handling — cursor-follow feels correct in either direction.
   const px = useMotionValue(0);
   const py = useMotionValue(0);
   const sx = useSpring(px, { stiffness: 120, damping: 20, mass: 0.4 });
   const sy = useSpring(py, { stiffness: 120, damping: 20, mass: 0.4 });
 
-  // Scroll parallax for background layers.
   const { scrollYProgress } = useScroll({
     target: wrapRef,
     offset: ["start end", "end start"],
@@ -88,7 +89,6 @@ export default function HeroVisual() {
       onMouseLeave={resetMove}
       className="relative h-full w-full"
     >
-      {/* Hero photo — never flip real photography for RTL */}
       <motion.div
         style={enabled ? { y: yImg } : undefined}
         className="lg:absolute w-full h-full relative inset-0"
@@ -99,14 +99,13 @@ export default function HeroVisual() {
           width={680}
           height={550}
           priority
-          className="object-contain w-full h-full object-bottom"
+          className="object-contain w-full object-bottom"
         />
       </motion.div>
 
-      {/* Floating glass cards */}
-      {CARDS.map((card) => (
+      {CARDS.map((card, i) => (
         <FloatingCard
-          key={card.src}
+          key={`${card.src}-${i}`}
           card={card}
           sx={sx}
           sy={sy}
@@ -128,7 +127,6 @@ function FloatingCard({
   sy: MotionValue<number>;
   enabled: boolean;
 }) {
-  // Pointer depth: each card shifts opposite the cursor by its own strength.
   const x = useTransform(sx, (v) => -v * card.depth);
   const y = useTransform(sy, (v) => -v * card.depth);
 
@@ -141,7 +139,6 @@ function FloatingCard({
       }}
       className="absolute"
     >
-      {/* Idle bob lives on a child so it never fights the pointer transform */}
       <motion.div
         animate={enabled ? { y: [0, -card.float, 0] } : undefined}
         transition={
@@ -161,7 +158,7 @@ function FloatingCard({
           aria-hidden
           width={card.w}
           height={card.h}
-          className="h-auto w-[clamp(48px,6vw,150px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
+          className="h-auto w-[clamp(48px,6vw,235px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
         />
       </motion.div>
     </motion.div>
