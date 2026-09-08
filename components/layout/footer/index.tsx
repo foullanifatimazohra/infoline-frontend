@@ -3,7 +3,7 @@ import Button from "@/components/ui/button";
 import Image from "next/image";
 import { Stagger, StaggerItem } from "@/components/ui/motion";
 
-import { footerColumns, legalLinks, certifications } from "./data";
+import { footerColumns, legalLinks } from "./data";
 
 export const Footer = () => {
   return (

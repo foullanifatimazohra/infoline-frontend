@@ -68,4 +68,9 @@ export const heroStats = [
   },
 ];
 
-export const certifications = ["ISO 9001", "COPC"];
+export const socials = [
+  { label: "Facebook", href: "#", icon: "linkedin" },
+  { label: "Twitter", href: "#", icon: "twitter" },
+  { label: "Instagram", href: "#", icon: "" },
+  { label: "LinkedIn", href: "#", icon: "linkedin" },
+];

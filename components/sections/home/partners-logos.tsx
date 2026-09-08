@@ -163,7 +163,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
             className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-brandblue-500 transition-colors hover:text-brandblue-600"
           >
             {t("clientsCta.label")}
-            <ArrowRight className="size-4" aria-hidden />
+            <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
           </Link>
         </div>
       </div>

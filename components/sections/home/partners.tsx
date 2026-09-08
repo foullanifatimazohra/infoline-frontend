@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 
 const partners = [
@@ -15,7 +16,7 @@ const partners = [
 function LogoPill({ name, src }: { name: string; src: string }) {
   return (
     <div className="shiny-chip shrink-0 mx-sm">
-      <div className="shiny-chip__inner w-[165px] flex items-center justify-center px-2xl py-lg">
+      <div className="shiny-chip__inner w-[165px] h-15 flex items-center justify-center px-2xl py-lg">
         <Image
           src={src}
           alt={name}
@@ -30,6 +31,7 @@ function LogoPill({ name, src }: { name: string; src: string }) {
 }
 
 export default function Partners() {
+  const t = useTranslations("Partners");
   const track = [...partners, ...partners];
 
   return (
@@ -44,27 +46,25 @@ export default function Partners() {
           as="p"
           className="overline-sm-medium text-slate-400 mb-[18px]"
         >
-          Partners
+          {t("eyebrow")}
         </StaggerItem>
         <StaggerItem
           as="h2"
           distance={72}
           className="heading-xl-bold text-[36px] text-white max-w-[35ch] mx-auto"
         >
-          Clients buy our service. Partners build the platform underneath it.
+          {t("title")}
         </StaggerItem>
         <StaggerItem
           as="p"
           className="body-lg-regular text-slate-300 max-w-[85ch] mx-auto mt-[32px]"
         >
-          Each sector page names the operations we already run there, the
-          regulatory constraints we work inside, and the client results we can
-          put in front of an evaluation committee.
+          {t("description")}
         </StaggerItem>
       </Stagger>
 
       <Reveal
-        className="mt-[60px] flex flex-col gap-lg"
+        className="mt-[60px] flex flex-col gap-y-[32px]"
         distance={48}
         blur={false}
         amount={0.2}
@@ -96,7 +96,7 @@ export default function Partners() {
           position: relative;
           border-radius: 9999px;
           padding: 1px;                       /* ring thickness */
-          background: rgba(255, 255, 255, 0.08); /* base ring (fallback) */
+          background: rgba(255, 255, 250, 0.08); /* base ring (fallback) */
           isolation: isolate;
         }
         .shiny-chip::before {

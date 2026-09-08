@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/ui/button";
@@ -12,34 +13,10 @@ type Pillar = {
   href: string;
 };
 
-const pillars: Pillar[] = [
-  {
-    eyebrow: "For clients",
-    title: "Work with a trusted operations partner",
-    description:
-      "Tell us what needs to improve across CX, quality, workforce, reporting or technology.",
-    cta: "Talk to our team",
-    href: "#clients",
-  },
-  {
-    eyebrow: "For vendors",
-    title: "Introduce your capability",
-    description:
-      "Introduce your company, capability, Oman presence and contact details to Procurement.",
-    cta: "Become a vendor",
-    href: "#vendors",
-  },
-  {
-    eyebrow: "For partners",
-    title: "Build something together",
-    description:
-      "If your platform or capability complements our portfolio, let's explore the opportunity together.",
-    cta: "Explore a partnership",
-    href: "#partners",
-  },
-];
-
 export default function Options() {
+  const t = useTranslations("Options");
+  const pillars = t.raw("pillars") as Pillar[];
+
   return (
     <section className="bg-white py-6xl">
       <div className="max-w-360 px-6 lg:px-10 mx-auto w-full">
@@ -49,9 +26,11 @@ export default function Options() {
           stagger={0.15}
         >
           <StaggerItem direction="start">
-            <p className="overline-sm-medium text-slate-500 mb-sm">Solutions</p>
+            <p className="overline-sm-medium text-slate-500 mb-sm">
+              {t("eyebrow")}
+            </p>
             <h2 className="heading-2xl-semibold text-slate-900 max-w-[23ch]">
-              Three ways we take work off your operation.
+              {t("title")}
             </h2>
           </StaggerItem>
           <StaggerItem
@@ -59,8 +38,7 @@ export default function Options() {
             direction="end"
             className="body-lg-regular text-slate-600 max-w-[54ch]"
           >
-            Pick the problem closest to yours. Each pillar groups the services
-            that solve it, with the proof that we have solved it before.
+            {t("description")}
           </StaggerItem>
         </Stagger>
 
@@ -89,7 +67,7 @@ export default function Options() {
                 className="mt-auto overline-sm-medium text-brandblue-500 hover:text-brandblue-700 transition-colors inline-flex items-center gap-xs"
               >
                 {pillar.cta}
-                <ArrowRight className="size-4" />
+                <ArrowRight className="size-4 rtl:rotate-180" />
               </Link>
             </StaggerItem>
           ))}
@@ -122,20 +100,19 @@ export default function Options() {
           <div className="relative z-10 flex flex-col lg:flex-row md:items-center justify-between gap-xl">
             <div>
               <h3 className="heading-xl-bold lg:text-[36px] mb-4 text-white">
-                Start with the outcome you need
+                {t("banner.title")}
               </h3>
               <p className="body-lg-regular text-brandblue-100">
-                Tell us what needs to improve. We will start from the operation,
-                not from a product
+                {t("banner.description")}
               </p>
             </div>
             <Button
-              href="/contact"
+              href={t("banner.cta.href")}
               size="large"
               className="shrink-0 rounded-lg bg-white !text-ink px-2xl py-md overline-xs-semibold hover:bg-white transition-colors"
             >
-              Talk to an expert
-              <ArrowRight className="size-4" />
+              {t("banner.cta.label")}
+              <ArrowRight className="size-4 rtl:rotate-180" />
             </Button>
           </div>
         </Reveal>

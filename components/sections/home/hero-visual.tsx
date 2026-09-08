@@ -13,41 +13,12 @@ import {
 } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-/**
- * Floating glass elements over the hero photo.
- * - `start` / `top` use CSS logical positioning (insetInlineStart / insetBlockStart)
- *   so they automatically mirror to the correct side when `dir="rtl"` is set
- *   on <html>. No JS branching needed for layout.
- * - `depth` = pointer-parallax strength (px), `float` = idle bob amplitude (px).
- * - Assets are expected to already include the glass-card chrome (blur, border,
- *   inner glow) baked in from Figma — this component only handles motion.
- */
 const CARDS = [
   {
     src: "/assets/hero/f4.svg",
-    w: 64,
-    h: 64,
-    top: "28%",
-    start: "17%",
-    depth: 22,
-    float: 8,
-    delay: 0,
-  },
-  {
-    src: "/assets/hero/f4.svg",
     w: 56,
     h: 56,
-    top: "45%",
-    start: "2%",
-    depth: 26,
-    float: 10,
-    delay: 0.4,
-  },
-  {
-    src: "/assets/hero/f4.svg",
-    w: 56,
-    h: 56,
-    top: "60%",
+    top: "10%",
     start: "7%",
     depth: 20,
     float: 9,
@@ -95,8 +66,7 @@ export default function HeroVisual() {
     target: wrapRef,
     offset: ["start end", "end start"],
   });
-  const yGlow = useTransform(scrollYProgress, [0, 1], [70, -70]);
-  const yArc = useTransform(scrollYProgress, [0, 1], [40, -30]);
+
   const yImg = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -121,20 +91,20 @@ export default function HeroVisual() {
       {/* Hero photo — never flip real photography for RTL */}
       <motion.div
         style={enabled ? { y: yImg } : undefined}
-        className="lg:absolute relative inset-0"
+        className="lg:absolute w-full h-full relative inset-0"
       >
         <Image
           src="/assets/hero/arc.svg"
           alt="Infoline customer operations team reviewing live performance dashboards"
-          width={647}
-          height={560}
+          width={680}
+          height={550}
           priority
-          className="object-contain h-full  object-bottom"
+          className="object-contain w-full h-full object-bottom"
         />
       </motion.div>
 
       {/* Floating glass cards */}
-      {/* {CARDS.map((card) => (
+      {CARDS.map((card) => (
         <FloatingCard
           key={card.src}
           card={card}
@@ -142,7 +112,7 @@ export default function HeroVisual() {
           sy={sy}
           enabled={enabled}
         />
-      ))} */}
+      ))}
     </div>
   );
 }

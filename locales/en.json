@@ -179,5 +179,77 @@
         "href": "#retail"
       }
     ]
+  },
+  "Main": {
+    "eyebrow": "Operating in Oman since 2004",
+    "titleLead": "Oman's trusted partner for",
+    "titleAccent": "customer operations.",
+    "description": "Trusted CX operations, managed services and technology from Oman, built around clear accountability and measurable outcomes.",
+    "primaryCta": { "label": "Talk to an Expert", "href": "/" },
+    "secondaryCta": { "label": "Explore Solutions", "href": "/solutions" },
+    "responseNote": "We respond within 1 business day."
+  },
+  "Partners": {
+    "eyebrow": "Partners",
+    "title": "Clients buy our service. Partners build the platform underneath it.",
+    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee."
+  },
+  "Options": {
+    "eyebrow": "Solutions",
+    "title": "Three ways we take work off your operation.",
+    "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
+    "pillars": [
+      {
+        "eyebrow": "For clients",
+        "title": "Work with a trusted operations partner",
+        "description": "Tell us what needs to improve across CX, quality, workforce, reporting or technology.",
+        "cta": "Talk to our team",
+        "href": "#clients"
+      },
+      {
+        "eyebrow": "For vendors",
+        "title": "Introduce your capability",
+        "description": "Introduce your company, capability, Oman presence and contact details to Procurement.",
+        "cta": "Become a vendor",
+        "href": "#vendors"
+      },
+      {
+        "eyebrow": "For partners",
+        "title": "Build something together",
+        "description": "If your platform or capability complements our portfolio, let's explore the opportunity together.",
+        "cta": "Explore a partnership",
+        "href": "#partners"
+      }
+    ],
+    "banner": {
+      "title": "Start with the outcome you need",
+      "description": "Tell us what needs to improve. We will start from the operation, not from a product",
+      "cta": { "label": "Talk to an expert", "href": "/contact" }
+    }
+  },
+  "Insights": {
+    "eyebrow": "Insights",
+    "title": "What we are seeing across Omani operations",
+    "allCta": { "label": "All insights", "href": "/insights" },
+    "items": [
+      {
+        "category": "Customer Experience",
+        "title": "What a COPC audit actually measures — and why buyers should ask",
+        "image": "/assets/insights/i1.svg",
+        "href": "/insights/copc-audit"
+      },
+      {
+        "category": "Automation",
+        "title": "Where a chatbot stops paying for itself in Arabic-first service",
+        "image": "/assets/insights/i2.svg",
+        "href": "/insights/chatbot-roi"
+      },
+      {
+        "category": "Public Sector",
+        "title": "Outsourcing inside government procurement rules: the practical route",
+        "image": "/assets/insights/i3.svg",
+        "href": "/insights/public-sector-procurement"
+      }
+    ]
   }
 }

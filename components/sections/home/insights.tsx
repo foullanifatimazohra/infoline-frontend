@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/ui/motion";
@@ -10,29 +11,10 @@ type Insight = {
   href: string;
 };
 
-const insights: Insight[] = [
-  {
-    category: "Customer Experience",
-    title: "What a COPC audit actually measures — and why buyers should ask",
-    image: "/assets/insights/i1.svg",
-    href: "/insights/copc-audit",
-  },
-  {
-    category: "Automation",
-    title: "Where a chatbot stops paying for itself in Arabic-first service",
-    image: "/assets/insights/i2.svg",
-    href: "/insights/chatbot-roi",
-  },
-  {
-    category: "Public Sector",
-    title:
-      "Outsourcing inside government procurement rules: the practical route",
-    image: "/assets/insights/i3.svg",
-    href: "/insights/public-sector-procurement",
-  },
-];
-
 export default function Insights() {
+  const t = useTranslations("Insights");
+  const insights = t.raw("items") as Insight[];
+
   return (
     <section className="insights py-20 lg:py-26">
       <div className="px-6 lg:px-10 max-w-360">
@@ -42,18 +24,20 @@ export default function Insights() {
           stagger={0.15}
         >
           <StaggerItem direction="start">
-            <p className="overline-sm-medium text-slate-300 mb-sm">Insights</p>
+            <p className="overline-sm-medium text-slate-300 mb-sm">
+              {t("eyebrow")}
+            </p>
             <h2 className="heading-xl-bold text-[36px] text-white">
-              What we are seeing across Omani operations
+              {t("title")}
             </h2>
           </StaggerItem>
           <StaggerItem direction="end">
             <Link
-              href="/insights"
+              href={t("allCta.href")}
               className="overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
             >
-              All insights
-              <ArrowRight className="size-4" />
+              {t("allCta.label")}
+              <ArrowRight className="size-4 rtl:rotate-180" />
             </Link>
           </StaggerItem>
         </Stagger>

@@ -86,7 +86,9 @@ export default function Button({
     .filter(Boolean)
     .join(" ");
 
-  const iconSize = isIconOnly ? "size-[18px]" : "size-3";
+  const iconSize = isIconOnly
+    ? "size-[18px] rtl:rotate-180"
+    : "size-3 rtl:rotate-180";
 
   const content = isIconOnly ? (
     Icon && <Icon className={iconSize} strokeWidth={2} />
