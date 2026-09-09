@@ -24,8 +24,8 @@ const CARDS = [
     src: "/assets/hero/f2.svg", // headset icon
     w: 67,
     h: 80,
-    top: "18%",
-    start: "8%",
+    top: "26%",
+    start: "10%",
     depth: 22,
     float: 8,
     delay: 0,
@@ -36,7 +36,7 @@ const CARDS = [
     h: 65,
     top: "41%",
     start: "0%",
-    depth: 26,
+    depth: 2,
     float: 10,
     delay: 0.4,
   },
@@ -44,7 +44,7 @@ const CARDS = [
     src: "/assets/hero/f4.svg", // terminal icon
     w: 67,
     h: 75,
-    top: "57%",
+    top: "60%",
     start: "5%",
     depth: 20,
     float: 9,
@@ -54,8 +54,8 @@ const CARDS = [
     src: "/assets/hero/chart.svg", // animated line chart card
     w: 220,
     h: 160,
-    top: "41%",
-    start: "24%",
+    top: "55%",
+    start: "30%",
     depth: 38,
     float: 13,
     delay: 0.2,
@@ -64,7 +64,7 @@ const CARDS = [
     src: "/assets/hero/percentage.svg", // animated 80% circle card
     w: 150,
     h: 160,
-    top: "55%",
+    top: "65%",
     start: "54%",
     depth: 34,
     float: 12,
@@ -110,9 +110,28 @@ export default function HeroVisual() {
       onMouseLeave={resetMove}
       className="relative h-full w-full"
     >
+      {/* Blue backdrop shape — its own layer behind the arc so it can mirror
+          in RTL (rtl:-scale-x-100 on the image). Shares arc.svg's 675×550
+          viewBox + identical object-fit and the same yImg parallax, so it
+          stays pixel-locked to the people image on scroll. */}
       <motion.div
         style={enabled ? { y: yImg } : undefined}
-        className="lg:absolute w-full relative inset-0"
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+      >
+        <Image
+          src="/assets/hero/shape.svg"
+          alt=""
+          aria-hidden
+          width={680}
+          height={550}
+          className="object-contain h-full w-auto object-bottom-left rtl:-scale-x-100"
+        />
+      </motion.div>
+
+      <motion.div
+        style={enabled ? { y: yImg } : undefined}
+        className="block lg:absolute  w-full lg:h-full relative"
       >
         <Image
           src="/assets/hero/arc.svg"
@@ -120,12 +139,12 @@ export default function HeroVisual() {
           width={680}
           height={550}
           priority
-          className="object-contain w-auto object-bottom"
+          className="object-contain h-full w-auto object-bottom-left"
         />
       </motion.div>
 
       {/* Desktop: absolute + parallax + idle bob. Hidden below lg. */}
-      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+      <div className="pointer-events-none absolute inset-0 block">
         {CARDS.map((card, i) => (
           <FloatingCard
             key={`${card.src}-${i}`}
@@ -133,21 +152,6 @@ export default function HeroVisual() {
             sx={sx}
             sy={sy}
             enabled={enabled}
-          />
-        ))}
-      </div>
-
-      {/* Mobile / tablet: plain static row, no absolute positioning, no motion. */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:hidden">
-        {CARDS.map((card, i) => (
-          <Image
-            key={`${card.src}-static-${i}`}
-            src={card.src}
-            alt=""
-            aria-hidden
-            width={card.w}
-            height={card.h}
-            className="h-auto w-[clamp(48px,18vw,120px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
           />
         ))}
       </div>

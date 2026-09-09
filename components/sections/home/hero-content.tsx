@@ -61,7 +61,7 @@ export default function HeroContent({ children }: { children: ReactNode }) {
       onMouseMove={handleMove}
       onMouseLeave={resetMove}
       style={enabled ? { y: yScroll } : undefined}
-      className="relative"
+      className="relative mt-15"
     >
       <motion.div
         style={
