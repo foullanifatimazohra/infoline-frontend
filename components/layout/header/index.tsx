@@ -3,21 +3,17 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { ArrowRight, Menu, X } from "lucide-react";
 import Button from "@/components/ui/button";
 import LanguageSwitcher from "./language-switcher";
 
-const menuItems = [
-  "Solutions",
-  "Industries",
-  "Case Studies",
-  "Insights",
-  "About",
-  "Careers",
-  // "Contact",
-];
+type NavItem = { label: string; href: string };
 
 export const Header = () => {
+  const t = useTranslations("Header");
+  const menuItems = t.raw("nav") as NavItem[];
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -57,11 +53,11 @@ export const Header = () => {
         <nav className="hidden min-w-0 items-center gap-6 min-[1081px]:flex">
           {menuItems.map((item) => (
             <Link
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="whitespace-nowrap border-b border-transparent py-1.5 text-[13.5px] font-medium tracking-[0.01em] text-slate-100 transition-colors duration-250 hover:border-brandblue-500 hover:text-cyan-50"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -69,8 +65,13 @@ export const Header = () => {
         {/* Desktop actions */}
         <div className="hidden items-center gap-5 min-[1081px]:flex">
           <LanguageSwitcher />
-          <Button href="/" icon={ArrowRight} size="small" iconPosition="right">
-            Talk to an Expert
+          <Button
+            href={t("cta.href")}
+            icon={ArrowRight}
+            size="small"
+            iconPosition="right"
+          >
+            {t("cta.label")}
           </Button>
         </div>
 
@@ -79,7 +80,7 @@ export const Header = () => {
           <LanguageSwitcher />
           <label
             htmlFor="nav-toggle"
-            aria-label="Toggle menu"
+            aria-label={t("menuToggle")}
             className="inline-flex size-10 cursor-pointer items-center justify-center rounded-md border border-white/10 text-slate-100 transition-colors hover:border-brandblue-500/60 hover:text-white"
           >
             <Menu className="size-5 peer-checked:hidden" />
@@ -98,12 +99,12 @@ export const Header = () => {
       <nav className="invisible fixed inset-x-0 top-21 z-40 -translate-y-3 border-t border-white/10 bg-ink px-6 pb-8 pt-4 opacity-0 transition-[opacity,transform,visibility] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] peer-checked:visible peer-checked:translate-y-0 peer-checked:opacity-100 md:px-12 min-[1081px]:hidden">
         <ul className="flex flex-col">
           {menuItems.map((item) => (
-            <li key={item}>
+            <li key={item.label}>
               <Link
-                href="#"
+                href={item.href}
                 className="block border-b border-white/[.06] py-4 text-[15px] font-medium text-slate-100 transition-colors hover:text-brandblue-500"
               >
-                {item}
+                {item.label}
               </Link>
             </li>
           ))}
@@ -111,13 +112,13 @@ export const Header = () => {
 
         <div className="mt-6">
           <Button
-            href="/"
+            href={t("cta.href")}
             icon={ArrowRight}
             size="large"
             iconPosition="right"
-            className="w-full justify-center"
+            className="justify-center"
           >
-            Talk to an Expert
+            {t("cta.label")}
           </Button>
         </div>
       </nav>

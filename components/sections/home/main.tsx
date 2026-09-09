@@ -5,18 +5,18 @@ import Proof from "./proof";
 import HeroVisual from "./hero-visual";
 import HeroContent from "./hero-content";
 import { MainBackground } from "@/components/ui/background/main";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 
 export default function Main() {
   const t = useTranslations("Main");
 
   return (
     <section className="relative overflow-hidden">
-      <div className="relative max-h-screen pt-25 grid items-center gap-16 lg:grid-cols-[1fr_1fr]">
+      <div className="relative max-h-screen pt-20 grid items-center gap-4 lg:grid-cols-[1fr_1fr]">
         <HeroContent>
           <Stagger
             as="div"
-            className="flex flex-col lg:pl-10 pl-6 items-start gap-0 py-14 lg:py-25"
+            className="flex flex-col lg:pl-10 pl-6 rtl:[pl-0 lg:pr-10 pr-6 lg:pl-0] items-start gap-0 py-14 lg:py-25"
             stagger={0.14}
             delayChildren={0.05}
             amount={0.35}
@@ -31,14 +31,17 @@ export default function Main() {
               </span>
             </StaggerItem>
 
-            <StaggerItem
+            <MaskText
               as="h1"
               className="max-w-[20ch] text-white text-[48px] font-bold leading-[1.06] tracking-[-.033em]"
-              distance={72}
-            >
-              {t("titleLead")}{" "}
-              <span className="text-lightblue-300">{t("titleAccent")}</span>
-            </StaggerItem>
+              segments={[
+                { text: t("titleLead") },
+                { text: t("titleAccent"), className: "text-lightblue-300" },
+              ]}
+              orchestrated
+              stagger={0.08}
+              duration={0.95}
+            />
 
             <StaggerItem
               as="p"

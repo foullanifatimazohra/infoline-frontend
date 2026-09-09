@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { Reveal, MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 const partners = [
   { name: "Elevatus", src: "/assets/partners/p1.svg" },
@@ -48,13 +48,13 @@ export default function Partners() {
         >
           {t("eyebrow")}
         </StaggerItem>
-        <StaggerItem
+        <MaskText
           as="h2"
-          distance={72}
           className="heading-xl-bold text-[36px] text-white max-w-[35ch] mx-auto"
-        >
-          {t("title")}
-        </StaggerItem>
+          segments={[{ text: t("title") }]}
+          amount={0.5}
+          duration={0.8}
+        />
         <StaggerItem
           as="p"
           className="body-lg-regular text-slate-300 max-w-[85ch] mx-auto mt-[32px]"
@@ -69,14 +69,22 @@ export default function Partners() {
         blur={false}
         amount={0.2}
       >
-        <div className="marquee-mask">
+        <div
+          className="marquee-mask"
+          dir="ltr"
+          style={{ overflow: "hidden", width: "100%" }}
+        >
           <div className="marquee-track marquee-track--left">
             {track.map((p, i) => (
               <LogoPill key={`row1-${p.name}-${i}`} {...p} />
             ))}
           </div>
         </div>
-        <div className="marquee-mask">
+        <div
+          className="marquee-mask"
+          dir="ltr"
+          style={{ overflow: "hidden", width: "100%" }}
+        >
           <div className="marquee-track marquee-track--right">
             {track.map((p, i) => (
               <LogoPill key={`row2-${p.name}-${i}`} {...p} />

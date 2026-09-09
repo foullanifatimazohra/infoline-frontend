@@ -251,5 +251,71 @@
         "href": "/insights/public-sector-procurement"
       }
     ]
+  },
+  "Header": {
+    "nav": [
+      { "label": "Solutions", "href": "#" },
+      { "label": "Industries", "href": "#" },
+      { "label": "Case Studies", "href": "#" },
+      { "label": "Insights", "href": "#" },
+      { "label": "About", "href": "#" },
+      { "label": "Careers", "href": "#" }
+    ],
+    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "menuToggle": "Toggle menu"
+  },
+  "Footer": {
+    "office": "Registered office, Muscat, Sultanate of Oman",
+    "contact": "+968 [phone] · hello@infoline.om",
+    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "label": "CX & BPO", "href": "#" },
+          { "label": "Technology & Enterprise", "href": "#" },
+          { "label": "People & Finance", "href": "#" },
+          { "label": "All services", "href": "#" }
+        ]
+      },
+      {
+        "title": "Industries",
+        "links": [
+          { "label": "Government", "href": "#" },
+          { "label": "Telecom", "href": "#" },
+          { "label": "Energy & Utilities", "href": "#" },
+          { "label": "All sectors", "href": "#" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "href": "#" },
+          { "label": "Leadership", "href": "#" },
+          { "label": "Case studies", "href": "#" },
+          { "label": "Insights", "href": "#" }
+        ]
+      },
+      {
+        "title": "Get in touch",
+        "links": [
+          { "label": "Partnership inquiry", "href": "#" },
+          { "label": "Vendor registration", "href": "#" },
+          { "label": "Careers & media", "href": "#" },
+          { "label": "Contact us", "href": "#" }
+        ]
+      }
+    ],
+    "socials": [
+      { "label": "Facebook", "href": "#", "network": "facebook" },
+      { "label": "X", "href": "#", "network": "x" },
+      { "label": "Instagram", "href": "#", "network": "instagram" },
+      { "label": "LinkedIn", "href": "#", "network": "linkedin" }
+    ],
+    "legal": [
+      { "label": "Privacy policy", "href": "#" },
+      { "label": "Company profile", "href": "#" }
+    ],
+    "copyright": "© 2026 Infoline LLC · an Omantel Group company"
   }
 }

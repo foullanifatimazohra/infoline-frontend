@@ -251,5 +251,71 @@
         "href": "/insights/public-sector-procurement"
       }
     ]
+  },
+  "Header": {
+    "nav": [
+      { "label": "الحلول", "href": "#" },
+      { "label": "القطاعات", "href": "#" },
+      { "label": "دراسات الحالة", "href": "#" },
+      { "label": "رؤى", "href": "#" },
+      { "label": "من نحن", "href": "#" },
+      { "label": "الوظائف", "href": "#" }
+    ],
+    "cta": { "label": "تحدث إلى خبير", "href": "/" },
+    "menuToggle": "فتح القائمة"
+  },
+  "Footer": {
+    "office": "المكتب المسجّل، مسقط، سلطنة عُمان",
+    "contact": "+968 [phone] · hello@infoline.om",
+    "cta": { "label": "تحدث إلى خبير", "href": "/" },
+    "columns": [
+      {
+        "title": "الحلول",
+        "links": [
+          { "label": "تجربة العملاء وتعهيد العمليات", "href": "#" },
+          { "label": "التقنية والمؤسسات", "href": "#" },
+          { "label": "الموارد البشرية والمالية", "href": "#" },
+          { "label": "جميع الخدمات", "href": "#" }
+        ]
+      },
+      {
+        "title": "القطاعات",
+        "links": [
+          { "label": "القطاع الحكومي", "href": "#" },
+          { "label": "الاتصالات", "href": "#" },
+          { "label": "الطاقة والمرافق", "href": "#" },
+          { "label": "جميع القطاعات", "href": "#" }
+        ]
+      },
+      {
+        "title": "الشركة",
+        "links": [
+          { "label": "من نحن", "href": "#" },
+          { "label": "القيادة", "href": "#" },
+          { "label": "دراسات الحالة", "href": "#" },
+          { "label": "رؤى", "href": "#" }
+        ]
+      },
+      {
+        "title": "تواصل معنا",
+        "links": [
+          { "label": "طلب شراكة", "href": "#" },
+          { "label": "تسجيل المورّدين", "href": "#" },
+          { "label": "الوظائف والإعلام", "href": "#" },
+          { "label": "اتصل بنا", "href": "#" }
+        ]
+      }
+    ],
+    "socials": [
+      { "label": "Facebook", "href": "#", "network": "facebook" },
+      { "label": "X", "href": "#", "network": "x" },
+      { "label": "Instagram", "href": "#", "network": "instagram" },
+      { "label": "LinkedIn", "href": "#", "network": "linkedin" }
+    ],
+    "legal": [
+      { "label": "سياسة الخصوصية", "href": "#" },
+      { "label": "ملف الشركة", "href": "#" }
+    ],
+    "copyright": "© 2026 Infoline LLC · شركة تابعة لمجموعة عُمانتل"
   }
 }

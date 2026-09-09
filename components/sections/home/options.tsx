@@ -3,7 +3,13 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/ui/button";
-import { Parallax, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import {
+  Reveal,
+  MaskText,
+  Parallax,
+  Stagger,
+  StaggerItem,
+} from "@/components/ui/motion";
 
 type Pillar = {
   eyebrow: string;
@@ -29,9 +35,13 @@ export default function Options() {
             <p className="overline-sm-medium text-slate-500 mb-sm">
               {t("eyebrow")}
             </p>
-            <h2 className="heading-2xl-semibold text-slate-900 max-w-[23ch]">
-              {t("title")}
-            </h2>
+            <MaskText
+              as="h2"
+              className="heading-2xl-semibold text-slate-900 max-w-[23ch]"
+              segments={[{ text: t("title") }]}
+              amount={0.5}
+              duration={0.8}
+            />
           </StaggerItem>
           <StaggerItem
             as="p"
@@ -64,10 +74,10 @@ export default function Options() {
               </p>
               <Link
                 href={pillar.href}
-                className="mt-auto overline-sm-medium text-brandblue-500 hover:text-brandblue-700 transition-colors inline-flex items-center gap-xs"
+                className="group mt-auto overline-sm-medium text-brandblue-500 hover:text-brandblue-700 transition-colors inline-flex items-center gap-xs"
               >
                 {pillar.cta}
-                <ArrowRight className="size-4 rtl:rotate-180" />
+                <ArrowRight className="size-4 rtl:rotate-180 transition-transform duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
               </Link>
             </StaggerItem>
           ))}
@@ -76,9 +86,8 @@ export default function Options() {
         <Reveal
           as="div"
           className="relative overflow-hidden rounded-2xl bg-brandblue-900 my-20 lg:py-15 lg:px-11 p-10"
-          distance={72}
-          blur={false}
           amount={0.25}
+          duration={1.15}
         >
           {/* Layer 1: background image — drifts on scroll (desktop only). The
               parallax layer is oversized so the translation never exposes an edge. */}

@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Icon from "@/components/ui/icon";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type SolutionItem = {
   icon: string;
@@ -27,9 +27,13 @@ export default function Solutions() {
             <p className="overline-sm-medium uppercase tracking-[0.28em] text-slate-300">
               {t("eyebrow")}
             </p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-              {t("title")}
-            </h2>
+            <MaskText
+              as="h2"
+              className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+              segments={[{ text: t("title") }]}
+              amount={0.5}
+              duration={0.8}
+            />
           </StaggerItem>
           <StaggerItem
             as="p"

@@ -11,7 +11,7 @@ import {
   useAnimationFrame,
   useReducedMotion,
 } from "framer-motion";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 
 export type PartnerLogo = {
   src: string;
@@ -111,13 +111,13 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
           >
             {t("eyebrow")}
           </StaggerItem>
-          <StaggerItem
+          <MaskText
             as="h2"
-            distance={72}
             className="mt-4 text-3xl text-slate-900 font-bold tracking-tight sm:text-4xl"
-          >
-            {t("title")}
-          </StaggerItem>
+            segments={[{ text: t("title") }]}
+            amount={0.5}
+            duration={0.8}
+          />
           <StaggerItem
             as="p"
             className="mt-4 text-[15px] max-w-[54ch] leading-relaxed text-slate-700"
@@ -132,6 +132,8 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
             className="relative w-full overflow-hidden [--gap:4rem]"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            dir="ltr"
+            style={{ overflow: "hidden", width: "100%" }}
           >
             <motion.ul
               ref={trackRef}
@@ -160,10 +162,13 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         <div className="mt-7 text-center">
           <Link
             href={t("clientsCta.href")}
-            className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-brandblue-500 transition-colors hover:text-brandblue-600"
+            className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-brandblue-500 transition-colors hover:text-brandblue-600"
           >
             {t("clientsCta.label")}
-            <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+            <ArrowRight
+              className="size-4 rtl:rotate-180 transition-transform duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
+              aria-hidden
+            />
           </Link>
         </div>
       </div>

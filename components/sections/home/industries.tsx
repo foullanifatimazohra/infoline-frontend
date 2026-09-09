@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Industry = {
   title: string;
@@ -27,9 +27,13 @@ export default function Industries() {
             <p className="text-[12px] overline-sm-medium uppercase tracking-[0.28em] text-slate-400">
               {t("eyebrow")}
             </p>
-            <h2 className="mt-3 max-w-[20ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]">
-              {t("title")}
-            </h2>
+            <MaskText
+              as="h2"
+              className="mt-3 max-w-[20ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]"
+              segments={[{ text: t("title") }]}
+              amount={0.5}
+              duration={0.8}
+            />
           </StaggerItem>
           <StaggerItem
             as="p"

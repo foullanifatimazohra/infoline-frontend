@@ -1,11 +1,21 @@
 import { Link } from "@/i18n/navigation";
 import Button from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { socialIcons } from "./social-icons";
 
-import { footerColumns, legalLinks } from "./data";
+type FooterLink = { label: string; href: string };
+type FooterColumn = { title: string; links: FooterLink[] };
+type SocialLink = { label: string; href: string; network: string };
 
 export const Footer = () => {
+  const t = useTranslations("Footer");
+  const columns = t.raw("columns") as FooterColumn[];
+  const socials = t.raw("socials") as SocialLink[];
+  const legal = t.raw("legal") as FooterLink[];
+
   return (
     <footer id="careers" className="bg-ink pb-10 pt-[76px] text-slate-300">
       <div className="mx-auto max-w-340 px-6 md:px-12">
@@ -25,32 +35,42 @@ export const Footer = () => {
               />
             </Link>
             <p className="mt-5 body-sm-regular text-slate-400">
-              Registered office, Muscat, Sultanate of Oman +968 [phone] ·
-              hello@infoline.om
+              {t("office")}
+              <br />
+              {t("contact")}
             </p>
-            <div className="mt-6 flex gap-3">
-              {/* {certifications.map((cert) => (
-                <div
-                  key={cert}
-                  className="flex h-[74px] w-[74px] items-center justify-center rounded-full border border-white/[.18] text-center font-mono text-[9px] font-medium leading-[1.2] text-slate-100"
-                >
-                  {cert.split(" ").map((word) => (
-                    <span key={word} className="block">
-                      {word}
-                    </span>
-                  ))}
-                </div>
-              ))} */}
-            </div>
+
+            {/* Social links */}
+            <ul className="mt-6 flex items-center gap-3">
+              {socials.map((social) => {
+                const Icon = socialIcons[social.network];
+                if (!Icon) return null;
+                return (
+                  <li key={social.network}>
+                    <Link
+                      href={social.href}
+                      aria-label={social.label}
+                      className="inline-flex size-10 items-center justify-center rounded-full bg-white/[.06] text-slate-200 transition-colors duration-300 hover:bg-brandblue-500 hover:text-white"
+                    >
+                      <Icon className="size-[18px]" />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
             <Button
-              href="#cta"
-              className="mt-7 inline-flex items-center gap-2.5 rounded-[2px] bg-brandblue-500 px-[26px] py-3.5 text-[12px] font-semibold uppercase tracking-[0.1em] text-white transition-[background,transform] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] hover:bg-brandblue-600"
+              href={t("cta.href")}
+              icon={ArrowRight}
+              size="small"
+              iconPosition="right"
+              className="mt-7 justify-center"
             >
-              Talk to an Expert
+              {t("cta.label")}
             </Button>
           </StaggerItem>
 
-          {footerColumns.map((column) => (
+          {columns.map((column) => (
             <StaggerItem as="div" key={column.title} distance={32} blur={false}>
               <p className="mb-[18px] font-mono text-[10.5px] font-medium uppercase tracking-[0.2em] text-slate-600">
                 {column.title}
@@ -72,10 +92,10 @@ export const Footer = () => {
 
         <div className="mt-16 flex flex-col items-start gap-6 border-t border-white/[.08] pt-[26px] sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[12px] text-slate-600">
-            © 2026 Infoline LLC · an Omantel Group company
+            {t("copyright")}
           </p>
           <div className="flex gap-6">
-            {legalLinks.map((link) => (
+            {legal.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}

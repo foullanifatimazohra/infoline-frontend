@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Insight = {
   category: string;
@@ -27,17 +27,21 @@ export default function Insights() {
             <p className="overline-sm-medium text-slate-300 mb-sm">
               {t("eyebrow")}
             </p>
-            <h2 className="heading-xl-bold text-[36px] text-white">
-              {t("title")}
-            </h2>
+            <MaskText
+              as="h2"
+              className="heading-xl-bold text-[36px] text-white"
+              segments={[{ text: t("title") }]}
+              amount={0.5}
+              duration={0.8}
+            />
           </StaggerItem>
           <StaggerItem direction="end">
             <Link
               href={t("allCta.href")}
-              className="overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
+              className="group overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
             >
               {t("allCta.label")}
-              <ArrowRight className="size-4 rtl:rotate-180" />
+              <ArrowRight className="size-4 rtl:rotate-180 transition-transform duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
             </Link>
           </StaggerItem>
         </Stagger>

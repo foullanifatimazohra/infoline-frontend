@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Row = { without: string; with: string; impact: string };
 
@@ -22,9 +22,13 @@ export default function WhatChanges() {
             <p className="text-[12px] overline-sm-medium uppercase tracking-[0.28em] text-slate-400">
               {t("eyebrow")}
             </p>
-            <h2 className="mt-3 max-w-[60ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]">
-              {t("title")}
-            </h2>
+            <MaskText
+              as="h2"
+              className="mt-3 max-w-[60ch] heading-2xl-semibold leading-tight tracking-tight sm:text-[42px]"
+              segments={[{ text: t("title") }]}
+              amount={0.4}
+              duration={0.8}
+            />
           </StaggerItem>
           <StaggerItem
             as="p"

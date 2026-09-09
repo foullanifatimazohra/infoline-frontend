@@ -14,40 +14,61 @@ import {
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 /**
- * Positions are eyeballed against the Figma/design screenshot as % of the
- * HeroVisual wrapper (top-left origin). Fine-tune live in devtools if the
- * final image asset's crop/whitespace differs slightly from the mock.
+ * Positions are % of the HeroVisual wrapper (top-left origin), tuned against
+ * the design screenshot. chart.svg and percentage.svg carry their own
+ * self-playing SMIL <animate> loops (line-draw + pulsing rings), so they
+ * animate automatically once mounted — no framer-motion needed for that part.
  */
 const CARDS = [
   {
-    src: "/assets/hero/f2.svg", // headset icon — above the shoulders, left of the chart card
-    w: 64,
-    h: 64,
+    src: "/assets/hero/f2.svg", // headset icon
+    w: 67,
+    h: 80,
     top: "18%",
-    start: "10%",
+    start: "8%",
     depth: 22,
-    float: 3,
+    float: 8,
     delay: 0,
   },
   {
-    src: "/assets/hero/f3.svg", // waveform icon — left edge, mid height
-    w: 56,
-    h: 56,
-    top: "30%",
+    src: "/assets/hero/f3.svg", // waveform icon
+    w: 62,
+    h: 65,
+    top: "41%",
     start: "0%",
     depth: 26,
     float: 10,
     delay: 0.4,
   },
   {
-    src: "/assets/hero/f4.svg", // terminal icon — below waveform, slightly right
-    w: 56,
-    h: 56,
-    top: "45%",
-    start: "3%",
+    src: "/assets/hero/f4.svg", // terminal icon
+    w: 67,
+    h: 75,
+    top: "57%",
+    start: "5%",
     depth: 20,
     float: 9,
     delay: 0.8,
+  },
+  {
+    src: "/assets/hero/chart.svg", // animated line chart card
+    w: 220,
+    h: 160,
+    top: "41%",
+    start: "24%",
+    depth: 38,
+    float: 13,
+    delay: 0.2,
+  },
+  {
+    src: "/assets/hero/percentage.svg", // animated 80% circle card
+    w: 150,
+    h: 160,
+    top: "55%",
+    start: "54%",
+    depth: 34,
+    float: 12,
+    delay: 1,
   },
 ] as const;
 
@@ -91,7 +112,7 @@ export default function HeroVisual() {
     >
       <motion.div
         style={enabled ? { y: yImg } : undefined}
-        className="lg:absolute w-full h-full relative inset-0"
+        className="lg:absolute w-full relative inset-0"
       >
         <Image
           src="/assets/hero/arc.svg"
@@ -99,19 +120,37 @@ export default function HeroVisual() {
           width={680}
           height={550}
           priority
-          className="object-contain w-full object-bottom"
+          className="object-contain w-auto object-bottom"
         />
       </motion.div>
 
-      {CARDS.map((card, i) => (
-        <FloatingCard
-          key={`${card.src}-${i}`}
-          card={card}
-          sx={sx}
-          sy={sy}
-          enabled={enabled}
-        />
-      ))}
+      {/* Desktop: absolute + parallax + idle bob. Hidden below lg. */}
+      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        {CARDS.map((card, i) => (
+          <FloatingCard
+            key={`${card.src}-${i}`}
+            card={card}
+            sx={sx}
+            sy={sy}
+            enabled={enabled}
+          />
+        ))}
+      </div>
+
+      {/* Mobile / tablet: plain static row, no absolute positioning, no motion. */}
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:hidden">
+        {CARDS.map((card, i) => (
+          <Image
+            key={`${card.src}-static-${i}`}
+            src={card.src}
+            alt=""
+            aria-hidden
+            width={card.w}
+            height={card.h}
+            className="h-auto w-[clamp(48px,18vw,120px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -158,7 +197,7 @@ function FloatingCard({
           aria-hidden
           width={card.w}
           height={card.h}
-          className="h-auto w-[clamp(48px,6vw,235px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
+          className="h-auto w-[clamp(48px,10vw,220px)] drop-shadow-[0_18px_40px_rgba(28,151,212,0.28)]"
         />
       </motion.div>
     </motion.div>

@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Point = { number: string; text: string };
 
@@ -20,13 +20,13 @@ export default function WhyInfoline() {
           >
             {t("eyebrow")}
           </StaggerItem>
-          <StaggerItem
+          <MaskText
             as="h2"
-            direction="start"
             className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
-          >
-            {t("title")}
-          </StaggerItem>
+            segments={[{ text: t("title") }]}
+            amount={0.5}
+            duration={0.8}
+          />
           <StaggerItem
             as="p"
             direction="start"

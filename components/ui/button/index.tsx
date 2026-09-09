@@ -75,7 +75,7 @@ export default function Button({
   const s = sizeClasses[size];
 
   const baseClasses = [
-    "inline-flex flex-none items-center justify-center whitespace-nowrap font-semibold uppercase",
+    "group inline-flex flex-none items-center justify-center whitespace-nowrap font-semibold uppercase",
     isIconOnly ? "rounded-full" : "rounded-md",
     isIconOnly ? s.iconPadding : `${s.padding} ${s.gap}`,
     s.text,
@@ -90,16 +90,27 @@ export default function Button({
     ? "size-[18px] rtl:rotate-180"
     : "size-3 rtl:rotate-180";
 
+  // Arrow glides toward the reading direction on hover.
+  const nudge =
+    "transition-transform duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] will-change-transform";
+  const nudgeRight = `${nudge} group-hover:translate-x-1 rtl:group-hover:-translate-x-1`;
+  const nudgeLeft = `${nudge} group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5`;
+
   const content = isIconOnly ? (
-    Icon && <Icon className={iconSize} strokeWidth={2} />
+    Icon && (
+      <Icon
+        className={`${iconSize} transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5`}
+        strokeWidth={2}
+      />
+    )
   ) : (
     <>
       {Icon && iconPosition === "left" && (
-        <Icon className={iconSize} strokeWidth={2} />
+        <Icon className={`${iconSize} ${nudgeLeft}`} strokeWidth={2} />
       )}
       {children}
       {Icon && iconPosition === "right" && (
-        <Icon className={iconSize} strokeWidth={2} />
+        <Icon className={`${iconSize} ${nudgeRight}`} strokeWidth={2} />
       )}
     </>
   );
