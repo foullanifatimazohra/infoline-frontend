@@ -1,0 +1,321 @@
+{
+  "homePage": {
+    "title": "Home Page"
+  },
+  "Solutions": {
+    "eyebrow": "Solutions",
+    "title": "What we do",
+    "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
+    "items": [
+      {
+        "icon": "/assets/solutions/s1.svg",
+        "title": "CX Operations",
+        "description": "You own the customer. We run the operation",
+        "href": "#cx-operations"
+      },
+      {
+        "icon": "/assets/solutions/s2.svg",
+        "title": "CX Transformation",
+        "description": "Find the gaps. Fix what matters. Stay accountable for improvement",
+        "href": "#cx-transformation"
+      },
+      {
+        "icon": "/assets/solutions/s3.svg",
+        "title": "Quality as a Service",
+        "description": "Quality you can defend, not just report",
+        "href": "#quality-as-a-service"
+      },
+      {
+        "icon": "/assets/solutions/s4.svg",
+        "title": "Training as a Service",
+        "description": "Build capability, certify it, then prove it on the floor",
+        "href": "#training-as-a-service"
+      },
+      {
+        "icon": "/assets/solutions/s5.svg",
+        "title": "Business Intelligence",
+        "description": "One version of the numbers. Clearer decisions",
+        "href": "#business-intelligence"
+      },
+      {
+        "icon": "/assets/solutions/s6.svg",
+        "title": "Workforce Management",
+        "description": "Right people. Right interval. Right service level",
+        "href": "#workforce-management"
+      },
+      {
+        "icon": "/assets/solutions/s7.svg",
+        "title": "Technology Services",
+        "description": "Connected channels, in-country options and AI where it helps",
+        "href": "#technology-services"
+      },
+      {
+        "icon": "/assets/solutions/s8.svg",
+        "title": "HR Outsourcing",
+        "description": "You direct the work. We manage the employment",
+        "href": "#hr-outsourcing"
+      }
+    ]
+  },
+  "WhyInfoline": {
+    "eyebrow": "Why Infoline",
+    "title": "Why organisations trust Infoline",
+    "description": "One accountable operating partner, close to your customers, with the scale and governance to hold a service level under real demand.",
+    "cta": { "label": "Talk to an expert", "href": "#contact" },
+    "points": [
+      {
+        "number": "01",
+        "text": "Trusted in Oman, close to your customers and operating environment"
+      },
+      {
+        "number": "02",
+        "text": "One accountable model across people, process, technology and performance"
+      },
+      { "number": "03", "text": "Operational scale that can flex with demand" },
+      {
+        "number": "04",
+        "text": "Human expertise strengthened by analytics, automation and AI"
+      }
+    ]
+  },
+  "Proof": {
+    "stats": [
+      {
+        "value": "22",
+        "unit": "yrs",
+        "label": "In continuous operation since 2003."
+      },
+      { "value": "1,400+", "label": "Seats across delivery centres." },
+      { "value": "68", "label": "Clients across six sectors" },
+      { "value": "6M", "label": "Customer transactions a year" }
+    ],
+    "badges": [
+      {
+        "src": "/assets/badges/iso.svg",
+        "alt": "ISO 9001:2015",
+        "width": 76,
+        "height": 76
+      },
+      {
+        "src": "/assets/badges/copc.svg",
+        "alt": "COPC Certified",
+        "width": 76,
+        "height": 76
+      }
+    ],
+    "eyebrow": "Trust built on proof",
+    "title": "Established in 2004. Part of Omantel Group",
+    "description": "Contracted service relationships, grouped by sector. Public authorities carry the largest share of our delivered volume.",
+    "clientsCta": { "label": "All clients", "href": "#clients" }
+  },
+
+  "WhatChanges": {
+    "eyebrow": "What changes with Infoline",
+    "title": "Less operating burden. More visibility. Clearer accountability",
+    "description": "Four things an operations owner notices in the first quarter. The detail behind each sits in the procurement comparison below.",
+    "columns": {
+      "without": "Without Infoline",
+      "with": "With Infoline",
+      "impact": "Business impact"
+    },
+    "rows": [
+      {
+        "without": "Multiple teams to coordinate",
+        "with": "One accountable operating partner",
+        "impact": "Clearer ownership and faster decisions"
+      },
+      {
+        "without": "Reactive staffing and capacity",
+        "with": "Demand-led workforce planning",
+        "impact": "Better readiness for peaks and growth"
+      },
+      {
+        "without": "Fragmented reporting",
+        "with": "Shared performance visibility",
+        "impact": "Faster, more confident decisions"
+      },
+      {
+        "without": "Your team manages day-to-day operations",
+        "with": "Infoline manages the agreed operating scope",
+        "impact": "More focus on customers and business priorities"
+      }
+    ],
+    "cta": { "label": "Model this for our operation", "href": "#contact" }
+  },
+  "Industries": {
+    "eyebrow": "Industries · 6 sectors",
+    "title": "If you think in sectors, start here instead.",
+    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee.",
+    "items": [
+      {
+        "title": "Government & Public Authorities",
+        "image": "/assets/industries/i1.png",
+        "href": "#government",
+        "description": "We have a long history of working with government and public authorities, providing efficient and effective solutions to meet their unique needs."
+      },
+      {
+        "title": "Telecom & Technology",
+        "image": "/assets/industries/i2.png",
+        "href": "#telecom"
+      },
+      {
+        "title": "Healthcare",
+        "image": "/assets/industries/i3.png",
+        "href": "#healthcare"
+      },
+      {
+        "title": "Energy & Utilities",
+        "image": "/assets/industries/i4.png",
+        "href": "#energy"
+      },
+      {
+        "title": "Banking, Financial Services & Insurance",
+        "image": "/assets/industries/i5.png",
+        "href": "#bfsi"
+      },
+      {
+        "title": "Retail",
+        "image": "/assets/industries/i6.png",
+        "href": "#retail"
+      }
+    ]
+  },
+  "Main": {
+    "eyebrow": "Operating in Oman since 2004",
+    "titleLead": "Oman's trusted partner for",
+    "titleAccent": "customer operations.",
+    "description": "Trusted CX operations, managed services and technology from Oman, built around clear accountability and measurable outcomes.",
+    "primaryCta": { "label": "Talk to an Expert", "href": "/" },
+    "secondaryCta": { "label": "Explore Solutions", "href": "/solutions" },
+    "responseNote": "We respond within 1 business day."
+  },
+  "Partners": {
+    "eyebrow": "Partners",
+    "title": "Clients buy our service. Partners build the platform underneath it.",
+    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee."
+  },
+  "Options": {
+    "eyebrow": "Solutions",
+    "title": "Three ways we take work off your operation.",
+    "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
+    "pillars": [
+      {
+        "eyebrow": "For clients",
+        "title": "Work with a trusted operations partner",
+        "description": "Tell us what needs to improve across CX, quality, workforce, reporting or technology.",
+        "cta": "Talk to our team",
+        "href": "#clients"
+      },
+      {
+        "eyebrow": "For vendors",
+        "title": "Introduce your capability",
+        "description": "Introduce your company, capability, Oman presence and contact details to Procurement.",
+        "cta": "Become a vendor",
+        "href": "#vendors"
+      },
+      {
+        "eyebrow": "For partners",
+        "title": "Build something together",
+        "description": "If your platform or capability complements our portfolio, let's explore the opportunity together.",
+        "cta": "Explore a partnership",
+        "href": "#partners"
+      }
+    ],
+    "banner": {
+      "title": "Start with the outcome you need",
+      "description": "Tell us what needs to improve. We will start from the operation, not from a product",
+      "cta": { "label": "Talk to an expert", "href": "/contact" }
+    }
+  },
+  "Insights": {
+    "eyebrow": "Insights",
+    "title": "What we are seeing across Omani operations",
+    "allCta": { "label": "All insights", "href": "/insights" },
+    "items": [
+      {
+        "category": "Customer Experience",
+        "title": "What a COPC audit actually measures — and why buyers should ask",
+        "image": "/assets/insights/i1.svg",
+        "href": "/insights/copc-audit"
+      },
+      {
+        "category": "Automation",
+        "title": "Where a chatbot stops paying for itself in Arabic-first service",
+        "image": "/assets/insights/i2.svg",
+        "href": "/insights/chatbot-roi"
+      },
+      {
+        "category": "Public Sector",
+        "title": "Outsourcing inside government procurement rules: the practical route",
+        "image": "/assets/insights/i3.svg",
+        "href": "/insights/public-sector-procurement"
+      }
+    ]
+  },
+  "Header": {
+    "nav": [
+      { "label": "Solutions", "href": "#" },
+      { "label": "Industries", "href": "#" },
+      { "label": "Case Studies", "href": "#" },
+      { "label": "Insights", "href": "#" },
+      { "label": "About", "href": "#" },
+      { "label": "Careers", "href": "#" }
+    ],
+    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "menuToggle": "Toggle menu"
+  },
+  "Footer": {
+    "office": "Registered office, Muscat, Sultanate of Oman",
+    "contact": "+968 [phone] · hello@infoline.om",
+    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "label": "CX & BPO", "href": "#" },
+          { "label": "Technology & Enterprise", "href": "#" },
+          { "label": "People & Finance", "href": "#" },
+          { "label": "All services", "href": "#" }
+        ]
+      },
+      {
+        "title": "Industries",
+        "links": [
+          { "label": "Government", "href": "#" },
+          { "label": "Telecom", "href": "#" },
+          { "label": "Energy & Utilities", "href": "#" },
+          { "label": "All sectors", "href": "#" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "href": "#" },
+          { "label": "Leadership", "href": "#" },
+          { "label": "Case studies", "href": "#" },
+          { "label": "Insights", "href": "#" }
+        ]
+      },
+      {
+        "title": "Get in touch",
+        "links": [
+          { "label": "Partnership inquiry", "href": "#" },
+          { "label": "Vendor registration", "href": "#" },
+          { "label": "Careers & media", "href": "#" },
+          { "label": "Contact us", "href": "#" }
+        ]
+      }
+    ],
+    "socials": [
+      { "label": "Facebook", "href": "#", "network": "facebook" },
+      { "label": "X", "href": "#", "network": "x" },
+      { "label": "Instagram", "href": "#", "network": "instagram" },
+      { "label": "LinkedIn", "href": "#", "network": "linkedin" }
+    ],
+    "legal": [
+      { "label": "Privacy policy", "href": "#" },
+      { "label": "Company profile", "href": "#" }
+    ],
+    "copyright": "© 2026 Infoline LLC · an Omantel Group company"
+  }
+}
