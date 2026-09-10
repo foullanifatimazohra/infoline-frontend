@@ -20,7 +20,7 @@ export default function Insights() {
       <div className="px-6 lg:px-10 max-w-360">
         <Stagger
           as="div"
-          className="flex items-start justify-between gap-lg"
+          className="flex flex-col lg:flex-row items-start justify-between gap-lg"
           stagger={0.15}
         >
           <StaggerItem direction="start">
