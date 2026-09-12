@@ -303,6 +303,18 @@ body {
   --size-3xl: 3.5rem;
   --size-6xs: 0.75rem;
   --thickness-xs: 0.03125rem;
+
+  /* Scroll-driven "scaling stack" for the Industries sectors. Registering the
+     keyframes here exposes an `animate-stack-recede` utility; the sticky pin,
+     the `view()` timeline and the exit range are all applied as Tailwind
+     arbitrary utilities in the markup, so the effect lives with the component. */
+  --animate-stack-recede: stack-recede linear both;
+  @keyframes stack-recede {
+    to {
+      transform: scale(0.92);
+      filter: brightness(0.9);
+    }
+  }
 }
 
 @utility container {

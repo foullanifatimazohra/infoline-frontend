@@ -2,14 +2,225 @@
   "homePage": {
     "title": "Home Page"
   },
+  "IndustriesPage": {
+    "hero": {
+      "eyebrow": "Industries · 6 sector groups",
+      "titleLead": "Trusted operations, shaped for",
+      "titleAccent": "your sector",
+      "description": "Every sector has its own service, regulatory and demand pressures. We bring local understanding and a trusted operating model shaped around your reality, not a generic template.",
+      "primaryCta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      },
+      "indexLabel": "Sectors we serve"
+    },
+    "differ": {
+      "eyebrow": "Industries",
+      "title": "How does CX differ by industry?",
+      "description": "The disciplines stay the same: service level, quality, workforce, data, governance and technology, but the pressures change. Telecom carries high volume and retention, government carries citizen trust and access, financial services carry regulation and data confidence, utilities carry billing and outage spikes. The operating model is shaped around those realities rather than a template."
+    },
+    "sectors": {
+      "eyebrow": "Sectors we serve",
+      "title": "Six sector groups",
+      "description": "Service level, quality, workforce, data, governance and technology stay constant as disciplines, but how they are applied changes by sector. Infoline's current portfolio spans six sector groups.",
+      "items": [
+        {
+          "id": "telecom",
+          "number": "01",
+          "icon": "/assets/solutions/s7.svg",
+          "image": "/assets/industries/i2.png",
+          "title": "Telecom & Technology",
+          "headline": "High-volume service needs an operating model that holds under pressure",
+          "summary": "Customer care, retention, technical support, outbound campaigns, digital non-voice operations, quality, training, workforce and customer experience analytics.",
+          "tags": [
+            "High contact volume",
+            "24/7 coverage",
+            "Channel migration",
+            "First contact resolution",
+            "Back-office claims dispute"
+          ],
+          "cta": {
+            "label": "Explore Telecom CX",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "government",
+          "number": "02",
+          "icon": "/assets/solutions/s2.svg",
+          "image": "/assets/industries/i1.png",
+          "title": "Government & Public Services",
+          "headline": "Citizen experience depends on trust, access and consistency",
+          "summary": "Managed CX operations, omni-channel service, quality, training, business intelligence, workforce management and in-country technology options.",
+          "tags": [
+            "Arabic-first accessibility",
+            "Clear standards",
+            "Secure data handling",
+            "In-country capability",
+            "Transparent reporting"
+          ],
+          "cta": {
+            "label": "Discuss Citizen Experience",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "bfsi",
+          "number": "03",
+          "icon": "/assets/solutions/s5.svg",
+          "image": "/assets/industries/i5.png",
+          "title": "Banking, Insurance & Fintech",
+          "headline": "Control, consistency and customer confidence in every interaction",
+          "summary": "Quality as a service, training, business intelligence, workforce management, and channel CX and technology services.",
+          "tags": [
+            "Data privacy",
+            "Regulated processes",
+            "Clear escalation",
+            "Identity workflow journeys",
+            "Auditable performance"
+          ],
+          "cta": {
+            "label": "Discuss Financial Services CX",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "utilities",
+          "number": "04",
+          "icon": "/assets/solutions/s6.svg",
+          "image": "/assets/industries/i4.png",
+          "title": "Utilities, Energy & Environment",
+          "headline": "When demand spikes, service cannot become unpredictable",
+          "summary": "Billing and service enquiries, outage or incident intake, connection requests, workforce forecasting, real-time service-level intervention and channel deflection.",
+          "tags": [
+            "SLA 98% → 94%",
+            "Abandonment 22% → 9%",
+            "Calls handled +160%",
+            "Branch shifts · 30/6"
+          ],
+          "cta": {
+            "label": "Explore Utilities Operations",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "logistics",
+          "number": "05",
+          "icon": "/assets/solutions/s1.svg",
+          "image": "/assets/industries/i6.png",
+          "title": "Logistics, Transport & Tourism",
+          "headline": "Time-sensitive journeys need service that can respond in the moment",
+          "summary": "CX operations, workforce management, training, omni-channel technology, quality and logistics intelligence.",
+          "tags": [
+            "Booking & enquiries",
+            "Tracking & handling",
+            "Multilingual support",
+            "Seasonal peaks",
+            "Fast escalation"
+          ],
+          "cta": {
+            "label": "Discuss Service Operations",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "realestate",
+          "number": "06",
+          "icon": "/assets/solutions/s8.svg",
+          "image": "/assets/industries/i3.png",
+          "title": "Real Estate, Commercial & Consumer",
+          "headline": "Customer expectations move quickly. Operations have to move with them",
+          "summary": "CX operations, training, quality, workforce management, business intelligence and HR outsourcing.",
+          "tags": [
+            "Orders & returns",
+            "Campaign support",
+            "Sales & retention",
+            "Appointment booking",
+            "Service escalations"
+          ],
+          "cta": {
+            "label": "Explore Customer Operations",
+            "href": "/contact"
+          }
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Your sector. Your operating reality",
+      "title": "Your sector. Your operating reality",
+      "description": "Tell us where service is under pressure and we will start from there.",
+      "button": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
+    },
+    "faq": {
+      "eyebrow": "Common questions",
+      "title": "Questions buyers usually ask",
+      "items": [
+        {
+          "q": "Which sectors does Infoline work with?",
+          "a": "Six sector groups: telecom and technology, government and public services, banking and insurance and fintech, utilities and energy, logistics and transport and tourism, and real estate and commercial and consumer."
+        },
+        {
+          "q": "Does the operating model change by sector?",
+          "a": "The disciplines stay constant — service level, quality, workforce, data, governance and technology. How they are applied changes by sector, shaped around each sector's pressures rather than a fixed template."
+        },
+        {
+          "q": "Can you support Arabic and English service?",
+          "a": "Yes. Arabic-first service with English support is standard across the portfolio, with in-country technology and hosting options where data residency matters."
+        }
+      ]
+    },
+    "clients": {
+      "eyebrow": "Clients",
+      "title": "Named across all six sector groups",
+      "logos": [
+        {
+          "src": "/assets/clients/moh.svg",
+          "alt": "Ministry of Health"
+        },
+        {
+          "src": "/assets/clients/tra.svg",
+          "alt": "Telecommunications Regulatory Authority"
+        },
+        {
+          "src": "/assets/clients/asyad.svg",
+          "alt": "ASYAD"
+        },
+        {
+          "src": "/assets/clients/ncsi.svg",
+          "alt": "National Centre for Statistics & Information"
+        },
+        {
+          "src": "/assets/clients/paew.svg",
+          "alt": "Public Authority for Electricity and Water"
+        },
+        {
+          "src": "/assets/clients/manpower.svg",
+          "alt": "Ministry of Manpower"
+        },
+        {
+          "src": "/assets/clients/oman-post.svg",
+          "alt": "Oman Post"
+        }
+      ]
+    }
+  },
   "SolutionsPage": {
     "hero": {
       "eyebrow": "Solutions",
       "titleLead": "Trusted operations.",
       "titleAccent": "Eight ways to improve performance",
       "description": "Choose the full operating model or the capability you need most. Every service is built around clear ownership, trusted delivery and a measurable outcome.",
-      "primaryCta": { "label": "Talk to an expert", "href": "/contact" },
-      "secondaryCta": { "label": "See how they combine", "href": "#catalogue" },
+      "primaryCta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "See how they combine",
+        "href": "#catalogue"
+      },
       "indexLabel": "The catalogue"
     },
     "catalogue": {
@@ -31,10 +242,26 @@
             "Recruitment, training, quality, workforce management, technology, supervision and the service level can move under one managed operating model. Delivery can be fully managed at Infoline, managed inside the client's premises, or applied to the client's existing resources through Infoline's management model.",
             "Weekly operational reviews, monthly performance reviews and quarterly business reviews use the same agreed metrics, with an escalation ladder defined before go-live."
           ],
-          "tags": ["Voice", "Live chat", "WhatsApp", "IVR", "Email", "Ticketing"],
-          "facts": ["Standard service level 80/20 and 90/30", "24/7 live on three accounts"],
-          "metric": { "value": "80/20", "label": "Standard service level" },
-          "cta": { "label": "Discuss your CX operation", "href": "/contact" }
+          "tags": [
+            "Voice",
+            "Live chat",
+            "WhatsApp",
+            "IVR",
+            "Email",
+            "Ticketing"
+          ],
+          "facts": [
+            "Standard service level 80/20 and 90/30",
+            "24/7 live on three accounts"
+          ],
+          "metric": {
+            "value": "80/20",
+            "label": "Standard service level"
+          },
+          "cta": {
+            "label": "Discuss your CX operation",
+            "href": "/contact"
+          }
         },
         {
           "id": "cx-transformation",
@@ -49,10 +276,25 @@
             "We map the current operation against the outcomes you need, size the gaps that cost the most, and agree a change plan with owners, milestones and a baseline. Work spans process, quality, workforce and technology so improvements hold once we hand back.",
             "Progress is tracked against the baseline in the same review cadence as delivery, so transformation is proven on the floor rather than in a slide."
           ],
-          "tags": ["Diagnostic", "Journey mapping", "Root cause", "Roadmap", "Benchmarking"],
-          "facts": ["Baseline agreed before go-live", "Improvement tracked every quarter"],
-          "metric": { "value": "90 days", "label": "First measurable gains" },
-          "cta": { "label": "Scope a transformation", "href": "/contact" }
+          "tags": [
+            "Diagnostic",
+            "Journey mapping",
+            "Root cause",
+            "Roadmap",
+            "Benchmarking"
+          ],
+          "facts": [
+            "Baseline agreed before go-live",
+            "Improvement tracked every quarter"
+          ],
+          "metric": {
+            "value": "90 days",
+            "label": "First measurable gains"
+          },
+          "cta": {
+            "label": "Scope a transformation",
+            "href": "/contact"
+          }
         },
         {
           "id": "quality-as-a-service",
@@ -67,10 +309,25 @@
             "Interactions are scored against a rubric agreed with you, calibrated across evaluators, and linked to coaching so scores change behaviour rather than just fill a dashboard. Sampling can be risk-weighted so the interactions that carry the most exposure get the most attention.",
             "Findings feed the same performance reviews as operations, with disputes and calibration logged so a score can always be defended to an auditor or an evaluation committee."
           ],
-          "tags": ["Evaluation", "Calibration", "Coaching", "Dispute handling", "Root cause"],
-          "facts": ["Rubric agreed with the client", "Risk-weighted sampling"],
-          "metric": { "value": "100%", "label": "Calibrated evaluators" },
-          "cta": { "label": "Review your quality model", "href": "/contact" }
+          "tags": [
+            "Evaluation",
+            "Calibration",
+            "Coaching",
+            "Dispute handling",
+            "Root cause"
+          ],
+          "facts": [
+            "Rubric agreed with the client",
+            "Risk-weighted sampling"
+          ],
+          "metric": {
+            "value": "100%",
+            "label": "Calibrated evaluators"
+          },
+          "cta": {
+            "label": "Review your quality model",
+            "href": "/contact"
+          }
         },
         {
           "id": "training-as-a-service",
@@ -85,10 +342,25 @@
             "New hires and existing teams move through structured onboarding, product and process training, and soft-skills development, each closed out with an assessment. Content is built with your subject-matter experts and kept current as products and policies change.",
             "Certification is validated against live performance in the first weeks on the floor, so training is measured by what changes in the operation, not by attendance."
           ],
-          "tags": ["Onboarding", "Product", "Soft skills", "Certification", "Refreshers"],
-          "facts": ["Assessed at every stage", "Validated against live performance"],
-          "metric": { "value": "2x", "label": "Faster time to proficiency" },
-          "cta": { "label": "Plan a training programme", "href": "/contact" }
+          "tags": [
+            "Onboarding",
+            "Product",
+            "Soft skills",
+            "Certification",
+            "Refreshers"
+          ],
+          "facts": [
+            "Assessed at every stage",
+            "Validated against live performance"
+          ],
+          "metric": {
+            "value": "2x",
+            "label": "Faster time to proficiency"
+          },
+          "cta": {
+            "label": "Plan a training programme",
+            "href": "/contact"
+          }
         },
         {
           "id": "business-intelligence",
@@ -103,10 +375,25 @@
             "We consolidate operational, quality and workforce data into one governed model, so leaders work from a single set of numbers instead of reconciling spreadsheets. Dashboards are built around the decisions you actually make, with definitions agreed and documented.",
             "Beyond dashboards, analysts investigate the drivers behind a trend — what is moving handle time, first-contact resolution or attrition — and package it for the same business reviews."
           ],
-          "tags": ["Dashboards", "Reporting", "Forecasting", "Root-cause analysis", "Data quality"],
-          "facts": ["One agreed set of definitions", "Refreshed on an agreed cadence"],
-          "metric": { "value": "1", "label": "Version of the numbers" },
-          "cta": { "label": "See a reporting model", "href": "/contact" }
+          "tags": [
+            "Dashboards",
+            "Reporting",
+            "Forecasting",
+            "Root-cause analysis",
+            "Data quality"
+          ],
+          "facts": [
+            "One agreed set of definitions",
+            "Refreshed on an agreed cadence"
+          ],
+          "metric": {
+            "value": "1",
+            "label": "Version of the numbers"
+          },
+          "cta": {
+            "label": "See a reporting model",
+            "href": "/contact"
+          }
         },
         {
           "id": "workforce-management",
@@ -121,10 +408,25 @@
             "Demand is forecast from history and known drivers, translated into schedules that fit your operating rules, and managed in real time so intraday changes do not cost the service level. Shrinkage, adherence and occupancy are tracked and fed back into the next forecast.",
             "Capacity plans flex with demand, and staffing scenarios for peaks, launches or growth are modelled before they are committed."
           ],
-          "tags": ["Forecasting", "Scheduling", "Real-time", "Adherence", "Capacity planning"],
-          "facts": ["Intraday management", "Scenario modelling for peaks"],
-          "metric": { "value": "24/7", "label": "Real-time coverage" },
-          "cta": { "label": "Model your capacity", "href": "/contact" }
+          "tags": [
+            "Forecasting",
+            "Scheduling",
+            "Real-time",
+            "Adherence",
+            "Capacity planning"
+          ],
+          "facts": [
+            "Intraday management",
+            "Scenario modelling for peaks"
+          ],
+          "metric": {
+            "value": "24/7",
+            "label": "Real-time coverage"
+          },
+          "cta": {
+            "label": "Model your capacity",
+            "href": "/contact"
+          }
         },
         {
           "id": "technology-services",
@@ -139,10 +441,25 @@
             "Voice, digital and messaging channels run on a connected platform, integrated with your systems so agents and reporting see one customer. In-country hosting options are available where data residency matters, and automation or AI is applied only where it measurably helps.",
             "The platform is delivered and supported by Infoline, with change management and monitoring inside the same governance as the operation."
           ],
-          "tags": ["Omnichannel", "Integrations", "IVR", "Chatbot", "In-country hosting"],
-          "facts": ["In-country options available", "AI applied where it pays"],
-          "metric": { "value": "6", "label": "Channels connected" },
-          "cta": { "label": "Explore the platform", "href": "/contact" }
+          "tags": [
+            "Omnichannel",
+            "Integrations",
+            "IVR",
+            "Chatbot",
+            "In-country hosting"
+          ],
+          "facts": [
+            "In-country options available",
+            "AI applied where it pays"
+          ],
+          "metric": {
+            "value": "6",
+            "label": "Channels connected"
+          },
+          "cta": {
+            "label": "Explore the platform",
+            "href": "/contact"
+          }
         },
         {
           "id": "hr-outsourcing",
@@ -157,10 +474,25 @@
             "Infoline manages recruitment, onboarding, payroll and day-to-day employee administration while you direct the work itself. The employment relationship, compliance and administration sit with us, reducing the operating burden on your team.",
             "Reporting on headcount, cost and compliance runs in the same cadence as the rest of the operation, so workforce decisions are made with current information."
           ],
-          "tags": ["Recruitment", "Payroll", "Onboarding", "Administration", "Compliance"],
-          "facts": ["Compliant employment model", "You direct the work"],
-          "metric": { "value": "1", "label": "Accountable employer" },
-          "cta": { "label": "Discuss HR outsourcing", "href": "/contact" }
+          "tags": [
+            "Recruitment",
+            "Payroll",
+            "Onboarding",
+            "Administration",
+            "Compliance"
+          ],
+          "facts": [
+            "Compliant employment model",
+            "You direct the work"
+          ],
+          "metric": {
+            "value": "1",
+            "label": "Accountable employer"
+          },
+          "cta": {
+            "label": "Discuss HR outsourcing",
+            "href": "/contact"
+          }
         }
       ]
     },
@@ -168,7 +500,10 @@
       "eyebrow": "For technology and solution partners",
       "title": "Build trusted solutions with Infoline",
       "description": "Have a platform, capability or solution that strengthens customer operations in Oman? We are open to strategic and technology partnerships where the fit is clear.",
-      "cta": { "label": "Explore a partnership", "href": "/contact" }
+      "cta": {
+        "label": "Explore a partnership",
+        "href": "/contact"
+      }
     },
     "faq": {
       "eyebrow": "Common questions",
@@ -196,13 +531,34 @@
       "eyebrow": "Clients",
       "title": "Named across the full catalogue.",
       "logos": [
-        { "src": "/assets/clients/moh.svg", "alt": "Ministry of Health" },
-        { "src": "/assets/clients/tra.svg", "alt": "Telecommunications Regulatory Authority" },
-        { "src": "/assets/clients/asyad.svg", "alt": "ASYAD" },
-        { "src": "/assets/clients/ncsi.svg", "alt": "National Centre for Statistics & Information" },
-        { "src": "/assets/clients/paew.svg", "alt": "Public Authority for Electricity and Water" },
-        { "src": "/assets/clients/manpower.svg", "alt": "Ministry of Manpower" },
-        { "src": "/assets/clients/oman-post.svg", "alt": "Oman Post" }
+        {
+          "src": "/assets/clients/moh.svg",
+          "alt": "Ministry of Health"
+        },
+        {
+          "src": "/assets/clients/tra.svg",
+          "alt": "Telecommunications Regulatory Authority"
+        },
+        {
+          "src": "/assets/clients/asyad.svg",
+          "alt": "ASYAD"
+        },
+        {
+          "src": "/assets/clients/ncsi.svg",
+          "alt": "National Centre for Statistics & Information"
+        },
+        {
+          "src": "/assets/clients/paew.svg",
+          "alt": "Public Authority for Electricity and Water"
+        },
+        {
+          "src": "/assets/clients/manpower.svg",
+          "alt": "Ministry of Manpower"
+        },
+        {
+          "src": "/assets/clients/oman-post.svg",
+          "alt": "Oman Post"
+        }
       ]
     }
   },
@@ -265,7 +621,10 @@
     "eyebrow": "Why Infoline",
     "title": "Why organisations trust Infoline",
     "description": "One accountable operating partner, close to your customers, with the scale and governance to hold a service level under real demand.",
-    "cta": { "label": "Talk to an expert", "href": "#contact" },
+    "cta": {
+      "label": "Talk to an expert",
+      "href": "#contact"
+    },
     "points": [
       {
         "number": "01",
@@ -275,7 +634,10 @@
         "number": "02",
         "text": "One accountable model across people, process, technology and performance"
       },
-      { "number": "03", "text": "Operational scale that can flex with demand" },
+      {
+        "number": "03",
+        "text": "Operational scale that can flex with demand"
+      },
       {
         "number": "04",
         "text": "Human expertise strengthened by analytics, automation and AI"
@@ -289,9 +651,18 @@
         "unit": "yrs",
         "label": "In continuous operation since 2003."
       },
-      { "value": "1,400+", "label": "Seats across delivery centres." },
-      { "value": "68", "label": "Clients across six sectors" },
-      { "value": "6M", "label": "Customer transactions a year" }
+      {
+        "value": "1,400+",
+        "label": "Seats across delivery centres."
+      },
+      {
+        "value": "68",
+        "label": "Clients across six sectors"
+      },
+      {
+        "value": "6M",
+        "label": "Customer transactions a year"
+      }
     ],
     "badges": [
       {
@@ -310,9 +681,11 @@
     "eyebrow": "Trust built on proof",
     "title": "Established in 2004. Part of Omantel Group",
     "description": "Contracted service relationships, grouped by sector. Public authorities carry the largest share of our delivered volume.",
-    "clientsCta": { "label": "All clients", "href": "#clients" }
+    "clientsCta": {
+      "label": "All clients",
+      "href": "#clients"
+    }
   },
-
   "WhatChanges": {
     "eyebrow": "What changes with Infoline",
     "title": "Less operating burden. More visibility. Clearer accountability",
@@ -344,7 +717,10 @@
         "impact": "More focus on customers and business priorities"
       }
     ],
-    "cta": { "label": "Model this for our operation", "href": "#contact" }
+    "cta": {
+      "label": "Model this for our operation",
+      "href": "#contact"
+    }
   },
   "Industries": {
     "eyebrow": "Industries · 6 sectors",
@@ -389,8 +765,14 @@
     "titleLead": "Oman's trusted partner for",
     "titleAccent": "customer operations.",
     "description": "Trusted CX operations, managed services and technology from Oman, built around clear accountability and measurable outcomes.",
-    "primaryCta": { "label": "Talk to an Expert", "href": "/" },
-    "secondaryCta": { "label": "Explore Solutions", "href": "/solutions" },
+    "primaryCta": {
+      "label": "Talk to an Expert",
+      "href": "/"
+    },
+    "secondaryCta": {
+      "label": "Explore Solutions",
+      "href": "/solutions"
+    },
     "responseNote": "We respond within 1 business day."
   },
   "Partners": {
@@ -428,13 +810,19 @@
     "banner": {
       "title": "Start with the outcome you need",
       "description": "Tell us what needs to improve. We will start from the operation, not from a product",
-      "cta": { "label": "Talk to an expert", "href": "/contact" }
+      "cta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
     }
   },
   "Insights": {
     "eyebrow": "Insights",
     "title": "What we are seeing across Omani operations",
-    "allCta": { "label": "All insights", "href": "/insights" },
+    "allCta": {
+      "label": "All insights",
+      "href": "/insights"
+    },
     "items": [
       {
         "category": "Customer Experience",
@@ -458,67 +846,161 @@
   },
   "Header": {
     "nav": [
-      { "label": "Solutions", "href": "/solutions" },
-      { "label": "Industries", "href": "#" },
-      { "label": "Case Studies", "href": "#" },
-      { "label": "Insights", "href": "#" },
-      { "label": "About", "href": "#" },
-      { "label": "Careers", "href": "#" }
+      {
+        "label": "Solutions",
+        "href": "/solutions"
+      },
+      {
+        "label": "Industries",
+        "href": "/industries"
+      },
+      {
+        "label": "Case Studies",
+        "href": "#"
+      },
+      {
+        "label": "Insights",
+        "href": "#"
+      },
+      {
+        "label": "About",
+        "href": "#"
+      },
+      {
+        "label": "Careers",
+        "href": "#"
+      }
     ],
-    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "cta": {
+      "label": "Talk to an Expert",
+      "href": "/"
+    },
     "menuToggle": "Toggle menu"
   },
   "Footer": {
     "office": "Registered office, Muscat, Sultanate of Oman",
     "contact": "+968 [phone] · hello@infoline.om",
-    "cta": { "label": "Talk to an Expert", "href": "/" },
+    "cta": {
+      "label": "Talk to an Expert",
+      "href": "/"
+    },
     "columns": [
       {
         "title": "Solutions",
         "links": [
-          { "label": "CX & BPO", "href": "#" },
-          { "label": "Technology & Enterprise", "href": "#" },
-          { "label": "People & Finance", "href": "#" },
-          { "label": "All services", "href": "#" }
+          {
+            "label": "CX & BPO",
+            "href": "#"
+          },
+          {
+            "label": "Technology & Enterprise",
+            "href": "#"
+          },
+          {
+            "label": "People & Finance",
+            "href": "#"
+          },
+          {
+            "label": "All services",
+            "href": "#"
+          }
         ]
       },
       {
         "title": "Industries",
         "links": [
-          { "label": "Government", "href": "#" },
-          { "label": "Telecom", "href": "#" },
-          { "label": "Energy & Utilities", "href": "#" },
-          { "label": "All sectors", "href": "#" }
+          {
+            "label": "Government",
+            "href": "#"
+          },
+          {
+            "label": "Telecom",
+            "href": "#"
+          },
+          {
+            "label": "Energy & Utilities",
+            "href": "#"
+          },
+          {
+            "label": "All sectors",
+            "href": "#"
+          }
         ]
       },
       {
         "title": "Company",
         "links": [
-          { "label": "About", "href": "#" },
-          { "label": "Leadership", "href": "#" },
-          { "label": "Case studies", "href": "#" },
-          { "label": "Insights", "href": "#" }
+          {
+            "label": "About",
+            "href": "#"
+          },
+          {
+            "label": "Leadership",
+            "href": "#"
+          },
+          {
+            "label": "Case studies",
+            "href": "#"
+          },
+          {
+            "label": "Insights",
+            "href": "#"
+          }
         ]
       },
       {
         "title": "Get in touch",
         "links": [
-          { "label": "Partnership inquiry", "href": "#" },
-          { "label": "Vendor registration", "href": "#" },
-          { "label": "Careers & media", "href": "#" },
-          { "label": "Contact us", "href": "#" }
+          {
+            "label": "Partnership inquiry",
+            "href": "#"
+          },
+          {
+            "label": "Vendor registration",
+            "href": "#"
+          },
+          {
+            "label": "Careers & media",
+            "href": "#"
+          },
+          {
+            "label": "Contact us",
+            "href": "#"
+          }
         ]
       }
     ],
     "socials": [
-      { "label": "Facebook", "href": "#", "network": "facebook" },
-      { "label": "X", "href": "#", "network": "x" },
-      { "label": "Instagram", "href": "#", "network": "instagram" },
-      { "label": "LinkedIn", "href": "#", "network": "linkedin" }
+      {
+        "label": "Facebook",
+        "href": "#",
+        "network": "facebook"
+      },
+      {
+        "label": "X",
+        "href": "#",
+        "network": "x"
+      },
+      {
+        "label": "Instagram",
+        "href": "#",
+        "network": "instagram"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#",
+        "network": "linkedin"
+      }
     ],
     "legal": [
-      { "label": "Privacy policy", "href": "#" },
-      { "label": "Company profile", "href": "#" }
+      {
+        "label": "Privacy policy",
+        "href": "#"
+      },
+      {
+        "label": "Company profile",
+        "href": "#"
+      }
     ],
     "copyright": "© 2026 Infoline LLC · an Omantel Group company"
   }
