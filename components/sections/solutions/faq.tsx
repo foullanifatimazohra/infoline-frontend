@@ -9,11 +9,6 @@ import { EASE } from "@/components/ui/motion/shared";
 
 type FaqItem = { q: string; a: string };
 
-/**
- * FAQ accordion. One item open at a time (first open by default); the panel
- * animates `height: auto` with a rotating plus. Reduced motion → instant
- * open/close, no travel.
- */
 export default function Faq() {
   const t = useTranslations("SolutionsPage");
   const items = t.raw("faq.items") as FaqItem[];
@@ -23,9 +18,13 @@ export default function Faq() {
   return (
     <section className="bg-slate-25 py-6xl">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
-        <Stagger as="div" className="mb-4xl flex flex-col gap-lg" stagger={0.15}>
+        <Stagger
+          as="div"
+          className="mb-4xl flex flex-col gap-lg"
+          stagger={0.15}
+        >
           <StaggerItem>
-            <p className="overline-sm-medium mb-sm text-slate-500">
+            <p className="overline-sm-medium mb-sm text-slate-400">
               {t("faq.eyebrow")}
             </p>
             <MaskText
@@ -38,18 +37,14 @@ export default function Faq() {
           </StaggerItem>
         </Stagger>
 
-        <Stagger
-          as="div"
-          className="mx-auto max-w-[860px] border-t border-slate-200"
-          stagger={0.08}
-        >
+        <Stagger as="div" className="mx-auto" stagger={0.08}>
           {items.map((item, i) => {
             const isOpen = i === open;
             return (
               <StaggerItem
                 as="div"
                 key={item.q}
-                className="border-b border-slate-200"
+                className="border-b border-slate-100"
               >
                 <button
                   type="button"
@@ -57,7 +52,7 @@ export default function Faq() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 py-6 text-start"
                 >
-                  <span className="heading-sm-semibold text-slate-900">
+                  <span className="body-xl-semibold text-slate-900">
                     {item.q}
                   </span>
                   <motion.span
@@ -74,17 +69,17 @@ export default function Faq() {
                   {isOpen && (
                     <motion.div
                       key="content"
-                      initial={reduce ? { opacity: 1 } : { height: 0, opacity: 0 }}
+                      initial={
+                        reduce ? { opacity: 1 } : { height: 0, opacity: 0 }
+                      }
                       animate={
-                        reduce
-                          ? { opacity: 1 }
-                          : { height: "auto", opacity: 1 }
+                        reduce ? { opacity: 1 } : { height: "auto", opacity: 1 }
                       }
                       exit={reduce ? { opacity: 1 } : { height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: EASE }}
                       className="overflow-hidden"
                     >
-                      <p className="body-lg-regular max-w-[70ch] pb-6 text-slate-600">
+                      <p className="body-lg-regular pb-6 text-slate-600">
                         {item.a}
                       </p>
                     </motion.div>

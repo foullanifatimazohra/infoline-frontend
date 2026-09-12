@@ -37,26 +37,29 @@ export default function PartnerCta() {
             />
           </Parallax>
 
-          <div className="relative z-10 flex flex-col justify-between gap-xl md:items-center lg:flex-row">
+          <div className="relative z-10 flex flex-col justify-between lg:gap-45 gap-4 md:items-center lg:flex-row">
             <div>
-              <p className="overline-sm-medium mb-4 text-brandblue-200">
+              <p className="overline-xs-medium mb-4 text-slate-100">
                 {t("partner.eyebrow")}
               </p>
-              <h3 className="heading-xl-bold mb-4 max-w-[20ch] text-white lg:text-[36px]">
+              <h3 className="heading-xl-bold mb-4 max-w-[30ch] text-white lg:text-[36px]">
                 {t("partner.title")}
               </h3>
-              <p className="body-lg-regular max-w-[54ch] text-brandblue-100">
+            </div>
+            <div className="flex flex-col lg:items-start gap-sm">
+              <p className="body-lg-regular max-w-[60ch] text-white">
                 {t("partner.description")}
               </p>
+              <Button
+                href={t("partner.cta.href")}
+                size="small"
+                variant="primary"
+                className="mt-6"
+              >
+                {t("partner.cta.label")}
+                <ArrowRight className="size-4 rtl:rotate-180" />
+              </Button>
             </div>
-            <Button
-              href={t("partner.cta.href")}
-              size="large"
-              className="overline-xs-semibold shrink-0 rounded-lg bg-white !text-ink px-2xl py-md transition-colors hover:bg-white"
-            >
-              {t("partner.cta.label")}
-              <ArrowRight className="size-4 rtl:rotate-180" />
-            </Button>
           </div>
         </Reveal>
       </div>

@@ -29,7 +29,7 @@ export default function Insights() {
             </p>
             <MaskText
               as="h2"
-              className="heading-xl-bold text-[36px] text-white"
+              className="heading-xl-bold text-[48px] text-white"
               segments={[{ text: t("title") }]}
               amount={0.5}
               duration={0.8}

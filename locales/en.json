@@ -234,7 +234,7 @@
           "number": "01",
           "family": "CX & BPO",
           "icon": "/assets/solutions/s1.svg",
-          "image": "/assets/solutions/catalogue/cx-operations.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "CX Operations",
           "headline": "You own the customer. We run the operation",
           "summary": "End-to-end operations, service level, quality, workforce and governance",
@@ -248,9 +248,7 @@
             "WhatsApp",
             "IVR",
             "Email",
-            "Ticketing"
-          ],
-          "facts": [
+            "Ticketing",
             "Standard service level 80/20 and 90/30",
             "24/7 live on three accounts"
           ],
@@ -281,9 +279,7 @@
             "Journey mapping",
             "Root cause",
             "Roadmap",
-            "Benchmarking"
-          ],
-          "facts": [
+            "Benchmarking",
             "Baseline agreed before go-live",
             "Improvement tracked every quarter"
           ],
@@ -314,9 +310,7 @@
             "Calibration",
             "Coaching",
             "Dispute handling",
-            "Root cause"
-          ],
-          "facts": [
+            "Root cause",
             "Rubric agreed with the client",
             "Risk-weighted sampling"
           ],
@@ -347,9 +341,7 @@
             "Product",
             "Soft skills",
             "Certification",
-            "Refreshers"
-          ],
-          "facts": [
+            "Refreshers",
             "Assessed at every stage",
             "Validated against live performance"
           ],
@@ -380,9 +372,7 @@
             "Reporting",
             "Forecasting",
             "Root-cause analysis",
-            "Data quality"
-          ],
-          "facts": [
+            "Data quality",
             "One agreed set of definitions",
             "Refreshed on an agreed cadence"
           ],
@@ -413,9 +403,7 @@
             "Scheduling",
             "Real-time",
             "Adherence",
-            "Capacity planning"
-          ],
-          "facts": [
+            "Capacity planning",
             "Intraday management",
             "Scenario modelling for peaks"
           ],
@@ -446,9 +434,7 @@
             "Integrations",
             "IVR",
             "Chatbot",
-            "In-country hosting"
-          ],
-          "facts": [
+            "In-country hosting",
             "In-country options available",
             "AI applied where it pays"
           ],
@@ -479,9 +465,7 @@
             "Payroll",
             "Onboarding",
             "Administration",
-            "Compliance"
-          ],
-          "facts": [
+            "Compliance",
             "Compliant employment model",
             "You direct the work"
           ],
@@ -531,34 +515,25 @@
       "eyebrow": "Clients",
       "title": "Named across the full catalogue.",
       "logos": [
-        {
-          "src": "/assets/clients/moh.svg",
-          "alt": "Ministry of Health"
-        },
+        { "src": "/assets/clients/moh.svg", "alt": "Ministry of Health" },
         {
           "src": "/assets/clients/tra.svg",
           "alt": "Telecommunications Regulatory Authority"
         },
+        { "src": "/assets/clients/asyad.svg", "alt": "ASYAD" },
         {
-          "src": "/assets/clients/asyad.svg",
-          "alt": "ASYAD"
+          "src": "/assets/clients/paew.svg",
+          "alt": "Public Authority for Electricity and Water"
         },
         {
           "src": "/assets/clients/ncsi.svg",
           "alt": "National Centre for Statistics & Information"
         },
         {
-          "src": "/assets/clients/paew.svg",
-          "alt": "Public Authority for Electricity and Water"
-        },
-        {
           "src": "/assets/clients/manpower.svg",
           "alt": "Ministry of Manpower"
         },
-        {
-          "src": "/assets/clients/oman-post.svg",
-          "alt": "Oman Post"
-        }
+        { "src": "/assets/clients/oman-post.svg", "alt": "Oman Post" }
       ]
     }
   },

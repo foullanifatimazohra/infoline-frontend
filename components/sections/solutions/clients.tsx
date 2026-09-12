@@ -13,21 +13,21 @@ export default function Clients() {
   const logos = t.raw("clients.logos") as Logo[];
 
   return (
-    <section className="bg-white py-6xl">
+    <section className="bg-white py-25">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
-        <div className="border-t border-slate-100 pt-12">
+        <div className="">
           <Stagger
             as="div"
-            className="mb-4xl flex flex-col items-center gap-sm text-center"
+            className="mb-4xl flex flex-col items-start gap-sm pb-6 border-b border-slate-100"
             stagger={0.14}
           >
-            <StaggerItem className="flex flex-col items-center">
-              <p className="overline-sm-medium mb-sm text-slate-500">
+            <StaggerItem className="flex flex-col items-start">
+              <p className="overline-sm-medium mb-4 text-slate-500">
                 {t("clients.eyebrow")}
               </p>
               <MaskText
                 as="h2"
-                className="heading-xl-bold text-center text-slate-900"
+                className="heading-xl-bold text-start text-slate-900"
                 segments={[{ text: t("clients.title") }]}
                 amount={0.5}
                 duration={0.8}
