@@ -16,7 +16,7 @@ export default function Insights() {
   const insights = t.raw("items") as Insight[];
 
   return (
-    <section className="insights py-20 lg:py-26">
+    <section className="insights flex items-center justify-center py-20 lg:py-26">
       <div className="px-6 lg:px-10 max-w-360">
         <Stagger
           as="div"
