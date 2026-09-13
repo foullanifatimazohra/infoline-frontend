@@ -1,5 +1,6 @@
+"use client";
+
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { MainBackground } from "@/components/ui/background/main";
@@ -15,6 +16,19 @@ type IndexService = {
 export default function Hero() {
   const t = useTranslations("SolutionsPage");
   const services = t.raw("catalogue.services") as IndexService[];
+
+  const handleServiceClick = (id: string) => {
+    const hash = `cat-${id}`;
+    // Update URL hash without triggering a page reload
+    window.history.pushState(null, "", `#${hash}`);
+    // Dispatch a hashchange event so the Catalogue component picks it up
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    // Scroll to the catalogue section smoothly
+    const catalogueSection = document.getElementById("catalogue");
+    if (catalogueSection) {
+      catalogueSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
@@ -90,9 +104,10 @@ export default function Hero() {
             >
               {services.map((s) => (
                 <StaggerItem as="li" key={s.id} distance={28}>
-                  <Link
-                    href={`#cat-${s.id}`}
-                    className="group flex items-center gap-5 border-b border-white/5 py-3 transition-colors hover:bg-white/[.02 hover:transform hover:translate-x-3"
+                  <button
+                    type="button"
+                    onClick={() => handleServiceClick(s.id)}
+                    className="group flex w-full items-center gap-5 border-b border-white/5 py-3 text-start transition-colors hover:bg-white/[.02] hover:translate-x-3"
                   >
                     <span className="font-mono text-[13px] tabular-nums text-slate-400 group-hover:text-brandblue-400">
                       {s.number}
@@ -100,7 +115,7 @@ export default function Hero() {
                     <span className="flex-1 body-sm-regular text-slate-200 transition-colors group-hover:text-white">
                       {s.title}
                     </span>
-                  </Link>
+                  </button>
                 </StaggerItem>
               ))}
             </Stagger>

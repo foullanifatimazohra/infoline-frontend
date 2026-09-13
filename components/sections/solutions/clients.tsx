@@ -1,16 +1,14 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
-
-type Logo = { src: string; alt: string };
+import LogoMarquee, { LogoItem } from "@/components/ui/logo-marquee";
 
 /**
- * Clients strip. Centered masked heading over a hairline divider, then a
- * staggered row of client logos (reusing the shared /assets/clients set).
+ * Clients strip. Centered masked heading over a hairline divider, then an
+ * animated marquee of client logos (reusing the shared /assets/clients set).
  */
 export default function Clients() {
   const t = useTranslations("SolutionsPage");
-  const logos = t.raw("clients.logos") as Logo[];
+  const logos = t.raw("clients.logos") as LogoItem[];
 
   return (
     <section className="bg-white py-25">
@@ -35,27 +33,14 @@ export default function Clients() {
             </StaggerItem>
           </Stagger>
 
-          <Stagger
-            as="ul"
-            className="grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-7"
-            stagger={0.08}
-          >
-            {logos.map((logo) => (
-              <StaggerItem
-                as="li"
-                key={logo.src}
-                className="flex items-center justify-center"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={140}
-                  height={48}
-                  className="h-10 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                />
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <LogoMarquee
+            logos={logos}
+            durationSeconds={30}
+            gap="4rem"
+            imageHeight={48}
+            imageWidth={140}
+            className="mt-10"
+          />
         </div>
       </div>
     </section>
