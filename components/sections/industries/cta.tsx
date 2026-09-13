@@ -4,11 +4,6 @@ import Image from "next/image";
 import Button from "@/components/ui/button";
 import { Reveal, Parallax } from "@/components/ui/motion";
 
-/**
- * "Your sector, your operating reality" banner. Reuses the Solutions partner-CTA
- * pattern: a <Reveal>-wrapped brandblue panel with a parallax background image
- * and a white CTA button.
- */
 export default function Cta() {
   const t = useTranslations("IndustriesPage");
 
@@ -37,9 +32,6 @@ export default function Cta() {
 
           <div className="relative z-10 flex flex-col justify-between gap-xl md:items-center lg:flex-row">
             <div>
-              <p className="overline-sm-medium mb-4 text-brandblue-200">
-                {t("cta.eyebrow")}
-              </p>
               <h3 className="heading-xl-bold mb-4 max-w-[20ch] text-white lg:text-[36px]">
                 {t("cta.title")}
               </h3>
@@ -47,11 +39,7 @@ export default function Cta() {
                 {t("cta.description")}
               </p>
             </div>
-            <Button
-              href={t("cta.button.href")}
-              size="large"
-              className="overline-xs-semibold shrink-0 rounded-lg bg-white !text-ink px-2xl py-md transition-colors hover:bg-white"
-            >
+            <Button href={t("cta.button.href")} size="large" variant="primary">
               {t("cta.button.label")}
               <ArrowRight className="size-4 rtl:rotate-180" />
             </Button>

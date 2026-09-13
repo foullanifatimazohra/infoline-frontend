@@ -13,28 +13,11 @@ type Sector = {
   title: string;
   headline: string;
   summary: string;
+  summaryTitle: string;
   tags: string[];
   cta: { label: string; href: string };
 };
 
-/**
- * The sector stack — the page's centrepiece. Each sector is a pinned card that
- * scales down as the next card scrolls up to cover it, producing a fanned
- * "scaling stack" deck.
- *
- * The whole effect is expressed with Tailwind utilities on the card:
- * `lg:sticky lg:top-[6.5rem]` pins it, `lg:animate-stack-recede` (registered in
- * globals.css `@theme`) plus the arbitrary `[animation-timeline:view()]` /
- * `[animation-range:exit-crossing]` utilities drive the scroll-linked scale.
- * Everything is scoped to `lg:` and `motion-reduce:` turns it off, so on mobile
- * or with reduced motion the cards render as a normal vertical stack.
- *
- * The hero's index deep-links here via `#sec-<id>` — each card carries that id
- * and `scroll-mt` so a pinned card lands just below the header.
- *
- * Layout alternates image ⇄ content per card for editorial rhythm; under RTL the
- * logical order is preserved automatically by grid + logical properties.
- */
 export default function Sectors() {
   const t = useTranslations("IndustriesPage");
   const sectors = t.raw("sectors.items") as Sector[];
@@ -49,12 +32,12 @@ export default function Sectors() {
           stagger={0.15}
         >
           <StaggerItem direction="start">
-            <p className="overline-sm-medium mb-sm text-slate-500">
+            <p className="overline-sm-medium mb-sm text-slate-400">
               {t("sectors.eyebrow")}
             </p>
             <MaskText
               as="h2"
-              className="heading-2xl-semibold max-w-[22ch] text-slate-900"
+              className="heading-2xl-semibold font-bold max-w-[22ch] text-slate-900"
               segments={[{ text: t("sectors.title") }]}
               amount={0.5}
               duration={0.8}
@@ -63,7 +46,7 @@ export default function Sectors() {
           <StaggerItem
             as="p"
             direction="end"
-            className="body-lg-regular max-w-[52ch] text-slate-600"
+            className="body-lg-regular max-w-[52ch] text-slate-700"
           >
             {t("sectors.description")}
           </StaggerItem>
@@ -79,21 +62,23 @@ export default function Sectors() {
                 id={`sec-${s.id}`}
                 className="scroll-mt-[6.5rem] overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_60px_-45px_rgba(38,50,56,0.55)] lg:sticky lg:top-[6.5rem] lg:origin-top lg:will-change-transform lg:animate-stack-recede lg:[animation-timeline:view()] lg:[animation-range:exit-crossing] motion-reduce:[animation:none]"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div
+                  className={`grid grid-cols-1 items-center lg:grid-cols-2 ${imageFirst ? "lg:grid-cols-[.7fr_1.3fr]" : "lg:grid-cols-[1.3fr_.7fr]"}`}
+                >
                   {/* Visual */}
                   <div
-                    className={`relative min-h-[240px] overflow-hidden bg-brandblue-900 lg:min-h-[420px] ${
+                    className={`min-h-[240px]  p-5  lg:min-h-[420px] items-center justify-center ${
                       imageFirst ? "lg:order-1" : "lg:order-2"
                     }`}
                   >
                     <Image
                       src={s.image}
                       alt={s.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
+                      width={380}
+                      height={460}
+                      className="object-cover rounded-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brandblue-950/60 via-transparent to-transparent" />
+
                     {/* Ghosted service-icon watermark. */}
                     <Icon
                       src={s.icon}
@@ -108,25 +93,23 @@ export default function Sectors() {
                       imageFirst ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
-                    <div className="mb-5 flex items-center gap-3.5">
-                      <span className="font-mono text-[13px] tabular-nums text-brandblue-500">
+                    <div className="mb-5 flex flex-col items-start gap-2">
+                      <span className="font-mono text-[13px] tabular-nums text-slate-400">
                         {s.number}
                       </span>
-                      <span className="block h-px w-8 bg-brandblue-200" />
-                      <Icon
-                        src={s.icon}
-                        aria-hidden
-                        className="size-6 text-brandblue-500"
-                      />
+                      <span className="block h-0.5 w-8 bg-brandblue-400" />
                     </div>
 
                     <h3 className="heading-lg-semibold text-slate-900">
                       {s.title}
                     </h3>
-                    <p className="body-lg-medium mt-2 text-brandblue-600">
+                    <p className="body-lg-medium mt-2 text-slate-900">
                       {s.headline}
                     </p>
-                    <p className="body-md-regular mt-4 max-w-[54ch] text-slate-600">
+                    <p className="overline-xs-medium mt-6 uppercase text-slate-400">
+                      {s.summaryTitle}
+                    </p>
+                    <p className="body-md-regular mt-4 max-w-[54ch] text-slate-700">
                       {s.summary}
                     </p>
 

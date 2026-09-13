@@ -79,7 +79,7 @@ export default function Faq() {
                       transition={{ duration: 0.4, ease: EASE }}
                       className="overflow-hidden"
                     >
-                      <p className="body-lg-regular pb-6 text-slate-600">
+                      <p className="body-lg-regular max-w-[70ch] pb-6 text-slate-600">
                         {item.a}
                       </p>
                     </motion.div>
