@@ -825,6 +825,175 @@
       }
     ]
   },
+  "AboutPage": {
+    "hero": {
+      "eyebrow": "About Infoline",
+      "titleLead": "Running customer operations from Oman",
+      "titleAccent": "since 2004",
+      "description": "Part of Omantel Group, based at Knowledge Oasis Muscat.",
+      "primaryCta": { "label": "Talk to an expert", "href": "/contact" },
+      "secondaryCta": { "label": "Explore solutions", "href": "/solutions" }
+    },
+    "whoWeAre": {
+      "eyebrow": "Who we are",
+      "titleLead": "Since 2004, Infoline has built its role as a trusted operations partner in",
+      "titleAccent": "Oman",
+      "paragraphs": [
+        "Established in 2004, Infoline has spent more than two decades running customer and business operations for organisations in Oman. Today, as part of Omantel Group, we bring together operational scale, local delivery, customer-experience capability and technology from our base at Knowledge Oasis Muscat.",
+        "We work with government and enterprise organisations across customer operations, CX transformation, quality, training, business intelligence, workforce management, technology services and HR outsourcing."
+      ]
+    },
+    "accountability": {
+      "eyebrow": "Built on trust, proven through operations",
+      "title": "Accountability for outcomes, not just capacity",
+      "description": "Our story is no longer only about outsourced capacity. It is about taking accountability for outcomes — service level, quality, workforce performance, customer feedback and the operating model behind them.",
+      "points": [
+        "We operate, not only advise",
+        "We measure performance against agreed numbers",
+        "We connect people, data and tech in one model",
+        "We build Omani capability and careers"
+      ]
+    },
+    "scale": {
+      "eyebrow": "Scale & credentials",
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet consectetur. In eu ut arcu posuere aliquam. Id nisl id imperdiet dui nulla. Metus viverra cras tristique nulla integer.",
+      "stats": [
+        { "value": "1,400+", "label": "Employees across business verticals" },
+        { "value": "68", "label": "Clients across six sectors" },
+        { "value": "6M", "label": "Customer transactions processed annually" },
+        { "value": "400+", "label": "Agents across accounts" },
+        {
+          "value": "250",
+          "label": "Seats at Knowledge Oasis Muscat, with extensibility"
+        },
+        {
+          "value": "4",
+          "label": "Live service languages: Arabic, English, Urdu and Bangla"
+        }
+      ]
+    },
+    "credentials": {
+      "eyebrow": "Quality credentials",
+      "titleLead": "ISO 9001:2015",
+      "titleMid": " quality management, with ",
+      "titleAccent": "COPC-certified",
+      "titleTail": " personnel embedded across operations",
+      "description": "Infoline operates under an ISO 9001:2015 certified quality management system and has COPC-certified personnel embedded across operations. COPC applies to certified personnel, not as a company-wide certification.",
+      "badges": [
+        {
+          "src": "/assets/about/badge1.svg",
+          "alt": "ISO 9001:2015",
+          "label": "ISO 9001:2015",
+          "caption": "Quality management"
+        },
+        {
+          "src": "/assets/about/badge2.svg",
+          "alt": "COPC Certified",
+          "label": "COPC Certified",
+          "caption": "Certified personnel"
+        }
+      ]
+    },
+    "vision": {
+      "eyebrow": "Vision & mission",
+      "title": "To make customer and business operations more trusted, intelligent and measurable, from Oman",
+      "paragraphs": [
+        "For organisations that expect better service and stronger performance",
+        "<span class=\"text-brandblue-400\">Our mission:</span> we bring together people, process, technology and data to run and improve customer and business operations, building local capability while delivering outcomes organisations can see and measure."
+      ]
+    },
+    "capability": {
+      "eyebrow": "Omanisation & talent",
+      "title": "Building capability in Oman, from entry level to leadership",
+      "description": "Infoline's people model is built around developing operating leaders, from entry-level customer operations through delivery supervisors, quality, training, workforce and management roles.",
+      "stats": [
+        { "value": "80%+", "label": "Omanisation" },
+        { "value": "100%", "label": "Omani talent management" },
+        { "value": "45", "label": "Omanis promoted in 2024" }
+      ]
+    },
+    "leadership": {
+      "eyebrow": "Leadership board",
+      "title": "Leadership",
+      "description": "A Board and executive team that set the direction and keep delivery close to clients, people and the market.",
+      "boardLabel": "Board of Directors",
+      "execLabel": "Executive Leadership",
+      "board": [
+        {
+          "name": "Khalifa Al Abri",
+          "title": "Chairman",
+          "image": "/assets/about/leaders/l1.jpg"
+        },
+        {
+          "name": "Salim Al Hinai",
+          "title": "Board Member",
+          "image": "/assets/about/leaders/l2.jpg"
+        },
+        {
+          "name": "Hamad Al Rawahi",
+          "title": "Board Member",
+          "image": "/assets/about/leaders/l3.jpg"
+        },
+        {
+          "name": "Saif Al Amri",
+          "title": "Board Member",
+          "image": "/assets/about/leaders/l4.jpg"
+        },
+        {
+          "name": "Bassim Al Kindi",
+          "title": "Board Member",
+          "image": "/assets/about/leaders/l5.jpg"
+        }
+      ],
+      "ceo": {
+        "name": "Yousuf Al Harthy",
+        "title": "Chief Executive Officer",
+        "image": "/assets/about/leaders/l6.jpg"
+      },
+      "executives": [
+        {
+          "name": "Adil Al Maskari",
+          "title": "Finance Director",
+          "image": "/assets/about/leaders/l7.jpg"
+        },
+        {
+          "name": "Kamal Al Balushi",
+          "title": "Operations Director",
+          "image": "/assets/about/leaders/l8.jpg"
+        },
+        {
+          "name": "Nabil Al Lawati",
+          "title": "VP, Business Development",
+          "image": "/assets/about/leaders/l9.jpg"
+        }
+      ]
+    },
+    "documents": {
+      "eyebrow": "Company documents",
+      "title": "Download the company profile",
+      "description": "A full introduction to Infoline and its operating capability, available in Arabic and English.",
+      "items": [
+        {
+          "title": "Company Profile — English",
+          "meta": "PDF · 5.2 MB",
+          "cta": "Download",
+          "href": "#"
+        },
+        {
+          "title": "Company Profile — Arabic",
+          "meta": "PDF · 5.4 MB",
+          "cta": "Download",
+          "href": "#"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Want to know how we can support your organisation?",
+      "description": "We respond within 1 business day.",
+      "button": { "label": "Talk to an expert", "href": "/contact" }
+    }
+  },
   "Header": {
     "nav": [
       {
@@ -845,7 +1014,7 @@
       },
       {
         "label": "About",
-        "href": "#"
+        "href": "/about"
       },
       {
         "label": "Careers",

@@ -716,3 +716,110 @@ body {
     }
   }
 }
+
+.about_chips_border {
+  position: relative;
+  border-radius: 9999px;
+  background: #fff; /* your background */
+}
+
+.about_chips_border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(62, 193, 240, 0.6) 0%,
+    rgba(62, 193, 240, 0.3) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.scale_border {
+  position: relative;
+  border-radius: 24px;
+  background: transparent;
+  z-index: 0;
+}
+
+.scale_border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(28, 151, 212, 0.5),
+    rgba(28, 151, 212, 0.1),
+    rgba(28, 151, 212, 0.5)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: rotate-border 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scale_border {
+  --chip-angle: 0deg;
+  position: relative;
+  border-radius: 24px;
+  padding: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  isolation: isolate;
+}
+
+.scale_border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+
+  background: conic-gradient(
+    from var(--chip-angle),
+    rgba(28, 151, 212, 0.1) 0deg,
+    rgba(28, 151, 212, 0.1) 270deg,
+    rgba(28, 151, 212, 0.5) 320deg,
+    rgba(28, 151, 212, 0.1) 360deg
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: chip-spin 3.5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes chip-spin {
+  to {
+    --chip-angle: 360deg;
+  }
+}
