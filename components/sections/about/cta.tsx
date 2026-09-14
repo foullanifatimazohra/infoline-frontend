@@ -37,7 +37,7 @@ export default function Cta() {
 
           <div className="relative z-10 flex flex-col justify-between gap-xl md:items-center lg:flex-row">
             <div>
-              <h3 className="heading-xl-bold mb-4 max-w-[22ch] text-white lg:text-[36px]">
+              <h3 className="heading-xl-bold mb-4 max-w-[26ch] text-white lg:text-[36px]">
                 {t("cta.title")}
               </h3>
               <p className="body-lg-regular max-w-[54ch] text-brandblue-100">

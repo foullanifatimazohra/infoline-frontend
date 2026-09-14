@@ -846,7 +846,10 @@
     "accountability": {
       "eyebrow": "Built on trust, proven through operations",
       "title": "Accountability for outcomes, not just capacity",
-      "description": "Our story is no longer only about outsourced capacity. It is about taking accountability for outcomes — service level, quality, workforce performance, customer feedback and the operating model behind them.",
+      "descriptions": [
+        "Our story is no longer only about outsourced capacity. It is about taking accountability for outcomes — service level, quality, workforce performance, customer feedback and the operating model behind them.",
+        "We work with government and enterprise organisations across customer operations, CX transformation, quality, training, business intelligence, workforce management, technology services and HR outsourcing."
+      ],
       "points": [
         "We operate, not only advise",
         "We measure performance against agreed numbers",
@@ -923,49 +926,54 @@
         {
           "name": "Khalifa Al Abri",
           "title": "Chairman",
-          "image": "/assets/about/leaders/l1.jpg"
+          "image": "/assets/about/leaders/I1.svg"
         },
         {
           "name": "Salim Al Hinai",
           "title": "Board Member",
-          "image": "/assets/about/leaders/l2.jpg"
+          "image": "/assets/about/leaders/I2.svg"
         },
         {
           "name": "Hamad Al Rawahi",
           "title": "Board Member",
-          "image": "/assets/about/leaders/l3.jpg"
+          "image": "/assets/about/leaders/I3.svg"
         },
         {
           "name": "Saif Al Amri",
           "title": "Board Member",
-          "image": "/assets/about/leaders/l4.jpg"
+          "image": "/assets/about/leaders/I4.svg"
         },
         {
           "name": "Bassim Al Kindi",
           "title": "Board Member",
-          "image": "/assets/about/leaders/l5.jpg"
+          "image": "/assets/about/leaders/I5.svg"
         }
       ],
       "ceo": {
         "name": "Yousuf Al Harthy",
         "title": "Chief Executive Officer",
-        "image": "/assets/about/leaders/l6.jpg"
+        "image": "/assets/about/leaders/I6.svg"
       },
       "executives": [
         {
           "name": "Adil Al Maskari",
           "title": "Finance Director",
-          "image": "/assets/about/leaders/l7.jpg"
+          "image": "/assets/about/leaders/I7.svg"
         },
         {
           "name": "Kamal Al Balushi",
           "title": "Operations Director",
-          "image": "/assets/about/leaders/l8.jpg"
+          "image": "/assets/about/leaders/I8.svg"
         },
         {
           "name": "Nabil Al Lawati",
           "title": "VP, Business Development",
-          "image": "/assets/about/leaders/l9.jpg"
+          "image": "/assets/about/leaders/I9.svg"
+        },
+        {
+          "name": "Dr. Mohammed El Badri",
+          "title": "Chief Strategist, CEO Office",
+          "image": "/assets/about/leaders/I10.svg"
         }
       ]
     },

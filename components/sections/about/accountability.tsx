@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Reveal, MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
-import { div } from "framer-motion/client";
 
 export default function Accountability() {
   const t = useTranslations("AboutPage");
   const points = t.raw("accountability.points") as string[];
+  const descriptions = t.raw("accountability.descriptions") as string[];
 
   return (
     <section className="relative overflow-hidden bg-slate-25">
@@ -35,15 +35,19 @@ export default function Accountability() {
             amount={0.5}
             duration={0.85}
           />
-          <Reveal
-            as="p"
-            direction="up"
-            distance={28}
-            delay={0.1}
-            className="mx-auto mt-6 max-w-[62ch] body-lg-regular text-slate-600"
-          >
-            {t("accountability.description")}
-          </Reveal>
+
+          {descriptions.map((description, i) => (
+            <Reveal
+              as="p"
+              key={i}
+              direction="up"
+              distance={28}
+              delay={0.1}
+              className="mx-auto mt-6 max-w-[62ch] body-lg-regular text-slate-600"
+            >
+              {description}
+            </Reveal>
+          ))}
 
           <Stagger
             as="ul"

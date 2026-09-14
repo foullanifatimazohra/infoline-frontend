@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { MaskText, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Person = { name: string; title: string; image: string };
 
@@ -16,7 +16,7 @@ function PersonCard({
       <div
         className={`relative size-28 overflow-hidden rounded-full lg:size-32 ${
           featured
-            ? "ring-2 ring-brandblue-500 ring-offset-2 ring-offset-white"
+            ? " ring-offset-2 ring-offset-white"
             : "ring-1 ring-slate-900/10"
         }`}
       >
@@ -33,6 +33,24 @@ function PersonCard({
         {person.title}
       </p>
     </StaggerItem>
+  );
+}
+
+/** Dashed container with a label straddling the top border, like a "boxed section" tag. */
+function DashedSection({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="relative mt-16 rounded-3xl border border-dashed border-[#ABD7ED] px-6 pb-10 pt-8 lg:px-10">
+      <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-white px-4 overline-sm-medium text-slate-400">
+        {label}
+      </span>
+      {children}
+    </div>
   );
 }
 
@@ -66,47 +84,37 @@ export default function Leadership() {
         </div>
 
         {/* Board of Directors */}
-        <Reveal
-          as="p"
-          direction="up"
-          distance={20}
-          duration={0.7}
-          className="mt-16 overline-sm-medium text-slate-400"
-        >
-          {t("leadership.boardLabel")}
-        </Reveal>
-        <Stagger
-          as="div"
-          className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5"
-          stagger={0.09}
-          amount={0.2}
-        >
-          {board.map((person) => (
-            <PersonCard key={person.name} person={person} />
-          ))}
-        </Stagger>
+        <DashedSection label={t("leadership.boardLabel")}>
+          <Stagger
+            as="div"
+            className="grid grid-cols-2 lg:p-7 p-4 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5"
+            stagger={0.09}
+            amount={0.2}
+          >
+            {board.map((person) => (
+              <PersonCard key={person.name} person={person} />
+            ))}
+          </Stagger>
+        </DashedSection>
 
         {/* Executive Leadership */}
-        <Reveal
-          as="p"
-          direction="up"
-          distance={20}
-          duration={0.7}
-          className="mt-16 overline-sm-semibold text-slate-400"
-        >
-          {t("leadership.execLabel")}
-        </Reveal>
-        <Stagger
-          as="div"
-          className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4"
-          stagger={0.09}
-          amount={0.2}
-        >
-          <PersonCard person={ceo} featured />
-          {executives.map((person) => (
-            <PersonCard key={person.name} person={person} />
-          ))}
-        </Stagger>
+        <div className="lg:p-20">
+          <DashedSection label={t("leadership.execLabel")}>
+            <Stagger
+              as="div"
+              className="flex lg:p-7 p-2 flex-col items-center gap-y-12"
+              stagger={0.09}
+              amount={0.2}
+            >
+              <PersonCard person={ceo} featured />
+              <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
+                {executives.map((person) => (
+                  <PersonCard key={person.name} person={person} />
+                ))}
+              </div>
+            </Stagger>
+          </DashedSection>
+        </div>
       </div>
     </section>
   );

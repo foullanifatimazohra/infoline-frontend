@@ -823,3 +823,25 @@ body {
     --chip-angle: 360deg;
   }
 }
+
+.dashed-box {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px dashed #abd7ed;
+  border-radius: 24px;
+  padding: 60px 32px 40px;
+}
+
+.dashed-box__title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0f172a; /* match bg-ink's actual color value */
+  padding: 0 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
