@@ -14,11 +14,11 @@ export default function Capability() {
   const stats = t.raw("capability.stats") as Stat[];
 
   return (
-    <section className="bg-[#f2f5f7] py-24 text-ink lg:py-32">
+    <section className="py-24 text-ink lg:py-32">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Reveal
           as="div"
-          className="rounded-3xl bg-white ring-1 ring-slate-900/5"
+          className="rounded-3xl ring-1 ring-slate-900/5"
           amount={0.25}
           duration={1}
         >
