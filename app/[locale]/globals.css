@@ -8,6 +8,14 @@ body {
 :root {
   --font-latin: var(--font-inter), sans-serif;
   --font-arabic: var(--font-ibm-plex-sans-arabic), sans-serif;
+  /* The site is a light design with dark sections that set their own bg —
+     keep the canvas white so unstyled sections never fall back to a dark
+     UA default in dark-mode browsers. */
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-white);
 }
 
 /* TailwindCSS global styles and resets */
@@ -830,6 +838,36 @@ body {
   border: 1px dashed #abd7ed;
   border-radius: 24px;
   padding: 60px 32px 40px;
+}
+
+/* About hero: clip the background photo to the torn-skyline shape exported
+   from Figma ("Mask group"). White area of the SVG = opaque, transparent = cut
+   out. The mask is anchored to the bottom of the section (mask-size 100% 100%
+   keeps it aligned with the element it clips, so the parallax drift inside
+   never shifts the silhouette itself). */
+.hero-mask {
+  -webkit-mask-image: url("/assets/about/mask-shape.svg");
+  mask-image: url("/assets/about/mask-shape.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: bottom center;
+  mask-position: bottom center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Who-we-are: the three Figma windows as a CSS mask source. White = show,
+   transparent = hide. Centered so the scroll-driven scale grows from the
+   middle of the pinned viewport. */
+.who-window-mask {
+  -webkit-mask-image: url("/assets/about/who-mask.svg");
+  mask-image: url("/assets/about/who-mask.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 55% auto;
+  mask-size: 55% auto;
 }
 
 .dashed-box__title {

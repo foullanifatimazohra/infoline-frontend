@@ -7,9 +7,8 @@ import { EASE, directionOffset, type RevealDirection } from "./shared";
 
 /**
  * Scroll-reveal wrapper (bold / cinematic): fades, slides and blurs its child
- * into place each time it enters the viewport. It resets as it leaves, so the
- * reveal replays whenever the user scrolls it back into view (set `once` to
- * play a single time).
+ * into place the first time it enters the viewport. By default it plays only
+ * once and stays put afterwards (pass `once={false}` to replay on re-entry).
  *
  * It is a thin client "island" — the `children` passed in stay server-rendered,
  * so wrapping content in <Reveal> does NOT turn the surrounding section into a
@@ -55,7 +54,7 @@ export function Reveal({
   distance = 64,
   duration = 0.9,
   blur = true,
-  once = false,
+  once = true,
   amount = 0.3,
   className,
 }: RevealProps) {

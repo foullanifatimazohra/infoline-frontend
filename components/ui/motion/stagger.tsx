@@ -41,7 +41,7 @@ export function Stagger({
   className,
   stagger = 0.12,
   delayChildren = 0.1,
-  once = false,
+  once = true,
   amount = 0.2,
 }: {
   children: ReactNode;
