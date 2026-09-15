@@ -46,7 +46,7 @@ export const Header = () => {
       />
 
       <div className="mx-auto flex h-21 max-w-360 items-center justify-between gap-7 px-6 md:px-12">
-        <Link href="#" className="flex flex-none items-baseline gap-3">
+        <Link href="/" className="flex flex-none items-baseline gap-3">
           <Image
             src="/assets/logo.svg"
             alt="Infoline Logo"

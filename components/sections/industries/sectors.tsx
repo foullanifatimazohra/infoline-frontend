@@ -63,12 +63,12 @@ export default function Sectors() {
                 className="scroll-mt-[6.5rem] overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_60px_-45px_rgba(38,50,56,0.55)] lg:sticky lg:top-[6.5rem] lg:origin-top lg:will-change-transform lg:animate-stack-recede lg:[animation-timeline:view()] lg:[animation-range:exit-crossing] motion-reduce:[animation:none]"
               >
                 <div
-                  className={`grid grid-cols-1 items-center lg:grid-cols-2 ${imageFirst ? "lg:grid-cols-[.7fr_1.3fr]" : "lg:grid-cols-[1.3fr_.7fr]"}`}
+                  className={`grid grid-cols-1 items-center lg:grid-cols-2 ${!imageFirst ? "lg:grid-cols-[.7fr_1.3fr]" : "lg:grid-cols-[1.3fr_.7fr]"}`}
                 >
                   {/* Visual */}
                   <div
                     className={`min-h-[240px]  p-5  lg:min-h-[420px] items-center justify-center ${
-                      imageFirst ? "lg:order-1" : "lg:order-2"
+                      !imageFirst ? "lg:order-1" : "lg:order-2"
                     }`}
                   >
                     <Image
@@ -90,7 +90,7 @@ export default function Sectors() {
                   {/* Content */}
                   <div
                     className={`flex flex-col justify-center p-7 lg:p-11 ${
-                      imageFirst ? "lg:order-2" : "lg:order-1"
+                      !imageFirst ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
                     <div className="mb-5 flex flex-col items-start gap-2">

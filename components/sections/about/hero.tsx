@@ -20,7 +20,10 @@ export default function Hero() {
         {/* Drifting layer — oversized so parallax never exposes an edge.
             The washes above are intentionally disabled (design uses the
             unfiltered photo). */}
-        <Parallax className="absolute inset-x-0 -inset-y-[50%]" speed={0.15}>
+        <Parallax
+          className="absolute inset-x-0 lg:-inset-y-[50%] -inset-y-[5%]"
+          speed={0.15}
+        >
           <Image
             src="/assets/about/hero-muscat.svg"
             alt=""

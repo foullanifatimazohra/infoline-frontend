@@ -28,7 +28,7 @@
           "id": "telecom",
           "number": "01",
           "icon": "/assets/solutions/s7.svg",
-          "image": "/assets/industries/i2.png",
+          "image": "/assets/industries/i1.svg",
           "title": "Telecom & Technology",
           "summaryTitle": "what we run here",
           "headline": "High-volume service needs an operating model that holds under pressure",
@@ -38,7 +38,7 @@
             "24/7 coverage",
             "Channel migration",
             "First contact resolution",
-            "Back-office claims dispute"
+            "Scale without losing discipline"
           ],
           "cta": {
             "label": "Explore Telecom CX",
@@ -49,7 +49,7 @@
           "id": "government",
           "number": "02",
           "icon": "/assets/solutions/s2.svg",
-          "image": "/assets/industries/i1.png",
+          "image": "/assets/industries/i2.svg",
           "title": "Government & Public Services",
           "summaryTitle": "what we run here",
           "headline": "Citizen experience depends on trust, access and consistency",
@@ -70,7 +70,7 @@
           "id": "bfsi",
           "number": "03",
           "icon": "/assets/solutions/s5.svg",
-          "image": "/assets/industries/i5.png",
+          "image": "/assets/industries/i3.svg",
           "summaryTitle": "what we run here",
           "title": "Banking, Insurance & Fintech",
           "headline": "Control, consistency and customer confidence in every interaction",
@@ -91,7 +91,7 @@
           "id": "utilities",
           "number": "04",
           "icon": "/assets/solutions/s6.svg",
-          "image": "/assets/industries/i4.png",
+          "image": "/assets/industries/i4.svg",
           "summaryTitle": "what we run here",
           "title": "Utilities, Energy & Environment",
           "headline": "When demand spikes, service cannot become unpredictable",
@@ -111,7 +111,7 @@
           "id": "logistics",
           "number": "05",
           "icon": "/assets/solutions/s1.svg",
-          "image": "/assets/industries/i6.png",
+          "image": "/assets/industries/i5.svg",
           "summaryTitle": "what we run here",
           "title": "Logistics, Transport & Tourism",
           "headline": "Time-sensitive journeys need service that can respond in the moment",
@@ -132,7 +132,7 @@
           "id": "realestate",
           "number": "06",
           "icon": "/assets/solutions/s8.svg",
-          "image": "/assets/industries/i3.png",
+          "image": "/assets/industries/i6.svg",
           "summaryTitle": "what we run here",
           "title": "Real Estate, Commercial & Consumer",
           "headline": "Customer expectations move quickly. Operations have to move with them",
@@ -1002,6 +1002,143 @@
       "button": { "label": "Talk to an expert", "href": "/contact" }
     }
   },
+  "CaseStudiesPage": {
+    "hero": {
+      "eyebrow": "Case Studies",
+      "titleLead": "Three operations, three",
+      "titleAccent": "numbers that moved",
+      "description": "Drawn from the current Service Catalogue",
+      "movementLabel": "Headline movement",
+      "movement": [
+        {
+          "value": "+7.0",
+          "title": "Voice of Customer",
+          "subtitle": "Digital Non-Voice CX"
+        },
+        {
+          "value": "+26",
+          "title": "Service level",
+          "subtitle": "Utilities CX Operations"
+        },
+        {
+          "value": "6",
+          "title": "Channels unified",
+          "subtitle": "Omnichannel Platform"
+        }
+      ]
+    },
+    "labels": {
+      "caseStudy": "Case study",
+      "client": "The client",
+      "scale": "Operating scale",
+      "serviceLine": "Service line",
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "results": "Results"
+    },
+    "chapters": [
+      {
+        "number": "01",
+        "tag": "Digital Non-Voice CX",
+        "client": "The largest telecom operator in Oman, digital non-voice channel",
+        "scale": "90–105 headcount.",
+        "serviceLine": "Digital Non-Voice CX",
+        "title": "A score that had not moved in quarters, up seven points in six months",
+        "challenge": "Voice of Customer was 81.8%, below an 85% contracted target, with dissatisfaction concentrated in repeat contacts and inconsistent handling across a digital non-voice operation.",
+        "approachRows": [
+          {
+            "label": "People",
+            "text": "Weekly coaching tied to individual scorecards and re-score closure."
+          },
+          {
+            "label": "Process",
+            "text": "Remove repeat-contact drivers at source."
+          },
+          {
+            "label": "Technology",
+            "text": "Improve routing and knowledge so the right agent has the right answer earlier."
+          }
+        ],
+        "results": [
+          {
+            "value": "+7.0",
+            "unit": "Points",
+            "text": "of Voice of Customer, 81.8% to 88.8% in six months"
+          },
+          {
+            "value": "+3",
+            "unit": "Points",
+            "text": "of First Contact Resolution, 74% to 77%"
+          },
+          {
+            "value": "4",
+            "unit": "Months",
+            "text": "sustained above the 85% target"
+          }
+        ],
+        "quote": {
+          "text": "“Infoline, you've set a new performance benchmark.”",
+          "attribution": "The largest telecom operator in Oman"
+        }
+      },
+      {
+        "number": "02",
+        "tag": "Utilities CX Operations",
+        "client": "One of the biggest utilities companies, voice contact centre",
+        "scale": "75,000–91,000 calls a month.",
+        "serviceLine": "Utilities CX Operations",
+        "title": "Service level up 26 points while more calls were handled",
+        "challenge": "Service level was 68% while 32% of callers abandoned before reaching an agent. Customers who could not get through by phone were moving into the branch network.",
+        "approachText": "Scale staffing against measured demand, introduce structured onboarding and weekly coaching, implement workforce forecasting and fixed weekly shifts, monitor SLA daily with real-time intervention, and deploy a cloud contact-centre platform with enhanced IVR and live reporting.",
+        "results": [
+          {
+            "value": "+26",
+            "unit": "Points",
+            "text": "of service level, 68% to 94% over seven months"
+          },
+          {
+            "value": "-24",
+            "unit": "Points",
+            "text": "of abandonment, 32% to 8%"
+          },
+          { "value": "+50%", "unit": "Calls", "text": "handled" },
+          { "value": "-20%", "unit": "Branch", "text": "visits" }
+        ]
+      },
+      {
+        "number": "03",
+        "tag": "Omnichannel Platform",
+        "client": "One of the biggest Omani Governmental Entities, delivering citizen-facing services.",
+        "scale": "",
+        "serviceLine": "Omnichannel Platform",
+        "title": "Six channels. One queue. One customer history",
+        "challenge": "Citizen contacts arrived across disconnected channels without a unified interaction view or queue, and reporting was assembled after the fact.",
+        "approachText": "Implement and integrate an omnichannel environment, align hosting and security, connect business continuity and technical support, and establish one accountable operating model.",
+        "results": [
+          {
+            "value": "6",
+            "unit": "Channels",
+            "text": "unified into one queue and agent desktop"
+          },
+          {
+            "value": "100%",
+            "unit": "Of",
+            "text": "interactions analysed through speech and sentiment analytics"
+          },
+          {
+            "value": "1",
+            "unit": "Supplier",
+            "text": "accountable for platform, operations and outcome"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Let's move your number",
+      "description": "We respond within 1 business day",
+      "button": { "label": "Talk to an expert", "href": "/contact" }
+    }
+  },
   "Header": {
     "nav": [
       {
@@ -1014,7 +1151,7 @@
       },
       {
         "label": "Case Studies",
-        "href": "#"
+        "href": "/case-studies"
       },
       {
         "label": "Insights",
@@ -1098,7 +1235,7 @@
           },
           {
             "label": "Case studies",
-            "href": "#"
+            "href": "/case-studies"
           },
           {
             "label": "Insights",

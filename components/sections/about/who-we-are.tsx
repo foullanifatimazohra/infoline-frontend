@@ -7,6 +7,12 @@ import {
   MaskText,
 } from "@/components/ui/motion";
 
+// Three rounded windows from the Figma export, used as a CSS mask source.
+// White = visible, transparent = cut away. Kept as a data URI so it ships with
+// the component and never triggers an extra request.
+const WHO_MASK =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='519' height='412' viewBox='0 0 519 412'%3E%3Crect x='0' y='0' width='167' height='352' rx='20' fill='%23fff'/%3E%3Crect x='176' y='60' width='167' height='352' rx='20' fill='%23fff'/%3E%3Crect x='352' y='0' width='167' height='352' rx='20' fill='%23fff'/%3E%3C/svg%3E\")";
+
 export default function WhoWeAre() {
   const t = useTranslations("AboutPage");
   const paragraphs = t.raw("whoWeAre.paragraphs") as string[];
@@ -29,9 +35,7 @@ export default function WhoWeAre() {
             className="mt-4 heading-2xl-semibold max-w-[30ch] text-slate-900"
             segments={[
               { text: t("whoWeAre.titleLead") },
-              {
-                text: t("whoWeAre.titleAccent"),
-              },
+              { text: t("whoWeAre.titleAccent") },
             ]}
             amount={0.5}
             duration={0.85}
@@ -46,17 +50,30 @@ export default function WhoWeAre() {
           </StaggerItem>
         </Stagger>
 
-        {/* One photo divided across three rounded masks — self-contained SVG
-            (image inlined as base64) matching the Figma export exactly. */}
+        {/* One photo, divided across three rounded windows by a CSS mask. */}
         <Parallax speed={0.08}>
-          <Image
-            src="/assets/about/who.svg"
-            alt=""
-            aria-hidden
-            width={519}
-            height={412}
-            className="h-auto w-full"
-          />
+          <div
+            className="group relative w-full overflow-hidden"
+            style={{
+              aspectRatio: "519 / 412",
+              maskImage: WHO_MASK,
+              WebkitMaskImage: WHO_MASK,
+              maskRepeat: "no-repeat",
+              WebkitMaskRepeat: "no-repeat",
+              maskSize: "100% 100%",
+              WebkitMaskSize: "100% 100%",
+              maskMode: "alpha",
+            }}
+          >
+            <Image
+              src="/assets/about/who-full.jpg"
+              alt=""
+              aria-hidden
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            />
+          </div>
         </Parallax>
       </div>
     </section>
