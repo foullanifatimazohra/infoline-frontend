@@ -16,11 +16,11 @@ export default function Insights() {
   const insights = t.raw("items") as Insight[];
 
   return (
-    <section className="insights py-20 lg:py-26">
+    <section className="insights flex items-center justify-center py-20 lg:py-26">
       <div className="px-6 lg:px-10 max-w-360">
         <Stagger
           as="div"
-          className="flex items-start justify-between gap-lg"
+          className="flex flex-col lg:flex-row items-start justify-between gap-lg"
           stagger={0.15}
         >
           <StaggerItem direction="start">
@@ -29,7 +29,7 @@ export default function Insights() {
             </p>
             <MaskText
               as="h2"
-              className="heading-xl-bold text-[36px] text-white"
+              className="heading-xl-bold text-[48px] text-white"
               segments={[{ text: t("title") }]}
               amount={0.5}
               duration={0.8}

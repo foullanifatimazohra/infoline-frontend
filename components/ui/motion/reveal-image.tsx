@@ -31,7 +31,7 @@ export function ClipReveal({
   className,
   duration = 1.15,
   delay = 0,
-  once = false,
+  once = true,
   amount = 0.3,
   zoom = true,
   curtainClassName = "bg-white",

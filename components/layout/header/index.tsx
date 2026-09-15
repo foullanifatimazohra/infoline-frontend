@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Menu, X } from "lucide-react";
 import Button from "@/components/ui/button";
+import { usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./language-switcher";
 
 type NavItem = { label: string; href: string };
@@ -13,6 +14,11 @@ type NavItem = { label: string; href: string };
 export const Header = () => {
   const t = useTranslations("Header");
   const menuItems = t.raw("nav") as NavItem[];
+
+  // Locale-stripped path (e.g. "/about") so the current nav item can be marked.
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href !== "#" && (pathname === href || pathname.startsWith(`${href}/`));
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -40,7 +46,7 @@ export const Header = () => {
       />
 
       <div className="mx-auto flex h-21 max-w-360 items-center justify-between gap-7 px-6 md:px-12">
-        <Link href="#" className="flex flex-none items-baseline gap-3">
+        <Link href="/" className="flex flex-none items-baseline gap-3">
           <Image
             src="/assets/logo.svg"
             alt="Infoline Logo"
@@ -55,7 +61,12 @@ export const Header = () => {
             <Link
               key={item.label}
               href={item.href}
-              className="whitespace-nowrap border-b border-transparent py-1.5 text-[13.5px] font-medium tracking-[0.01em] text-slate-100 transition-colors duration-250 hover:border-brandblue-500 hover:text-cyan-50"
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={`whitespace-nowrap border-b py-1.5 text-[13.5px] font-medium tracking-[0.01em] transition-colors duration-250 ${
+                isActive(item.href)
+                  ? "border-brandblue-500 text-brandblue-400"
+                  : "border-transparent text-slate-100 hover:border-brandblue-500 hover:text-cyan-50"
+              }`}
             >
               {item.label}
             </Link>
@@ -102,7 +113,12 @@ export const Header = () => {
             <li key={item.label}>
               <Link
                 href={item.href}
-                className="block border-b border-white/[.06] py-4 text-[15px] font-medium text-slate-100 transition-colors hover:text-brandblue-500"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`block border-b border-white/[.06] py-4 text-[15px] font-medium transition-colors ${
+                  isActive(item.href)
+                    ? "text-brandblue-400"
+                    : "text-slate-100 hover:text-brandblue-500"
+                }`}
               >
                 {item.label}
               </Link>

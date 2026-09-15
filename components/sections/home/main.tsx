@@ -12,7 +12,7 @@ export default function Main() {
 
   return (
     <>
-      <section className="relative overflow-hidden lg:h-screen flex items-center">
+      <section className="relative overflow-hidden justify-center lg:h-screen flex items-center">
         <div className="grid items-center gap-4 h-full lg:grid-cols-[1fr_1fr]">
           <HeroContent>
             <Stagger

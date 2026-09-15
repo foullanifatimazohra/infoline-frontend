@@ -64,6 +64,7 @@ export default function WhatChanges() {
                   icon={ArrowRight}
                   size="small"
                   iconPosition="right"
+                  className="flex-wrap"
                 >
                   {t("cta.label")}
                 </Button>

@@ -74,7 +74,7 @@ export function MaskText({
   delayChildren = 0.05,
   duration = 0.9,
   blur = true,
-  once = false,
+  once = true,
   amount = 0.4,
   orchestrated = false,
 }: {

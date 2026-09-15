@@ -18,6 +18,10 @@ import { EASE } from "./shared";
  * Degrades gracefully:
  * - Unparseable value → renders the raw string (still fades via its parent).
  * - `prefers-reduced-motion` / SSR / no-JS → shows the final value immediately.
+ *
+ * Like the other motion primitives, the count plays once by default and does
+ * not replay when the element scrolls out and back in (pass `once={false}` to
+ * restore the replay behaviour).
  */
 type Parsed = {
   prefix: string;
@@ -42,14 +46,14 @@ export function CountUp({
   duration = 1.6,
   className,
   amount = 0.5,
-  once = false,
+  once = true,
 }: {
   value: string;
   duration?: number;
   className?: string;
   /** Fraction visible before the count starts (0–1). */
   amount?: number;
-  /** Count a single time instead of replaying on every re-entry. */
+  /** Count a single time (default) instead of replaying on every re-entry. */
   once?: boolean;
 }) {
   const parsed = parse(value);
