@@ -1139,6 +1139,86 @@
       "button": { "label": "Talk to an expert", "href": "/contact" }
     }
   },
+  "CareersPage": {
+    "hero": {
+      "eyebrow": "Careers",
+      "title": "Build your career with a trusted team",
+      "description": "At Infoline, trust starts with our people. Join teams that run real customer operations, solve real service challenges and grow through learning, responsibility and progression.",
+      "cta": { "label": "View open roles", "href": "#vacancies" }
+    },
+    "capability": {
+      "eyebrow": "Omani capability",
+      "title": "Capability built locally, and promoted from within",
+      "description": "The current catalogue states that 80%+ of the workforce is Omani, that middle-management supervisory and specialist roles are held by Omanis, and that 45 Omanis had been promoted in 2026 at the time of the catalogue.",
+      "stats": [
+        { "value": "80%+", "label": "Of the workforce is Omani" },
+        { "value": "100%", "label": "Middle-management supervisory and specialist roles held by Omanis" },
+        { "value": "45", "label": "Omanis promoted in 2026" }
+      ]
+    },
+    "learn": {
+      "eyebrow": "A career built through operations",
+      "title": "Learn customer operations by doing the work",
+      "body": "Infoline is a place to learn customer operations by doing the work: serving customers, understanding performance, improving quality, building knowledge and growing into specialist and leadership roles.",
+      "chips": [
+        "Real operational responsibility",
+        "Learning tied to the job",
+        "Paths into quality, training, workforce, operations and technology",
+        "A workplace focused on building Omani capability"
+      ]
+    },
+    "traits": {
+      "eyebrow": "What we look for",
+      "title": "Service mindset, and the ability to work to measurable standards",
+      "items": [
+        { "icon": "sparkles", "label": "Service mindset" },
+        { "icon": "messages", "label": "Language & communication" },
+        { "icon": "book", "label": "Learning agility" },
+        { "icon": "zap", "label": "Resilience" },
+        { "icon": "target", "label": "Accuracy" },
+        { "icon": "pointer", "label": "Digital confidence" }
+      ]
+    },
+    "vacancies": {
+      "eyebrow": "Vacancies",
+      "title": "Roles we're hiring for now",
+      "note": "Don't see your fit? Reach out anyway, tell us what you do and where you'd like to grow.",
+      "columns": {
+        "role": "Role",
+        "discipline": "Discipline",
+        "location": "Location",
+        "apply": "Apply"
+      },
+      "fullTime": "Full-time",
+      "roles": [
+        {
+          "title": "Customer Experience Agent (Arabic / English)",
+          "discipline": "Customer Experience",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Team Leader, Contact Centre",
+          "discipline": "Operations",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Workforce Management Analyst",
+          "discipline": "Workforce Management",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Quality Assurance Specialist",
+          "discipline": "Quality",
+          "location": "Muscat, Oman"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Don't see your fit?",
+      "description": "Reach out anyway, tell us what you do and where you'd like to grow.",
+      "button": { "label": "Send a general application", "href": "/contact" }
+    }
+  },
   "Header": {
     "nav": [
       {
@@ -1163,7 +1243,7 @@
       },
       {
         "label": "Careers",
-        "href": "#"
+        "href": "/careers"
       }
     ],
     "cta": {
