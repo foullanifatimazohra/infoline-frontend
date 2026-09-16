@@ -1,7 +1,11 @@
+"use client";
+
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Icon from "@/components/ui/icon";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
+import { useSolutions } from "@/lib/wp";
 
 type SolutionItem = {
   icon: string;
@@ -13,7 +17,27 @@ type SolutionItem = {
 
 export default function Solutions() {
   const t = useTranslations("Solutions");
-  const items = t.raw("items") as SolutionItem[];
+  // Designed content from the locale files — also the graceful fallback
+  // while the CMS query loads or when the CMS returns nothing.
+  const fallback = t.raw("items") as SolutionItem[];
+
+  // Pillars from the CMS (WPGraphQL `solutions`), locale-aware via the hook.
+  const { data: solutionsPage } = useSolutions();
+
+  const items: SolutionItem[] = useMemo(() => {
+    const fromCms = (solutionsPage?.items ?? []).map((s, i) => {
+      const slug = s.uri.split("/").filter(Boolean).pop() ?? s.title;
+      return {
+        icon: s.icon?.src ?? fallback[i % fallback.length]?.icon ?? "",
+        title: s.title,
+        description: s.problemStatement ?? s.services[0] ?? "",
+        href: `/solutions/${slug}`,
+        featured: undefined,
+      };
+    });
+    return fromCms.length > 0 ? fromCms : fallback;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [solutionsPage]);
 
   return (
     <section className="bg-[#0a1014] py-10 text-white sm:py-12 lg:py-28">
@@ -50,7 +74,6 @@ export default function Solutions() {
           stagger={0.1}
         >
           {items.map((item) => {
-            //  const Icon = iconMap[item.icon] ?? iconMap.headphones;
             return (
               <StaggerItem as="li" key={item.title}>
                 <Link

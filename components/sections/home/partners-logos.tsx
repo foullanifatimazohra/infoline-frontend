@@ -1,10 +1,12 @@
 "use client";
 
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 import LogoMarquee, { LogoItem } from "@/components/ui/logo-marquee";
+import { useClients } from "@/lib/wp";
 
 type Props = {
   durationSeconds?: number;
@@ -32,6 +34,16 @@ const DEMO_LOGOS: LogoItem[] = [
 
 export default function PartnerLogos({ durationSeconds = 30 }: Props) {
   const t = useTranslations("Proof");
+
+  // Client logos from the CMS (WPGraphQL `clients`), locale-aware via the hook.
+  // Falls back to the bundled demo set while loading or if the CMS has none.
+  const { data: clients } = useClients();
+  const logos: LogoItem[] = useMemo(() => {
+    const fromCms = (clients ?? [])
+      .filter((c) => c.logo?.src)
+      .map((c) => ({ src: c.logo!.src, alt: c.logo!.alt || c.name }));
+    return fromCms.length > 0 ? fromCms : DEMO_LOGOS;
+  }, [clients]);
 
   return (
     <div className="bg-white py-20 sm:py-24">
@@ -64,7 +76,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         </Stagger>
 
         <div className="mt-7">
-          <LogoMarquee logos={DEMO_LOGOS} durationSeconds={durationSeconds} />
+          <LogoMarquee logos={logos} durationSeconds={durationSeconds} />
         </div>
 
         <div className="mt-7 text-center">
