@@ -37,7 +37,7 @@ export default function Hero() {
           amount={0.3}
         >
           {/* Careers eyebrow — Frame 30 */}
-          <StaggerItem className="mb-6" distance={32}>
+          <StaggerItem className="mb-1" distance={32}>
             <span className="flex items-center gap-4 font-mono text-[13px] font-medium uppercase leading-[16px] tracking-[1.5px] text-[#74C0E7]">
               {t("hero.eyebrow")}
             </span>
@@ -55,7 +55,7 @@ export default function Hero() {
           {/* Description */}
           <StaggerItem
             as="p"
-            className="mt-6 flex max-w-[641px] items-center justify-center text-center text-[16px] font-normal leading-[24px] text-[#CFD8DC]"
+            className="mt-2 flex max-w-[60ch] items-center justify-center text-center body-lg-description text-[#CFD8DC]"
           >
             {t("hero.description")}
           </StaggerItem>

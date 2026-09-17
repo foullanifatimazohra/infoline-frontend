@@ -1,18 +1,15 @@
 "use client";
 
-import { useMemo } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem, Reveal } from "@/components/ui/motion";
-import { useCareers } from "@/lib/wp";
 
 type Role = { title: string; discipline: string; location: string };
 
 /**
- * Vacancies — the hiring table. Roles come live from the CMS `careers` post
- * type (title only today — discipline/location are localized defaults until
- * the CMS field group lands); when the CMS is empty or unreachable the
- * designed locale roles render instead.
+ * Vacancies — the hiring table, fully static: roles come from the designed
+ * locale JSON (`CareersPage.vacancies.roles`), no CMS fetch.
  *
  * On desktop it reads as a table with a header row; below `sm` it collapses
  * into stacked cards (role / meta / apply). The grid-template-columns come
@@ -21,21 +18,9 @@ type Role = { title: string; discipline: string; location: string };
  */
 export default function Vacancies() {
   const t = useTranslations("CareersPage");
-  const { data } = useCareers();
   const col = (k: string) => t(`vacancies.columns.${k}`);
 
-  // CMS roles first; designed JSON roles as the fallback/seed content.
-  const roles = useMemo<Role[]>(() => {
-    const fromCms = (data?.items ?? []).map<Role>((c) => ({
-      title: c.title,
-      discipline: t("vacancies.defaultDiscipline"),
-      location: t("vacancies.defaultLocation"),
-    }));
-    if (fromCms.length > 0) return fromCms;
-    return t.raw("vacancies.roles") as Role[];
-  }, [data, t]);
-
-  console.log("roles", roles);
+  const roles = t.raw("vacancies.roles") as Role[];
 
   return (
     <section
@@ -135,13 +120,13 @@ export default function Vacancies() {
 
                   {/* Apply */}
                   <div className="sm:text-end">
-                    <a
+                    <Link
                       href={`mailto:careers@infoline.om?subject=${encodeURIComponent(role.title)}`}
-                      className="inline-flex items-center gap-2 text-[14px] font-semibold text-brandblue-600 transition-colors duration-300 hover:text-brandblue-500"
+                      className="inline-flex items-center gap-2 text-[14px] font-semibold text-brandblue-500 transition-colors duration-300 hover:text-brandblue-500"
                     >
                       {col("apply")}
                       <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Reveal>

@@ -1,11 +1,7 @@
-"use client";
-
-import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
-import { useIndustries } from "@/lib/wp";
 
 type Industry = {
   title: string;
@@ -16,49 +12,7 @@ type Industry = {
 
 export default function Industries() {
   const t = useTranslations("Industries");
-  // Designed content from the locale files — also the graceful fallback
-  // while the CMS query loads or when the CMS returns nothing.
-  const fallback = t.raw("items") as Industry[];
-
-  // Industries from the CMS (WPGraphQL `industries`), locale-aware via the hook.
-  const { data: industriesPage } = useIndustries();
-
-  const items: Industry[] = useMemo(() => {
-    // CMS cards (entries without a hero image are skipped — the card design is
-    // photo-led). Titles/links/images come from the CMS; copy prefers the CMS
-    // intro and falls back to the designed description for the same sector.
-    const fromCms = (industriesPage?.items ?? [])
-      .filter((i) => i.image?.src)
-      .map((i) => {
-        const slug = i.uri.split("/").filter(Boolean).pop() ?? i.title;
-        return {
-          title: i.title,
-          image: i.image!.src,
-          href: `/industries/${slug}`,
-          description:
-            i.intro ??
-            fallback.find((f) => f.href === `#${slug}`)?.description ??
-            "",
-        };
-      })
-      .filter((i) => i.description);
-
-    if (fromCms.length === 0) return fallback;
-
-    // Merge: CMS entries replace the matching designed card (same slug),
-    // designed cards fill the remaining grid so it never renders half-empty
-    // while the CMS is still being populated, and CMS-only sectors append.
-    const cmsBySlug = new Map(
-      fromCms.map((i) => [i.href.replace("/industries/", ""), i]),
-    );
-    const merged = fallback.map((f) => cmsBySlug.get(f.href.replace(/^#/, "")) ?? f);
-    const mergedSlugs = new Set(merged.map((i) => i.href.replace("/industries/", "").replace(/^#/, "")));
-    const extras = fromCms.filter((i) => {
-      const slug = i.href.replace("/industries/", "");
-      return !mergedSlugs.has(slug) && !fallback.some((f) => f.href === `#${slug}`);
-    });
-    return [...merged, ...extras];
-  }, [industriesPage, fallback]);
+  const items = t.raw("items") as Industry[];
 
   return (
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">

@@ -1118,12 +1118,17 @@
       "eyebrow": "ما نبحث عنه",
       "title": "عقلية الخدمة، والقدرة على العمل وفق معايير قابلة للقياس",
       "items": [
-        { "icon": "sparkles", "label": "عقلية الخدمة" },
-        { "icon": "messages", "label": "اللغة والتواصل" },
-        { "icon": "book", "label": "سرعة التعلّم" },
-        { "icon": "zap", "label": "الصمود" },
-        { "icon": "target", "label": "الدقة" },
-        { "icon": "pointer", "label": "الثقة الرقمية" }
+        { "icon": "/assets/careers/services/1.svg", "label": "عقلية الخدمة" },
+        { "icon": "/assets/careers/services/2.svg", "label": "اللغة والتواصل" },
+        { "icon": "/assets/careers/services/3.svg", "label": "سرعة التعلّم" },
+        {
+          "icon": "/assets/careers/services/4.svg",
+          "height": 16,
+          "width": 16,
+          "label": "الصمود"
+        },
+        { "icon": "/assets/careers/services/5.svg", "label": "الدقة" },
+        { "icon": "/assets/careers/services/6.svg", "label": "الثقة الرقمية" }
       ]
     },
     "vacancies": {
