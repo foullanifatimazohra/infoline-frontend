@@ -1152,7 +1152,10 @@
       "description": "The current catalogue states that 80%+ of the workforce is Omani, that middle-management supervisory and specialist roles are held by Omanis, and that 45 Omanis had been promoted in 2026 at the time of the catalogue.",
       "stats": [
         { "value": "80%+", "label": "Of the workforce is Omani" },
-        { "value": "100%", "label": "Middle-management supervisory and specialist roles held by Omanis" },
+        {
+          "value": "100%",
+          "label": "Middle-management supervisory and specialist roles held by Omanis"
+        },
         { "value": "45", "label": "Omanis promoted in 2026" }
       ]
     },
@@ -1171,12 +1174,29 @@
       "eyebrow": "What we look for",
       "title": "Service mindset, and the ability to work to measurable standards",
       "items": [
-        { "icon": "sparkles", "label": "Service mindset" },
-        { "icon": "messages", "label": "Language & communication" },
-        { "icon": "book", "label": "Learning agility" },
-        { "icon": "zap", "label": "Resilience" },
-        { "icon": "target", "label": "Accuracy" },
-        { "icon": "pointer", "label": "Digital confidence" }
+        {
+          "icon": "/assets/careers/services/1.svg",
+          "label": "Service mindset"
+        },
+        {
+          "icon": "/assets/careers/services/2.svg",
+          "label": "Language & communication"
+        },
+        {
+          "icon": "/assets/careers/services/3.svg",
+          "label": "Learning agility"
+        },
+        {
+          "icon": "/assets/careers/services/4.svg",
+          "height": 16,
+          "width": 16,
+          "label": "Resilience"
+        },
+        { "icon": "/assets/careers/services/5.svg", "label": "Accuracy" },
+        {
+          "icon": "/assets/careers/services/6.svg",
+          "label": "Digital confidence"
+        }
       ]
     },
     "vacancies": {
@@ -1190,6 +1210,8 @@
         "apply": "Apply"
       },
       "fullTime": "Full-time",
+      "defaultDiscipline": "Customer Experience",
+      "defaultLocation": "Muscat, Oman",
       "roles": [
         {
           "title": "Customer Experience Agent (Arabic / English)",

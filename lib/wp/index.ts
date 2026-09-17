@@ -11,6 +11,7 @@ export {
   getIndustry,
   getIndustries,
   getClients,
+  getCareers,
   getHubs,
   type WpLocale,
 } from "./api";
@@ -25,6 +26,7 @@ export {
   useIndustry,
   useIndustries,
   useClients,
+  useCareers,
   useHubs,
 } from "./hooks";
 export {
@@ -37,5 +39,6 @@ export {
   prefetchIndustry,
   prefetchIndustries,
   prefetchClients,
+  prefetchCareers,
   prefetchHubs,
 } from "./server";

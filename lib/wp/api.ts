@@ -7,6 +7,7 @@ import {
   INDUSTRY_BY_URI,
   CLIENTS,
   HUBS,
+  CAREERS_LIST,
 } from "./queries";
 import {
   normalizeService,
@@ -22,6 +23,7 @@ import type {
   Solution,
   Industry,
   Client,
+  Career,
   Hubs,
 } from "./types";
 
@@ -352,6 +354,46 @@ export async function getIndustries(
                     alt: n.industryCoreContent.heroImage.node.altText ?? "",
                   }
                 : null,
+            },
+          ]
+        : [],
+    ),
+    nextPage: null,
+  };
+}
+
+/* --------------------------------- Career --------------------------------- */
+
+/**
+ * Careers listing. The post type is minimal today (title/slug/date/language —
+ * no ACF group yet, handover §7), so this returns exactly what the CMS can
+ * provide; discipline/location columns are frontend defaults in the UI.
+ * Ordered by date, newest first (WP default ordering for post lists).
+ */
+export async function getCareers(
+  locale: WpLocale = "en",
+  first = 50,
+): Promise<Paginated<Career>> {
+  const data = await wpFetch<{
+    careers: {
+      nodes: {
+        title: string | null;
+        slug: string | null;
+        uri: string | null;
+        date: string | null;
+      }[];
+    };
+  }>(CAREERS_LIST, { first, language: languageFilter(locale) });
+
+  return {
+    items: data.careers.nodes.flatMap((n) =>
+      n.slug && n.title
+        ? [
+            {
+              slug: n.slug,
+              title: n.title,
+              date: n.date ?? null,
+              uri: n.uri ?? `/careers/${n.slug}/`,
             },
           ]
         : [],

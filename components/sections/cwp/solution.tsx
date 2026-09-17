@@ -13,6 +13,7 @@ import type { Solution } from "@/lib/wp";
  */
 export default function SolutionTemplate({ solution }: { solution: Solution }) {
   const c = solution;
+  console.log("solution", solution);
 
   return (
     <main className="overflow-x-clip">

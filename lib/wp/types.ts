@@ -160,6 +160,25 @@ export type Client = {
 };
 
 /* ------------------------------------------------------------------ */
+/* Career                                                              */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Careers post type. The model is minimal today — standard WP fields only
+ * (title/slug/date/language; no ACF group yet, handover §7 "Careers fields:
+ * not ready"). Discipline/location columns come from frontend defaults until
+ * the CMS adds the field group; extend this type then.
+ */
+export type Career = {
+  slug: string;
+  title: string;
+  /** Publication date (ISO) — usable for ordering roles by recency. */
+  date: string | null;
+  /** WP uri, e.g. "/careers/customer-experience-specialist/". */
+  uri: string;
+};
+
+/* ------------------------------------------------------------------ */
 /* Hubs / options pages                                                */
 /* ------------------------------------------------------------------ */
 

@@ -8,6 +8,7 @@ import {
   getIndustry,
   getIndustries,
   getClients,
+  getCareers,
   getHubs,
   type WpLocale,
 } from "./api";
@@ -106,6 +107,13 @@ export async function prefetchClients(qc: QueryClient, locale: WpLocale = "en") 
   return qc.fetchQuery({
     queryKey: wpKeys.clients(locale),
     queryFn: () => getClients(locale),
+  });
+}
+
+export async function prefetchCareers(qc: QueryClient, locale: WpLocale = "en") {
+  return qc.fetchQuery({
+    queryKey: wpKeys.careers(locale),
+    queryFn: () => getCareers(locale),
   });
 }
 

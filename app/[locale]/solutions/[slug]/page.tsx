@@ -27,7 +27,11 @@ export default async function SolutionPage({ params }: Props) {
   const wpLocale = locale === "ar" ? "ar" : "en";
 
   const queryClient = getQueryClient();
-  const solution = await prefetchSolution(queryClient, `/solutions/${slug}/`, wpLocale);
+  const solution = await prefetchSolution(
+    queryClient,
+    `/solutions/${slug}/`,
+    wpLocale,
+  );
 
   if (!solution) notFound();
 

@@ -17,7 +17,7 @@ export default function IndustryTemplate({ industry }: { industry: Industry }) {
   const hasProcurement = c.procurementItems.length > 0;
   const hasServices = c.sectorServices.length > 0;
   const hasFaqs = c.faqs.length > 0;
-
+  console.log("industry", industry);
   return (
     <main className="overflow-x-clip">
       {/* Hero */}
@@ -105,7 +105,9 @@ export default function IndustryTemplate({ industry }: { industry: Industry }) {
                   key={item.title}
                   className="rounded-2xl border border-slate-200 bg-white p-6"
                 >
-                  <h3 className="heading-md-semibold text-slate-900">{item.title}</h3>
+                  <h3 className="heading-md-semibold text-slate-900">
+                    {item.title}
+                  </h3>
                   <p className="body-md-regular mt-2 text-slate-600">
                     {item.description}
                   </p>

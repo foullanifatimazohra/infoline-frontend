@@ -1137,6 +1137,8 @@
         "apply": "قدّم الآن"
       },
       "fullTime": "دوام كامل",
+      "defaultDiscipline": "تجربة العملاء",
+      "defaultLocation": "مسقط، عُمان",
       "roles": [
         {
           "title": "موظف تجربة عملاء (عربي / إنجليزي)",

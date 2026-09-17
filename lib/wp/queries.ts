@@ -224,6 +224,19 @@ export const INDUSTRY_BY_URI = /* GraphQL */ `
 
 /* --------------------------------- Clients -------------------------------- */
 
+export const CAREERS_LIST = /* GraphQL */ `
+  query Careers($first: Int, $language: LanguageCodeFilterEnum) {
+    careers(first: $first, where: { language: $language }) {
+      nodes {
+        title
+        slug
+        uri
+        date
+      }
+    }
+  }
+`;
+
 export const CLIENTS = /* GraphQL */ `
   query Clients($language: LanguageCodeFilterEnum) {
     clients(first: 100, where: { language: $language }) {

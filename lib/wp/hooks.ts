@@ -12,6 +12,7 @@ import {
   getIndustry,
   getIndustries,
   getClients,
+  getCareers,
   getHubs,
   type WpLocale,
 } from "./api";
@@ -152,6 +153,17 @@ export function useClients(options?: WpQueryOptions<Client[]>) {
     ...options,
     queryKey: wpKeys.clients(locale),
     queryFn: () => getClients(locale),
+  });
+}
+
+export function useCareers(
+  options?: WpQueryOptions<Awaited<ReturnType<typeof getCareers>>>,
+) {
+  const locale = useWpLocale();
+  return useQuery({
+    ...options,
+    queryKey: wpKeys.careers(locale),
+    queryFn: () => getCareers(locale),
   });
 }
 

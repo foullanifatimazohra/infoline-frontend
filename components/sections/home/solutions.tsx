@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Icon from "@/components/ui/icon";
+import Image from "next/image";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 import { useSolutions } from "@/lib/wp";
 
@@ -74,22 +74,21 @@ export default function Solutions() {
           stagger={0.1}
         >
           {items.map((item) => {
+            console.log("item", item);
             return (
               <StaggerItem as="li" key={item.title}>
                 <Link
                   href={item.href}
                   className="group flex h-full flex-col rounded-2xl border p-6 transition-[border-color,background,box-shadow,transform] duration-300 border-slate-600/60 bg-white/[.02] hover:-translate-y-1 hover:border-brandblue-500/60 hover:bg-brandblue-500/[.06] hover:shadow-[0_16px_40px_-24px_rgba(28,151,212,0.8)]"
                 >
-                  <Icon
+                  <Image
                     src={item.icon}
-                    className={`size-8 ${
-                      item.featured
-                        ? "text-brandblue-500"
-                        : "text-brandblue-400"
-                    }`}
+                    alt={item.title}
+                    height={32}
+                    width={32}
                     aria-hidden
                   />
-                  <h3 className="mt-8 heading-md-semibold font-semibold transition-colors text-white group-hover:text-brandblue-500">
+                  <h3 className="mt-8 heading-md-semibold leading-8 font-semibold transition-colors text-white group-hover:text-brandblue-500">
                     {item.title}
                   </h3>
                   <p className="mt-3 body-md-regular leading-relaxed text-slate-100">
