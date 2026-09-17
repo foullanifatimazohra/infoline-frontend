@@ -16,7 +16,9 @@ export default function Industries() {
   const t = useTranslations("Industries");
   // Sector content lives under the industries page's namespace — read it from
   // the root scope (t.raw resolves keys relative to the hook's namespace).
-  const items = useTranslations().raw("IndustriesPage.sectors.items") as Sector[];
+  const items = useTranslations().raw(
+    "IndustriesPage.sectors.items",
+  ) as Sector[];
 
   return (
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">
