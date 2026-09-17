@@ -3,16 +3,20 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-type Industry = {
-  title: string;
-  image: string;
-  href: string;
-  description: string;
-};
+type Sector = { id: string; title: string; image: string; summary: string };
 
+/**
+ * Home industries grid — single source of truth is the industries page's
+ * sector list (`IndustriesPage.sectors.items`): same titles, images and
+ * summary paragraphs. Each card deep-links to that sector's anchor on the
+ * industries page (`/industries#sec-<id>`), where every article carries
+ * `id="sec-<id>"`.
+ */
 export default function Industries() {
   const t = useTranslations("Industries");
-  const items = t.raw("items") as Industry[];
+  // Sector content lives under the industries page's namespace — read it from
+  // the root scope (t.raw resolves keys relative to the hook's namespace).
+  const items = useTranslations().raw("IndustriesPage.sectors.items") as Sector[];
 
   return (
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">
@@ -51,9 +55,9 @@ export default function Industries() {
           stagger={0.11}
         >
           {items.map((item) => (
-            <StaggerItem as="li" key={item.title}>
+            <StaggerItem as="li" key={item.id}>
               <Link
-                href={item.href}
+                href={`/industries#sec-${item.id}`}
                 className="group relative block aspect-[4/3] max-h-[254px] w-full overflow-hidden rounded-2xl"
               >
                 {/* 1. Image — bottom layer */}
@@ -81,7 +85,7 @@ export default function Industries() {
                   {/* Description: revealed on hover */}
                   <div className="grid grid-rows-[0fr] transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:grid-rows-[1fr] group-hover:mt-2">
                     <p className="line-clamp-2 max-w-[90%] overflow-hidden text-[14px] leading-relaxed text-white/75 opacity-0 -translate-y-1 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:opacity-100 group-hover:translate-y-0">
-                      {item.description}
+                      {item.summary}
                     </p>
                   </div>
                 </div>
