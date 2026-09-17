@@ -270,9 +270,9 @@
         {
           "id": "cx-transformation",
           "number": "02",
-          "family": "CX & BPO",
+          "family": "Enhance customer experience",
           "icon": "/assets/solutions/s2.svg",
-          "image": "/assets/solutions/catalogue/cx-transformation.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "CX Transformation",
           "headline": "Find the gaps. Fix what matters. Stay accountable for improvement",
           "summary": "Diagnostics, journey redesign and a measurable improvement plan you can hold us to",
@@ -301,9 +301,9 @@
         {
           "id": "quality-as-a-service",
           "number": "03",
-          "family": "CX & BPO",
+          "family": "Defensible Quality",
           "icon": "/assets/solutions/s3.svg",
-          "image": "/assets/solutions/catalogue/quality-as-a-service.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "Quality as a Service",
           "headline": "Quality you can defend, not just report",
           "summary": "Independent evaluations, calibration and coaching tied to the outcomes that matter",
@@ -332,9 +332,9 @@
         {
           "id": "training-as-a-service",
           "number": "04",
-          "family": "CX & BPO",
+          "family": "On-the-job training",
           "icon": "/assets/solutions/s4.svg",
-          "image": "/assets/solutions/catalogue/training-as-a-service.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "Training as a Service",
           "headline": "Build capability, certify it, then prove it on the floor",
           "summary": "Onboarding, product and soft-skills training with certification and floor validation",
@@ -365,7 +365,7 @@
           "number": "05",
           "family": "Technology & Data",
           "icon": "/assets/solutions/s5.svg",
-          "image": "/assets/solutions/catalogue/business-intelligence.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "Business Intelligence",
           "headline": "One version of the numbers. Clearer decisions",
           "summary": "Governed reporting, dashboards and analysis across the operation",
@@ -394,9 +394,9 @@
         {
           "id": "workforce-management",
           "number": "06",
-          "family": "Technology & Data",
+          "family": "Focus on demands",
           "icon": "/assets/solutions/s6.svg",
-          "image": "/assets/solutions/catalogue/workforce-management.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "Workforce Management",
           "headline": "Right people. Right interval. Right service level",
           "summary": "Forecasting, scheduling and real-time management against the service level",
@@ -427,7 +427,7 @@
           "number": "07",
           "family": "Technology & Data",
           "icon": "/assets/solutions/s7.svg",
-          "image": "/assets/solutions/catalogue/technology-services.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "Technology Services",
           "headline": "Connected channels, in-country options and AI where it helps",
           "summary": "Contact platform, integrations and automation, delivered and supported",
@@ -456,9 +456,9 @@
         {
           "id": "hr-outsourcing",
           "number": "08",
-          "family": "People & Finance",
+          "family": "HR Solutions",
           "icon": "/assets/solutions/s8.svg",
-          "image": "/assets/solutions/catalogue/hr-outsourcing.jpg",
+          "image": "/assets/solutions/cx1.svg",
           "title": "HR Outsourcing",
           "headline": "You direct the work. We manage the employment",
           "summary": "Recruitment, payroll and employee administration under a compliant model",
@@ -552,49 +552,49 @@
         "icon": "/assets/solutions/s1.svg",
         "title": "CX Operations",
         "description": "You own the customer. We run the operation",
-        "href": "#cx-operations"
+        "href": "/solutions/#cat-cx-operations"
       },
       {
         "icon": "/assets/solutions/s2.svg",
         "title": "CX Transformation",
         "description": "Find the gaps. Fix what matters. Stay accountable for improvement",
-        "href": "#cx-transformation"
+        "href": "/solutions/#cat-cx-transformation"
       },
       {
         "icon": "/assets/solutions/s3.svg",
         "title": "Quality as a Service",
         "description": "Quality you can defend, not just report",
-        "href": "#quality-as-a-service"
+        "href": "/solutions/#cat-quality-as-a-service"
       },
       {
         "icon": "/assets/solutions/s4.svg",
         "title": "Training as a Service",
         "description": "Build capability, certify it, then prove it on the floor",
-        "href": "#training-as-a-service"
+        "href": "/solutions/#cat-training-as-a-service"
       },
       {
         "icon": "/assets/solutions/s5.svg",
         "title": "Business Intelligence",
         "description": "One version of the numbers. Clearer decisions",
-        "href": "#business-intelligence"
+        "href": "/solutions/#cat-business-intelligence"
       },
       {
         "icon": "/assets/solutions/s6.svg",
         "title": "Workforce Management",
         "description": "Right people. Right interval. Right service level",
-        "href": "#workforce-management"
+        "href": "/solutions/#cat-workforce-management"
       },
       {
         "icon": "/assets/solutions/s7.svg",
         "title": "Technology Services",
         "description": "Connected channels, in-country options and AI where it helps",
-        "href": "#technology-services"
+        "href": "/solutions/#cat-technology-services"
       },
       {
         "icon": "/assets/solutions/s8.svg",
         "title": "HR Outsourcing",
         "description": "You direct the work. We manage the employment",
-        "href": "#hr-outsourcing"
+        "href": "/solutions/#cat-hr-outsourcing"
       }
     ]
   },
@@ -710,13 +710,13 @@
     "items": [
       {
         "title": "Government & Public Authorities",
-        "image": "/assets/industries/i1.png",
+        "image": "/assets/industries/i1.svg",
         "href": "#government",
         "description": "We have a long history of working with government and public authorities, providing efficient and effective solutions to meet their unique needs."
       },
       {
         "title": "Telecom & Technology",
-        "image": "/assets/industries/i2.png",
+        "image": "/assets/industries/i2.svg",
         "href": "#telecom"
       },
       {
@@ -1139,6 +1139,108 @@
       "button": { "label": "Talk to an expert", "href": "/contact" }
     }
   },
+  "CareersPage": {
+    "hero": {
+      "eyebrow": "Careers",
+      "title": "Build your career with a trusted team",
+      "description": "At Infoline, trust starts with our people. Join teams that run real customer operations, solve real service challenges and grow through learning, responsibility and progression.",
+      "cta": { "label": "View open roles", "href": "#vacancies" }
+    },
+    "capability": {
+      "eyebrow": "Omani capability",
+      "title": "Capability built locally, and promoted from within",
+      "description": "The current catalogue states that 80%+ of the workforce is Omani, that middle-management supervisory and specialist roles are held by Omanis, and that 45 Omanis had been promoted in 2026 at the time of the catalogue.",
+      "stats": [
+        { "value": "80%+", "label": "Of the workforce is Omani" },
+        {
+          "value": "100%",
+          "label": "Middle-management supervisory and specialist roles held by Omanis"
+        },
+        { "value": "45", "label": "Omanis promoted in 2026" }
+      ]
+    },
+    "learn": {
+      "eyebrow": "A career built through operations",
+      "title": "Learn customer operations by doing the work",
+      "body": "Infoline is a place to learn customer operations by doing the work: serving customers, understanding performance, improving quality, building knowledge and growing into specialist and leadership roles.",
+      "chips": [
+        "Real operational responsibility",
+        "Learning tied to the job",
+        "Paths into quality, training, workforce, operations and technology",
+        "A workplace focused on building Omani capability"
+      ]
+    },
+    "traits": {
+      "eyebrow": "What we look for",
+      "title": "Service mindset, and the ability to work to measurable standards",
+      "items": [
+        {
+          "icon": "/assets/careers/services/1.svg",
+          "label": "Service mindset"
+        },
+        {
+          "icon": "/assets/careers/services/2.svg",
+          "label": "Language & communication"
+        },
+        {
+          "icon": "/assets/careers/services/3.svg",
+          "label": "Learning agility"
+        },
+        {
+          "icon": "/assets/careers/services/4.svg",
+          "height": 16,
+          "width": 16,
+          "label": "Resilience"
+        },
+        { "icon": "/assets/careers/services/5.svg", "label": "Accuracy" },
+        {
+          "icon": "/assets/careers/services/6.svg",
+          "label": "Digital confidence"
+        }
+      ]
+    },
+    "vacancies": {
+      "eyebrow": "Vacancies",
+      "title": "Roles we're hiring for now",
+      "note": "Don't see your fit? Reach out anyway, tell us what you do and where you'd like to grow.",
+      "columns": {
+        "role": "Role",
+        "discipline": "Discipline",
+        "location": "Location",
+        "apply": "Apply"
+      },
+      "fullTime": "Full-time",
+      "defaultDiscipline": "Customer Experience",
+      "defaultLocation": "Muscat, Oman",
+      "roles": [
+        {
+          "title": "Customer Experience Agent (Arabic / English)",
+          "discipline": "Customer Experience",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Team Leader, Contact Centre",
+          "discipline": "Operations",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Workforce Management Analyst",
+          "discipline": "Workforce Management",
+          "location": "Muscat, Oman"
+        },
+        {
+          "title": "Quality Assurance Specialist",
+          "discipline": "Quality",
+          "location": "Muscat, Oman"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Don't see your fit?",
+      "description": "Reach out anyway, tell us what you do and where you'd like to grow.",
+      "button": { "label": "Send a general application", "href": "/contact" }
+    }
+  },
   "Header": {
     "nav": [
       {
@@ -1155,7 +1257,7 @@
       },
       {
         "label": "Insights",
-        "href": "#"
+        "href": "/insights"
       },
       {
         "label": "About",
@@ -1163,7 +1265,11 @@
       },
       {
         "label": "Careers",
-        "href": "#"
+        "href": "/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
       }
     ],
     "cta": {
@@ -1298,5 +1404,19 @@
       }
     ],
     "copyright": "© 2026 Infoline LLC · an Omantel Group company"
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "titleLead": "This page isn't here",
+    "titleAccent": "just yet.",
+    "description": "The page you're looking for is not available. It may be on its way — meanwhile, here's where we can take you.",
+    "primaryCta": {
+      "label": "Back to home",
+      "href": "/"
+    },
+    "secondaryCta": {
+      "label": "Explore solutions",
+      "href": "/solutions"
+    }
   }
 }
