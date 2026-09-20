@@ -1418,5 +1418,138 @@
       "label": "Explore solutions",
       "href": "/solutions"
     }
+  },
+  "ContactPage": {
+    "hero": {
+      "eyebrow": "Contact",
+      "titleLead": "Talk to a trusted",
+      "titleAccent": "partner in Oman",
+      "description": "Whether you want to improve an operation, introduce a supplier capability or explore a partnership, start with the Infoline team that can take it forward.",
+      "bannerTitle": "How do I contact Infoline for business, vendor or partnership enquiries?",
+      "bannerBody": "Choose the route that fits. Clients discussing an operation, a CX workshop or a capability session use the enquiry form. Vendors introduce a company profile and capability to Procurement. Technology and strategic partners route to Business Development. Candidates apply through Careers. Email connect@infoline.om or call +968 2446 2626."
+    },
+    "routes": {
+      "label": "Choose your route",
+      "title": "Choose the right team",
+      "routeA": {
+        "tag": "For clients",
+        "title": "Improve an operation",
+        "description": "Discussing an operation, a CX workshop or a capability session. This route reaches the commercial team that can scope it."
+      },
+      "routeB": {
+        "tag": "For technology & strategic partnerships",
+        "title": "Partnerships",
+        "description": "If your platform, capability or market access complements our CX, managed services or technology portfolio, let us explore the opportunity together."
+      },
+      "routeC": {
+        "tag": "For vendors & suppliers",
+        "title": "Register a capability",
+        "description": "Introduce your company, products or services to our Procurement team. Keep the first submission simple: company profile, capability, Oman presence and contact details."
+      },
+      "routeD": {
+        "tag": "For careers · media & communications",
+        "title": "People and MarCom",
+        "description": "Looking to join Infoline? Use the Careers route so your application reaches the right team. Press requests, brand, events and corporate enquiries reach MarCom."
+      },
+      "profileLink": "Or download the company profile"
+    },
+    "trust": {
+      "stats": [
+        { "value": "22", "label": "years in operation" },
+        { "value": "1,200+", "label": "seats across delivery centres" },
+        { "value": "7", "label": "industries served" }
+      ],
+      "certified": "ISO 9001 · COPC",
+      "certifiedLabel": "certified"
+    },
+    "form": {
+      "sections": {
+        "service": "Service or solution inquiry",
+        "project": "New project inquiry",
+        "vendor": "Vendor & supplier registration",
+        "careers": "Careers & media"
+      },
+      "yourDetails": "Your details",
+      "name": "Name",
+      "namePlaceholder": "Full name",
+      "organisation": "Organisation",
+      "organisationPlaceholder": "Company or authority",
+      "workEmail": "Work email",
+      "emailPlaceholder": "you@company.com",
+      "country": "Country",
+      "countryPlaceholder": "Select country",
+      "countries": ["Oman", "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Other"],
+      "aboutEngagement": "About the engagement",
+      "yourProject": "Your project",
+      "service": "Choose service",
+      "servicePlaceholder": "Select services",
+      "projectType": "Project type",
+      "projectTypePlaceholder": "Choose type : New build, Platform migration, Custom integration, Other...",
+      "projectTypeOptions": ["New build", "Platform migration", "Custom integration", "Other"],
+      "timeline": "When are you looking to start?",
+      "timelineOptions": ["Ready to start now", "Within 1–3 months", "Within 3–6 months", "Still scoping"],
+      "vendorCategory": "What are you registering?",
+      "vendorCategoryOptions": ["Company profile", "Product or service", "Partnership proposal"],
+      "build": "What are you trying to build?",
+      "fix": "What are you trying to fix?",
+      "roleInterest": "What kind of role are you interested in?",
+      "rolePlaceholder": "e.g. Contact centre agent, Quality analyst, Workforce planner…",
+      "messagePlaceholder": "Two or three sentences on what you're building and what success looks like.",
+      "fixPlaceholder": "Two or three sentences on the operation you want to change.",
+      "messageOptional": "Message (optional)",
+      "messageOptionalPlaceholder": "Anything else we should know?",
+      "sendService": "Send inquiry",
+      "sendProject": "Send project brief",
+      "sendCareers": "Send message",
+      "bookCall": "Book a call instead",
+      "respondNote": "We respond within 1 business day",
+      "errors": {
+        "name": "Please enter your full name",
+        "email": "Enter a valid work email",
+        "organisation": "Please tell us your organisation",
+        "country": "Select your country",
+        "service": "Select the service you're interested in",
+        "vendor": "Select what you're registering",
+        "projectType": "Choose a project type",
+        "timeline": "Pick a timeframe",
+        "message": "A couple of sentences helps us route this correctly",
+        "role": "Tell us the kind of role you're after"
+      }
+    },
+    "success": {
+      "title": {
+        "service": "Thanks — your inquiry is with our commercial team.",
+        "project": "Thanks — your project brief has landed.",
+        "careers": "Thanks — your message is on its way to the right team."
+      },
+      "description": {
+        "service": "A named account lead will reply to ask within 1 business day with next steps. No further action is needed from you right now.",
+        "project": "We'll review the brief and come back within 1 business day to scope the first conversation. No account needed — yet.",
+        "careers": "HR and Communications will review your message and reply within 1 business day if there's a fit."
+      },
+      "again": "Send another inquiry"
+    },
+    "sidebar": {
+      "faq": {
+        "title": "Prefer to read first?",
+        "description": "Security, SLAs, onboarding and pricing model are answered in the FAQ — no call needed.",
+        "link": "Read the FAQ"
+      },
+      "office": {
+        "title": "Head Office Address",
+        "address": "5th Floor, KOM 4, Knowledge Oasis, Al Rusayl, Muscat, Oman",
+        "tel": "Tel",
+        "telValue": "+968 2416 2626",
+        "fax": "Fax",
+        "faxValue": "+968 2416 2626",
+        "emailLabel": "Email",
+        "emailValue": "contact@infoline.om",
+        "mapAlt": "Map showing the Infoline head office in Knowledge Oasis, Al Rusayl, Muscat"
+      },
+      "social": {
+        "title": "Follow us",
+        "description": "Updates on services, certifications, and hiring."
+      }
+    }
   }
 }
