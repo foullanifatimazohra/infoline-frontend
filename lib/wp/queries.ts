@@ -245,7 +245,7 @@ export const CLIENTS = /* GraphQL */ `
         databaseId
         slug
         title
-        clientContent {
+        content {
           clientName
           clientLogo {
             node {

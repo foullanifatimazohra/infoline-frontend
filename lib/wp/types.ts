@@ -148,7 +148,7 @@ export type Industry = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Client — clientContent                                              */
+/* Client — content (live schema is `content`, not `clientContent`)      */
 /* ------------------------------------------------------------------ */
 
 export type Client = {
@@ -157,6 +157,15 @@ export type Client = {
   slug: string;
   name: string;
   logo: ImageField | null;
+};
+
+/** Shape returned by the live schema client node (Phase 1 §3). */
+export type RawClientNode = {
+  id: string;
+  databaseId: number | null;
+  slug: string | null;
+  title: string | null;
+  content: { clientName: string | null; clientLogo: ImageField | null };
 };
 
 /* ------------------------------------------------------------------ */

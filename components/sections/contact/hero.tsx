@@ -11,7 +11,7 @@ export default function Hero() {
   const t = useTranslations("ContactPage");
 
   return (
-    <section className="bg-white pt-14 pb-16 lg:pt-20 lg:pb-20">
+    <section className="bg-white pt-14 pb-16 lg:pt-60 lg:pb-20">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Stagger as="div" stagger={0.12} amount={0.3}>
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">

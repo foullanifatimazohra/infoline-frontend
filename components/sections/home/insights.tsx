@@ -4,16 +4,20 @@ import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-type Insight = {
+export type InsightItem = {
   category: string;
   title: string;
   image: string;
   href: string;
 };
 
-export default function Insights() {
+export default function Insights({
+  items,
+}: {
+  items: InsightItem[];
+}) {
   const t = useTranslations("Insights");
-  const insights = t.raw("items") as Insight[];
+  const insights = items;
 
   return (
     <section className="insights flex items-center justify-center py-20 lg:py-26">

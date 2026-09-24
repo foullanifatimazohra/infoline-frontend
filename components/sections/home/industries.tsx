@@ -3,22 +3,19 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-type Sector = { id: string; title: string; image: string; summary: string };
+export type IndustryItem = {
+  id: string;
+  title: string;
+  image: string;
+  summary: string;
+};
 
-/**
- * Home industries grid — single source of truth is the industries page's
- * sector list (`IndustriesPage.sectors.items`): same titles, images and
- * summary paragraphs. Each card deep-links to that sector's anchor on the
- * industries page (`/industries#sec-<id>`), where every article carries
- * `id="sec-<id>"`.
- */
-export default function Industries() {
+export default function Industries({
+  items,
+}: {
+  items: IndustryItem[];
+}) {
   const t = useTranslations("Industries");
-  // Sector content lives under the industries page's namespace — read it from
-  // the root scope (t.raw resolves keys relative to the hook's namespace).
-  const items = useTranslations().raw(
-    "IndustriesPage.sectors.items",
-  ) as Sector[];
 
   return (
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">

@@ -19,10 +19,10 @@ export default function Hero() {
 
   return (
     <section className="bg-ink">
-      <div className="mx-auto w-full max-w-360 px-6 py-20 lg:px-10 lg:py-26">
+      <div className="mx-auto w-full max-w-360 px-6 py-20 lg:px-10 lg:py-30">
         <Stagger
           as="div"
-          className="grid items-center gap-2xl lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]"
+          className="grid items-start gap-2xl lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]"
           stagger={0.14}
           amount={0.25}
         >

@@ -44,7 +44,6 @@ export type CaseStudyListItem = Pick<
   | "industrySectors"
   | "featuredResult"
   | "resultMetric"
-  | "clientName"
   | "heroMetrics"
   | "image"
 >;

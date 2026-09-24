@@ -269,17 +269,14 @@ export function normalizeIndustry(raw: RawIndustry | null): Industry | null {
 /* Client                                                              */
 /* ------------------------------------------------------------------ */
 
-import type { Client } from "./types";
+import type { Client, RawClientNode } from "./types";
 
 type RawClient = {
   id: string | null;
   databaseId: number | null;
   slug: string | null;
   title: string | null;
-  clientContent: {
-    clientName: string | null;
-    clientLogo: Parameters<typeof normalizeImage>[0];
-  } | null;
+  content: { clientName: string | null; clientLogo: ImageField | null } | null;
 };
 
 export function normalizeClient(raw: RawClient | null): Client | null {
@@ -288,7 +285,7 @@ export function normalizeClient(raw: RawClient | null): Client | null {
     id: raw.id ?? "",
     databaseId: raw.databaseId ?? 0,
     slug: raw.slug ?? "",
-    name: raw.clientContent?.clientName ?? raw.title ?? "",
-    logo: normalizeImage(raw.clientContent?.clientLogo),
+    name: raw.content?.clientName ?? raw.title ?? "",
+    logo: normalizeImage(raw.content?.clientLogo as any),
   };
 }

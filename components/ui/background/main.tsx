@@ -14,11 +14,11 @@ export function MainBackground() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="absolute inset-0 -z-1 overflow-hidden bg-ink">
+    <div className="absolute inset-0 -z-1 overflow-hidden bg-ink/90">
       {/* Primary brand glow — top-left, wide and soft. */}
       <motion.div
         aria-hidden
-        className="absolute -left-[12%] -top-[18%] h-[46rem] w-[46rem] rounded-full"
+        className="absolute -left-[20%] -top-[18%] h-[46rem] w-[46rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle at center, rgba(28,151,212,0.34), rgba(28,151,212,0) 68%)",
@@ -35,9 +35,9 @@ export function MainBackground() {
             : { duration: 20, repeat: Infinity, ease: "easeInOut" }
         }
       />
-
+      {/* 
       {/* Accent glow — mid-right, cooler and smaller, drifts on its own clock. */}
-      <motion.div
+      {/* <motion.div
         aria-hidden
         className="absolute right-[2%] top-[24%] h-[34rem] w-[34rem] rounded-full"
         style={{
@@ -55,10 +55,10 @@ export function MainBackground() {
             ? undefined
             : { duration: 26, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
         }
-      />
+      /> */}
 
       {/* Deep cyan pool — lower-centre, anchors the composition. */}
-      <motion.div
+      {/* <motion.div
         aria-hidden
         className="absolute bottom-[-14%] left-[38%] h-[30rem] w-[30rem] rounded-full"
         style={{
@@ -72,7 +72,7 @@ export function MainBackground() {
             ? undefined
             : { duration: 22, repeat: Infinity, ease: "easeInOut", delay: 3 }
         }
-      />
+      /> */}
     </div>
   );
 }

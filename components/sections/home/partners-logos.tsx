@@ -8,29 +8,10 @@ import LogoMarquee, { LogoItem } from "@/components/ui/logo-marquee";
 
 type Props = {
   durationSeconds?: number;
+  logos?: LogoItem[];
 };
 
-// Replace with data fetched from your backend.
-const DEMO_LOGOS: LogoItem[] = [
-  { src: "/assets/clients/moh.svg", alt: "Ministry of Health" },
-  {
-    src: "/assets/clients/tra.svg",
-    alt: "Telecommunications Regulatory Authority",
-  },
-  { src: "/assets/clients/asyad.svg", alt: "ASYAD" },
-  {
-    src: "/assets/clients/paew.svg",
-    alt: "Public Authority for Electricity and Water",
-  },
-  {
-    src: "/assets/clients/ncsi.svg",
-    alt: "National Centre for Statistics & Information",
-  },
-  { src: "/assets/clients/manpower.svg", alt: "Ministry of Manpower" },
-  { src: "/assets/clients/oman-post.svg", alt: "Oman Post" },
-];
-
-export default function PartnerLogos({ durationSeconds = 30 }: Props) {
+export default function PartnerLogos({ durationSeconds = 30, logos = [] }: Props) {
   const t = useTranslations("Proof");
 
   return (
@@ -64,7 +45,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         </Stagger>
 
         <div className="mt-7">
-          <LogoMarquee logos={DEMO_LOGOS} durationSeconds={durationSeconds} />
+          <LogoMarquee logos={logos} durationSeconds={durationSeconds} />
         </div>
 
         <div className="mt-7 text-center">

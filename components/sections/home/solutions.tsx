@@ -3,17 +3,21 @@ import { Link } from "@/i18n/navigation";
 import Icon from "@/components/ui/icon";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-type SolutionItem = {
-  icon: string;
+import type { SolutionItem as WpSolutionItem } from "@/components/sections/home/solutions";
+
+export type SolutionItem = {
+  icon: string | null;
   title: string;
   description: string;
   href: string;
-  featured?: boolean;
 };
 
-export default function Solutions() {
+export default function Solutions({
+  items,
+}: {
+  items: SolutionItem[];
+}) {
   const t = useTranslations("Solutions");
-  const items = t.raw("items") as SolutionItem[];
 
   return (
     <section className="bg-[#0a1014] py-10 text-white sm:py-12 lg:py-28">
@@ -58,12 +62,8 @@ export default function Solutions() {
                   className="group flex h-full flex-col rounded-2xl border p-6 transition-[border-color,background,box-shadow,transform] duration-300 border-slate-600/60 bg-white/[.02] hover:-translate-y-1 hover:border-brandblue-500/60 hover:bg-brandblue-500/[.06] hover:shadow-[0_16px_40px_-24px_rgba(28,151,212,0.8)]"
                 >
                   <Icon
-                    src={item.icon}
-                    className={`size-8 ${
-                      item.featured
-                        ? "text-brandblue-500"
-                        : "text-brandblue-400"
-                    }`}
+                    src={item.icon ?? ""}
+                    className={`size-8 text-brandblue-400`}
                     aria-hidden
                   />
                   <h3 className="mt-8 heading-md-semibold font-semibold transition-colors text-white group-hover:text-brandblue-500">

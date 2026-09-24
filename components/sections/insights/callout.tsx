@@ -15,7 +15,7 @@ export default function Callout() {
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Reveal
           as="div"
-          className="flex items-center lg:gap-15 gap-10 overflow-hidden rounded-2xl bg-brandblue-50 px-7 py-10 lg:px-12 lg:py-14"
+          className="flex items-center flex-col lg:flex-row lg:gap-15 gap-10 overflow-hidden rounded-2xl bg-brandblue-50 px-7 py-10 lg:px-12 lg:py-14"
           amount={0.3}
           duration={1.1}
         >

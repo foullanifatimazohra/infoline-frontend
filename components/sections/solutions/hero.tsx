@@ -36,7 +36,7 @@ export default function Hero() {
           everywhere; aria-hidden because it is decorative. */}
       <video
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-2 h-full w-full object-cover opacity-45"
+        className="pointer-events-none absolute inset-0 -z-1 h-full w-full object-cover opacity-65"
         autoPlay
         muted
         loop

@@ -28,10 +28,10 @@ export default function Hero() {
         className="absolute inset-0 bg-ink/85 bg-[radial-gradient(ellipse_60%_55%_at_50%_18%,rgba(28,151,212,0.28),transparent_70%)]"
       />
 
-      <div className="relative mx-auto flex w-full max-w-360 flex-col items-center px-6 pb-24 pt-40 text-center lg:pb-28 lg:pt-52">
+      <div className="relative mx-auto flex w-full h-full max-w-360 flex-col items-center px-6 pb-24 pt-40 text-center lg:pb-28 lg:pt-52">
         <Stagger
           as="div"
-          className="flex flex-col items-center"
+          className="flex flex-col items-center justify-center h-full"
           stagger={0.14}
           delayChildren={0.05}
           amount={0.3}
