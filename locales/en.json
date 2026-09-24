@@ -521,12 +521,18 @@
       "eyebrow": "Clients",
       "title": "Named across the full catalogue.",
       "logos": [
-        { "src": "/assets/clients/moh.svg", "alt": "Ministry of Health" },
+        {
+          "src": "/assets/clients/moh.svg",
+          "alt": "Ministry of Health"
+        },
         {
           "src": "/assets/clients/tra.svg",
           "alt": "Telecommunications Regulatory Authority"
         },
-        { "src": "/assets/clients/asyad.svg", "alt": "ASYAD" },
+        {
+          "src": "/assets/clients/asyad.svg",
+          "alt": "ASYAD"
+        },
         {
           "src": "/assets/clients/paew.svg",
           "alt": "Public Authority for Electricity and Water"
@@ -539,7 +545,10 @@
           "src": "/assets/clients/manpower.svg",
           "alt": "Ministry of Manpower"
         },
-        { "src": "/assets/clients/oman-post.svg", "alt": "Oman Post" }
+        {
+          "src": "/assets/clients/oman-post.svg",
+          "alt": "Oman Post"
+        }
       ]
     }
   },
@@ -808,20 +817,20 @@
       {
         "category": "Customer Experience",
         "title": "What a COPC audit actually measures — and why buyers should ask",
-        "image": "/assets/insights/i1.svg",
-        "href": "/insights/copc-audit"
+        "image": "/assets/blog/copc-audit.jpg",
+        "href": "/blog/copc-audit"
       },
       {
         "category": "Automation",
         "title": "Where a chatbot stops paying for itself in Arabic-first service",
-        "image": "/assets/insights/i2.svg",
-        "href": "/insights/chatbot-roi"
+        "image": "/assets/blog/chatbot-roi.jpg",
+        "href": "/blog/chatbot-roi"
       },
       {
         "category": "Public Sector",
         "title": "Outsourcing inside government procurement rules: the practical route",
-        "image": "/assets/insights/i3.svg",
-        "href": "/insights/public-sector-procurement"
+        "image": "/assets/blog/public-sector-procurement.jpg",
+        "href": "/blog/public-sector-procurement"
       }
     ]
   },
@@ -831,8 +840,14 @@
       "titleLead": "Running customer operations from Oman",
       "titleAccent": "since 2004",
       "description": "Part of Omantel Group, based at Knowledge Oasis Muscat.",
-      "primaryCta": { "label": "Talk to an expert", "href": "/contact" },
-      "secondaryCta": { "label": "Explore solutions", "href": "/solutions" }
+      "primaryCta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Explore solutions",
+        "href": "/solutions"
+      }
     },
     "whoWeAre": {
       "eyebrow": "Who we are",
@@ -862,10 +877,22 @@
       "title": "Lorem Ipsum",
       "description": "Lorem ipsum dolor sit amet consectetur. In eu ut arcu posuere aliquam. Id nisl id imperdiet dui nulla. Metus viverra cras tristique nulla integer.",
       "stats": [
-        { "value": "1,400+", "label": "Employees across business verticals" },
-        { "value": "68", "label": "Clients across six sectors" },
-        { "value": "6M", "label": "Customer transactions processed annually" },
-        { "value": "400+", "label": "Agents across accounts" },
+        {
+          "value": "1,400+",
+          "label": "Employees across business verticals"
+        },
+        {
+          "value": "68",
+          "label": "Clients across six sectors"
+        },
+        {
+          "value": "6M",
+          "label": "Customer transactions processed annually"
+        },
+        {
+          "value": "400+",
+          "label": "Agents across accounts"
+        },
         {
           "value": "250",
           "label": "Seats at Knowledge Oasis Muscat, with extensibility"
@@ -911,9 +938,18 @@
       "title": "Building capability in Oman, from entry level to leadership",
       "description": "Infoline's people model is built around developing operating leaders, from entry-level customer operations through delivery supervisors, quality, training, workforce and management roles.",
       "stats": [
-        { "value": "80%+", "label": "Omanisation" },
-        { "value": "100%", "label": "Omani talent management" },
-        { "value": "45", "label": "Omanis promoted in 2024" }
+        {
+          "value": "80%+",
+          "label": "Omanisation"
+        },
+        {
+          "value": "100%",
+          "label": "Omani talent management"
+        },
+        {
+          "value": "45",
+          "label": "Omanis promoted in 2024"
+        }
       ]
     },
     "leadership": {
@@ -999,7 +1035,10 @@
     "cta": {
       "title": "Want to know how we can support your organisation?",
       "description": "We respond within 1 business day.",
-      "button": { "label": "Talk to an expert", "href": "/contact" }
+      "button": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
     }
   },
   "CaseStudiesPage": {
@@ -1101,8 +1140,16 @@
             "unit": "Points",
             "text": "of abandonment, 32% to 8%"
           },
-          { "value": "+50%", "unit": "Calls", "text": "handled" },
-          { "value": "-20%", "unit": "Branch", "text": "visits" }
+          {
+            "value": "+50%",
+            "unit": "Calls",
+            "text": "handled"
+          },
+          {
+            "value": "-20%",
+            "unit": "Branch",
+            "text": "visits"
+          }
         ]
       },
       {
@@ -1136,7 +1183,10 @@
     "cta": {
       "title": "Let's move your number",
       "description": "We respond within 1 business day",
-      "button": { "label": "Talk to an expert", "href": "/contact" }
+      "button": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
     }
   },
   "CareersPage": {
@@ -1144,19 +1194,28 @@
       "eyebrow": "Careers",
       "title": "Build your career with a trusted team",
       "description": "At Infoline, trust starts with our people. Join teams that run real customer operations, solve real service challenges and grow through learning, responsibility and progression.",
-      "cta": { "label": "View open roles", "href": "#vacancies" }
+      "cta": {
+        "label": "View open roles",
+        "href": "#vacancies"
+      }
     },
     "capability": {
       "eyebrow": "Omani capability",
       "title": "Capability built locally, and promoted from within",
       "description": "The current catalogue states that 80%+ of the workforce is Omani, that middle-management supervisory and specialist roles are held by Omanis, and that 45 Omanis had been promoted in 2026 at the time of the catalogue.",
       "stats": [
-        { "value": "80%+", "label": "Of the workforce is Omani" },
+        {
+          "value": "80%+",
+          "label": "Of the workforce is Omani"
+        },
         {
           "value": "100%",
           "label": "Middle-management supervisory and specialist roles held by Omanis"
         },
-        { "value": "45", "label": "Omanis promoted in 2026" }
+        {
+          "value": "45",
+          "label": "Omanis promoted in 2026"
+        }
       ]
     },
     "learn": {
@@ -1192,7 +1251,10 @@
           "width": 16,
           "label": "Resilience"
         },
-        { "icon": "/assets/careers/services/5.svg", "label": "Accuracy" },
+        {
+          "icon": "/assets/careers/services/5.svg",
+          "label": "Accuracy"
+        },
         {
           "icon": "/assets/careers/services/6.svg",
           "label": "Digital confidence"
@@ -1238,7 +1300,10 @@
     "cta": {
       "title": "Don't see your fit?",
       "description": "Reach out anyway, tell us what you do and where you'd like to grow.",
-      "button": { "label": "Send a general application", "href": "/contact" }
+      "button": {
+        "label": "Send a general application",
+        "href": "/contact"
+      }
     }
   },
   "Header": {
@@ -1345,7 +1410,7 @@
           },
           {
             "label": "Insights",
-            "href": "#"
+            "href": "/insights"
           }
         ]
       },
@@ -1405,6 +1470,116 @@
     ],
     "copyright": "© 2026 Infoline LLC · an Omantel Group company"
   },
+  "InsightsPage": {
+    "hero": {
+      "eyebrow": "Insights",
+      "titleLead": "Proof behind",
+      "titleAccent": "trusted performance.",
+      "description": "Trust grows when performance can be explained and extended. Our insights and case studies show what changed, why it changed and what organisations can apply next.",
+      "statsLabel": "Headline movement",
+      "stats": [
+        {
+          "value": "+7.0",
+          "title": "Voice of Customer",
+          "source": "Digital Non-Voice CX"
+        },
+        {
+          "value": "+26",
+          "title": "Service level",
+          "source": "Utilities CX Operations"
+        },
+        {
+          "value": "6",
+          "title": "Channels unified",
+          "source": "Omnichannel Platform"
+        }
+      ]
+    },
+    "callout": {
+      "title": "What results has Infoline delivered?",
+      "description": "The current Service Catalogue records a digital customer-experience programme that lifted Voice of Customer from 81.8% to 88.8% in six months and held above target for four, and a utilities contact-centre transformation that moved service level from 68% to 94% while cutting abandonment from 32% to 8%."
+    },
+    "themes": {
+      "eyebrow": "Content themes",
+      "title": "Four territories we write from",
+      "items": [
+        {
+          "value": "+26",
+          "title": "Culture Excellence",
+          "description": "People, service culture, quality and capability"
+        },
+        {
+          "value": "+26",
+          "title": "Clarity & Speed",
+          "description": "SLA discipline, process improvement and faster resolution"
+        },
+        {
+          "value": "+26",
+          "title": "AI & Digital Acceleration",
+          "description": "Automation, analytics, digital CX and practical AI"
+        },
+        {
+          "value": "+26",
+          "title": "Value Growth",
+          "description": "Managed services, efficiency and measurable outcomes"
+        }
+      ]
+    },
+    "proof": {
+      "title": "What results has Infoline delivered?",
+      "items": [
+        {
+          "title": "Digital Non-Voice CX",
+          "description": "A score that had not moved in quarters, up seven points in six months",
+          "href": "/case-studies"
+        },
+        {
+          "title": "Utilities CX Operations",
+          "description": "Service level up 26 points while more calls were handled",
+          "href": "/case-studies"
+        },
+        {
+          "title": "Omnichannel Platform",
+          "description": "Six channels. One queue. One customer history",
+          "href": "/case-studies"
+        }
+      ],
+      "cta": "Read case study"
+    },
+    "formats": {
+      "eyebrow": "Formats",
+      "title": "Executive articles, service explainers, benchmark notes and data-led perspectives"
+    },
+    "featured": {
+      "eyebrow": "Featured proof",
+      "title": "Featured proof",
+      "rows": [
+        {
+          "description": "Voice of Customer: 81.8% → 88.8% in six months; sustained above target for four months",
+          "from": "81.8%",
+          "to": "88.8%"
+        },
+        {
+          "description": "Utilities operation: SLA 68% → 94%; abandonment 32% → 8%; calls handled +50%; branch visits −20%",
+          "from": "68%",
+          "to": "94%"
+        },
+        {
+          "description": "Omnichannel programme: six channels unified into one queue; full interaction analytics described in the Service Catalogue",
+          "from": "6",
+          "to": "1"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Want the detail behind the result?",
+      "description": "Talk to us about the case closest to your operation.",
+      "button": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
+    }
+  },
   "NotFound": {
     "eyebrow": "404",
     "titleLead": "This page isn't here",
@@ -1455,9 +1630,18 @@
     },
     "trust": {
       "stats": [
-        { "value": "22", "label": "years in operation" },
-        { "value": "1,200+", "label": "seats across delivery centres" },
-        { "value": "7", "label": "industries served" }
+        {
+          "value": "22",
+          "label": "years in operation"
+        },
+        {
+          "value": "1,200+",
+          "label": "seats across delivery centres"
+        },
+        {
+          "value": "7",
+          "label": "industries served"
+        }
       ],
       "certified": "ISO 9001 · COPC",
       "certifiedLabel": "certified"
@@ -1478,18 +1662,40 @@
       "emailPlaceholder": "you@company.com",
       "country": "Country",
       "countryPlaceholder": "Select country",
-      "countries": ["Oman", "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Other"],
+      "countries": [
+        "Oman",
+        "United Arab Emirates",
+        "Saudi Arabia",
+        "Qatar",
+        "Kuwait",
+        "Bahrain",
+        "Other"
+      ],
       "aboutEngagement": "About the engagement",
       "yourProject": "Your project",
       "service": "Choose service",
       "servicePlaceholder": "Select services",
       "projectType": "Project type",
       "projectTypePlaceholder": "Choose type : New build, Platform migration, Custom integration, Other...",
-      "projectTypeOptions": ["New build", "Platform migration", "Custom integration", "Other"],
+      "projectTypeOptions": [
+        "New build",
+        "Platform migration",
+        "Custom integration",
+        "Other"
+      ],
       "timeline": "When are you looking to start?",
-      "timelineOptions": ["Ready to start now", "Within 1–3 months", "Within 3–6 months", "Still scoping"],
+      "timelineOptions": [
+        "Ready to start now",
+        "Within 1–3 months",
+        "Within 3–6 months",
+        "Still scoping"
+      ],
       "vendorCategory": "What are you registering?",
-      "vendorCategoryOptions": ["Company profile", "Product or service", "Partnership proposal"],
+      "vendorCategoryOptions": [
+        "Company profile",
+        "Product or service",
+        "Partnership proposal"
+      ],
       "build": "What are you trying to build?",
       "fix": "What are you trying to fix?",
       "roleInterest": "What kind of role are you interested in?",
@@ -1551,5 +1757,122 @@
         "description": "Updates on services, certifications, and hiring."
       }
     }
+  },
+  "Blog": {
+    "page": {
+      "eyebrow": "Articles, events and company news",
+      "titleLead": "Insights from the",
+      "titleAccent": "operations floor",
+      "description": "What we are learning from live operations — articles, event notes and company news from the Infoline team.",
+      "featuredLabel": "Featured",
+      "readMore": "Read more",
+      "allUpdatesLabel": "All updates",
+      "filters": [
+        {
+          "id": "all",
+          "label": "All"
+        },
+        {
+          "id": "articles",
+          "label": "Articles"
+        },
+        {
+          "id": "events",
+          "label": "Events"
+        },
+        {
+          "id": "news",
+          "label": "News"
+        }
+      ],
+      "cta": {
+        "title": "Let's move your number",
+        "description": "We respond within 1 business day",
+        "button": {
+          "label": "Talk to an expert",
+          "href": "/contact"
+        }
+      },
+      "single": {
+        "backLabel": "All posts",
+        "shareLabel": "Share",
+        "aboutTitle": "About Infoline",
+        "aboutDescription": "Infoline runs customer operations for Oman's government and enterprise organisations — CX operations, managed services and technology, built around clear accountability and measurable outcomes since 2004.",
+        "aboutCta": {
+          "label": "Talk to an expert",
+          "href": "/contact"
+        },
+        "moreLabel": "Keep reading",
+        "notFoundTitle": "Post not found",
+        "notFoundDescription": "This story may have been moved or unpublished.",
+        "notFoundCta": "Back to all posts"
+      },
+      "meta": {
+        "title": "Blog — Infoline",
+        "description": "Articles, event notes and company news from the Infoline operations floor in Oman."
+      }
+    },
+    "posts": [
+      {
+        "slug": "copc-audit",
+        "category": "Articles",
+        "date": "2025-09-17",
+        "dateLabel": "17 Sep 2026",
+        "title": "A score that had not moved in quarters, up seven points in six months",
+        "excerpt": "Moving a utilities contact centre from 68% to 94% took forecasting, scheduling and quality discipline in a specific order. The sequence matters more than any single tool.",
+        "body": [
+          "When a utilities contact centre came to us, its customer satisfaction score had been stuck between 66% and 68% for three consecutive quarters. Nothing had changed on the surface — same volume profile, same channels, same team size. What had changed was the mix of contacts: more complex, multi-step requests arriving with higher stakes.",
+          "The first move was not a new tool. It was measurement discipline: rebuilding the quality rubric so that it measured resolution quality, not just call handling. Once auditors and team leads agreed on what a good outcome looked like, coaching finally had something concrete to aim at.",
+          "Forecasting came next. Historical interval data was hiding a mid-morning peak that staffing had quietly absorbed as overtime. Re-cutting schedules around the real curve recovered hundreds of hours a quarter without adding headcount.",
+          "Six months later the score crossed 94%. The order mattered: measure properly, then coach, then forecast. Teams that invert the sequence usually buy technology to solve what is, in the end, an operating-discipline problem."
+        ],
+        "image": "/assets/blog/copc-audit.jpg"
+      },
+      {
+        "slug": "chatbot-roi",
+        "category": "Articles",
+        "date": "2025-08-02",
+        "dateLabel": "2 Aug 2026",
+        "title": "Where a chatbot stops paying for itself in Arabic-first service",
+        "excerpt": "Deflection is easy to celebrate and easy to over-count. Here is where the return curve flattens, and what to measure instead.",
+        "body": [
+          "Every automation business case starts with deflection, and most of them over-count it. A bot that answers 'where is my order' at 2am looks like pure margin — until the contacts it fails come back as second attempts, twice as long and twice as expensive.",
+          "The honest unit of value is cost per resolved contact, not cost per contact deflected. When we measure resolution, the return curve of a typical Arabic-first deployment rises steeply for the top three intents, then flattens hard.",
+          "The flattening happens where language nuance meets regulatory nuance: complaints, billing disputes, anything a customer may escalate. Handling those gracefully means handing them to a human with full context — and the handoff has to be built as carefully as the bot.",
+          "Our rule of thumb after a dozen deployments: automate the top intents end to end, design the handoff like a product, and stop buying intents past the flattening point. That is where a chatbot stops paying for itself."
+        ],
+        "image": "/assets/blog/chatbot-roi.jpg"
+      },
+      {
+        "slug": "public-sector-procurement",
+        "category": "Events",
+        "date": "2025-06-10",
+        "dateLabel": "10 Jun 2026",
+        "title": "Outsourcing inside government procurement rules: the practical route",
+        "excerpt": "A field note from this year's procurement forum: what tender committees actually ask about CX outsourcing, and how to answer.",
+        "body": [
+          "At this year's government procurement forum we sat with tender committees from utilities, telecom and health. The questions were consistent across all three: how is quality measured when the operation is outsourced, what data leaves the country, and what happens in the first ninety days.",
+          "On quality, committees no longer accept satisfaction scores on their own. They ask for the audit methodology behind the number — sampling, rubric, calibration cadence — and who inside the vendor is accountable when the number moves the wrong way.",
+          "On data residency, the practical answer is architectural: show which systems hold personal data, where they run, and what the cross-border surface looks like. Vendors who answer with a diagram instead of an assurance sentence do better.",
+          "On mobilisation, the strongest bids were the ones with a named first-ninety-days plan: baseline, quick wins, and the governance forum where progress is reviewed. Procurement rules reward specificity — the practical route is simply to be specific."
+        ],
+        "image": "/assets/blog/public-sector-procurement.jpg"
+      },
+      {
+        "slug": "infoline-omantel-group",
+        "category": "News",
+        "date": "2025-05-21",
+        "dateLabel": "21 May 2026",
+        "title": "Infoline joins Omantel Group: what it means for our customers",
+        "excerpt": "The next chapter for Oman's customer-operations partner — more scale, more technology, same accountability.",
+        "body": [
+          "This quarter marks a milestone for Infoline: we are now part of Omantel Group. For our clients, the change is deliberately quiet — the same teams, the same SLAs, the same escalation paths — while the platform underneath them grows.",
+          "What the Group brings is infrastructure: national reach, a deeper technology portfolio, and investment capacity for the next generation of CX tooling. What stays is the operating discipline our clients buy us for.",
+          "For the market, it signals something we have argued for two decades: customer operations is not a commodity back office. It is a strategic function that deserves investment, measurement and a seat at the table.",
+          "We will be publishing more about what this unlocks — new capabilities, new partnerships, and a bigger stage for Omani talent. Watch this space, or talk to us directly."
+        ],
+        "image": "/assets/blog/cta-wave.jpg"
+      }
+    ]
   }
 }

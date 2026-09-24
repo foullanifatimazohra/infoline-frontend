@@ -333,6 +333,14 @@ body {
   margin-right: auto;
 }
 
+/* Faint blueprint grid wash used behind content (insights proof card). */
+@utility grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(13, 22, 27, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 22, 27, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
 /* Typography */
 
 @utility heading-hero-semibold {

@@ -110,6 +110,11 @@ export default function HeroVisual() {
       onMouseLeave={resetMove}
       className="relative h-full w-full"
     >
+      {/* Art box — anchored to the bottom of the column and height-capped
+          (min of 92% of the column and 46vw) so the 675×550 artwork can never
+          scale past the column width or the fold on tall/short viewports.
+          object-bottom-left keeps people + circle pinned to the baseline.
+          Mobile stays in normal flow (relative, w-full). */}
       {/* Blue backdrop shape — its own layer behind the arc so it can mirror
           in RTL (rtl:-scale-x-100 on the image). Shares arc.svg's 675×550
           viewBox + identical object-fit and the same yImg parallax, so it
@@ -117,7 +122,7 @@ export default function HeroVisual() {
       <motion.div
         style={enabled ? { y: yImg } : undefined}
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 lg:inset-x-0 lg:top-auto lg:bottom-0 lg:h-[min(92%,46vw)]"
       >
         <Image
           src="/assets/hero/shape.svg"
@@ -125,13 +130,13 @@ export default function HeroVisual() {
           aria-hidden
           width={680}
           height={550}
-          className="object-contain h-full w-auto object-bottom-left rtl:-scale-x-100"
+          className="h-full w-full object-contain object-bottom-left rtl:-scale-x-100"
         />
       </motion.div>
 
       <motion.div
         style={enabled ? { y: yImg } : undefined}
-        className="block lg:absolute  w-full lg:h-full relative"
+        className="relative w-full lg:absolute lg:inset-x-0 lg:bottom-0 lg:h-[min(92%,46vw)]"
       >
         <Image
           src="/assets/hero/arc.svg"
@@ -139,12 +144,14 @@ export default function HeroVisual() {
           width={680}
           height={550}
           priority
-          className="object-contain h-full w-auto object-bottom-left"
+          className="h-auto w-full object-contain object-bottom-left lg:h-full"
         />
       </motion.div>
 
-      {/* Desktop: absolute + parallax + idle bob. Hidden below lg. */}
-      <div className="pointer-events-none absolute inset-0 block">
+      {/* Desktop: absolute + parallax + idle bob. Hidden below lg.
+          Uses the same geometry as the art box so the tuned % offsets stay
+          locked to the artwork at every viewport size. */}
+      <div className="pointer-events-none absolute inset-0 lg:inset-x-0 lg:top-auto lg:bottom-0 lg:h-[min(92%,46vw)]">
         {CARDS.map((card, i) => (
           <FloatingCard
             key={`${card.src}-${i}`}

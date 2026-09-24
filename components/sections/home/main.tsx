@@ -12,12 +12,12 @@ export default function Main() {
 
   return (
     <>
-      <section className="relative overflow-hidden justify-center lg:h-screen flex items-center">
+      <section className="relative overflow-hidden justify-center items-center lg:h-screen lg:min-h-[700px] flex pb-16 lg:pb-0">
         <div className="grid items-center gap-4 h-full lg:grid-cols-[1fr_1fr]">
           <HeroContent>
             <Stagger
               as="div"
-              className="flex flex-col lg:pl-10 pl-6 rtl:[pl-0 lg:pr-10 pr-6 lg:pl-0] items-start gap-0 py-14 lg:py-25"
+              className="flex flex-col lg:pl-10 pl-6 rtl:[pl-0 lg:pr-10 pr-6 lg:pl-0] items-start gap-0 py-14 lg:py-[clamp(0px,6vh,100px)]"
               stagger={0.14}
               delayChildren={0.05}
               amount={0.35}

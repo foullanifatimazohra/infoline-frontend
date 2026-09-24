@@ -17,6 +17,27 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
+      {/* Layer 1 — background video. Muted/looped/playsInline so it autoplays
+          everywhere; aria-hidden because it is decorative. */}
+      <video
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-2 h-full w-full object-cover opacity-45"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/assets/industries-bg.webm" type="video/webm" />
+      </video>
+
+      {/* Layer 2 — melt the video into ink at the edges so the copy and the
+          sector index stay readable over the moving backdrop. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-2 bg-gradient-to-b from-ink via-ink/55 to-ink"
+      />
+
       <div className="mx-auto w-full max-w-360 px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1.3fr_.7fr] lg:gap-20">
           {/* Left column */}
