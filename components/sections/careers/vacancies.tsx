@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem, Reveal } from "@/components/ui/motion";
 
@@ -118,15 +117,16 @@ export default function Vacancies() {
                     </span>
                   </div>
 
-                  {/* Apply */}
+                  {/* Apply — deep-links to the on-page application form.
+                      Plain anchor (native hash scroll, no locale prefixing). */}
                   <div className="sm:text-end">
-                    <Link
-                      href={`mailto:careers@infoline.om?subject=${encodeURIComponent(role.title)}`}
+                    <a
+                      href="#apply"
                       className="inline-flex items-center gap-2 text-[14px] font-semibold text-brandblue-500 transition-colors duration-300 hover:text-brandblue-500"
                     >
                       {col("apply")}
                       <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </Reveal>

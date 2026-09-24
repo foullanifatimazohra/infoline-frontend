@@ -1304,6 +1304,35 @@
         "label": "Send a general application",
         "href": "/contact"
       }
+    },
+    "apply": {
+      "title": "Apply for this role",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+968 …",
+      "cv": "CV / Resume",
+      "cvHint": "PDF, DOC or DOCX — max 5 MB",
+      "cvButton": "Choose file",
+      "cvSelected": "file selected",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Anything you want us to know",
+      "submit": "Submit application",
+      "submitting": "Sending…",
+      "successTitle": "Application received",
+      "successDescription": "Thank you for applying — our team will be in touch.",
+      "successAgain": "Apply to another role",
+      "errors": {
+        "name": "Please enter your full name",
+        "email": "Enter a valid email",
+        "phone": "Enter a valid phone number",
+        "position": "Missing role",
+        "cv": "Attach your CV (PDF, DOC or DOCX, max 5 MB)",
+        "general": "Something went wrong sending your application. Please try again."
+      },
+      "role": "Role"
     }
   },
   "Header": {
@@ -1720,7 +1749,21 @@
         "timeline": "Pick a timeframe",
         "message": "A couple of sentences helps us route this correctly",
         "role": "Tell us the kind of role you're after"
-      }
+      },
+      "projectTypeKeys": [
+        "new_build",
+        "platform_migration",
+        "custom_integration",
+        "other"
+      ],
+      "timelineKeys": [
+        "ready_now",
+        "1_3_months",
+        "3_6_months",
+        "scoping"
+      ],
+      "submitError": "Something went wrong sending your message. Please wait a few minutes and try again.",
+      "submitting": "Sending…"
     },
     "success": {
       "title": {

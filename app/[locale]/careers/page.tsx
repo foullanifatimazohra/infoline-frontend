@@ -5,6 +5,7 @@ import Capability from "@/components/sections/careers/capability";
 import Learn from "@/components/sections/careers/learn";
 import Traits from "@/components/sections/careers/traits";
 import Vacancies from "@/components/sections/careers/vacancies";
+import Apply from "@/components/sections/careers/apply";
 import Cta from "@/components/sections/careers/cta";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,6 +25,7 @@ export default function CareersPage() {
       <Learn />
       <Traits />
       <Vacancies />
+      <Apply />
       <Cta />
     </main>
   );

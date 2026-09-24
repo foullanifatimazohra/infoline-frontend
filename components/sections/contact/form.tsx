@@ -1,10 +1,18 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CalendarClock, ChevronDown } from "lucide-react";
 import { EASE } from "@/components/ui/motion/shared";
+import Turnstile from "@/components/ui/forms/turnstile";
+import Honeypot from "@/components/ui/forms/honeypot";
+import {
+  submitInquiry,
+  classifyInquiryResult,
+  type ProjectType,
+  type StartTimeline,
+} from "@/lib/forms/client";
 import { useRouteSelection, type RouteId } from "./route-context";
 import Rail from "./rail";
 
@@ -77,6 +85,7 @@ export default function Form({
   services: { title: string }[];
 }) {
   const t = useTranslations("ContactPage");
+  const locale = useLocale();
   const reduce = !!useReducedMotion();
   const uid = useId();
 
@@ -95,6 +104,10 @@ export default function Form({
   });
   const [touched, setTouched] = useState<Strings>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [generalError, setGeneralError] = useState<string | null>(null);
+  const [serverFieldErrors, setServerFieldErrors] = useState<Record<string, string>>({});
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const formRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
@@ -103,13 +116,22 @@ export default function Form({
   const timelineOptions = t.raw("form.timelineOptions") as string[];
   const projectTypeOptions = t.raw("form.projectTypeOptions") as string[];
   const vendorOptions = t.raw("form.vendorCategoryOptions") as string[];
+  // Index-aligned with the label arrays above — maps UI label -> API key.
+  const timelineKeys = t.raw("form.timelineKeys") as string[];
+  const projectTypeKeys = t.raw("form.projectTypeKeys") as string[];
 
   const set = (key: string, v: string) =>
     setValues((prev) => ({ ...prev, [key]: v }));
   const blur = (key: string) => setTouched((prev) => ({ ...prev, [key]: "1" }));
 
+  /** UI label -> fixed API key (handover: send the key, not the label). */
+  const keyForLabel = (label: string, keys: string[], labels: string[]) =>
+    keys[labels.indexOf(label)] ?? label;
+
   /** Field-level validation — only surfaces once a field is touched. */
   const errorFor = (key: string): string | undefined => {
+    // Server-side validation errors take precedence (mapped by field).
+    if (serverFieldErrors[key]) return serverFieldErrors[key];
     if (!touched[key]) return undefined;
     const v = values[key].trim();
     switch (key) {
@@ -181,19 +203,97 @@ export default function Form({
     careers: t("form.sections.careers"),
   }[route];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setTouched(Object.fromEntries(requiredKeys[route].map((k) => [k, "1"])));
     if (invalid) return;
-    // No backend endpoint yet (per the API handover — forms are "not ready").
-    // The success state is shown optimistically; swap in an API call later.
-    setSent(true);
-    requestAnimationFrame(() =>
-      successRef.current?.scrollIntoView({
-        behavior: reduce ? "auto" : "smooth",
-        block: "nearest",
-      }),
-    );
+
+    // Vendor route has no API form yet (handover §2 lists only the three
+    // GraphQL inquiries + job application) — keep the local success state.
+    if (route === "vendor") {
+      setSent(true);
+      requestAnimationFrame(() =>
+        successRef.current?.scrollIntoView({
+          behavior: reduce ? "auto" : "smooth",
+          block: "nearest",
+        }),
+      );
+      return;
+    }
+
+    setSubmitting(true);
+    setGeneralError(null);
+    setServerFieldErrors({});
+
+    try {
+      const result = await submitInquiry(
+        route === "service"
+          ? {
+              action: "service_inquiry",
+              name: values.name,
+              organisation: values.organisation,
+              workEmail: values.email,
+              country: values.country,
+              service: values.service,
+              message: values.message,
+              website: "",
+              turnstileToken,
+            }
+          : {
+              action: "project_inquiry",
+              name: values.name,
+              organisation: values.organisation,
+              workEmail: values.email,
+              country: values.country,
+              projectType: keyForLabel(
+                values.projectType,
+                projectTypeOptions,
+                projectTypeKeys,
+              ) as ProjectType,
+              startTimeline: keyForLabel(
+                values.timeline,
+                timelineOptions,
+                timelineKeys,
+              ) as StartTimeline,
+              message: values.message,
+              website: "",
+              turnstileToken,
+            },
+      );
+
+      const state = classifyInquiryResult(result);
+      if (state === "success") {
+        setSent(true);
+        requestAnimationFrame(() =>
+          successRef.current?.scrollIntoView({
+            behavior: reduce ? "auto" : "smooth",
+            block: "nearest",
+          }),
+        );
+      } else if (state === "field_errors") {
+        // Map server errors onto our fields (field names match inputs).
+        const mapped: Record<string, string> = {};
+        for (const errItem of result.validationErrors) {
+          const uiKey =
+            errItem.field === "workEmail"
+              ? "email"
+              : errItem.field === "startTimeline"
+                ? "timeline"
+                : errItem.field;
+          // Server messages are English-only — show our own copy (handover §3).
+          mapped[uiKey] = t(`form.errors.${uiKey}`);
+        }
+        setServerFieldErrors(mapped);
+        setTouched(Object.fromEntries(Object.keys(mapped).map((k) => [k, "1"])));
+      } else {
+        // Rate limit / server error — show the general message.
+        setGeneralError(t("form.submitError"));
+      }
+    } catch {
+      setGeneralError(t("form.submitError"));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const reset = () => {
@@ -211,6 +311,8 @@ export default function Form({
     });
     setTouched({});
     setSent(false);
+    setGeneralError(null);
+    setServerFieldErrors({});
     formRef.current?.scrollIntoView({
       behavior: reduce ? "auto" : "smooth",
       block: "start",
@@ -300,6 +402,9 @@ export default function Form({
                       noValidate
                       className="rounded-2xl bg-white p-8 shadow-[0_1px_2px_rgba(15,40,60,.04),0_18px_44px_-24px_rgba(15,40,60,.18)] lg:p-10"
                     >
+                      {/* Honeypot — every form ships it (Phase 3 handover). */}
+                      <Honeypot />
+
                       {/* ---- Shared: your details ---- */}
                       <p className="mb-6 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
                         {t("form.yourDetails")}
@@ -626,13 +731,31 @@ export default function Form({
                         </motion.div>
                       </AnimatePresence>
 
+                      {/* ---- Submission feedback ---- */}
+                      {generalError && (
+                        <p
+                          role="alert"
+                          className="mt-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-medium text-red-700"
+                        >
+                          {generalError}
+                        </p>
+                      )}
+
+                      {/* Turnstile — inert until the backend sets the key. */}
+                      <Turnstile
+                        onToken={setTurnstileToken}
+                        language={locale}
+                        className="mt-6"
+                      />
+
                       {/* ---- Actions ---- */}
                       <div className="mt-9 flex flex-wrap items-center gap-3.5">
                         <button
                           type="submit"
-                          className="group inline-flex items-center gap-2.5 rounded-md bg-brandblue-500 px-7 py-4 text-[12.5px] font-semibold uppercase tracking-[0.11em] text-white shadow-[0_8px_24px_-12px_rgba(28,151,212,.9)] transition-[background,box-shadow,transform] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] hover:bg-brandblue-600 hover:shadow-[0_16px_34px_-14px_rgba(28,151,212,1)]"
+                          disabled={submitting}
+                          className="group inline-flex items-center gap-2.5 rounded-md bg-brandblue-500 px-7 py-4 text-[12.5px] font-semibold uppercase tracking-[0.11em] text-white shadow-[0_8px_24px_-12px_rgba(28,151,212,.9)] transition-[background,box-shadow,transform] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] hover:bg-brandblue-600 hover:shadow-[0_16px_34px_-14px_rgba(28,151,212,1)] disabled:cursor-not-allowed disabled:opacity-60"
                         >
-                          {submitLabel}
+                          {submitting ? t("form.submitting") : submitLabel}
                           <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
                         </button>
                         <a

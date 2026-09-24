@@ -1304,6 +1304,35 @@
         "label": "أرسل طلبًا عامًا",
         "href": "/contact"
       }
+    },
+    "apply": {
+      "title": "التقديم على هذه الوظيفة",
+      "name": "الاسم الكامل",
+      "namePlaceholder": "اسمك",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "you@company.com",
+      "phone": "الهاتف",
+      "phonePlaceholder": "+968 …",
+      "cv": "السيرة الذاتية",
+      "cvHint": "PDF أو DOC أو DOCX — بحد أقصى 5 ميجابايت",
+      "cvButton": "اختر ملفًا",
+      "cvSelected": "تم اختيار الملف",
+      "message": "رسالة (اختياري)",
+      "messagePlaceholder": "أي شيء تريد أن نعرفه",
+      "submit": "إرسال الطلب",
+      "submitting": "جارٍ الإرسال…",
+      "successTitle": "تم استلام الطلب",
+      "successDescription": "شكرًا لتقديمك — سيتواصل فريقنا معك قريبًا.",
+      "successAgain": "التقديم على وظيفة أخرى",
+      "errors": {
+        "name": "يرجى إدخال اسمك الكامل",
+        "email": "أدخل بريدًا إلكترونيًا صحيحًا",
+        "phone": "أدخل رقم هاتف صحيحًا",
+        "position": "الوظيفة مفقودة",
+        "cv": "أرفق سيرتك الذاتية (PDF أو DOC أو DOCX، بحد أقصى 5 ميجابايت)",
+        "general": "حدث خطأ أثناء إرسال طلبك. حاول مرة أخرى."
+      },
+      "role": "الوظيفة"
     }
   },
   "Header": {
@@ -1720,7 +1749,21 @@
         "timeline": "اختر الإطار الزمني",
         "message": "جملتان تساعدناننا في توجيه طلبك بشكل صحيح",
         "role": "أخبرنا بنوع الدور الذي تبحث عنه"
-      }
+      },
+      "projectTypeKeys": [
+        "new_build",
+        "platform_migration",
+        "custom_integration",
+        "other"
+      ],
+      "timelineKeys": [
+        "ready_now",
+        "1_3_months",
+        "3_6_months",
+        "scoping"
+      ],
+      "submitError": "حدث خطأ أثناء إرسال رسالتك. يرجى الانتظار بضع دقائق والمحاولة مرة أخرى.",
+      "submitting": "جارٍ الإرسال…"
     },
     "success": {
       "title": {
