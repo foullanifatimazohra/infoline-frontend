@@ -18,7 +18,7 @@ export function MainBackground() {
       {/* Primary brand glow — top-left, wide and soft. */}
       <motion.div
         aria-hidden
-        className="absolute -left-[12%] -top-[18%] h-[46rem] w-[46rem] rounded-full"
+        className="absolute -start-[12%] -top-[18%] h-[46rem] w-[46rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle at center, rgba(28,151,212,0.34), rgba(28,151,212,0) 68%)",
@@ -39,7 +39,7 @@ export function MainBackground() {
       {/* Accent glow — mid-right, cooler and smaller, drifts on its own clock. */}
       <motion.div
         aria-hidden
-        className="absolute right-[2%] top-[24%] h-[34rem] w-[34rem] rounded-full"
+        className="absolute end-[2%] top-[24%] h-[34rem] w-[34rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle at center, rgba(55,120,247,0.24), rgba(55,120,247,0) 70%)",
@@ -60,7 +60,7 @@ export function MainBackground() {
       {/* Deep cyan pool — lower-centre, anchors the composition. */}
       <motion.div
         aria-hidden
-        className="absolute bottom-[-14%] left-[38%] h-[30rem] w-[30rem] rounded-full"
+        className="absolute bottom-[-14%] start-[38%] h-[30rem] w-[30rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle at center, rgba(79,195,247,0.18), rgba(79,195,247,0) 72%)",

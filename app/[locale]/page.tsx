@@ -13,6 +13,7 @@ import {
   getIndustries,
   getSolutions,
 } from "@/lib/wp/api";
+import { fetchLocalized } from "@/lib/wp/localized";
 
 /** Derive a short, URL-safe id from a WP uri, e.g.
  *  "/industries/telecom-technology/" → "telecom-technology". */
@@ -85,10 +86,10 @@ export default async function HomePage() {
   // Pull every content block that lives on this home page from the WPGraphQL
   // backend so the site is driven by the CMS instead of static locale JSON.
   const [solutions, industries, caseStudies, clients] = await Promise.all([
-    getSolutions("en"),
-    getIndustries("en"),
-    getCaseStudies("en"),
-    getClients("en"),
+    fetchLocalized((l) => getSolutions(l)),
+    fetchLocalized((l) => getIndustries(l)),
+    fetchLocalized((l) => getCaseStudies(l)),
+    fetchLocalized((l) => getClients(l)),
   ]);
 
   const solutionItems = solutions.items.map(toSolutionItem);

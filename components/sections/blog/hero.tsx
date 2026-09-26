@@ -2,8 +2,9 @@ import { useTranslations } from "next-intl";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 /**
- * Blog listing hero — ink band with the eyebrow, two-tone headline and
- * supporting copy, left-aligned like the Insights hero.
+ * Blog listing hero — ink band with the eyebrow, headline and supporting
+ * copy, aligned to the reading-start edge like the Insights hero. The accent
+ * segment is optional (the current design uses a single white headline).
  */
 export default function Hero() {
   const t = useTranslations("Blog.page");
@@ -33,7 +34,7 @@ export default function Hero() {
             segments={[
               { text: t("titleLead") },
               { text: t("titleAccent"), className: "text-lightblue-300" },
-            ]}
+            ].filter((s) => s.text)}
             orchestrated
             stagger={0.08}
             duration={0.95}

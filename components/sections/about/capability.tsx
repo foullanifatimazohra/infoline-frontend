@@ -48,7 +48,7 @@ export default function Capability() {
               {stats.map((stat) => (
                 <StaggerItem
                   key={stat.label}
-                  className="border-l-2 border-brandblue-500 pl-4"
+                  className="border-s-2 border-brandblue-500 ps-4"
                 >
                   <dd className="text-3xl font-bold tracking-tight text-brandblue-500 sm:text-4xl">
                     <CountUp value={stat.value} duration={1.4} />

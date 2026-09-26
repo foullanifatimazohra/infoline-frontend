@@ -24,7 +24,7 @@ export default function Callout() {
             src="/assets/insights/callout.svg"
             width={380}
             height={380}
-            alt="Callout Image"
+            alt={t("calloutImageAlt")}
           />
 
           <div className="relative">

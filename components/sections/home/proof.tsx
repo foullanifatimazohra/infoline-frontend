@@ -30,7 +30,7 @@ export default function Proof() {
                     duration={stat.value.toString().length > 2 ? 0.8 : 2}
                   />
                   {stat.unit && (
-                    <span className="ml-1 text-base font-medium text-slate-400">
+                    <span className="ms-1 text-base font-medium text-slate-400">
                       {stat.unit}
                     </span>
                   )}
@@ -46,7 +46,7 @@ export default function Proof() {
             direction="end"
             delay={0.25}
             distance={40}
-            className="flex items-center gap-4.5 border-white/10 lg:border-l lg:pl-2"
+            className="flex items-center gap-4.5 border-white/10 lg:border-s lg:ps-2"
           >
             {badges.map((badge) => (
               <Image

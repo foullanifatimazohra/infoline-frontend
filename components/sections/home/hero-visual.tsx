@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import {
   motion,
   useMotionValue,
@@ -73,6 +74,7 @@ const CARDS = [
 ] as const;
 
 export default function HeroVisual() {
+  const t = useTranslations("Main");
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   const prefersReduced = useReducedMotion();
   const enabled = isDesktop && !prefersReduced;
@@ -140,7 +142,7 @@ export default function HeroVisual() {
       >
         <Image
           src="/assets/hero/arc.svg"
-          alt="Infoline customer operations team reviewing live performance dashboards"
+          alt={t("heroImageAlt")}
           width={680}
           height={550}
           priority

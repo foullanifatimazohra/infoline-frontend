@@ -891,3 +891,16 @@ body {
   color: #94a3b8;
   white-space: nowrap;
 }
+
+/* ── Arabic typography ────────────────────────────────────────────────────
+   Arabic is a cursive script: any letter-spacing pulls joined letters apart
+   (the tracked overlines/eyebrows rendered as disconnected glyphs), and the
+   monospace stack has no Arabic glyphs so it fell back to a system font.
+   In RTL, reset tracking and map the mono labels to the Arabic face. These
+   rules are unlayered, so they win over Tailwind's layered utilities. */
+html[dir="rtl"] body * {
+  letter-spacing: 0;
+}
+html[dir="rtl"] .font-mono {
+  font-family: var(--font-arabic);
+}

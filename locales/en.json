@@ -7,7 +7,7 @@
       "eyebrow": "Industries · 6 sector groups",
       "titleLead": "Trusted operations, shaped for",
       "titleAccent": "your sector",
-      "description": "Every sector has its own service, regulatory and demand pressures. We bring local understanding and a trusted operating model shaped around your reality, not a generic template.",
+      "description": "Every sector has different service, regulatory and demand pressures. We bring local understanding and a trusted operating model shaped around your reality, not a generic template.",
       "primaryCta": {
         "label": "Talk to an expert",
         "href": "/contact"
@@ -17,7 +17,7 @@
     "differ": {
       "eyebrow": "Industries",
       "title": "How does CX differ by industry?",
-      "description": "The disciplines stay the same: service level, quality, workforce, data, governance and technology, but the pressures change. Telecom carries high volume and retention, government carries citizen trust and access, financial services carry regulation and data confidence, utilities carry billing and outage spikes. The operating model is shaped around those realities rather than a template."
+      "description": "The disciplines stay the same, service level, quality, workforce, data, governance and technology, but the pressures change. Telecom carries high volume and retention, government carries citizen trust and access, financial services carry regulation and data confidence, utilities carry billing and outage spikes. The operating model is shaped around those realities rather than a template."
     },
     "sectors": {
       "eyebrow": "Sectors we serve",
@@ -32,12 +32,12 @@
           "title": "Telecom & Technology",
           "summaryTitle": "what we run here",
           "headline": "High-volume service needs an operating model that holds under pressure",
-          "summary": "Customer care, retention, technical support, outbound campaigns, digital non-voice operations, quality, training, workforce and customer experience analytics.",
+          "summary": "Customer care, retention, technical support, outbound campaigns, digital non-voice operations, quality, training, workforce and customer-experience analytics.",
           "tags": [
-            "High contact volume",
+            "High contact volumes",
             "24/7 coverage",
             "Channel migration",
-            "First contact resolution",
+            "First-contact resolution",
             "Scale without losing discipline"
           ],
           "cta": {
@@ -53,7 +53,7 @@
           "title": "Government & Public Services",
           "summaryTitle": "what we run here",
           "headline": "Citizen experience depends on trust, access and consistency",
-          "summary": "Managed CX operations, omni-channel service, quality, training, business intelligence, workforce management and in-country technology options.",
+          "summary": "Managed CX operations, omnichannel service, quality, training, business intelligence, workforce management and in-country technology options.",
           "tags": [
             "Arabic-first accessibility",
             "Clear standards",
@@ -74,12 +74,12 @@
           "summaryTitle": "what we run here",
           "title": "Banking, Insurance & Fintech",
           "headline": "Control, consistency and customer confidence in every interaction",
-          "summary": "Quality as a service, training, business intelligence, workforce management, and channel CX and technology services.",
+          "summary": "Quality as a Service, training, business intelligence, workforce management, omnichannel CX and technology services.",
           "tags": [
             "Data privacy",
             "Regulated processes",
             "Clear escalation",
-            "Identity workflow journeys",
+            "Identity-sensitive journeys",
             "Auditable performance"
           ],
           "cta": {
@@ -95,12 +95,12 @@
           "summaryTitle": "what we run here",
           "title": "Utilities, Energy & Environment",
           "headline": "When demand spikes, service cannot become unpredictable",
-          "summary": "Billing and service enquiries, outage or incident intake, connection requests, workforce forecasting, real-time service-level intervention and channel deflection.",
+          "summary": "Billing and service enquiries, outage or incident peaks, connection requests, workforce forecasting, real-time service-level intervention and channel deflection.",
           "tags": [
-            "SLA 98% → 94%",
-            "Abandonment 22% → 9%",
-            "Calls handled +160%",
-            "Branch shifts · 30/6"
+            "SLA 68% → 94%",
+            "Abandonment 32% → 8%",
+            "Calls handled +50%",
+            "Branch visits -20%"
           ],
           "cta": {
             "label": "Explore Utilities Operations",
@@ -115,10 +115,10 @@
           "summaryTitle": "what we run here",
           "title": "Logistics, Transport & Tourism",
           "headline": "Time-sensitive journeys need service that can respond in the moment",
-          "summary": "CX operations, workforce management, training, omni-channel technology, quality and logistics intelligence.",
+          "summary": "CX operations, workforce management, training, omnichannel technology, quality and business intelligence.",
           "tags": [
             "Booking & enquiries",
-            "Tracking & handling",
+            "Disruption handling",
             "Multilingual support",
             "Seasonal peaks",
             "Fast escalation"
@@ -142,7 +142,7 @@
             "Campaign support",
             "Sales & retention",
             "Appointment booking",
-            "Service escalations"
+            "Service consistency"
           ],
           "cta": {
             "label": "Explore Customer Operations",
@@ -763,7 +763,8 @@
       "label": "Explore Solutions",
       "href": "/solutions"
     },
-    "responseNote": "We respond within 1 business day."
+    "responseNote": "We respond within 1 business day.",
+    "heroImageAlt": "Infoline customer operations team reviewing live performance dashboards"
   },
   "Partners": {
     "eyebrow": "Partners",
@@ -854,15 +855,15 @@
       "titleLead": "Since 2004, Infoline has built its role as a trusted operations partner in",
       "titleAccent": "Oman",
       "paragraphs": [
-        "Established in 2004, Infoline has spent more than two decades running customer and business operations for organisations in Oman. Today, as part of Omantel Group, we bring together operational scale, local delivery, customer-experience capability and technology from our base at Knowledge Oasis Muscat.",
+        "Established in 2004, Infoline has spent more than two decades running customer and business operations for organisations in Oman. Today, as part of Omantel Group, we bring together operational delivery, customer-experience capability and technology from our base at Knowledge Oasis Muscat.",
         "We work with government and enterprise organisations across customer operations, CX transformation, quality, training, business intelligence, workforce management, technology services and HR outsourcing."
       ]
     },
     "accountability": {
-      "eyebrow": "Built on trust, proven through operations",
+      "eyebrow": "Built on trust. Proven through operations",
       "title": "Accountability for outcomes, not just capacity",
       "descriptions": [
-        "Our story is no longer only about outsourced capacity. It is about taking accountability for outcomes — service level, quality, workforce performance, customer feedback and the operating model behind them.",
+        "Our story is no longer only about outsourced capacity. It is about taking accountability for outcomes, service level, quality, workforce performance, customer feedback and the operating model behind them.",
         "We work with government and enterprise organisations across customer operations, CX transformation, quality, training, business intelligence, workforce management, technology services and HR outsourcing."
       ],
       "points": [
@@ -899,7 +900,7 @@
         },
         {
           "value": "4",
-          "label": "Live service languages: Arabic, English, Urdu and Bangla"
+          "label": "Live service languages: Arabic, English, Urdu and Bengali"
         }
       ]
     },
@@ -921,7 +922,7 @@
           "src": "/assets/about/badge2.svg",
           "alt": "COPC Certified",
           "label": "COPC Certified",
-          "caption": "Certified personnel"
+          "caption": "COPC certified personnel"
         }
       ]
     },
@@ -936,7 +937,7 @@
     "capability": {
       "eyebrow": "Omanisation & talent",
       "title": "Building capability in Oman, from entry level to leadership",
-      "description": "Infoline's people model is built around developing operating leaders, from entry-level customer operations through delivery supervisors, quality, training, workforce and management roles.",
+      "description": "Infoline's people model is built around developing capability locally, from entry-level customer operations through supervisory, quality, training, workforce and management roles.",
       "stats": [
         {
           "value": "80%+",
@@ -944,7 +945,7 @@
         },
         {
           "value": "100%",
-          "label": "Omani talent management"
+          "label": "Omani middle management"
         },
         {
           "value": "45",
@@ -955,7 +956,7 @@
     "leadership": {
       "eyebrow": "Leadership board",
       "title": "Leadership",
-      "description": "A Board and executive team that set the direction and keep delivery close to clients, people and the market.",
+      "description": "A Board and executive team who set the direction and keep delivery close to clients, people and the market.",
       "boardLabel": "Board of Directors",
       "execLabel": "Executive Leadership",
       "board": [
@@ -1370,7 +1371,9 @@
       "label": "Talk to an Expert",
       "href": "/"
     },
-    "menuToggle": "Toggle menu"
+    "menuToggle": "Toggle menu",
+    "logoAlt": "Infoline — home",
+    "languageLabel": "Language"
   },
   "Footer": {
     "office": "Registered office, Muscat, Sultanate of Oman",
@@ -1497,14 +1500,15 @@
         "href": "#"
       }
     ],
-    "copyright": "© 2026 Infoline LLC · an Omantel Group company"
+    "copyright": "© 2026 Infoline LLC · an Omantel Group company",
+    "logoAlt": "Infoline"
   },
   "InsightsPage": {
     "hero": {
       "eyebrow": "Insights",
       "titleLead": "Proof behind",
       "titleAccent": "trusted performance.",
-      "description": "Trust grows when performance can be explained and extended. Our insights and case studies show what changed, why it changed and what organisations can apply next.",
+      "description": "Trust grows when performance can be explained and evidenced. Our insights and case studies show what changed, why it changed and what organisations can apply next.",
       "statsLabel": "Headline movement",
       "stats": [
         {
@@ -1607,7 +1611,9 @@
         "label": "Talk to an expert",
         "href": "/contact"
       }
-    }
+    },
+    "featuredImageAlt": "Infoline operations performance insights",
+    "calloutImageAlt": "Infoline team reviewing operational evidence"
   },
   "NotFound": {
     "eyebrow": "404",
@@ -1772,7 +1778,7 @@
         "careers": "Thanks — your message is on its way to the right team."
       },
       "description": {
-        "service": "A named account lead will reply to ask within 1 business day with next steps. No further action is needed from you right now.",
+        "service": "A named account lead will reply to {email} within 1 business day with next steps. No further action is needed from you right now.",
         "project": "We'll review the brief and come back within 1 business day to scope the first conversation. No account needed — yet.",
         "careers": "HR and Communications will review your message and reply within 1 business day if there's a fit."
       },
@@ -1803,10 +1809,10 @@
   },
   "Blog": {
     "page": {
-      "eyebrow": "Articles, events and company news",
-      "titleLead": "Insights from the",
-      "titleAccent": "operations floor",
-      "description": "What we are learning from live operations — articles, event notes and company news from the Infoline team.",
+      "eyebrow": "Newsroom",
+      "titleLead": "Articles, events and company news",
+      "titleAccent": "",
+      "description": "Operational perspectives from the teams running customer experience in Oman, plus where to meet us and what has changed at Infoline.",
       "featuredLabel": "Featured",
       "readMore": "Read more",
       "allUpdatesLabel": "All updates",
@@ -1917,5 +1923,9 @@
         "image": "/assets/blog/cta-wave.jpg"
       }
     ]
+  },
+  "Metadata": {
+    "title": "Infoline — Oman's trusted partner for customer operations",
+    "description": "Trusted CX operations, managed services and technology from Oman, built around clear accountability and measurable outcomes."
   }
 }

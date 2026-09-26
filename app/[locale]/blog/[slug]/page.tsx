@@ -5,6 +5,7 @@ import SingleHero from "@/components/sections/blog/single-hero";
 import Article from "@/components/sections/blog/article";
 import { nextBlogPosts } from "@/lib/blog";
 import { getBlogPosts, getBlogPostBySlug } from "@/lib/wp/api";
+import { fetchLocalized } from "@/lib/wp/localized";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -14,7 +15,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug, "en");
+  const post = await fetchLocalized((l) => getBlogPostBySlug(slug, l));
 
   return {
     title: post ? `${post.title} — Infoline` : "Infoline",
@@ -25,7 +26,7 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug, "en");
+  const post = await fetchLocalized((l) => getBlogPostBySlug(slug, l));
 
   if (!post) {
     // Soft 404 — themed, server-rendered, noindex (same reasoning as the
@@ -34,7 +35,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     return <SoftNotFound />;
   }
 
-  const posts = await getBlogPosts("en");
+  const posts = await fetchLocalized((l) => getBlogPosts(l));
   const morePosts = nextBlogPosts(posts, slug, 2).filter(
     (p) => p.slug !== slug,
   );

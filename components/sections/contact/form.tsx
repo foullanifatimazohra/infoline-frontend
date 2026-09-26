@@ -378,7 +378,7 @@ export default function Form({
                       {t(`success.title.${route}`)}
                     </h3>
                     <p className="body-lg-regular mt-3 max-w-[64ch] text-slate-600">
-                      {t(`success.description.${route}`)}
+                      {t(`success.description.${route}`, { email: values.email })}
                     </p>
                     <button
                       type="button"

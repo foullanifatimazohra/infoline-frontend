@@ -60,7 +60,7 @@ export default function FeaturedProof() {
         </Stagger>
         <Image
           src="/assets/insights/insights.svg"
-          alt="Insigts visual"
+          alt={t("featuredImageAlt")}
           height={600}
           width={500}
           className="object-cover"

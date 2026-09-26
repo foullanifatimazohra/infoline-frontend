@@ -52,7 +52,7 @@ export default function Traits() {
                   as="li"
                   key={item.label}
                   distance={24}
-                  className="group box-border flex flex-none cursor-default items-center gap-4 rounded-full border border-slate-100  py-4 pl-6 pr-7 shadow-[0px_24px_40px_-34px_rgba(38,50,56,0.1)] transition-colors duration-200 hover:border-brandblue-200 hover:bg-[#F3FAFD]"
+                  className="group box-border flex flex-none cursor-default items-center gap-4 rounded-full border border-slate-100  py-4 ps-6 pe-7 shadow-[0px_24px_40px_-34px_rgba(38,50,56,0.1)] transition-colors duration-200 hover:border-brandblue-200 hover:bg-[#F3FAFD]"
                 >
                   <span className="relative flex size-7 flex-none items-center justify-center">
                     <Image

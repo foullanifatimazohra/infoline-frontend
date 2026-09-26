@@ -5,6 +5,7 @@ import Featured from "@/components/sections/blog/featured";
 import Updates from "@/components/sections/blog/updates";
 import Cta from "@/components/sections/blog/cta";
 import { getBlogPosts } from "@/lib/wp/api";
+import { fetchLocalized } from "@/lib/wp/localized";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Blog.page");
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts("en");
+  const posts = await fetchLocalized((l) => getBlogPosts(l));
 
   if (posts.length === 0) {
     return (

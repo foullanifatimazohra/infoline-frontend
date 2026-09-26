@@ -8,6 +8,7 @@ import Vacancies from "@/components/sections/careers/vacancies";
 import Apply from "@/components/sections/careers/apply";
 import Cta from "@/components/sections/careers/cta";
 import { getCareers } from "@/lib/wp/api";
+import { fetchLocalized } from "@/lib/wp/localized";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("CareersPage");
@@ -19,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function CareersPage() {
-  const { items: careers } = await getCareers("en");
+  const { items: careers } = await fetchLocalized((l) => getCareers(l));
 
   return (
     <main className="overflow-x-clip">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
@@ -7,6 +7,7 @@ import { ProviderQueryWrapper } from "@/providers";
 import CustomCursor from "@/components/ui/cursor";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ScrollProgress } from "@/components/ui/motion";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,10 +20,10 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Infoline App",
-  description: "Infoline app description",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Metadata");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function RootLayout({
   children,
@@ -37,6 +38,7 @@ export default async function RootLayout({
       <body className={locale === "ar" ? "font-arabic" : "font-latin"}>
         <NextIntlClientProvider>
           <ProviderQueryWrapper>
+            <ScrollProgress />
             <Header />
             {children}
             <Footer />

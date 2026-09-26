@@ -17,7 +17,7 @@ export default function Main() {
           <HeroContent>
             <Stagger
               as="div"
-              className="flex flex-col lg:pl-10 pl-6 rtl:[pl-0 lg:pr-10 pr-6 lg:pl-0] items-start gap-0 py-14 lg:py-[clamp(0px,6vh,100px)]"
+              className="flex flex-col ps-6 lg:ps-10 items-start gap-0 py-14 lg:py-[clamp(0px,6vh,100px)]"
               stagger={0.14}
               delayChildren={0.05}
               amount={0.35}

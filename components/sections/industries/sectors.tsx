@@ -168,16 +168,26 @@ export default function Sectors() {
                     </p>
 
                     {/* Tags */}
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <Stagger
+                      as="div"
+                      className="mt-6 flex flex-wrap gap-2"
+                      stagger={0.06}
+                      delayChildren={0.15}
+                      amount={0.6}
+                    >
                       {s.tags.map((tag) => (
-                        <span
+                        <StaggerItem
+                          as="span"
                           key={tag}
-                          className="rounded-full border border-slate-200 bg-slate-25 px-3 py-1 text-[12px] font-medium text-slate-600"
+                          distance={14}
+                          duration={0.55}
+                          blur={false}
+                          className="inline-block rounded-full border border-slate-200 bg-slate-25 px-3 py-1 text-[12px] font-medium text-slate-600 transition-colors duration-300 hover:border-brandblue-300 hover:bg-brandblue-50 hover:text-brandblue-700"
                         >
                           {tag}
-                        </span>
+                        </StaggerItem>
                       ))}
-                    </div>
+                    </Stagger>
 
                     <div className="mt-8">
                       <Button

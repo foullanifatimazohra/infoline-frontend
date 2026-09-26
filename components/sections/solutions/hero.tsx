@@ -128,7 +128,7 @@ export default function Hero() {
                   <button
                     type="button"
                     onClick={() => handleServiceClick(s.id)}
-                    className="group flex w-full items-center gap-5 border-b border-white/5 py-3 text-start transition-colors hover:bg-white/[.02] hover:translate-x-3"
+                    className="group flex w-full items-center gap-5 border-b border-white/5 py-3 text-start transition-[background-color,transform] duration-300 [transition-timing-function:cubic-bezier(.16,1,.3,1)] hover:bg-white/[.02] hover:translate-x-3 rtl:hover:-translate-x-3"
                   >
                     <span className="font-mono text-[13px] tabular-nums text-slate-400 group-hover:text-brandblue-400">
                       {s.number}

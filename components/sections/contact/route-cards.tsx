@@ -10,7 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { EASE } from "@/components/ui/motion/shared";
-import { Stagger, StaggerItem } from "@/components/ui/motion";
+import { SpotlightCard, Stagger, StaggerItem } from "@/components/ui/motion";
 import { useRouteSelection, type RouteId } from "./route-context";
 
 type Route = {
@@ -63,7 +63,8 @@ export default function RouteCards() {
             const active = route === r.id;
             const Icon = r.icon;
             return (
-              <StaggerItem key={r.id}>
+              <StaggerItem key={r.id} className="h-full">
+                <SpotlightCard className="h-full rounded-2xl" lift={4}>
                 <motion.button
                   type="button"
                   onClick={() => setRoute(r.id)}
@@ -113,6 +114,7 @@ export default function RouteCards() {
                     {r.description}
                   </span>
                 </motion.button>
+                </SpotlightCard>
               </StaggerItem>
             );
           })}
@@ -125,7 +127,12 @@ export default function RouteCards() {
             className="group inline-flex items-center gap-2 font-mono text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 transition-colors hover:text-brandblue-600"
           >
             {t("profileLink")}
-            <span aria-hidden>→</span>
+            <span
+              aria-hidden
+              className="inline-block transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
+            >
+              →
+            </span>
           </a>
         </div>
       </div>
