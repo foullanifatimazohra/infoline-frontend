@@ -12,7 +12,6 @@ import {
   getClients,
   getIndustries,
   getSolutions,
-  getServices,
 } from "@/lib/wp/api";
 
 /** Derive a short, URL-safe id from a WP uri, e.g.
@@ -21,8 +20,18 @@ function slugFromUri(uri: string): string {
   return uri.replace(/^\/industries\//, "").replace(/\/$/, "");
 }
 
+// Local fallbacks for when the CMS entry has no image set yet — next/image
+// errors on an empty `src`, so these stand in rather than an empty string.
+const INDUSTRY_IMAGE_FALLBACK = "/assets/industries/i1.svg";
+const INSIGHT_IMAGE_FALLBACK = "/assets/insights/insights.svg";
+
 /** Map an API Solution to the props the home Solutions section expects. */
-function toSolutionItem(s: { title: string; uri: string; icon: { src: string } | null; problemStatement: string | null }) {
+function toSolutionItem(s: {
+  title: string;
+  uri: string;
+  icon: { src: string } | null;
+  problemStatement: string | null;
+}) {
   return {
     icon: s.icon?.src ?? null,
     title: s.title,
@@ -32,23 +41,32 @@ function toSolutionItem(s: { title: string; uri: string; icon: { src: string } |
 }
 
 /** Map an API Industry to the props the home Industries section expects. */
-function toIndustryItem(i: { title: string; uri: string; intro: string | null; image: { src: string } | null }) {
+function toIndustryItem(i: {
+  title: string;
+  uri: string;
+  intro: string | null;
+  image: { src: string } | null;
+}) {
   return {
     id: slugFromUri(i.uri),
     title: i.title,
-    image: i.image?.src ?? "",
+    image: i.image?.src ?? INDUSTRY_IMAGE_FALLBACK,
     summary: i.intro ?? "",
   };
 }
 
 /** Map an API CaseStudy to the props the home Insights section expects. */
-function toInsightItem(cs: { title: string; uri: string; image: { src: string } | null; industrySectors: { name: string }[] | null }) {
-  const category =
-    cs.industrySectors?.[0]?.name ?? cs.title ?? "Insights";
+function toInsightItem(cs: {
+  title: string;
+  uri: string;
+  image: { src: string } | null;
+  industrySectors: { name: string }[] | null;
+}) {
+  const category = cs.industrySectors?.[0]?.name ?? cs.title ?? "Insights";
   return {
     category: category,
     title: cs.title,
-    image: cs.image?.src ?? "",
+    image: cs.image?.src ?? INSIGHT_IMAGE_FALLBACK,
     href: cs.uri,
   };
 }
@@ -66,25 +84,14 @@ function toLogoItem(c: { name: string; logo: { src: string } | null }) {
 export default async function HomePage() {
   // Pull every content block that lives on this home page from the WPGraphQL
   // backend so the site is driven by the CMS instead of static locale JSON.
-  const [services, solutions, industries, caseStudies, clients] = await Promise.all([
-    getServices("en"),
+  const [solutions, industries, caseStudies, clients] = await Promise.all([
     getSolutions("en"),
     getIndustries("en"),
     getCaseStudies("en"),
     getClients("en"),
   ]);
 
-  // ------------------------------------------------ Console logs
-  // Print everything we fetched so it can be checked directly in the DevTools
-  // console while developing and debugging.
-  console.log("=== HOME PAGE — WPGraphQL fetched content ===");
-  console.log("[services]", services);
-  console.log("[solutions]", solutions);
-  console.log("[industries]", industries);
-  console.log("[caseStudies]", caseStudies);
-  console.log("[clients]", clients);
-
-  const solutionItems = services.items.map((s) => toSolutionItem({ title: s.title, uri: s.uri, problemStatement: s.problemStatement } as any));
+  const solutionItems = solutions.items.map(toSolutionItem);
   const industryItems = industries.items.map(toIndustryItem);
   const insightItems = caseStudies.items.map(toInsightItem);
   const logoItems = clients.map(toLogoItem);

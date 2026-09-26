@@ -50,10 +50,11 @@ export async function wpFetch<TData>(
 
   if (json.errors?.length) {
     throw new Error(
-      `WPGraphQL error: ${json.errors.map((e) => e.message).join(" · ")}`,
+      `WPGraphQL returned errors: ${json.errors.map((e) => e.message).join("; ")}`,
     );
   }
-  if (json.data === undefined || json.data === null) {
+
+  if (!json.data) {
     throw new Error("WPGraphQL returned no data");
   }
 

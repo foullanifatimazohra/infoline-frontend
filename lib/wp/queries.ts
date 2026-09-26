@@ -222,6 +222,63 @@ export const INDUSTRY_BY_URI = /* GraphQL */ `
   }
 `;
 
+/* ---------------------------------- Blog ----------------------------------- */
+
+/**
+ * The CMS has no dedicated "Insights"/blog post type yet (handover §7: "not
+ * created"). This uses the standard WordPress `post`/`posts` fields instead,
+ * verified live against the endpoint — `categories` doubles as the filter
+ * chips on the listing page.
+ */
+export const POSTS_LIST = /* GraphQL */ `
+  query Posts($first: Int, $language: LanguageCodeFilterEnum) {
+    posts(first: $first, where: { language: $language }) {
+      nodes {
+        title
+        slug
+        uri
+        date
+        excerpt
+        categories {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const POST_BY_URI = /* GraphQL */ `
+  query PostByUri($uri: ID!) {
+    post(id: $uri, idType: URI) {
+      title
+      slug
+      uri
+      date
+      content
+      excerpt
+      categories {
+        nodes {
+          name
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+    }
+  }
+`;
+
 /* --------------------------------- Clients -------------------------------- */
 
 export const CAREERS_LIST = /* GraphQL */ `
@@ -245,14 +302,11 @@ export const CLIENTS = /* GraphQL */ `
         databaseId
         slug
         title
-        content {
-          clientName
-          clientLogo {
-            node {
-              id
-              sourceUrl
-              altText
-            }
+        featuredImage {
+          node {
+            id
+            sourceUrl
+            altText
           }
         }
       }

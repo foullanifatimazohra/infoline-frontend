@@ -8,6 +8,8 @@ import {
   CLIENTS,
   HUBS,
   CAREERS_LIST,
+  POSTS_LIST,
+  POST_BY_URI,
 } from "./queries";
 import {
   normalizeService,
@@ -15,6 +17,8 @@ import {
   normalizeSolution,
   normalizeIndustry,
   normalizeClient,
+  normalizePost,
+  type RawPostNode,
 } from "./normalize";
 import type {
   Service,
@@ -26,6 +30,7 @@ import type {
   Career,
   Hubs,
 } from "./types";
+import type { BlogPost } from "@/lib/blog";
 
 /**
  * Locale handling (handover §7: "build routing so it can take a locale").
@@ -58,10 +63,9 @@ export async function getService(
   uri: string,
   locale: WpLocale = "en",
 ): Promise<Service | null> {
-  const data = await wpFetch<{ service: Parameters<typeof normalizeService>[0] }>(
-    SERVICE_BY_URI,
-    { uri: uriForLocale(uri, locale) },
-  );
+  const data = await wpFetch<{
+    service: Parameters<typeof normalizeService>[0];
+  }>(SERVICE_BY_URI, { uri: uriForLocale(uri, locale) });
   return normalizeService(data.service);
 }
 
@@ -81,7 +85,9 @@ export async function getServices(
       nodes: {
         title: string | null;
         uri: string | null;
-        pillars: { nodes: { name: string | null; slug: string | null }[] } | null;
+        pillars: {
+          nodes: { name: string | null; slug: string | null }[];
+        } | null;
         serviceCoreContent: { problemStatement: string | null } | null;
       }[];
     };
@@ -158,15 +164,22 @@ export async function getCaseStudies(
       nodes: {
         title: string | null;
         uri: string | null;
-        industrySectors: { nodes: { name: string | null; slug: string | null }[] } | null;
+        industrySectors: {
+          nodes: { name: string | null; slug: string | null }[];
+        } | null;
         caseStudyCoreContent: {
           featuredResult: string | null;
           resultMetric: string | null;
           clientName: string | null;
-          heroMetrics: { metric: string | null; measure: string | null }[] | null;
-          heroImage:
-            | { node?: { sourceUrl?: string | null; altText?: string | null } | null }
+          heroMetrics:
+            | { metric: string | null; measure: string | null }[]
             | null;
+          heroImage: {
+            node?: {
+              sourceUrl?: string | null;
+              altText?: string | null;
+            } | null;
+          } | null;
         } | null;
       }[];
     };
@@ -224,7 +237,10 @@ export async function getCaseStudies(
           measure: m.measure ?? "",
         })),
         image: core?.heroImage?.node?.sourceUrl
-          ? { src: core.heroImage.node.sourceUrl, alt: core.heroImage.node.altText ?? "" }
+          ? {
+              src: core.heroImage.node.sourceUrl,
+              alt: core.heroImage.node.altText ?? "",
+            }
           : null,
       },
     ];
@@ -232,7 +248,9 @@ export async function getCaseStudies(
 
   // Client-side sector filter until the backend exposes the where-arg.
   const filtered = sectorSlug
-    ? items.filter((item) => item.industrySectors.some((t) => t.slug === sectorSlug))
+    ? items.filter((item) =>
+        item.industrySectors.some((t) => t.slug === sectorSlug),
+      )
     : items;
 
   return { items: filtered, nextPage: null };
@@ -286,7 +304,10 @@ export async function getSolutions(
     `,
     { first, language: languageFilter(locale) },
   );
-  return { items: data.solutions.nodes.flatMap((n) => normalizeSolution(n) ?? []), nextPage: null };
+  return {
+    items: data.solutions.nodes.flatMap((n) => normalizeSolution(n) ?? []),
+    nextPage: null,
+  };
 }
 
 /* -------------------------------- Industry -------------------------------- */
@@ -312,9 +333,12 @@ export async function getIndustries(
         uri: string | null;
         industryCoreContent: {
           industryIntro: string | null;
-          heroImage:
-            | { node?: { sourceUrl?: string | null; altText?: string | null } | null }
-            | null;
+          heroImage: {
+            node?: {
+              sourceUrl?: string | null;
+              altText?: string | null;
+            } | null;
+          } | null;
         } | null;
       }[];
     };
@@ -405,11 +429,33 @@ export async function getCareers(
 /* --------------------------------- Clients -------------------------------- */
 
 export async function getClients(locale: WpLocale = "en"): Promise<Client[]> {
-  const data = await wpFetch<{ clients: { nodes: Parameters<typeof normalizeClient>[0][] } }>(
-    CLIENTS,
-    { language: languageFilter(locale) },
-  );
+  const data = await wpFetch<{
+    clients: { nodes: Parameters<typeof normalizeClient>[0][] };
+  }>(CLIENTS, { language: languageFilter(locale) });
   return data.clients.nodes.flatMap((n) => normalizeClient(n) ?? []);
+}
+
+/* ---------------------------------- Blog ----------------------------------- */
+
+export async function getBlogPosts(
+  locale: WpLocale = "en",
+  first = 50,
+): Promise<BlogPost[]> {
+  const data = await wpFetch<{ posts: { nodes: RawPostNode[] } }>(
+    POSTS_LIST,
+    { first, language: languageFilter(locale) },
+  );
+  return data.posts.nodes.flatMap((n) => normalizePost(n) ?? []);
+}
+
+export async function getBlogPostBySlug(
+  slug: string,
+  locale: WpLocale = "en",
+): Promise<BlogPost | null> {
+  const data = await wpFetch<{ post: RawPostNode | null }>(POST_BY_URI, {
+    uri: uriForLocale(`/${slug}/`, locale),
+  });
+  return normalizePost(data.post);
 }
 
 /* ---------------------------- Hubs / options ------------------------------ */

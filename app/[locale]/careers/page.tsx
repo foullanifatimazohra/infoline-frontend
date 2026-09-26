@@ -7,6 +7,7 @@ import Traits from "@/components/sections/careers/traits";
 import Vacancies from "@/components/sections/careers/vacancies";
 import Apply from "@/components/sections/careers/apply";
 import Cta from "@/components/sections/careers/cta";
+import { getCareers } from "@/lib/wp/api";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("CareersPage");
@@ -17,14 +18,16 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const { items: careers } = await getCareers("en");
+
   return (
     <main className="overflow-x-clip">
       <Hero />
       <Capability />
       <Learn />
       <Traits />
-      <Vacancies />
+      <Vacancies careers={careers} />
       <Apply />
       <Cta />
     </main>

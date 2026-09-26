@@ -159,13 +159,20 @@ export type Client = {
   logo: ImageField | null;
 };
 
-/** Shape returned by the live schema client node (Phase 1 §3). */
+/**
+ * Shape returned by the live schema client node. The ACF `clientContent`
+ * group from the original handover no longer exists on the live schema —
+ * `content` is a plain string (unused) and the logo is the standard
+ * `featuredImage`, with the client name on `title` (verified live).
+ */
 export type RawClientNode = {
   id: string;
   databaseId: number | null;
   slug: string | null;
   title: string | null;
-  content: { clientName: string | null; clientLogo: ImageField | null };
+  featuredImage: {
+    node?: { sourceUrl?: string | null; altText?: string | null } | null;
+  } | null;
 };
 
 /* ------------------------------------------------------------------ */

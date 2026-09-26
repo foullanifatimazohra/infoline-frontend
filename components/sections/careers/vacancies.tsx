@@ -3,23 +3,28 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem, Reveal } from "@/components/ui/motion";
-
-type Role = { title: string; discipline: string; location: string };
+import type { Career } from "@/lib/wp/types";
 
 /**
- * Vacancies — the hiring table, fully static: roles come from the designed
- * locale JSON (`CareersPage.vacancies.roles`), no CMS fetch.
+ * Vacancies — the hiring table. Role titles come from the CMS `careers` post
+ * type; discipline/location aren't modeled there yet (handover: "Careers
+ * fields: post type exists, no field group"), so those fall back to
+ * `vacancies.defaultDiscipline` / `defaultLocation`.
  *
  * On desktop it reads as a table with a header row; below `sm` it collapses
  * into stacked cards (role / meta / apply). The grid-template-columns come
  * from CSS variables so RTL flips column order automatically with the
  * document direction.
  */
-export default function Vacancies() {
+export default function Vacancies({ careers }: { careers: Career[] }) {
   const t = useTranslations("CareersPage");
   const col = (k: string) => t(`vacancies.columns.${k}`);
 
-  const roles = t.raw("vacancies.roles") as Role[];
+  const roles = careers.map((c) => ({
+    title: c.title,
+    discipline: t("vacancies.defaultDiscipline"),
+    location: t("vacancies.defaultLocation"),
+  }));
 
   return (
     <section

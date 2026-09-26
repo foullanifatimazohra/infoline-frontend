@@ -271,21 +271,99 @@ export function normalizeIndustry(raw: RawIndustry | null): Industry | null {
 
 import type { Client, RawClientNode } from "./types";
 
-type RawClient = {
-  id: string | null;
-  databaseId: number | null;
-  slug: string | null;
-  title: string | null;
-  content: { clientName: string | null; clientLogo: ImageField | null } | null;
-};
-
-export function normalizeClient(raw: RawClient | null): Client | null {
+export function normalizeClient(raw: RawClientNode | null): Client | null {
   if (!raw) return null;
   return {
     id: raw.id ?? "",
     databaseId: raw.databaseId ?? 0,
     slug: raw.slug ?? "",
-    name: raw.content?.clientName ?? raw.title ?? "",
-    logo: normalizeImage(raw.content?.clientLogo as any),
+    name: raw.title ?? "",
+    logo: normalizeImage(raw.featuredImage),
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/* Blog — standard WP `post` (no dedicated Insights post type yet)     */
+/* ------------------------------------------------------------------ */
+
+import { BLOG_CTA_IMAGE, type BlogPost } from "@/lib/blog";
+
+const HTML_ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  "#039": "'",
+  apos: "'",
+  nbsp: " ",
+  "#8211": "–",
+  "#8212": "—",
+  "#8216": "‘",
+  "#8217": "’",
+  "#8220": "“",
+  "#8221": "”",
+  "#8230": "…",
+};
+
+function decodeHtmlEntities(text: string): string {
+  return text.replace(/&(#?\w+);/g, (match, code) => {
+    if (code in HTML_ENTITIES) return HTML_ENTITIES[code];
+    if (code.startsWith("#x") || code.startsWith("#X")) {
+      return String.fromCharCode(parseInt(code.slice(2), 16));
+    }
+    if (code.startsWith("#")) {
+      return String.fromCharCode(parseInt(code.slice(1), 10));
+    }
+    return match;
+  });
+}
+
+function stripHtml(html: string): string {
+  return decodeHtmlEntities(html.replace(/<[^>]+>/g, "")).trim();
+}
+
+/** Gutenberg `content` HTML → plain-text paragraphs (handover §7: post body has no ACF field, so this reads WP's own rendered content). */
+function htmlToParagraphs(html: string): string[] {
+  const blocks = html.match(/<p[^>]*>[\s\S]*?<\/p>/g) ?? [];
+  const paragraphs = blocks.map(stripHtml).filter(Boolean);
+  if (paragraphs.length) return paragraphs;
+  const fallback = stripHtml(html);
+  return fallback ? [fallback] : [];
+}
+
+function formatDateLabel(iso: string | null): string {
+  if (!iso) return "";
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(date);
+}
+
+export type RawPostNode = {
+  title: string | null;
+  slug: string | null;
+  uri: string | null;
+  date: string | null;
+  excerpt: string | null;
+  content?: string | null;
+  categories: { nodes: { name: string | null }[] } | null;
+  featuredImage: Parameters<typeof normalizeImage>[0];
+};
+
+export function normalizePost(raw: RawPostNode | null): BlogPost | null {
+  if (!raw?.slug) return null;
+
+  return {
+    slug: raw.slug,
+    category: raw.categories?.nodes?.[0]?.name ?? "",
+    date: raw.date ?? "",
+    dateLabel: formatDateLabel(raw.date),
+    title: raw.title ? decodeHtmlEntities(raw.title) : "",
+    excerpt: raw.excerpt ? stripHtml(raw.excerpt) : "",
+    body: raw.content ? htmlToParagraphs(raw.content) : [],
+    image: normalizeImage(raw.featuredImage)?.src ?? BLOG_CTA_IMAGE,
   };
 }
