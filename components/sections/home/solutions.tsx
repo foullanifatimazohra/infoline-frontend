@@ -8,8 +8,6 @@ import {
   StaggerItem,
 } from "@/components/ui/motion";
 
-import type { SolutionItem as WpSolutionItem } from "@/components/sections/home/solutions";
-
 export type SolutionItem = {
   icon: string | null;
   title: string;
@@ -17,12 +15,9 @@ export type SolutionItem = {
   href: string;
 };
 
-export default function Solutions({
-  items,
-}: {
-  items: SolutionItem[];
-}) {
+export default function Solutions() {
   const t = useTranslations("Solutions");
+  const items = t.raw("items") as SolutionItem[];
 
   return (
     <section className="bg-[#0a1014] py-10 text-white sm:py-12 lg:py-28">
@@ -63,22 +58,22 @@ export default function Solutions({
             return (
               <StaggerItem as="li" key={item.title}>
                 <SpotlightCard tone="dark" className="h-full rounded-2xl">
-                <Link
-                  href={item.href}
-                  className="group flex h-full flex-col rounded-2xl border p-6 transition-[border-color,background,box-shadow] duration-300 border-slate-600/60 bg-white/[.02] hover:border-brandblue-500/60 hover:bg-brandblue-500/[.06] hover:shadow-[0_16px_40px_-24px_rgba(28,151,212,0.8)]"
-                >
-                  <Icon
-                    src={item.icon ?? ""}
-                    className="size-8 text-brandblue-400 transition-transform duration-500 [transition-timing-function:cubic-bezier(.34,1.56,.64,1)] group-hover:-rotate-6 group-hover:scale-110"
-                    aria-hidden
-                  />
-                  <h3 className="mt-8 heading-md-semibold font-semibold transition-colors text-white group-hover:text-brandblue-500">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 body-md-regular leading-relaxed text-slate-100">
-                    {item.description}
-                  </p>
-                </Link>
+                  <Link
+                    href={item.href}
+                    className="group flex h-full flex-col rounded-2xl border p-6 transition-[border-color,background,box-shadow] duration-300 border-slate-600/60 bg-white/[.02] hover:border-brandblue-500/60 hover:bg-brandblue-500/[.06] hover:shadow-[0_16px_40px_-24px_rgba(28,151,212,0.8)]"
+                  >
+                    <Icon
+                      src={item.icon ?? ""}
+                      className="size-8 text-brandblue-400 transition-transform duration-500 [transition-timing-function:cubic-bezier(.34,1.56,.64,1)] group-hover:-rotate-6 group-hover:scale-110"
+                      aria-hidden
+                    />
+                    <h3 className="mt-8 heading-md-semibold font-semibold transition-colors text-white group-hover:text-brandblue-500">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 body-md-regular leading-relaxed text-slate-100">
+                      {item.description}
+                    </p>
+                  </Link>
                 </SpotlightCard>
               </StaggerItem>
             );

@@ -3,12 +3,9 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
-import { ProviderQueryWrapper } from "@/providers";
 import CustomCursor from "@/components/ui/cursor";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { ScrollProgress } from "@/components/ui/motion";
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -37,13 +34,10 @@ export default async function RootLayout({
     >
       <body className={locale === "ar" ? "font-arabic" : "font-latin"}>
         <NextIntlClientProvider>
-          <ProviderQueryWrapper>
-            <ScrollProgress />
-            <Header />
-            {children}
-            <Footer />
-            <CustomCursor />
-          </ProviderQueryWrapper>
+          <Header />
+          {children}
+          <Footer />
+          <CustomCursor />
         </NextIntlClientProvider>
       </body>
     </html>

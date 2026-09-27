@@ -3,28 +3,22 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem, Reveal } from "@/components/ui/motion";
-import type { Career } from "@/lib/wp/types";
+
+type Role = { title: string; discipline: string; location: string };
 
 /**
- * Vacancies — the hiring table. Role titles come from the CMS `careers` post
- * type; discipline/location aren't modeled there yet (handover: "Careers
- * fields: post type exists, no field group"), so those fall back to
- * `vacancies.defaultDiscipline` / `defaultLocation`.
+ * Vacancies — the hiring table, driven entirely by the static
+ * `CareersPage.vacancies.roles` locale content.
  *
  * On desktop it reads as a table with a header row; below `sm` it collapses
  * into stacked cards (role / meta / apply). The grid-template-columns come
  * from CSS variables so RTL flips column order automatically with the
  * document direction.
  */
-export default function Vacancies({ careers }: { careers: Career[] }) {
+export default function Vacancies() {
   const t = useTranslations("CareersPage");
   const col = (k: string) => t(`vacancies.columns.${k}`);
-
-  const roles = careers.map((c) => ({
-    title: c.title,
-    discipline: t("vacancies.defaultDiscipline"),
-    location: t("vacancies.defaultLocation"),
-  }));
+  const roles = t.raw("vacancies.roles") as Role[];
 
   return (
     <section
@@ -122,8 +116,7 @@ export default function Vacancies({ careers }: { careers: Career[] }) {
                     </span>
                   </div>
 
-                  {/* Apply — deep-links to the on-page application form.
-                      Plain anchor (native hash scroll, no locale prefixing). */}
+                  {/* Apply — deep-links to the on-page application card. */}
                   <div className="sm:text-end">
                     <a
                       href="#apply"

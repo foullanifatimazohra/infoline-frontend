@@ -3,19 +3,16 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-export type IndustryItem = {
-  id: string;
+type Industry = {
   title: string;
   image: string;
-  summary: string;
+  href: string;
+  description: string;
 };
 
-export default function Industries({
-  items,
-}: {
-  items: IndustryItem[];
-}) {
+export default function Industries() {
   const t = useTranslations("Industries");
+  const items = t.raw("items") as Industry[];
 
   return (
     <section className="bg-white py-20 text-[#0a1014] sm:py-24 lg:py-28">
@@ -54,9 +51,9 @@ export default function Industries({
           stagger={0.11}
         >
           {items.map((item) => (
-            <StaggerItem as="li" key={item.id}>
+            <StaggerItem as="li" key={item.title}>
               <Link
-                href={`/industries#sec-${item.id}`}
+                href={item.href}
                 className="group relative block aspect-[4/3] max-h-[254px] w-full overflow-hidden rounded-2xl"
               >
                 {/* 1. Image — bottom layer */}
@@ -84,7 +81,7 @@ export default function Industries({
                   {/* Description: revealed on hover */}
                   <div className="grid grid-rows-[0fr] transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:grid-rows-[1fr] group-hover:mt-2">
                     <p className="line-clamp-2 max-w-[90%] overflow-hidden text-[14px] leading-relaxed text-white/75 opacity-0 -translate-y-1 transition-all duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:opacity-100 group-hover:translate-y-0">
-                      {item.summary}
+                      {item.description}
                     </p>
                   </div>
                 </div>

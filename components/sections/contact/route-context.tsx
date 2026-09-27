@@ -16,8 +16,14 @@ type RouteContextValue = {
  */
 const RouteContext = createContext<RouteContextValue | null>(null);
 
-export function RouteProvider({ children }: { children: ReactNode }) {
-  const [route, setRoute] = useState<RouteId>("service");
+export function RouteProvider({
+  children,
+  initialRoute = "service",
+}: {
+  children: ReactNode;
+  initialRoute?: RouteId;
+}) {
+  const [route, setRoute] = useState<RouteId>(initialRoute);
   return (
     <RouteContext.Provider value={{ route, setRoute }}>
       {children}

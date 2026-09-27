@@ -4,20 +4,16 @@ import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
-export type InsightItem = {
+type Insight = {
   category: string;
   title: string;
   image: string;
   href: string;
 };
 
-export default function Insights({
-  items,
-}: {
-  items: InsightItem[];
-}) {
+export default function Insights() {
   const t = useTranslations("Insights");
-  const insights = items;
+  const insights = t.raw("items") as Insight[];
 
   return (
     <section className="insights flex items-center justify-center py-20 lg:py-26">
@@ -41,7 +37,7 @@ export default function Insights({
           </StaggerItem>
           <StaggerItem direction="end">
             <Link
-              href={t("allCta.href")}
+              href="/blogs"
               className="group overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
             >
               {t("allCta.label")}

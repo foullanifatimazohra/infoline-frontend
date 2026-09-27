@@ -14,7 +14,7 @@ export function MainBackground() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="absolute inset-0 -z-1 overflow-hidden bg-ink">
+    <div className="absolute inset-0 -z-1 overflow-hidden bg-ink/90">
       {/* Primary brand glow — top-left, wide and soft. */}
       <motion.div
         aria-hidden

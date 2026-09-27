@@ -17,10 +17,6 @@ export const WP_GRAPHQL_ENDPOINT =
   process.env.NEXT_PUBLIC_WPGRAPHQL_ENDPOINT ??
   "https://green-tarsier-764009.hostingersite.com/graphql";
 
-export const WP_APPLY_ENDPOINT =
-  process.env.NEXT_PUBLIC_WP_APPLY_ENDPOINT ??
-  "https://green-tarsier-764009.hostingersite.com/wp-json/infoline/v1/apply";
-
 export type InquiryAction = "service_inquiry" | "project_inquiry" | "media_inquiry";
 
 /** Fixed keys per handover §3 — send the key, never the UI label. */
@@ -116,68 +112,6 @@ export async function submitInquiry(
   return {
     ...payload,
     validationErrors: payload.validationErrors ?? [],
-  };
-}
-
-export type JobApplicationInput = {
-  name: string;
-  email: string;
-  phone: string;
-  /** Title of the role the candidate applied from. */
-  position: string;
-  message?: string;
-  /** PDF, DOC or DOCX — max 5 MB (validated by the API). */
-  cv: File;
-  website?: string;
-  turnstileToken?: string;
-};
-
-export type JobApplicationResult = SubmitInquiryResult & { action?: string };
-
-/**
- * Job application via the REST endpoint (multipart — do NOT set Content-Type;
- * the browser must add the multipart boundary itself or the upload breaks).
- * HTTP 200 on success, 422 on rejection (status code is meaningful here).
- */
-export async function submitJobApplication(
-  input: JobApplicationInput,
-  { signal }: { signal?: AbortSignal } = {},
-): Promise<JobApplicationResult> {
-  const form = new FormData();
-  form.append("name", input.name);
-  form.append("email", input.email);
-  form.append("phone", input.phone);
-  form.append("position", input.position);
-  if (input.message) form.append("message", input.message);
-  form.append("cv", input.cv);
-  // Honeypot — always empty for real users.
-  form.append("website", input.website ?? "");
-  form.append("turnstileToken", input.turnstileToken ?? "");
-
-  const res = await fetch(WP_APPLY_ENDPOINT, {
-    method: "POST",
-    body: form,
-    signal,
-  });
-
-  let payload: JobApplicationResult | null = null;
-  try {
-    payload = (await res.json()) as JobApplicationResult;
-  } catch {
-    // Non-JSON error body — fall through to the status handling below.
-  }
-
-  if (!payload) {
-    throw new Error(`Application request failed: HTTP ${res.status}`);
-  }
-
-  return {
-    success: payload.success ?? res.ok,
-    message: payload.message ?? "",
-    entryId: payload.entryId ?? 0,
-    emailSent: payload.emailSent ?? false,
-    validationErrors: payload.validationErrors ?? [],
-    action: payload.action,
   };
 }
 

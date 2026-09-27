@@ -1308,32 +1308,11 @@
     },
     "apply": {
       "title": "Apply for this role",
-      "name": "Full name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "you@company.com",
-      "phone": "Phone",
-      "phonePlaceholder": "+968 …",
-      "cv": "CV / Resume",
-      "cvHint": "PDF, DOC or DOCX — max 5 MB",
-      "cvButton": "Choose file",
-      "cvSelected": "file selected",
-      "message": "Message (optional)",
-      "messagePlaceholder": "Anything you want us to know",
-      "submit": "Submit application",
-      "submitting": "Sending…",
-      "successTitle": "Application received",
-      "successDescription": "Thank you for applying — our team will be in touch.",
-      "successAgain": "Apply to another role",
-      "errors": {
-        "name": "Please enter your full name",
-        "email": "Enter a valid email",
-        "phone": "Enter a valid phone number",
-        "position": "Missing role",
-        "cv": "Attach your CV (PDF, DOC or DOCX, max 5 MB)",
-        "general": "Something went wrong sending your application. Please try again."
-      },
-      "role": "Role"
+      "description": "Tell us which role you're interested in through our contact form — our team reviews every application personally and replies within 1 business day.",
+      "cta": {
+        "label": "Apply via contact form",
+        "href": "/contact?route=careers"
+      }
     }
   },
   "Header": {

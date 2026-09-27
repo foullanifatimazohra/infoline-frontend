@@ -35,7 +35,7 @@ export default function Hero() {
             </div>
             <StaggerItem
               as="p"
-              className="max-w-[52ch] pb-2 text-[15px] leading-[1.65] text-slate-500 lg:text-end"
+              className="max-w-[52ch] pb-2 text-[15px] leading-[1.65] text-slate-500 lg:text-start"
             >
               {t("hero.description")}
             </StaggerItem>

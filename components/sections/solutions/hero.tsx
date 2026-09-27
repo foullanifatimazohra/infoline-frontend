@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { MainBackground } from "@/components/ui/background/main";
-import { Reveal, Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
+import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 
 type IndexService = {
   id: string;
