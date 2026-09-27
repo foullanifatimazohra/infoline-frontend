@@ -22,11 +22,12 @@ export default function Cta() {
           duration={1.15}
         >
           <Image
-            src={BLOG_CTA_IMAGE}
+            src="/assets/options/bg.jpg"
             alt=""
             fill
-            sizes="(min-width: 1440px) 1336px, 100vw"
-            className="pointer-events-none object-cover opacity-90"
+            aria-hidden
+            className="object-cover object-top-right"
+            priority={false}
           />
           <div
             aria-hidden

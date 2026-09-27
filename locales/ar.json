@@ -715,40 +715,7 @@
   "Industries": {
     "eyebrow": "القطاعات · 6 قطاعات",
     "title": "إذا كنت تفكر بالقطاعات، ابدأ من هنا.",
-    "description": "تسمي كل صفحة قطاع العمليات التي نشغّلها هناك، والقيود التنظيمية التي نعمل ضمنها، ونتائج العملاء التي نضعها أمام لجنة تقييم.",
-    "items": [
-      {
-        "title": "الحكومة والجهات العامة",
-        "image": "/assets/industries/i1.png",
-        "href": "#government",
-        "description": "لدينا تاريخ طويل في العمل مع الحكومة والجهات العامة، نقدّم فيه حلولاً فعّالة وكفؤة تلبي احتياجاتها الفريدة."
-      },
-      {
-        "title": "الاتصالات والتقنية",
-        "image": "/assets/industries/i2.png",
-        "href": "#telecom"
-      },
-      {
-        "title": "الرعاية الصحية",
-        "image": "/assets/industries/i3.png",
-        "href": "#healthcare"
-      },
-      {
-        "title": "الطاقة والمرافق",
-        "image": "/assets/industries/i4.png",
-        "href": "#energy"
-      },
-      {
-        "title": "الخدمات المصرفية والمالية والتأمين",
-        "image": "/assets/industries/i5.png",
-        "href": "#bfsi"
-      },
-      {
-        "title": "التجزئة",
-        "image": "/assets/industries/i6.png",
-        "href": "#retail"
-      }
-    ]
+    "description": "تسمي كل صفحة قطاع العمليات التي نشغّلها هناك، والقيود التنظيمية التي نعمل ضمنها، ونتائج العملاء التي نضعها أمام لجنة تقييم."
   },
   "Main": {
     "eyebrow": "نعمل في عُمان منذ 2004",

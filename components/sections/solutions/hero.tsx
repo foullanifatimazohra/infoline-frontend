@@ -143,7 +143,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <MainBackground />
+      <MainBackground tone="translucent" />
     </section>
   );
 }

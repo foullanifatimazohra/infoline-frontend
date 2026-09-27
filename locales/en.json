@@ -715,40 +715,7 @@
   "Industries": {
     "eyebrow": "Industries · 6 sectors",
     "title": "If you think in sectors, start here instead.",
-    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee.",
-    "items": [
-      {
-        "title": "Government & Public Authorities",
-        "image": "/assets/industries/i1.svg",
-        "href": "#government",
-        "description": "We have a long history of working with government and public authorities, providing efficient and effective solutions to meet their unique needs."
-      },
-      {
-        "title": "Telecom & Technology",
-        "image": "/assets/industries/i2.svg",
-        "href": "#telecom"
-      },
-      {
-        "title": "Healthcare",
-        "image": "/assets/industries/i3.png",
-        "href": "#healthcare"
-      },
-      {
-        "title": "Energy & Utilities",
-        "image": "/assets/industries/i4.png",
-        "href": "#energy"
-      },
-      {
-        "title": "Banking, Financial Services & Insurance",
-        "image": "/assets/industries/i5.png",
-        "href": "#bfsi"
-      },
-      {
-        "title": "Retail",
-        "image": "/assets/industries/i6.png",
-        "href": "#retail"
-      }
-    ]
+    "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee."
   },
   "Main": {
     "eyebrow": "Operating in Oman since 2004",

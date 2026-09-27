@@ -23,9 +23,6 @@ type NavItem = { label: string; href: string };
 /** Routes whose hero is light, so the header uses its light theme (per Figma). */
 const LIGHT_HERO_ROUTES = ["/contact"];
 
-/** Hide the bar once the user has scrolled past this many px and keeps going down. */
-const HIDE_AFTER = 160;
-
 export const Header = () => {
   const t = useTranslations("Header");
   const menuItems = t.raw("nav") as NavItem[];
@@ -39,19 +36,14 @@ export const Header = () => {
     href !== "#" && (pathname === href || pathname.startsWith(`${href}/`));
 
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
-  // Solid background after the first few px; hide on scroll-down, reveal on
-  // scroll-up. Never hides while the mobile menu is open.
+  // Solid background after the first few px. The bar itself stays fixed and
+  // visible at all times — it never hides on scroll.
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
     setScrolled(y > 16);
-    if (open) return;
-    if (y > prev + 4 && y > HIDE_AFTER) setHidden(true);
-    else if (y < prev - 4 || y <= HIDE_AFTER) setHidden(false);
   });
 
   // Correct state on mount (e.g. reload mid-page, where no scroll event fires).
@@ -106,11 +98,9 @@ export const Header = () => {
               ? "bg-white/85 backdrop-blur-[18px] backdrop-saturate-140 shadow-[0_1px_0_0_rgba(15,40,60,0.08)]"
               : "bg-ink backdrop-blur-[18px] backdrop-saturate-140 shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
         }`}
-        // Pixel offsets (header is h-21 = 84px): a numeric 0 lets framer reset
-        // the transform to `none` once settled.
         initial={reduce ? { opacity: 0 } : { y: -96, opacity: 0 }}
-        animate={reduce ? { opacity: 1 } : { y: hidden ? -96 : 0, opacity: 1 }}
-        transition={{ duration: hidden ? 0.35 : 0.6, ease: EASE }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: EASE }}
       >
         <div className="mx-auto flex h-21 max-w-360 items-center justify-between gap-7 px-6 md:px-12">
           <Link

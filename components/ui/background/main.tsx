@@ -10,11 +10,19 @@ import { motion, useReducedMotion } from "framer-motion";
  * All motion is slow, low-contrast and GPU-friendly (transform/opacity only).
  * Under `prefers-reduced-motion` the blobs render in a fixed resting position.
  */
-export function MainBackground() {
+export function MainBackground({
+  tone = "solid",
+}: {
+  /** "solid" = fully opaque ink base (home hero); "translucent" = bg-ink/90,
+   * letting the video/gradient layers underneath (solutions, industries) show through. */
+  tone?: "solid" | "translucent";
+}) {
   const reduce = useReducedMotion();
 
   return (
-    <div className="absolute inset-0 -z-1 overflow-hidden bg-ink/90">
+    <div
+      className={`absolute inset-0 -z-1 overflow-hidden ${tone === "translucent" ? "bg-ink/90" : "bg-ink"}`}
+    >
       {/* Primary brand glow — top-left, wide and soft. */}
       <motion.div
         aria-hidden
