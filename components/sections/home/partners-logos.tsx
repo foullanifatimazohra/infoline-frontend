@@ -10,8 +10,7 @@ type Props = {
   durationSeconds?: number;
 };
 
-// Replace with data fetched from your backend.
-const DEMO_LOGOS: LogoItem[] = [
+const LOGOS: LogoItem[] = [
   { src: "/assets/clients/moh.svg", alt: "Ministry of Health" },
   {
     src: "/assets/clients/tra.svg",
@@ -44,7 +43,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         >
           <StaggerItem
             as="p"
-            className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-400"
+            className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-600"
           >
             {t("eyebrow")}
           </StaggerItem>
@@ -64,7 +63,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         </Stagger>
 
         <div className="mt-7">
-          <LogoMarquee logos={DEMO_LOGOS} durationSeconds={durationSeconds} />
+          <LogoMarquee logos={LOGOS} durationSeconds={durationSeconds} />
         </div>
 
         <div className="mt-7 text-center">

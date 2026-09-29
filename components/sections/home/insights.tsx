@@ -37,7 +37,7 @@ export default function Insights() {
           </StaggerItem>
           <StaggerItem direction="end">
             <Link
-              href={t("allCta.href")}
+              href="/blog"
               className="group overline-sm-medium uppercase text-brandblue-500 hover:text-brandblue-300 transition-colors whitespace-nowrap flex items-center gap-xs"
             >
               {t("allCta.label")}

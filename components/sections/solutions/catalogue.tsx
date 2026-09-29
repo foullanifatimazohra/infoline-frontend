@@ -102,7 +102,7 @@ export default function Catalogue() {
         </div>
 
         {/* Interactive card */}
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_60px_-45px_rgba(38,50,56,0.55)] lg:grid-cols-[minmax(0,220px)_1fr]">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_60px_-45px_rgba(38,50,56,0.55)] lg:grid-cols-[minmax(0,240px)_1fr]">
           {/* LEFT RAIL */}
           <div className="border-b border-slate-100 lg:border-e lg:border-b-0">
             <div className="flex gap-2 overflow-x-auto lg:flex-col lg:overflow-visible">
@@ -145,7 +145,7 @@ export default function Catalogue() {
                         {s.title}
                       </span>
                       <span
-                        className={`body-xs-regular mt-2 uppercase tracking-[0.1em] ${
+                        className={`body-xs-regular mt-2 ${
                           isActive ? "text-brandblue-400" : "text-slate-400"
                         }`}
                       >
@@ -223,14 +223,14 @@ export default function Catalogue() {
 
 function ServicePhoto({ src }: { src: string }) {
   return (
-    <div className="relative w-full  border rounded-xl border-brandblue-500">
+    <div className="relative lg:h-[520px] lg:max-w-[290px] w-full border rounded-xl border-brandblue-500">
       <Image
         src={src}
         alt=""
-        height={530}
+        height={520}
         width={290}
         aria-hidden
-        className="object-cover h-full min-w-[290px] w-full rounded-xl"
+        className="object-cover lg:h-[520px] lg:max-w-[290px] w-full rounded-xl"
       />
 
       {/* Gradient overlay */}

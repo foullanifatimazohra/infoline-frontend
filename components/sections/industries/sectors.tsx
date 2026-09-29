@@ -1,9 +1,12 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Icon from "@/components/ui/icon";
 import Button from "@/components/ui/button";
-import { MaskText, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Sector = {
   id: string;
@@ -21,6 +24,57 @@ type Sector = {
 export default function Sectors() {
   const t = useTranslations("IndustriesPage");
   const sectors = t.raw("sectors.items") as Sector[];
+
+  /**
+   * Deep-link correction (e.g. /industries#sec-telecom from the home grid).
+   *
+   * Every sector article is `position: sticky` with a scroll-driven recede
+   * animation, so the browser's built-in hash scroll can align against a
+   * stuck/scaled box instead of the article's natural flow position — landing
+   * deep-links on the wrong card. This effect recomputes the target's natural
+   * offset from LAYOUT metrics (offsetHeight ignores transforms; preceding
+   * siblings + the container's row gap) and applies it directly, so the
+   * landing point is exact regardless of sticky/animation state. Re-applied
+   * after fonts/images settle so late layout shifts can't undo it.
+   */
+  useEffect(() => {
+    const applyHashScroll = () => {
+      const hash = window.location.hash;
+      if (!hash.startsWith("#sec-")) return;
+      const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+      const scroller = document.scrollingElement;
+      if (!el || !scroller) return;
+
+      const container = el.parentElement;
+      let naturalTop: number;
+      if (container) {
+        const gap = parseFloat(getComputedStyle(container).rowGap || "0") || 0;
+        let acc = 0;
+        let node = container.firstElementChild as HTMLElement | null;
+        while (node && node !== el) {
+          acc += node.offsetHeight + gap; // offsetHeight: layout size, sticky/transform-proof
+          node = node.nextElementSibling as HTMLElement | null;
+        }
+        naturalTop = container.getBoundingClientRect().top + scroller.scrollTop + acc;
+      } else {
+        naturalTop = el.getBoundingClientRect().top + scroller.scrollTop;
+      }
+
+      const margin = parseFloat(getComputedStyle(el).scrollMarginTop || "0") || 0;
+      const target = Math.max(0, naturalTop - margin);
+      if (Math.abs(scroller.scrollTop - target) > 2) {
+        scroller.scrollTop = target;
+      }
+    };
+
+    applyHashScroll();
+    const t = setTimeout(applyHashScroll, 400);
+    window.addEventListener("load", applyHashScroll);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("load", applyHashScroll);
+    };
+  }, []);
 
   return (
     <section className="bg-white py-6xl">
@@ -114,16 +168,26 @@ export default function Sectors() {
                     </p>
 
                     {/* Tags */}
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <Stagger
+                      as="div"
+                      className="mt-6 flex flex-wrap gap-2"
+                      stagger={0.06}
+                      delayChildren={0.15}
+                      amount={0.6}
+                    >
                       {s.tags.map((tag) => (
-                        <span
+                        <StaggerItem
+                          as="span"
                           key={tag}
-                          className="rounded-full border border-slate-200 bg-slate-25 px-3 py-1 text-[12px] font-medium text-slate-600"
+                          distance={14}
+                          duration={0.55}
+                          blur={false}
+                          className="inline-block rounded-full border border-slate-200 bg-slate-25 px-3 py-1 text-[12px] font-medium text-slate-600 transition-colors duration-300 hover:border-brandblue-300 hover:bg-brandblue-50 hover:text-brandblue-700"
                         >
                           {tag}
-                        </span>
+                        </StaggerItem>
                       ))}
-                    </div>
+                    </Stagger>
 
                     <div className="mt-8">
                       <Button

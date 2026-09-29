@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import Hero from "@/components/sections/about/hero";
 import WhoWeAre from "@/components/sections/about/who-we-are";
 import Accountability from "@/components/sections/about/accountability";
@@ -8,6 +10,20 @@ import Capability from "@/components/sections/about/capability";
 import Leadership from "@/components/sections/about/leadership";
 import Documents from "@/components/sections/about/documents";
 import Cta from "@/components/sections/about/cta";
+import { localeAlternates } from "@/lib/site";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const [t, locale] = await Promise.all([
+    getTranslations("AboutPage"),
+    getLocale(),
+  ]);
+
+  return {
+    title: `${t("hero.eyebrow")} — ${t("hero.titleLead")} ${t("hero.titleAccent")}`,
+    description: t("hero.description"),
+    alternates: await localeAlternates(locale, "/about"),
+  };
+}
 
 export default function AboutPage() {
   return (
