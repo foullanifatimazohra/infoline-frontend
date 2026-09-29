@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `${t("hero.eyebrow")} — ${t("hero.titleLead")} ${t("hero.titleAccent")}`,
     description: t("hero.description"),
-    alternates: localeAlternates(locale, "/case-studies"),
+    alternates: await localeAlternates(locale, "/case-studies"),
   };
 }
 

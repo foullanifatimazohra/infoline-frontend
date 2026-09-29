@@ -22,8 +22,13 @@ export default function Proof() {
             amount={0.3}
           >
             {stats.map((stat) => (
-              <StaggerItem key={stat.label} className="max-w-[570px]">
-                <dt className="sr-only">{stat.label}</dt>
+              <StaggerItem
+                key={stat.label}
+                className="flex max-w-[570px] flex-col-reverse"
+              >
+                <dt className="mt-2 text-[13px] leading-snug text-slate-300">
+                  {stat.label}
+                </dt>
                 <dd className="text-3xl font-bold sm:text-4xl">
                   <CountUp
                     value={stat.value}
@@ -35,9 +40,6 @@ export default function Proof() {
                     </span>
                   )}
                 </dd>
-                <p className="mt-2 text-[13px] leading-snug text-slate-300">
-                  {stat.label}
-                </p>
               </StaggerItem>
             ))}
           </Stagger>

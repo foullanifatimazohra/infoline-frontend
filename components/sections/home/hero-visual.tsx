@@ -141,10 +141,10 @@ export default function HeroVisual() {
         className="relative w-full lg:absolute lg:inset-x-0 lg:inset-y-0 lg:my-auto lg:h-[min(92%,46vw)]"
       >
         <Image
-          src="/assets/hero/arc.svg"
+          src="/assets/hero/arc.png"
           alt={t("heroImageAlt")}
-          width={680}
-          height={550}
+          width={1360}
+          height={1108}
           priority
           className="h-auto w-full object-contain object-bottom-left lg:h-full"
         />

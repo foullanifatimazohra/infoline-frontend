@@ -63,7 +63,7 @@ export default function Hero() {
       </div>
 
       {/* Foreground copy */}
-      <div className="relative mx-auto w-full max-w-360 px-6 py-28 lg:px-10 lg:py-50">
+      <div className="relative mx-auto w-full max-w-360 px-6 py-28 lg:px-10 lg:py-50 2xl:flex 2xl:h-screen 2xl:justify-center 2xl:items-center">
         <Stagger
           as="div"
           className="flex flex-col items-center"

@@ -5,7 +5,7 @@ import Proof from "./proof";
 import HeroVisual from "./hero-visual";
 import HeroContent from "./hero-content";
 import { MainBackground } from "@/components/ui/background";
-import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 
 export default function Main() {
   const t = useTranslations("Main");
@@ -32,17 +32,14 @@ export default function Main() {
                 </span>
               </StaggerItem>
 
-              <MaskText
-                as="h1"
-                className="max-w-[20ch] text-white text-[48px] font-bold leading-[1.06] tracking-[-.033em]"
-                segments={[
-                  { text: t("titleLead") },
-                  { text: t("titleAccent"), className: "text-lightblue-300" },
-                ]}
-                orchestrated
-                stagger={0.08}
-                duration={0.95}
-              />
+              {/* Plain, unanimated — this is the page's LCP element. Fading
+                  it in via a word-cascade (like every other heading) held
+                  the largest contentful paint back by 1.5s+ waiting on the
+                  stagger; it renders at full opacity immediately instead. */}
+              <h1 className="max-w-[20ch] text-white text-[48px] font-bold leading-[1.06] tracking-[-.033em]">
+                {t("titleLead")}{" "}
+                <span className="text-lightblue-300">{t("titleAccent")}</span>
+              </h1>
 
               <StaggerItem
                 as="p"
@@ -71,7 +68,7 @@ export default function Main() {
 
               <StaggerItem
                 as="p"
-                className="mt-6.5 font-mono text-[13px] leading-[1.6] text-slate-500"
+                className="mt-6.5 font-mono text-[13px] leading-[1.6] text-slate-400"
                 distance={32}
               >
                 {t("responseNote")}

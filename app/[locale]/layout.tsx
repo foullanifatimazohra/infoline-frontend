@@ -6,7 +6,7 @@ import "./globals.css";
 import CustomCursor from "@/components/ui/cursor";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { SITE_NAME, SITE_URL, localeAlternates } from "@/lib/site";
+import { SITE_NAME, getSiteUrl, localeAlternates } from "@/lib/site";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -21,15 +21,19 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [t, locale] = await Promise.all([getTranslations("Metadata"), getLocale()]);
+  const [t, locale, siteUrl] = await Promise.all([
+    getTranslations("Metadata"),
+    getLocale(),
+    getSiteUrl(),
+  ]);
   const title = t("title");
   const description = t("description");
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(siteUrl),
     title,
     description,
-    alternates: localeAlternates(locale),
+    alternates: await localeAlternates(locale),
     robots: { index: true, follow: true },
     openGraph: {
       title,

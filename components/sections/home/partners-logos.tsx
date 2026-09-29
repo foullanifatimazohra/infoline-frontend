@@ -43,7 +43,7 @@ export default function PartnerLogos({ durationSeconds = 30 }: Props) {
         >
           <StaggerItem
             as="p"
-            className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-400"
+            className="text-[12px] font-medium uppercase tracking-[0.28em] text-slate-600"
           >
             {t("eyebrow")}
           </StaggerItem>

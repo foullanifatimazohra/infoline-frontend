@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: post ? `${post.title} — Infoline` : "Infoline",
     description: post?.excerpt,
     robots: post ? undefined : { index: false, follow: true },
-    alternates: post ? localeAlternates(locale, `/blog/${slug}`) : undefined,
+    alternates: post ? await localeAlternates(locale, `/blog/${slug}`) : undefined,
   };
 }
 

@@ -33,7 +33,7 @@ export default function Options() {
           stagger={0.15}
         >
           <StaggerItem direction="start">
-            <p className="overline-sm-medium text-slate-500 mb-sm">
+            <p className="overline-sm-medium text-slate-600 mb-sm">
               {t("eyebrow")}
             </p>
             <MaskText
