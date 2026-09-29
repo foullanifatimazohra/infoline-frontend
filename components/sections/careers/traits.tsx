@@ -64,7 +64,7 @@ export default function Traits() {
                       aria-hidden
                     />
                   </span>
-                  <h3 className="items-center body-xl-medium text-slate-700">
+                  <h3 className="items-center text-wrap body-xl-medium text-slate-700">
                     {item.label}
                   </h3>
                 </StaggerItem>

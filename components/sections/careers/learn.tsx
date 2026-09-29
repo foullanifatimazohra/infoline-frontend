@@ -11,7 +11,7 @@ export default function Learn() {
     <section className="bg-white py-24 lg:py-32">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Reveal
-          className="relative h-[612px] overflow-hidden rounded-2xl bg-[#0D161B]"
+          className="relative lg:h-[612px] h-full overflow-hidden rounded-2xl bg-[#0D161B]"
           amount={0.25}
           duration={1.1}
         >
@@ -21,12 +21,12 @@ export default function Learn() {
 
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-[-36.83%] z-0 h-[635px] w-[635px] -translate-x-1/2 rounded-[172px] bg-[radial-gradient(70.71%_70.71%_at_50%_50%,rgba(0,188,212,0.13)_0%,rgba(0,188,212,0)_70%)] blur-[13px]"
+            className="pointer-events-none absolute left-1/2 top-[-36.83%] z-0 lg:h-[635px] h-full w-[635px] -translate-x-1/2 rounded-[172px] bg-[radial-gradient(70.71%_70.71%_at_50%_50%,rgba(0,188,212,0.13)_0%,rgba(0,188,212,0)_70%)] blur-[13px]"
           />
 
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-[32.53%] left-[-6.32%] z-0 h-[450px] w-[640px] rounded-[172px] bg-[radial-gradient(70.71%_70.71%_at_50%_50%,rgba(0,188,212,0.13)_0%,rgba(0,188,212,0)_70%)] blur-[13px]"
+            className="pointer-events-none absolute -bottom-[32.53%] left-[-6.32%] z-0  w-[640px] rounded-[172px] bg-[radial-gradient(70.71%_70.71%_at_50%_50%,rgba(0,188,212,0.13)_0%,rgba(0,188,212,0)_70%)] blur-[13px]"
           />
 
           <div
@@ -61,7 +61,7 @@ export default function Learn() {
               Content
           ========================== */}
 
-          <div className="relative z-10 px-7 pt-10 lg:px-11">
+          <div className="relative z-10 px-7 py-10 lg:px-11">
             <div className="grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
               {/* Left */}
               <div>
@@ -102,11 +102,10 @@ export default function Learn() {
                   distance={20}
                   className="
                     box-border
-                    inline-flex
-                    h-[38px]
+                    lg:h-[38px]
                     items-center
                     justify-center
-                    whitespace-nowrap
+                    flex-wrap
                     rounded-full
                     border
                     border-[rgba(171,215,237,0.2)]
