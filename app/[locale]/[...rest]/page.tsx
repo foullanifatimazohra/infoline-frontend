@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ThemedNotFound from "@/components/sections/not-found/themed";
+import ThemedNotFound from "@/components/sections/not-found";
 
 /**
  * Catch-all for unmatched URLs inside a locale. Renders the themed

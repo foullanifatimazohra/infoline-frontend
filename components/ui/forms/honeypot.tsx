@@ -5,7 +5,7 @@
  * fill it; bots usually do. It must be hidden off-screen with CSS (not
  * display:none and not type="hidden", which smarter bots skip).
  */
-export const HONEYPOT_NAME = "website";
+const HONEYPOT_NAME = "website";
 
 export default function Honeypot() {
   return (

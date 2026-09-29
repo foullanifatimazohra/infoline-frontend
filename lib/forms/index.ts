@@ -13,33 +13,24 @@
  * - Choice fields take fixed keys, not UI labels (see CHOICE maps below).
  */
 
-export const WP_GRAPHQL_ENDPOINT =
+const WP_GRAPHQL_ENDPOINT =
   process.env.NEXT_PUBLIC_WPGRAPHQL_ENDPOINT ??
   "https://green-tarsier-764009.hostingersite.com/graphql";
 
-export type InquiryAction = "service_inquiry" | "project_inquiry" | "media_inquiry";
+type InquiryAction = "service_inquiry" | "project_inquiry" | "media_inquiry";
 
 /** Fixed keys per handover §3 — send the key, never the UI label. */
-export const PROJECT_TYPES = [
-  "new_build",
-  "platform_migration",
-  "custom_integration",
-  "other",
-] as const;
+export type ProjectType =
+  | "new_build"
+  | "platform_migration"
+  | "custom_integration"
+  | "other";
 
-export const START_TIMELINES = [
-  "ready_now",
-  "1_3_months",
-  "3_6_months",
-  "scoping",
-] as const;
+export type StartTimeline = "ready_now" | "1_3_months" | "3_6_months" | "scoping";
 
-export type ProjectType = (typeof PROJECT_TYPES)[number];
-export type StartTimeline = (typeof START_TIMELINES)[number];
+type ValidationError = { field: string; message: string };
 
-export type ValidationError = { field: string; message: string };
-
-export type SubmitInquiryResult = {
+type SubmitInquiryResult = {
   success: boolean;
   message: string;
   entryId: number;
@@ -113,19 +104,6 @@ export async function submitInquiry(
     ...payload,
     validationErrors: payload.validationErrors ?? [],
   };
-}
-
-/** Shared helpers for UI layers. */
-
-/** Group validation errors by field name for per-field rendering. */
-export function errorsByField(errors: ValidationError[]) {
-  const map = new Map<string, string[]>();
-  for (const e of errors) {
-    const list = map.get(e.field) ?? [];
-    list.push(e.message);
-    map.set(e.field, list);
-  }
-  return map;
 }
 
 /**

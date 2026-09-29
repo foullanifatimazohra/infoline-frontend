@@ -9,8 +9,6 @@ export type BlogPost = {
   image: string;
 };
 
-export const BLOG_CTA_IMAGE = "/assets/blog/cta-wave.jpg";
-
 export function getBlogPost(posts: BlogPost[], slug: string) {
   return posts.find((p) => p.slug === slug);
 }

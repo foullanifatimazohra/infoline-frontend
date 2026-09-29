@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Hero from "@/components/sections/blog/hero";
 import Featured from "@/components/sections/blog/featured";
 import Updates from "@/components/sections/blog/updates";
 import Cta from "@/components/sections/blog/cta";
 import type { BlogPost } from "@/lib/blog";
+import { localeAlternates } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Blog.page");
+  const [t, locale] = await Promise.all([
+    getTranslations("Blog.page"),
+    getLocale(),
+  ]);
 
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: localeAlternates(locale, "/blog"),
   };
 }
 

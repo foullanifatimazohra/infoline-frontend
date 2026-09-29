@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { Reveal } from "@/components/ui/motion";
-import { BLOG_CTA_IMAGE } from "@/lib/blog";
 
 /**
  * Closing CTA — rounded ink band with the grey wave photo, "Let's move your

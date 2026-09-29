@@ -12,7 +12,7 @@ import {
   classifyInquiryResult,
   type ProjectType,
   type StartTimeline,
-} from "@/lib/forms/client";
+} from "@/lib/forms";
 import { useRouteSelection, type RouteId } from "./route-context";
 import Rail from "./rail";
 

@@ -8,7 +8,7 @@ import {
   StaggerItem,
 } from "@/components/ui/motion";
 
-export type SolutionItem = {
+type SolutionItem = {
   icon: string | null;
   title: string;
   description: string;

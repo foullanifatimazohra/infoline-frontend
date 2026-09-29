@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Proof from "./proof";
 import HeroVisual from "./hero-visual";
 import HeroContent from "./hero-content";
-import { MainBackground } from "@/components/ui/background/main";
+import { MainBackground } from "@/components/ui/background";
 import { Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 
 export default function Main() {

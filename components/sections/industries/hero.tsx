@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
-import { MainBackground } from "@/components/ui/background/main";
+import { MainBackground } from "@/components/ui/background";
 import { Reveal, Stagger, StaggerItem, MaskText } from "@/components/ui/motion";
 import { Link } from "@/i18n/navigation";
 

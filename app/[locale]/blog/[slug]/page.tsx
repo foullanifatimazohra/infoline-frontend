@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import SingleHero from "@/components/sections/blog/single-hero";
 import Article from "@/components/sections/blog/article";
 import { getBlogPost, nextBlogPosts, type BlogPost } from "@/lib/blog";
+import { localeAlternates } from "@/lib/site";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -13,7 +14,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const t = await getTranslations();
+  const [t, locale] = await Promise.all([getTranslations(), getLocale()]);
   const posts = t.raw("Blog.posts") as BlogPost[];
   const post = getBlogPost(posts, slug);
 
@@ -21,6 +22,7 @@ export async function generateMetadata({
     title: post ? `${post.title} — Infoline` : "Infoline",
     description: post?.excerpt,
     robots: post ? undefined : { index: false, follow: true },
+    alternates: post ? localeAlternates(locale, `/blog/${slug}`) : undefined,
   };
 }
 

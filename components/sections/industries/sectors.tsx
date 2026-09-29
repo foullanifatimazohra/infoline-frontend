@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Icon from "@/components/ui/icon";
 import Button from "@/components/ui/button";
-import { MaskText, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
 type Sector = {
   id: string;

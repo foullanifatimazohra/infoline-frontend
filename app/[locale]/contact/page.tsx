@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Hero from "@/components/sections/contact/hero";
 import RouteCards from "@/components/sections/contact/route-cards";
 import TrustStrip from "@/components/sections/contact/trust-strip";
 import Form from "@/components/sections/contact/form";
 import { RouteProvider, type RouteId } from "@/components/sections/contact/route-context";
+import { localeAlternates } from "@/lib/site";
 
 const VALID_ROUTES: RouteId[] = ["service", "project", "vendor", "careers"];
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("ContactPage");
+  const [t, locale] = await Promise.all([
+    getTranslations("ContactPage"),
+    getLocale(),
+  ]);
 
   return {
     title: `${t("hero.eyebrow")} — ${t("hero.titleLead")} ${t("hero.titleAccent")}`,
     description: t("hero.description"),
+    alternates: localeAlternates(locale, "/contact"),
   };
 }
 
