@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { MaskText, Stagger, StaggerItem } from "@/components/ui/motion";
 
@@ -69,7 +68,6 @@ export default function Hero() {
               className="relative isolate flex w-[209px] items-center gap-3 rounded-lg bg-[#1C97D4] px-[34px] py-[19px] text-[13px] font-semibold uppercase leading-[13px] tracking-[1.43px] text-white shadow-[0px_14px_40px_-16px_rgba(28,151,212,0.95)]"
             >
               {t("hero.cta.label")}
-              <ArrowRight className="size-3.5 rtl:rotate-180" />
             </Button>
           </StaggerItem>
         </Stagger>
