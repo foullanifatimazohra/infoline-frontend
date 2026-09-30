@@ -15,7 +15,7 @@ export default function Featured({ post }: { post: BlogPost }) {
   const t = useTranslations("Blog.page");
 
   return (
-    <section className="bg-white pb-16 lg:pb-20">
+    <section className="bg-white py-16 lg:py-20">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-10">
         <Reveal
           as="p"

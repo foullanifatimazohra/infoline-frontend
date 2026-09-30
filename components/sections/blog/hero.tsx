@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-360 px-6 pb-16 pt-28 lg:px-10 lg:pb-24 lg:pt-44">
         <Stagger
           as="div"
-          className="flex flex-col items-start"
+          className="flex flex-col items-center text-center"
           stagger={0.14}
           delayChildren={0.05}
           amount={0.3}
