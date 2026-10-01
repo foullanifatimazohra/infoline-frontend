@@ -1873,5 +1873,307 @@
   "Metadata": {
     "title": "إنفولاين — شريك عُمان الموثوق لعمليات العملاء",
     "description": "عمليات تجربة عملاء وخدمات مُدارة وتقنية من عُمان، مبنية حول مسؤولية واضحة ونتائج قابلة للقياس."
+  },
+  "HomeV1": {
+    "hero": {
+      "badge": "جزء من مجموعة عمانتل",
+      "titleLead": "عمليات عملاء تُبنى وتُدار في",
+      "titleAccent": "عُمان.",
+      "description": "عمليات تجربة العملاء والجودة والتدريب وإدارة القوى العاملة وذكاء الأعمال والتقنية — موثوقة ومُدارة ومقدَّمة من عُمان.",
+      "primaryCta": {
+        "label": "تحدث إلى فريقنا",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "احجز ورشة تجربة العملاء",
+        "href": "/contact"
+      },
+      "image": "/assets/home-1/hero.webp",
+      "imageAlt": "مستشارو إنفولاين يقودون ورشة عمل مع عميل في مسقط",
+      "stats": [
+        {
+          "value": "22",
+          "unit": "سنة",
+          "label": "نعمل في عُمان منذ 2003"
+        },
+        {
+          "value": "68",
+          "label": "عميلاً عبر ستة قطاعات"
+        },
+        {
+          "value": "400+",
+          "label": "موظف جاهز لمساعدتك"
+        },
+        {
+          "value": "6M+",
+          "label": "معاملة عملاء سنويًا"
+        },
+        {
+          "value": "1,400+",
+          "label": "مقعدًا عبر مراكز التسليم"
+        }
+      ]
+    },
+    "whyTrust": {
+      "eyebrow": "لماذا إنفولاين",
+      "titleLines": [
+        "مبنيّون على الثقة.",
+        "مُثبَتون تحت الضغط."
+      ],
+      "description": "شريك تشغيلي واحد مسؤول، قريب من عملائك، بقدرة وحوكمة تحافظان على مستوى الخدمة تحت الطلب الحقيقي.",
+      "stepLabel": "السبب",
+      "ofLabel": "من",
+      "goToLabel": "انتقل إلى السبب",
+      "points": [
+        {
+          "number": "01",
+          "title": "موثوقون في عُمان، قريبون من عملائك وبيئتك التشغيلية",
+          "image": "/assets/home-1/why-1.webp",
+          "imageAlt": "عمارة حديثة في مسقط عند الغروب"
+        },
+        {
+          "number": "02",
+          "title": "نموذج واحد مسؤول يشمل الأفراد والعمليات والتقنية والأداء",
+          "image": "/assets/home-1/why-2.webp",
+          "imageAlt": "فريق يراجع تقارير الأداء معًا"
+        },
+        {
+          "number": "03",
+          "title": "قدرة تشغيلية تتّسم بالمرونة مع الطلب",
+          "image": "/assets/home-1/why-3.webp",
+          "imageAlt": "قادة العمليات في اجتماع تخطيط"
+        },
+        {
+          "number": "04",
+          "title": "خبرة بشرية معزَّزة بالتحليلات والأتمتة والذكاء الاصطناعي",
+          "image": "/assets/home-1/why-4.webp",
+          "imageAlt": "محلل يعمل على لوحة بيانات بالذكاء الاصطناعي"
+        }
+      ]
+    },
+    "whatWeDo": {
+      "eyebrow": "ما نقوم به",
+      "title": "كل ما تحتاجه عملياتك.",
+      "description": "ثماني قدرات. شريك واحد مسؤول. من عمليات الخطوط الأمامية إلى التقنية التي تقف خلفها.",
+      "items": [
+        {
+          "icon": "/assets/solutions/s1.svg",
+          "title": "عمليات تجربة العميل",
+          "description": "أنت تملك العميل. نحن نشغّل العملية",
+          "href": "/solutions#cat-cx-operations"
+        },
+        {
+          "icon": "/assets/solutions/s2.svg",
+          "title": "تحويل تجربة العميل",
+          "description": "اعثر على الفجوات. أصلح ما يهم. ابقَ مسؤولاً عن التحسين",
+          "href": "/solutions#cat-cx-transformation"
+        },
+        {
+          "icon": "/assets/solutions/s3.svg",
+          "title": "الجودة كخدمة",
+          "description": "جودة تستطيع الدفاع عنها، لا مجرد الإبلاغ عنها",
+          "href": "/solutions#cat-quality-as-a-service"
+        },
+        {
+          "icon": "/assets/solutions/s4.svg",
+          "title": "التدريب كخدمة",
+          "description": "ابنِ القدرة، وثّقها، ثم أثبتها على الأرض",
+          "href": "/solutions#cat-training-as-a-service"
+        },
+        {
+          "icon": "/assets/solutions/s5.svg",
+          "title": "ذكاء الأعمال",
+          "description": "نسخة واحدة من الأرقام. قرارات أوضح",
+          "href": "/solutions#cat-business-intelligence"
+        },
+        {
+          "icon": "/assets/solutions/s7.svg",
+          "title": "الخدمات التقنية",
+          "description": "قنوات مترابطة وخيارات داخل البلاد وذكاء اصطناعي حيث يفيد",
+          "href": "/solutions#cat-technology-services"
+        },
+        {
+          "icon": "/assets/solutions/s8.svg",
+          "title": "تعهيد الموارد البشرية",
+          "description": "أنت توجّه العمل. نحن ندير التوظيف",
+          "href": "/solutions#cat-hr-outsourcing"
+        },
+        {
+          "icon": "/assets/solutions/s6.svg",
+          "title": "إدارة القوى العاملة",
+          "description": "الأشخاص المناسبون. الفترة المناسبة. مستوى الخدمة الصحيح",
+          "href": "/solutions#cat-workforce-management"
+        }
+      ]
+    },
+    "industries": {
+      "eyebrow": "القطاعات",
+      "title": "إذا كنت تفكر بالقطاعات، ابدأ من هنا.",
+      "description": "تسمّي كل صفحة قطاع العمليات التي نشغّلها هناك، والقيود التنظيمية التي نعمل ضمنها، ونتائج العملاء التي نضعها أمام لجنة التقييم.",
+      "exploreLabel": "استكشف القطاع",
+      "items": [
+        {
+          "id": "government",
+          "title": "الحكومة والخدمات العامة",
+          "description": "خطوط مساعدة للمواطنين ومكاتب خدمة رقمية ودعم للحكومة الإلكترونية ضمن قواعد المشتريات العامة.",
+          "image": "/assets/industries/i2.png",
+          "href": "/industries"
+        },
+        {
+          "id": "telecom",
+          "title": "الاتصالات والتقنية",
+          "description": "الخدمات عالية الحجم تحتاج نموذج تشغيل يصمد تحت الضغط.",
+          "image": "/assets/industries/i1.png",
+          "href": "/industries"
+        },
+        {
+          "id": "logistics",
+          "title": "الخدمات اللوجستية والنقل والسياحة",
+          "description": "الرحلات الحساسة للوقت تحتاج خدمة تستجيب في اللحظة.",
+          "image": "/assets/industries/i5.png",
+          "href": "/industries"
+        },
+        {
+          "id": "utilities",
+          "title": "المرافق والطاقة والبيئة",
+          "description": "عندما ترتفع الطلبات، لا يمكن أن تصبح الخدمة غير متوقعة.",
+          "image": "/assets/industries/i4.png",
+          "href": "/industries"
+        },
+        {
+          "id": "bfsi",
+          "title": "الخدمات المصرفية والتأمين والتقنية المالية",
+          "description": "تحكّم واتساق وثقة العملاء في كل تفاعل.",
+          "image": "/assets/industries/i3.png",
+          "href": "/industries"
+        },
+        {
+          "id": "realestate",
+          "title": "العقارات والتجارة والمستهلك",
+          "description": "توقعات العملاء تتحرك بسرعة، والعمليات يجب أن تتحرك معها.",
+          "image": "/assets/industries/i6.png",
+          "href": "/industries"
+        }
+      ]
+    },
+    "whatChanges": {
+      "eyebrow": "ما الذي يتغير مع إنفولاين",
+      "title": "عبء تشغيلي أقل. رؤية أوضح. مسؤولية أدق.",
+      "description": "أربعة أمور يلاحظها صاحب العملية في الربع الأول.",
+      "columns": {
+        "without": "بدون إنفولاين",
+        "with": "مع إنفولاين",
+        "impact": "التأثير على الأعمال"
+      },
+      "rows": [
+        {
+          "without": "فرق متعددة تحتاج إلى تنسيق",
+          "with": "شريك تشغيلي واحد مسؤول",
+          "impact": "ملكية أوضح وقرارات أسرع"
+        },
+        {
+          "without": "توظيف وطاقة استيعابية تفاعلية",
+          "with": "تخطيط قوى عاملة يقوده الطلب",
+          "impact": "استعداد أفضل للذُرى والنمو"
+        },
+        {
+          "without": "تقارير مجزأة",
+          "with": "رؤية مشتركة للأداء",
+          "impact": "قرارات أسرع وأكثر ثقة"
+        },
+        {
+          "without": "فريقك يدير العمليات اليومية",
+          "with": "إنفولاين تدير نطاق التشغيل المتفق عليه",
+          "impact": "تركيز أكبر على العملاء وأولويات الأعمال"
+        }
+      ],
+      "cta": {
+        "label": "تحدث إلى خبير",
+        "href": "/contact"
+      }
+    },
+    "proof": {
+      "eyebrow": "ثقة مبنية على الإثبات",
+      "title": "تأسست في 2004. جزء من مجموعة عمانتل",
+      "description": "علاقات خدمة تعاقدية مصنَّفة حسب القطاع. تحمل الجهات العامة الحصة الأكبر من حجم أعمالنا المنجزة.",
+      "centerLogoAlt": "إنفولاين",
+      "cta": {
+        "label": "عرض جميع العملاء",
+        "href": "/industries"
+      },
+      "logos": [
+        {
+          "src": "/assets/clients/moh.svg",
+          "name": "وزارة الصحة"
+        },
+        {
+          "src": "/assets/clients/paew.svg",
+          "name": "الهيئة العامة للكهرباء والمياه"
+        },
+        {
+          "src": "/assets/clients/ncsi.svg",
+          "name": "المركز الوطني للإحصاء والمعلومات"
+        },
+        {
+          "src": "/assets/clients/manpower.svg",
+          "name": "وزارة القوى العاملة"
+        },
+        {
+          "src": "/assets/clients/asyad.svg",
+          "name": "أسياد"
+        },
+        {
+          "src": "/assets/clients/tra.svg",
+          "name": "هيئة تنظيم الاتصالات"
+        },
+        {
+          "src": "/assets/clients/oman-post.svg",
+          "name": "البريد العُماني"
+        }
+      ]
+    },
+    "threeWays": {
+      "eyebrow": "الحلول",
+      "title": "ثلاث طرق نتخفّف بها عن عملياتك",
+      "description": "اختر المشكلة الأقرب إلى واقعك. كل محور يجمع الخدمات التي تعالجها، مع الدليل على أننا عالجناها سابقًا.",
+      "pillars": [
+        {
+          "id": "clients",
+          "title": "للعملاء",
+          "description": "اعمل مع شريك تشغيل موثوق",
+          "cta": "تحدث إلى فريقنا",
+          "href": "/contact",
+          "image": "/assets/home-1/for-clients.webp",
+          "imageAlt": "ممثل عملاء إنفولاين"
+        },
+        {
+          "id": "vendors",
+          "title": "للموردين",
+          "description": "عرّف بقدرتك وسجّل كمورّد",
+          "cta": "سجّل كمورّد",
+          "href": "/contact",
+          "image": "/assets/home-1/for-vendors.webp",
+          "imageAlt": "ممثل موردي إنفولاين"
+        },
+        {
+          "id": "partners",
+          "title": "للشركاء",
+          "description": "لنبنِ شيئًا معًا مع شريك تشغيل موثوق",
+          "cta": "استكشف شراكة",
+          "href": "/contact",
+          "image": "/assets/home-1/for-partners.webp",
+          "imageAlt": "ممثلة شركاء إنفولاين"
+        }
+      ]
+    },
+    "cta": {
+      "title": "ابدأ من النتيجة التي تحتاجها",
+      "description": "أخبرنا بما يحتاج إلى تحسين. سنبدأ من العملية، لا من منتج",
+      "cta": {
+        "label": "تحدث إلى خبير",
+        "href": "/contact"
+      },
+      "image": "/assets/home-1/cta.webp"
+    }
   }
 }

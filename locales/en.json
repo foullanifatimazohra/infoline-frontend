@@ -1873,5 +1873,307 @@
   "Metadata": {
     "title": "Infoline — Oman's trusted partner for customer operations",
     "description": "Trusted CX operations, managed services and technology from Oman, built around clear accountability and measurable outcomes."
+  },
+  "HomeV1": {
+    "hero": {
+      "badge": "Part of Omantel group",
+      "titleLead": "Customer operations built and managed in",
+      "titleAccent": "Oman.",
+      "description": "CX operations, quality, training, workforce management, BI and technology — trusted, managed and delivered from Oman.",
+      "primaryCta": {
+        "label": "Talk to Our Team",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Book a CX Workshop",
+        "href": "/contact"
+      },
+      "image": "/assets/home-1/hero.webp",
+      "imageAlt": "Infoline consultants leading a client workshop in Muscat",
+      "stats": [
+        {
+          "value": "22",
+          "unit": "yrs",
+          "label": "Operating in Oman since 2003"
+        },
+        {
+          "value": "68",
+          "label": "Clients across six sectors"
+        },
+        {
+          "value": "400+",
+          "label": "Agents ready to help you"
+        },
+        {
+          "value": "6M+",
+          "label": "Customer transactions a year"
+        },
+        {
+          "value": "1,400+",
+          "label": "Seats across delivery centres"
+        }
+      ]
+    },
+    "whyTrust": {
+      "eyebrow": "Why Infoline",
+      "titleLines": [
+        "Built on trust.",
+        "Proven under pressure."
+      ],
+      "description": "One accountable operating partner, close to your customers, with the scale and governance to hold a service level under real demand.",
+      "stepLabel": "Reason",
+      "ofLabel": "of",
+      "goToLabel": "Go to reason",
+      "points": [
+        {
+          "number": "01",
+          "title": "Trusted in Oman, close to your customers and operating environment",
+          "image": "/assets/home-1/why-1.webp",
+          "imageAlt": "Modern architecture in Muscat at sunset"
+        },
+        {
+          "number": "02",
+          "title": "One accountable model across people, process, technology and performance",
+          "image": "/assets/home-1/why-2.webp",
+          "imageAlt": "Team reviewing performance reports together"
+        },
+        {
+          "number": "03",
+          "title": "Operational scale that can flex with demand",
+          "image": "/assets/home-1/why-3.webp",
+          "imageAlt": "Operations leaders in a planning meeting"
+        },
+        {
+          "number": "04",
+          "title": "Human expertise strengthened by analytics, automation and AI",
+          "image": "/assets/home-1/why-4.webp",
+          "imageAlt": "Analyst working with an AI dashboard"
+        }
+      ]
+    },
+    "whatWeDo": {
+      "eyebrow": "What we do",
+      "title": "Everything your operation needs.",
+      "description": "Eight capabilities. One accountable partner. From frontline operations to the technology behind them.",
+      "items": [
+        {
+          "icon": "/assets/solutions/s1.svg",
+          "title": "CX Operations",
+          "description": "You own the customer. We run the operation",
+          "href": "/solutions#cat-cx-operations"
+        },
+        {
+          "icon": "/assets/solutions/s2.svg",
+          "title": "CX Transformation",
+          "description": "Find the gaps. Fix what matters. Stay accountable for improvement",
+          "href": "/solutions#cat-cx-transformation"
+        },
+        {
+          "icon": "/assets/solutions/s3.svg",
+          "title": "Quality as a Service",
+          "description": "Quality you can defend, not just report",
+          "href": "/solutions#cat-quality-as-a-service"
+        },
+        {
+          "icon": "/assets/solutions/s4.svg",
+          "title": "Training as a Service",
+          "description": "Build capability, certify it, then prove it on the floor",
+          "href": "/solutions#cat-training-as-a-service"
+        },
+        {
+          "icon": "/assets/solutions/s5.svg",
+          "title": "Business Intelligence",
+          "description": "One version of the numbers. Clearer decisions",
+          "href": "/solutions#cat-business-intelligence"
+        },
+        {
+          "icon": "/assets/solutions/s7.svg",
+          "title": "Technology Services",
+          "description": "Connected channels, in-country options and AI where it helps",
+          "href": "/solutions#cat-technology-services"
+        },
+        {
+          "icon": "/assets/solutions/s8.svg",
+          "title": "HR Outsourcing",
+          "description": "You direct the work. We manage the employment",
+          "href": "/solutions#cat-hr-outsourcing"
+        },
+        {
+          "icon": "/assets/solutions/s6.svg",
+          "title": "Workforce Management",
+          "description": "Right people. Right interval. Right service level",
+          "href": "/solutions#cat-workforce-management"
+        }
+      ]
+    },
+    "industries": {
+      "eyebrow": "Industries",
+      "title": "If you think in sectors, start here instead.",
+      "description": "Each sector page names the operations we already run there, the regulatory constraints we work inside, and the client results we can put in front of an evaluation committee.",
+      "exploreLabel": "Explore sector",
+      "items": [
+        {
+          "id": "government",
+          "title": "Government & Public Services",
+          "description": "Citizen helplines, digital service desks and e-government support inside public procurement rules.",
+          "image": "/assets/industries/i2.png",
+          "href": "/industries"
+        },
+        {
+          "id": "telecom",
+          "title": "Telecom & Technology",
+          "description": "High-volume service needs an operating model that holds under pressure.",
+          "image": "/assets/industries/i1.png",
+          "href": "/industries"
+        },
+        {
+          "id": "logistics",
+          "title": "Logistics, Transport & Tourism",
+          "description": "Time-sensitive journeys need service that can respond in the moment.",
+          "image": "/assets/industries/i5.png",
+          "href": "/industries"
+        },
+        {
+          "id": "utilities",
+          "title": "Utilities, Energy & Environment",
+          "description": "When demand spikes, service cannot become unpredictable.",
+          "image": "/assets/industries/i4.png",
+          "href": "/industries"
+        },
+        {
+          "id": "bfsi",
+          "title": "Banking, Insurance & Fintech",
+          "description": "Control, consistency and customer confidence in every interaction.",
+          "image": "/assets/industries/i3.png",
+          "href": "/industries"
+        },
+        {
+          "id": "realestate",
+          "title": "Real Estate, Commercial & Consumer",
+          "description": "Customer expectations move quickly. Operations have to move with them.",
+          "image": "/assets/industries/i6.png",
+          "href": "/industries"
+        }
+      ]
+    },
+    "whatChanges": {
+      "eyebrow": "What changes with Infoline",
+      "title": "Less operating burden. More visibility. Clearer accountability.",
+      "description": "Four things an operations owner notices in the first quarter.",
+      "columns": {
+        "without": "Without Infoline",
+        "with": "With Infoline",
+        "impact": "Business Impact"
+      },
+      "rows": [
+        {
+          "without": "Multiple teams to coordinate",
+          "with": "One accountable operating partner",
+          "impact": "Clearer ownership and faster decisions"
+        },
+        {
+          "without": "Reactive staffing and capacity",
+          "with": "Demand-led workforce planning",
+          "impact": "Better readiness for peaks and growth"
+        },
+        {
+          "without": "Fragmented reporting",
+          "with": "Shared performance visibility",
+          "impact": "Faster, more confident decisions"
+        },
+        {
+          "without": "Your team manages day-to-day operations",
+          "with": "Infoline manages the agreed operating scope",
+          "impact": "More focus on customers and business priorities"
+        }
+      ],
+      "cta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      }
+    },
+    "proof": {
+      "eyebrow": "Trust built on proof",
+      "title": "Established in 2004. Part of Omantel Group",
+      "description": "Contracted service relationships, grouped by sector. Public authorities carry the largest share of our delivered volume.",
+      "centerLogoAlt": "Infoline",
+      "cta": {
+        "label": "See all clients",
+        "href": "/industries"
+      },
+      "logos": [
+        {
+          "src": "/assets/clients/moh.svg",
+          "name": "Ministry of Health"
+        },
+        {
+          "src": "/assets/clients/paew.svg",
+          "name": "Public Authority for Electricity & Water"
+        },
+        {
+          "src": "/assets/clients/ncsi.svg",
+          "name": "National Centre for Statistics & Information"
+        },
+        {
+          "src": "/assets/clients/manpower.svg",
+          "name": "Ministry of Manpower"
+        },
+        {
+          "src": "/assets/clients/asyad.svg",
+          "name": "ASYAD"
+        },
+        {
+          "src": "/assets/clients/tra.svg",
+          "name": "Telecommunications Regulatory Authority"
+        },
+        {
+          "src": "/assets/clients/oman-post.svg",
+          "name": "Oman Post"
+        }
+      ]
+    },
+    "threeWays": {
+      "eyebrow": "Solutions",
+      "title": "Three ways we take work off your operation",
+      "description": "Pick the problem closest to yours. Each pillar groups the services that solve it, with the proof that we have solved it before.",
+      "pillars": [
+        {
+          "id": "clients",
+          "title": "For Clients",
+          "description": "Work with a trusted operations partner",
+          "cta": "Talk to our team",
+          "href": "/contact",
+          "image": "/assets/home-1/for-clients.webp",
+          "imageAlt": "Infoline client representative"
+        },
+        {
+          "id": "vendors",
+          "title": "For Vendors",
+          "description": "Introduce your capability and become a vendor",
+          "cta": "Become a vendor",
+          "href": "/contact",
+          "image": "/assets/home-1/for-vendors.webp",
+          "imageAlt": "Infoline vendor representative"
+        },
+        {
+          "id": "partners",
+          "title": "For Partners",
+          "description": "Build something together with a trusted operations partner",
+          "cta": "Explore partnership",
+          "href": "/contact",
+          "image": "/assets/home-1/for-partners.webp",
+          "imageAlt": "Infoline partner representative"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start with the outcome you need",
+      "description": "Tell us what needs to improve. We will start from the operation, not from a product",
+      "cta": {
+        "label": "Talk to an expert",
+        "href": "/contact"
+      },
+      "image": "/assets/home-1/cta.webp"
+    }
   }
 }
