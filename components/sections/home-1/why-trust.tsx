@@ -176,9 +176,9 @@ function PinnedStory({ points }: { points: Point[] }) {
             {/* Clock hand + centre dot */}
             <span
               style={{ transform: `rotate(${handDeg}deg)` }}
-              className="pointer-events-none absolute start-1/2 top-1/2 h-[120svh] w-px origin-top bg-[#1a1a1c]/80"
+              className="pointer-events-none absolute start-1/2 top-1/2 h-[120svh] w-px origin-top bg-brandblue-500"
             />
-            <span className="pointer-events-none absolute start-1/2 top-1/2 z-10 size-4.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1a1a1c] rtl:translate-x-1/2" />
+            <span className="pointer-events-none absolute start-1/2 top-1/2 z-10 size-4.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brandblue-500 rtl:translate-x-1/2" />
           </div>
 
           {/* Reason (reading-end side, desktop) */}
