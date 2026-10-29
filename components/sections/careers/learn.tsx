@@ -1,18 +1,17 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Eyebrow } from "@/components/sections/home-1/shared";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { Reveal, MaskText } from "@/components/ui/motion";
+import WhyJoinStack from "@/components/sections/careers/why-join-stack";
 
 /**
  * "Why join" — dark panel with a centred header and the four proof points as a
  * column of alternating light / brand cards (Figma Careers › section#partners).
  *
- * The cards follow the Scroll Stack pattern: each one pins (`sticky`) as it
- * reaches the top offset and the next card slides over it, so scrolling back
- * reverses the stack for free. Reduced motion falls back to a plain column.
- * Below the stack sits the "Ready for your next role?" glass CTA.
+ * The cards follow the Scroll Stack pattern (see `WhyJoinStack`): on desktop
+ * each one pins and fans into a layered pile as it arrives. Below the stack
+ * sits the "Ready for your next role?" glass CTA.
  */
 export default function Learn() {
   const t = useTranslations("CareersPage");
@@ -55,31 +54,7 @@ export default function Learn() {
               {t("learn.body")}
             </p>
 
-            <ul className="mt-9 flex w-full max-w-[265px] flex-col gap-9">
-              {chips.map((chip, i) => {
-                const brand = i % 2 === 1;
-                return (
-                  <li
-                    key={chip}
-                    className={`sticky top-28 flex min-h-[210px] flex-col gap-6 rounded-[20px] px-6 pt-5 pb-8 text-start motion-reduce:static ${
-                      brand
-                        ? "bg-brandblue-500 text-white"
-                        : "bg-[#d7eaf4] text-brandblue-600"
-                    }`}
-                  >
-                    <Image
-                      src={`/assets/careers/learn/${i + 1}.svg`}
-                      alt=""
-                      aria-hidden
-                      width={36}
-                      height={36}
-                      className="size-9 flex-none"
-                    />
-                    <p className="text-[28px] leading-8 font-medium">{chip}</p>
-                  </li>
-                );
-              })}
-            </ul>
+            <WhyJoinStack chips={chips} />
 
             <div className="mt-14 flex w-full max-w-[1162px] flex-col gap-6 rounded-[20px] border border-brandblue-500/60 bg-[rgba(29,38,43,0.6)] p-6 text-start shadow-[0_24px_40px_0_rgba(62,193,240,0.12)] backdrop-blur-[6px] lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:p-8">
               <div className="flex max-w-[687px] flex-col gap-3">

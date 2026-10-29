@@ -3,7 +3,7 @@ import { messages } from "../support/messages";
 import { scrollElementTo, setMotionPreference, type MotionPreference } from "../support/motion";
 
 /**
- * Careers › "Why join" — Scroll Stack cards (sticky pin) + "Ready for your
+ * Careers › "Why join" — Scroll Stack cards (sticky pin + fan) + "Ready for your
  * next role?" CTA. The talent-network button is intentionally disabled until
  * its destination is confirmed.
  */
@@ -51,9 +51,15 @@ for (const preference of ["no-preference", "reduce"] as MotionPreference[]) {
     await expect(cards).toHaveCount(4);
     const position = (i: number) => cards.nth(i).evaluate((el) => getComputedStyle(el).position);
     const top = (i: number) => cards.nth(i).evaluate((el) => Math.round(el.getBoundingClientRect().top));
+    // Fanned pose lives on the card inside each sticky <li>.
+    const transform = (i: number) =>
+      cards.nth(i).locator("> div").evaluate((el) => getComputedStyle(el).transform);
 
     if (preference === "reduce") {
-      for (let i = 0; i < 4; i++) expect(await position(i)).toBe("static");
+      for (let i = 0; i < 4; i++) {
+        expect(await position(i)).toBe("static");
+        expect(await transform(i)).toBe("none");
+      }
       return;
     }
 
@@ -78,11 +84,17 @@ for (const preference of ["no-preference", "reduce"] as MotionPreference[]) {
       .poll(async () => Math.max(...(await Promise.all([0, 1, 2].map(async (i) => Math.abs((await top(i)) - pin))))))
       .toBeLessThanOrEqual(2);
     expect(await top(3)).toBeGreaterThan(pin + 20);
+    // Pinned cards are fanned into distinct poses so each stays visible.
+    const poses = await Promise.all([0, 1, 2].map(transform));
+    for (const pose of poses) expect(pose).not.toBe("none");
+    expect(new Set(poses).size).toBe(3);
 
     // Reverse: scroll back above the stack — cards return to a spaced column.
     await scrollElementTo(page, cards.nth(0).locator("xpath=.."), 500);
     const tops = await Promise.all([0, 1, 2, 3].map(top));
     for (let i = 1; i < 4; i++) expect(tops[i]).toBeGreaterThan(tops[i - 1] + 200);
+    // …and unwind back to their resting pose.
+    for (let i = 0; i < 4; i++) expect(await transform(i)).toBe("none");
 
     // Nothing left transformed/faded.
     for (let i = 0; i < 4; i++) {
